@@ -49,8 +49,6 @@ class PyFacebook( object ):
     self.__app_id       = app_id
     self.__app_secret   = app_secret
     self.__access_token = access_token
-    self.__connection   = Pyfb( app_id )
-    self.__connection.set_access_token( access_token )
 
   def get_list_from_fb( self, container_obj_id, class_to_get ):
     """
