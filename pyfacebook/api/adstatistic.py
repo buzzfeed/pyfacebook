@@ -1,6 +1,6 @@
 from pyfacebook.fault import Fault, FacebookException
 
-from discotech.settings import FACEBOOK_PROD_ACCOUNT_ID
+from pyfacebook.settings import FACEBOOK_PROD_ACCOUNT_ID
 
 class AdStatisticApi:
 

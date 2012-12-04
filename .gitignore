@@ -4,3 +4,4 @@ dist
 *.pyc
 settings.py
 nbproject
+pyfacebook.egg-info
