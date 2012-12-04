@@ -1,4 +1,3 @@
-from pyfb import Pyfb
 from urlparse import parse_qsl
 
 from pyfacebook import utils
@@ -19,7 +18,7 @@ from pyfacebook.api.adgroup import AdGroupApi
 from pyfacebook.api.adcampaign import AdCampaignApi
 from pyfacebook.api.adcreative import AdCreativeApi
 
-import urllib
+import urllib, urllib2
 import json
 
 class PyFacebook( object ):
@@ -27,10 +26,10 @@ class PyFacebook( object ):
   The Facebook class's methods will return an object reflecting the Facebook Graph API
 
   """
-  __app_id       = None
-  __app_secret   = None
-  __access_token = None
-  __connection   = None
+  __app_id         = None
+  __app_secret     = None
+  __access_token   = None
+  __graph_endpoint = "https://graph.facebook.com"
 
   def __init__( self, app_id, access_token=None, app_secret=None, raw_data=False ):
     """
@@ -61,8 +60,11 @@ class PyFacebook( object ):
     :rtype: List of objects of Class class_to_get, representing data pulled from the Facebook Graph API
 
     """
+    resp = self.get( '/' + str( container_obj_id ) + '/' + class_to_get.lower() )
+    lst  = [ self.get_instance( class_to_get, obj ) for obj in resp ]
+    return lst
 
-    conn              = self.get_connection( )
+    """
     pyfb_objects      = conn._client.get_list( container_obj_id, utils.pluralize( class_to_get ) )
     new_local_objects = [ ]
     for pyfb_object in pyfb_objects:
@@ -70,6 +72,7 @@ class PyFacebook( object ):
       self.copysome( pyfb_object, new_local_object, new_local_object.attrs_to_copy )
       new_local_objects.append( new_local_object )
     return new_local_objects
+    """
 
   def get_one_from_fb( self, reference_obj_id, class_to_get ):
     """
@@ -82,11 +85,15 @@ class PyFacebook( object ):
     :rtype: Object of Class class_to_get, representing data pulled from the Facebook Graph API
 
     """
-
+    resp = self.get( '/' + str( reference_obj_id ) )
+    obj  = self.get_instance( class_to_get, resp )
+    return obj
+    """
     conn                     = self.get_connection( )
     pyfb_object              = conn._client.get_one( reference_obj_id, class_to_get )
     new_local_object, errors = self.get_instance( class_to_get, pyfb_object )
     return new_local_object
+    """
 
   def get_connection( self ):
     """
@@ -100,7 +107,7 @@ class PyFacebook( object ):
     return self.__connection
 
   def get( self, resource, params={} ):
-    url = "https://graph.facebook.com" + str( resource )
+    url = self.__graph_endpoint + str( resource )
     if '?' in url:
       url += '&'
     else:
@@ -109,9 +116,39 @@ class PyFacebook( object ):
     if params:
       url += urllib.urlencode( params )
     raw_response = urllib.urlopen( url ).read( )
-    return json.loads( raw_response )
+    obj = json.loads( raw_response )
+    if 'error' in obj:
+      raise FacebookException( obj['error'] )
+    if 'data' in obj:
+      return obj['data']
+    return obj
 
-  def get_access_token(self):
+  def post(self, resource, payload ):
+    """
+    Issues an HTTP POST request to the resource with params as the payload
+    """
+    url = self.__graph_endpoint + str( resource )
+    raw_response = urllib.urlopen( url, payload ).read()
+    obj = json.loads( raw_response )
+    if 'error' in obj:
+      raise FacebookException( obj['error'] )
+    return obj
+
+  def delete(self, resource, params, content_type='application/json'):
+    """
+    Issues an HTTP DELETE request to the resource with params as the payload
+    """
+    url = self.__graph_endpoint + str( resource )
+    opener = urllib2.build_opener( urllib2.HTTPSHandler )
+    request = urllib2.Request( url, data=params )
+    request.add_header( 'Content-Type', content_type )
+    request.get_method = lambda: 'DELETE'
+    raw_response = opener.open(request).read( )
+    return raw_response
+
+  def access_token(self, access_token=None):
+    if access_token:
+      self.__access_token = access_token
     return self.__access_token
 
   def custom_graph_call( self, url, return_class, qsl_call=False, requires_access_token=False ):
@@ -157,7 +194,7 @@ class PyFacebook( object ):
     errors = [ ]
 
     try:
-      facebook_token_url = "https://graph.facebook.com/oauth/access_token"
+      facebook_token_url = self.__graph_endpoint + '/oauth/access_token'
       if self.__app_id is None or self.__app_secret is None or self.__access_token is None:
         raise FacebookException( "Must set app_id, app_secret and access_token before calling exchange_token" )
 
