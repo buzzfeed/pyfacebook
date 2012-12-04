@@ -22,7 +22,7 @@ class AdGroupApi:
         if next:
           resp = self.__fb.get( next )
         else:
-          url  = '/act_' + str( account_id ) + '/adgroups?access_token=' + str( self.__fb.get_access_token() )
+          url  = '/act_' + str( account_id ) + '/adgroups?access_token=' + str( self.__fb.access_token() )
           if include_deleted:
             url += '&include_deleted=true'
           resp = self.__fb.get( url )

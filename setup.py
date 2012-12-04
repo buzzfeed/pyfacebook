@@ -14,5 +14,5 @@ setup(
     author_email = 'jeff.revesz@buzzfeed.com',
     packages=find_packages(),
     test_suite='test',
-    requires=['nose', 'pyfb']
+    requires=['nose']
 )
