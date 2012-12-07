@@ -15,6 +15,11 @@ class TestAdCampaignApi():
 
     def test_find_by_adgroup_id_and_find_by_id(self):
         adgroups, errors = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID)
+
+        if errors:
+          for err in errors:
+            print err.message
+
         adgroup = adgroups[0]
 
         adcampaign, errors = self.fb.api().adcampaign().find_by_adgroup_id(adgroup.id)
