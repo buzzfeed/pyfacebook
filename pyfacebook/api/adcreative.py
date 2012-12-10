@@ -23,3 +23,56 @@ class AdCreativeApi:
       return adcreatives, []
     except:
       return None, [Fault()]
+
+  def create(self, account_id, adgroup_id, name, body, link_url, max_bid, bid_type, ad_status, creative_ids, start_time, end_time, title, targeting):
+    kwargs = {
+      'account_id': account_id,
+      'adgroup_id': adgroup_id,
+      'name': name,
+      'body': body,
+      'link_url': link_url,
+      'max_bid': max_bid,
+      'bid_type': bid_type,
+      'ad_status': ad_status,
+      'creative_ids': creative_ids,
+      'start_time': start_time,
+      'end_time': end_time,
+      'title': title,
+      'targeting': targeting
+    }
+    adcreative, model, errors = self.__fb.create('AdCreative', **kwargs)
+    if errors:
+      return None, errors
+    setattr(model, 'ad_id', adcreative['id'])
+    return model, []
+
+  def update(self, adcreative_id, adgroup_id=None, name=None, body=None, link_url=None, max_bid=0, bid_type=0, ad_status=None, creative_ids=None, start_time=None, end_time=None, title=None, targeting=None):
+    kwargs = {
+      'adgroup_id': adgroup_id,
+      'name': name,
+      'body': body,
+      'link_url': link_url,
+      'max_bid': max_bid,
+      'bid_type': bid_type,
+      'ad_status': ad_status,
+      'creative_ids': creative_ids,
+      'start_time': start_time,
+      'end_time': end_time,
+      'title': title,
+      'targeting': targeting
+    }
+    kwargs = self.__fb._clean_params(kwargs)
+    result, errors = self.update(adcreative_id, **kwargs)
+    if errors:
+      return None, errors
+    if result != True:
+      return None, [Fault(message='Request could not be completed. Result was <%s>' % res)]
+
+    return result, []
+
+  def __result_to_model(self, data):
+    ag = self.adgroup()
+    for key in data.keys():
+      if hasattr( ag ):
+        setattr( ag, key, data[key] )
+    return ag

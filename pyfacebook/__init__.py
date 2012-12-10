@@ -2,12 +2,13 @@ import sys
 import urllib
 import urllib2
 import json
-
+from urllib import urlencode
 from urlparse import parse_qsl
 
 from pyfacebook import utils
 from pyfacebook.fault import Fault
 
+from pyfacebook import models
 from pyfacebook.models.adaccount import AdAccount
 from pyfacebook.models.aduser import AdUser
 from pyfacebook.models.adstatistic import AdStatistic
@@ -79,6 +80,62 @@ class PyFacebook( object ):
     """
     resp = self.get( '/' + str( reference_obj_id ) )
     return self.get_instance( class_to_get, resp )[0]
+
+  def create(self, model, **kwargs):
+    """
+    Creates a new instance on type <model> with the given <kwargs>
+
+    :param model The class of which to create the new instance; it can be either a string with the name of the class or the class module itself.
+
+    :rtype tuple A dict with the attributes of the remote obj, the new model instance with the given attributes and the errors raised, if any.
+    """
+    account_id = kwargs.get('account_id')
+    if not account_id:
+      raise FacebookException('An account_id is required to make the request!')
+
+    if issubclass(model, models.Model):
+      klass = model
+      klass_name = model.__name__.lower()
+    elif isinstance(model, str):
+      klass = getattr(models, model)
+      klass_name = model.lower()
+    else:
+      raise FacebookException('Invalid model class: %r' % model)
+
+    try:
+      url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=klass_name)
+      url = '?'.join([url, urlencode({'access_token': self.access_token()})])
+
+      created_obj = self.post(url, kwargs)
+      model_obj = klass(**kwargs)
+    except:
+      return None, None, [Fault()]
+    return created_obj, model_obj, []
+
+  def update(self, obj_id, **kwargs):
+    """
+    Sends an update request for obj_id with the given kwargs.
+
+    :rtype dict The data retrieved by the request after updating.
+    """
+    try:
+      url = '/{obj_id}'.format(obj_id=obj_id)
+      url = '?'.join([url, urlencode({'access_token': self.access_token()})])
+      response = self.post(url, kwargs)
+    except:
+      return None, [Fault()]
+    return response, []
+
+  def _clean_params(self, clean_empty_strings=True, kwargs):
+    """
+    Remove null and falsy values from an argument list.
+    """
+    for k, v in kwargs.iteritems():
+      if not v:
+        if isinstance(v, str) and not clean_empty_strings:
+          continue
+        del kwargs[k]
+    return kwargs
 
   def get( self, resource, params={} ):
     url = self.__graph_endpoint + str( resource )
