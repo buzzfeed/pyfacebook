@@ -84,7 +84,7 @@ class PyFacebook( object ):
     """
     Creates a new instance on type <model> with the given <kwargs>
 
-    :param model The class of which to create the new instance; it can be either a string with the name of the class or the class module itself.
+    :param string model The class of which to create the new instance; it can be either a string with the name of the class or the class module itself.
 
     :rtype tuple A dict with the attributes of the remote obj, the new model instance with the given attributes and the errors raised, if any.
     """
@@ -93,23 +93,21 @@ class PyFacebook( object ):
     except KeyError:
       raise FacebookException('An account_id is required to make the request!')
 
-    if isinstance(model, str):
-      klass_name = model.lower()
-      klass = getattr(getattr(models, klass_name), model)
-    elif issubclass(model, models.Model):
-      klass = model
-      klass_name = model.__name__.lower()
-    else:
-      raise FacebookException('Invalid model class: %r' % model)
+    # if isinstance(model, str):
+    #   klass_name = model.lower()
+    #   klass = getattr(getattr(models, klass_name), model)
+    # elif issubclass(model, models.Model):
+    #   klass = model
+    #   klass_name = model.__name__.lower()
+    # else:
+    #   raise FacebookException('Invalid model class: %r' % model)
 
     try:
-      url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=klass_name)
-      url = '?'.join([url, urllib.urlencode({'access_token': self.access_token()})])
-
+      url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
       created_obj = self.post(url, urllib.urlencode(kwargs))
-      model_obj = klass(kwargs)
+      instance = self.get_instance(model, kwargs)
       if 'id' in created_obj:
-        setattr(model_obj, 'id', created_obj['id'])
+        setattr(instance, 'id', created_obj['id'])
     except Exception as e:
       raise
       return None, None, [Fault()]
@@ -122,14 +120,13 @@ class PyFacebook( object ):
     :rtype dict The data retrieved by the request after updating.
     """
     try:
-      url = '/{obj_id}'.format(obj_id=obj_id)
-      url = '?'.join([url, urllib.urlencode({'access_token': self.access_token()})])
+      url = '/{obj_id}?{querydict}'.format(obj_id=obj_id)
       response = self.post(url, urllib.urlencode(kwargs))
     except:
       return None, [Fault()]
     return response, []
 
-  def _clean_params(self, clean_empty_strings=True, **kwargs):
+  def clean_params(self, clean_empty_strings=True, **kwargs):
     """
     Remove null and falsy values from an argument list.
     """
@@ -159,7 +156,9 @@ class PyFacebook( object ):
     """
     Issues an HTTP POST request to the resource with params as the payload
     """
-    url = self.__graph_endpoint + str( resource )
+    url = '{base_url}{source_url}'.format(base_url=self.__graph_endpoint, source_url=str(resource))
+    url += '&' if '?' in url else '?'
+    url += urllib.urlencode({'access_token': self.access_token()})
     raw_response = urllib.urlopen( url, payload ).read()
     obj = json.loads( raw_response )
     try:
@@ -225,26 +224,16 @@ class PyFacebook( object ):
   def adimage( self, o )    :     return utils.wrapper( lambda: AdImage( o )     )
 
   def get_instance( self, classname, o ):
-    name = classname.lower( )
-    if name == 'adaccount':
-      return self.adaccount(o)
-    elif name == 'aduser':
-      return self.aduser(o)
-    elif name == 'user':
-      return self.user(o)
-    elif name == 'adstatistic':
-      return self.adstatistic(o)
-    elif name == 'stats':
-      return self.stats(o)
-    elif name == 'adgroup':
-      return self.adgroup(o)
-    elif name == 'adcampaign':
-      return self.adcampaign(o)
-    elif name == 'adcreative':
-      return self.adcreative(o)
-    elif name == 'adimage':
-      return self.adimage(o)
-    else:
+    """
+    Returns an initialized instance of the class given by classname.
+
+    :param string classname The name of the module containing the needed class.
+
+    :param dict o A dictionary containing arguments to initialize a instance of the requested class.
+    """
+    try:
+      return getattr(self, classname.lower())(o)
+    except AttributeError:
       raise FacebookException( "Unrecognized object requested." )
 
   def api(self):

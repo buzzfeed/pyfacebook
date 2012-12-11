@@ -40,3 +40,6 @@ class TestAdCreativeApi( ):
     params = {'name': 'test'}
     success, errors = self.fb.api().adcreative().update(adcreative.id, **params)
     ok_(success)
+    updated_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
+    ok_(updated_obj.id == adcreative.id)
+    ok_(updated_obj.name == params['name'])

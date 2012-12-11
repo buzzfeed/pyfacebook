@@ -26,7 +26,7 @@ class AdCreativeApi:
 
   def create(self, account_id, acreative_type=25, **kwargs):
     kwargs.update(account_id=account_id, type=acreative_type)
-    kwargs = self.__fb._clean_params(**kwargs)
+    kwargs = self.__fb.clean_params(**kwargs)
     adcreative, model, errors = self.__fb.create('AdCreative', **kwargs)
     if errors:
       errors.append(Fault(message='AdCreative Type is %s' % acreative_type))
@@ -35,7 +35,7 @@ class AdCreativeApi:
     return model, []
 
   def update(self, adcreative_id, **kwargs):
-    kwargs = self.__fb._clean_params(**kwargs)
+    kwargs = self.__fb.clean_params(**kwargs)
     result, errors = self.__fb.update(adcreative_id, **kwargs)
     if errors:
       return None, errors
