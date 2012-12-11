@@ -2,7 +2,6 @@ import sys
 import urllib
 import urllib2
 import json
-from urllib import urlencode
 from urlparse import parse_qsl
 
 from pyfacebook import utils
@@ -89,26 +88,30 @@ class PyFacebook( object ):
 
     :rtype tuple A dict with the attributes of the remote obj, the new model instance with the given attributes and the errors raised, if any.
     """
-    account_id = kwargs.get('account_id')
-    if not account_id:
+    try:
+      account_id = kwargs.pop('account_id')
+    except KeyError:
       raise FacebookException('An account_id is required to make the request!')
 
-    if issubclass(model, models.Model):
+    if isinstance(model, str):
+      klass_name = model.lower()
+      klass = getattr(getattr(models, klass_name), model)
+    elif issubclass(model, models.Model):
       klass = model
       klass_name = model.__name__.lower()
-    elif isinstance(model, str):
-      klass = getattr(models, model)
-      klass_name = model.lower()
     else:
       raise FacebookException('Invalid model class: %r' % model)
 
     try:
       url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=klass_name)
-      url = '?'.join([url, urlencode({'access_token': self.access_token()})])
+      url = '?'.join([url, urllib.urlencode({'access_token': self.access_token()})])
 
-      created_obj = self.post(url, kwargs)
-      model_obj = klass(**kwargs)
-    except:
+      created_obj = self.post(url, urllib.urlencode(kwargs))
+      model_obj = klass(kwargs)
+      if 'id' in created_obj:
+        setattr(model_obj, 'id', created_obj['id'])
+    except Exception as e:
+      raise
       return None, None, [Fault()]
     return created_obj, model_obj, []
 
@@ -120,13 +123,13 @@ class PyFacebook( object ):
     """
     try:
       url = '/{obj_id}'.format(obj_id=obj_id)
-      url = '?'.join([url, urlencode({'access_token': self.access_token()})])
-      response = self.post(url, kwargs)
+      url = '?'.join([url, urllib.urlencode({'access_token': self.access_token()})])
+      response = self.post(url, urllib.urlencode(kwargs))
     except:
       return None, [Fault()]
     return response, []
 
-  def _clean_params(self, clean_empty_strings=True, kwargs):
+  def _clean_params(self, clean_empty_strings=True, **kwargs):
     """
     Remove null and falsy values from an argument list.
     """
@@ -159,8 +162,11 @@ class PyFacebook( object ):
     url = self.__graph_endpoint + str( resource )
     raw_response = urllib.urlopen( url, payload ).read()
     obj = json.loads( raw_response )
-    if 'error' in obj:
-      raise FacebookException( obj['error'] )
+    try:
+      if 'error' in obj:
+        raise FacebookException( obj['error'] )
+    except TypeError:  # update calls simply return True, so it's not iterable, but correct
+      pass
     return obj
 
   def delete(self, resource, params, content_type='application/json'):

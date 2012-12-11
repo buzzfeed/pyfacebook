@@ -1,10 +1,9 @@
+import json
 from pyfacebook.settings import FACEBOOK_APP_SECRET
 from pyfacebook.settings import FACEBOOK_APP_ID
 from pyfacebook.settings import FACEBOOK_TEST_ACCESS_TOKEN
 from pyfacebook.settings import FACEBOOK_TEST_ACCOUNT_ID
-
 from pyfacebook import PyFacebook
-
 from nose.tools import ok_
 
 class TestAdCreativeApi( ):
@@ -23,3 +22,21 @@ class TestAdCreativeApi( ):
     ok_( not not adcreative.name )
     ok_( not not adcreative.link_url )
     ok_( not not adcreative.title )
+
+  def test_create(self):
+    params = {
+      'acreative_type': 25,
+      'action_spec': json.dumps({'action.type': 'app_use', 'application': FACEBOOK_APP_ID})
+    }
+    adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
+    ok_(not not adcreative.id)
+
+  def test_update(self):
+    params = {
+      'acreative_type': 25,
+      'action_spec': json.dumps({'action.type': 'app_use', 'application': FACEBOOK_APP_ID})
+    }
+    adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
+    params = {'name': 'test'}
+    success, errors = self.fb.api().adcreative().update(adcreative.id, **params)
+    ok_(success)
