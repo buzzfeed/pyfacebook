@@ -30,6 +30,8 @@ class TestAdCreativeApi( ):
     }
     adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
     ok_(not not adcreative.id)
+    created_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
+    ok_(created_obj.id == adcreative.id)
 
   def test_update(self):
     params = {

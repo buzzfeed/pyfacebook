@@ -84,7 +84,7 @@ class PyFacebook( object ):
     """
     Creates a new instance on type <model> with the given <kwargs>
 
-    :param string model The class of which to create the new instance; it can be either a string with the name of the class or the class module itself.
+    :param string model The handle of the model we're creating
 
     :rtype tuple A dict with the attributes of the remote obj, the new model instance with the given attributes and the errors raised, if any.
     """
@@ -93,25 +93,15 @@ class PyFacebook( object ):
     except KeyError:
       raise FacebookException('An account_id is required to make the request!')
 
-    # if isinstance(model, str):
-    #   klass_name = model.lower()
-    #   klass = getattr(getattr(models, klass_name), model)
-    # elif issubclass(model, models.Model):
-    #   klass = model
-    #   klass_name = model.__name__.lower()
-    # else:
-    #   raise FacebookException('Invalid model class: %r' % model)
-
     try:
       url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
       created_obj = self.post(url, urllib.urlencode(kwargs))
       instance = self.get_instance(model, kwargs)
       if 'id' in created_obj:
         setattr(instance, 'id', created_obj['id'])
-    except Exception as e:
-      raise
-      return None, None, [Fault()]
-    return created_obj, model_obj, []
+    except:
+      return None, [Fault()]
+    return model_obj, []
 
   def update(self, obj_id, **kwargs):
     """
@@ -166,6 +156,7 @@ class PyFacebook( object ):
         raise FacebookException( obj['error'] )
     except TypeError:  # update calls simply return True, so it's not iterable, but correct
       pass
+    raw_response.close()
     return obj
 
   def delete(self, resource, params, content_type='application/json'):
