@@ -21,5 +21,6 @@ class AdGroup( Model ):
                        'adcampaign',
                        'targetingspecs',
                        'adcreative',
-                       'adstatistic'
+                       'adstatistic',
+                       'creative_ids'
                      )
