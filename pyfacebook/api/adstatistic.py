@@ -1,7 +1,5 @@
 from pyfacebook.fault import Fault, FacebookException
 
-from pyfacebook.settings import FACEBOOK_PROD_ACCOUNT_ID
-
 class AdStatisticApi:
 
   def __init__( self, fb ):
@@ -29,7 +27,7 @@ class AdStatisticApi:
       return None, [ Fault( ) ]
     return stat, [ ]
 
-  def find_by_adgroup_ids( self, adgroup_ids, include_deleted=False ):
+  def find_by_adgroup_ids( self, adgroup_ids, adaccount_id, include_deleted=False ):
     """
     Retrieves the Statistic object associated with this AdGroup
 
@@ -41,7 +39,11 @@ class AdStatisticApi:
       if not adgroup_ids:
         raise FacebookException( "Must pass an adgroup_id list to this call" )
 
-      adaccount_id = 'act_' + str( FACEBOOK_PROD_ACCOUNT_ID )
+      if not adaccount_id:
+        raise FacebookException( "Must pass an adaccount_id to this call" )
+
+      if str( adaccount_id ).find( 'act_' ) < 0:
+        adaccount_id = 'act_' + str( adaccount_id )
 
       num_ids   = len( adgroup_ids )
       batch     = 0
