@@ -2,6 +2,7 @@ from pyfacebook.settings import FACEBOOK_APP_SECRET
 from pyfacebook.settings import FACEBOOK_APP_ID
 from pyfacebook.settings import FACEBOOK_TEST_ACCESS_TOKEN
 from pyfacebook.settings import FACEBOOK_TEST_ACCOUNT_ID
+from pyfacebook.settings import FACEBOOK_PROD_ACCOUNT_ID
 
 from pyfacebook import PyFacebook
 
@@ -47,7 +48,7 @@ class TestAdStatisticApi( ):
       'unique_clicks'             : 0
     }
 
-    stats, errors = self.fb.api().adstatistic().find_by_adgroup_ids( [ adgroup.id for adgroup in adgroups ], include_deleted=include_deleted )
+    stats, errors = self.fb.api().adstatistic().find_by_adgroup_ids( [ adgroup.id for adgroup in adgroups ], FACEBOOK_PROD_ACCOUNT_ID, include_deleted=include_deleted )
 
     for stat in stats:
       for key, val in all_stats.items():
