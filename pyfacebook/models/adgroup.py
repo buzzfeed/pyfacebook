@@ -8,10 +8,12 @@ class AdGroup( Model ):
   """
   attrs_to_copy    = ( 'id',
                        'campaign_id',
-                       'ad_id',
+                       'adgroup_id',
                        'name',
                        'disapprove_reason_descriptions',
                        'adgroup_status',
+                       'ad_status',
+                       'bid_info',
                        'bid_type',
                        'max_bid',
                        'start_time',
@@ -19,8 +21,8 @@ class AdGroup( Model ):
                        'updated_time',
                        'adaccount',
                        'adcampaign',
-                       'targetingspecs',
-                       'adcreative',
+                       'targeting',
+                       'creative_ids',
+                       'ad_id',
                        'adstatistic',
-                       'creative_ids'
                      )

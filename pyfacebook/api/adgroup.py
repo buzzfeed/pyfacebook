@@ -36,7 +36,7 @@ class AdGroupApi:
             break
         else:
           break
-      for entry in ad_group_dicts:
+      for entry in ad_group_dicts:        
         ad_group, errors   = self.__fb.adgroup( entry )
         ad_groups.append( ad_group )
     except:
