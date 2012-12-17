@@ -24,7 +24,7 @@ class AdCreativeApi:
     except:
       return None, [Fault()]
 
-  def create(self, account_id, name=None, acreative_type='25', object_id=None, body=None, image_hash=None, image_url=None, creative_id=None, count_current_adgroups=None, title=None, run_status=None, link_url=None, url_tags=None, preview_url=None, related_fan_page=None, follow_redirect=None, auto_update=None, story_id=None, action_spec=None):
+  def create(self, account_id, name=None, adcreative_type='25', object_id=None, body=None, image_hash=None, image_url=None, creative_id=None, count_current_adgroups=None, title=None, run_status=None, link_url=None, url_tags=None, preview_url=None, related_fan_page=None, follow_redirect=None, auto_update=None, story_id=None, action_spec=None):
     """
     Creates a new AdCreative using the given parameters. For more information visit: https://developers.facebook.com/docs/reference/ads-api/creative-specs/
 
@@ -49,17 +49,43 @@ class AdCreativeApi:
 
     :rtype tuple the new adcreative and any raised errors.
     """
-
-    kwargs.update(account_id=account_id, type=acreative_type)
+    kwargs = {
+      'account_id': account_id,
+      'type': adcreative_type,
+      'object_id': object_id,
+      'body': body,
+      'image_hash': image_hash,
+      'image_url': image_url,
+      'creative_id': creative_id,
+      'count_current_adgroups': count_current_adgroups,
+      'title': title,
+      'run_status': run_status,
+      'link_url': link_url,
+      'url_tags': url_tags,
+      'preview_url': preview_url,
+      'related_fan_page': related_fan_page,
+      'follow_redirect': follow_redirect,
+      'auto_update': auto_update,
+      'story_id': story_id,
+      'action_spec': action_spec
+    }
     kwargs = self.__fb.clean_params(**kwargs)
-    adcreative, model, errors = self.__fb.create('AdCreative', **kwargs)
+    model, errors = self.__fb.create('AdCreative', **kwargs)
     if errors:
-      errors.append(Fault(message='AdCreative Type is %s' % acreative_type))
+      errors.append(Fault(message='AdCreative Type is %s' % adcreative_type))
       return None, errors
 
     return model, []
 
   def update(self, adcreative_id, **kwargs):
+    """
+    Updates an AdCreative given by it's id. Params to update depend on the type of adcreative.
+
+    :param int adcreative_id The id of the AdCreative to update
+    :param dict A dcitionary containing the key-value pairs of fields to update. The fields that may be updated depend on the type of AdCreative
+
+    :rtype tuple The success status (i.e. True, None) of the process and the errors occured, if any.
+    """
     kwargs = self.__fb.clean_params(**kwargs)
     result, errors = self.__fb.update(adcreative_id, **kwargs)
     if errors:

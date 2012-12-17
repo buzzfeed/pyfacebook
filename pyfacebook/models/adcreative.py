@@ -26,5 +26,7 @@ class AdCreative( Model ):
     'updated_time',
     'targeting',
     'impression_control_map',
-    'spec'
+    'spec',
+    'action_spec',
+    'type'
   )

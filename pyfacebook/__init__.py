@@ -5,7 +5,7 @@ import json
 from urlparse import parse_qsl
 
 from pyfacebook import utils
-from pyfacebook.fault import Fault
+from pyfacebook.fault import Fault, FacebookException
 
 from pyfacebook import models
 from pyfacebook.models.adaccount import AdAccount
@@ -95,13 +95,13 @@ class PyFacebook( object ):
 
     try:
       url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
-      created_obj = self.post(url, urllib.urlencode(kwargs))
-      instance = self.get_instance(model, kwargs)
-      if 'id' in created_obj:
-        setattr(instance, 'id', created_obj['id'])
+      response = self.post(url, urllib.urlencode(kwargs))
+      instance, errors = self.get_instance(model, kwargs)
+      if 'id' in response:
+        setattr(instance, 'id', response['id'])
     except:
       return None, [Fault()]
-    return model_obj, []
+    return instance, []
 
   def update(self, obj_id, **kwargs):
     """
@@ -110,7 +110,7 @@ class PyFacebook( object ):
     :rtype dict The data retrieved by the request after updating.
     """
     try:
-      url = '/{obj_id}?{querydict}'.format(obj_id=obj_id)
+      url = '/{obj_id}'.format(obj_id=obj_id)
       response = self.post(url, urllib.urlencode(kwargs))
     except:
       return None, [Fault()]
@@ -120,11 +120,13 @@ class PyFacebook( object ):
     """
     Remove null and falsy values from an argument list.
     """
+    cleaned_data = dict()
     for k, v in kwargs.iteritems():
       if not v:
         if isinstance(v, str) and not clean_empty_strings:
-          continue
-        del kwargs[k]
+          cleaned_data[k] = v
+      else:
+        cleaned_data[k] = v
     return kwargs
 
   def get( self, resource, params={} ):
@@ -136,10 +138,12 @@ class PyFacebook( object ):
     url += 'access_token=' + str( self.__access_token )
     if params:
       url += urllib.urlencode( params )
-    raw_response = urllib.urlopen( url ).read( )
+    response = urllib.urlopen(url)
+    raw_response = response.read( )
     obj = json.loads( raw_response )
     if 'error' in obj:
       raise FacebookException( obj['error'] )
+    response.close()
     return obj
 
   def post(self, resource, payload ):
@@ -149,26 +153,27 @@ class PyFacebook( object ):
     url = '{base_url}{source_url}'.format(base_url=self.__graph_endpoint, source_url=str(resource))
     url += '&' if '?' in url else '?'
     url += urllib.urlencode({'access_token': self.access_token()})
-    raw_response = urllib.urlopen( url, payload ).read()
+    response = urllib.urlopen(url, payload)
+    raw_response = response.read()
     obj = json.loads( raw_response )
     try:
       if 'error' in obj:
         raise FacebookException( obj['error'] )
     except TypeError:  # update calls simply return True, so it's not iterable, but correct
       pass
-    raw_response.close()
+    response.close()
     return obj
 
   def delete(self, resource, params, content_type='application/json'):
     """
     Issues an HTTP DELETE request to the resource with params as the payload
     """
-    url = self.__graph_endpoint + str( resource )
-    opener = urllib2.build_opener( urllib2.HTTPSHandler )
-    request = urllib2.Request( url, data=params )
-    request.add_header( 'Content-Type', content_type )
+    url = self.__graph_endpoint + str(resource)
+    opener = urllib2.build_opener(urllib2.HTTPSHandler)
+    request = urllib2.Request(url, data=params)
+    request.add_header('Content-Type', content_type)
     request.get_method = lambda: 'DELETE'
-    raw_response = opener.open(request).read( )
+    raw_response = opener.open(request).read()
     return raw_response
 
   def access_token(self, access_token=None):
@@ -214,7 +219,7 @@ class PyFacebook( object ):
   def adcreative( self, o ) :     return utils.wrapper( lambda: AdCreative( o )  )
   def adimage( self, o )    :     return utils.wrapper( lambda: AdImage( o )     )
 
-  def get_instance( self, classname, o ):
+  def get_instance(self, classname, o):
     """
     Returns an initialized instance of the class given by classname.
 
@@ -225,7 +230,7 @@ class PyFacebook( object ):
     try:
       return getattr(self, classname.lower())(o)
     except AttributeError:
-      raise FacebookException( "Unrecognized object requested." )
+      raise FacebookException("Unrecognized object requested.")
 
   def api(self):
     return FacebookApi( self )

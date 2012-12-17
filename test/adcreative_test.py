@@ -4,7 +4,7 @@ from pyfacebook.settings import FACEBOOK_APP_ID
 from pyfacebook.settings import FACEBOOK_TEST_ACCESS_TOKEN
 from pyfacebook.settings import FACEBOOK_TEST_ACCOUNT_ID
 from pyfacebook import PyFacebook
-from nose.tools import ok_
+from nose.tools import eq_, ok_
 
 class TestAdCreativeApi( ):
   def setUp(self):
@@ -28,14 +28,16 @@ class TestAdCreativeApi( ):
       'acreative_type': 25,
       'action_spec': json.dumps({'action.type': 'app_use', 'application': FACEBOOK_APP_ID})
     }
-    adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
-    ok_(not not adcreative.id)
-    created_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
-    ok_(created_obj.id == adcreative.id)
+    created_obj, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
+    ok_(not not created_obj.id)
+    fetched_obj = self.fb.get_one_from_fb(created_obj.id, 'AdCreative')
+    eq_(fetched_obj.id, created_obj.id)
+    eq_(fetched_obj.type, params['adcreative_type'])
+    eq_(fetched_obj.action_spec, json.loads(params['action_spec']))
 
   def test_update(self):
     params = {
-      'acreative_type': 25,
+      'adcreative_type': 25,
       'action_spec': json.dumps({'action.type': 'app_use', 'application': FACEBOOK_APP_ID})
     }
     adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
@@ -43,5 +45,5 @@ class TestAdCreativeApi( ):
     success, errors = self.fb.api().adcreative().update(adcreative.id, **params)
     ok_(success)
     updated_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
-    ok_(updated_obj.id == adcreative.id)
-    ok_(updated_obj.name == params['name'])
+    eq_(updated_obj.id, adcreative.id)
+    eq_(updated_obj.name, params['name'])
