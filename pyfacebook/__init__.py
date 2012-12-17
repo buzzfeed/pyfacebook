@@ -173,7 +173,9 @@ class PyFacebook( object ):
     request = urllib2.Request(url, data=params)
     request.add_header('Content-Type', content_type)
     request.get_method = lambda: 'DELETE'
-    raw_response = opener.open(request).read()
+    response = opener.open(request)
+    raw_response = response.read()
+    response.close()
     return raw_response
 
   def access_token(self, access_token=None):
