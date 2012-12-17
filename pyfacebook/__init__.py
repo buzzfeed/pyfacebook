@@ -2,12 +2,12 @@ import sys
 import urllib
 import urllib2
 import json
-
 from urlparse import parse_qsl
 
 from pyfacebook import utils
-from pyfacebook.fault import Fault
+from pyfacebook.fault import Fault, FacebookException
 
+from pyfacebook import models
 from pyfacebook.models.adaccount import AdAccount
 from pyfacebook.models.aduser import AdUser
 from pyfacebook.models.adstatistic import AdStatistic
@@ -80,6 +80,55 @@ class PyFacebook( object ):
     resp = self.get( '/' + str( reference_obj_id ) )
     return self.get_instance( class_to_get, resp )[0]
 
+  def create(self, model, **kwargs):
+    """
+    Creates a new instance on type <model> with the given <kwargs>
+
+    :param string model The handle of the model we're creating
+
+    :rtype tuple A dict with the attributes of the remote obj, the new model instance with the given attributes and the errors raised, if any.
+    """
+    try:
+      account_id = kwargs.pop('account_id')
+    except KeyError:
+      raise FacebookException('An account_id is required to make the request!')
+
+    try:
+      url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
+      response = self.post(url, urllib.urlencode(kwargs))
+      instance, errors = self.get_instance(model, kwargs)
+      if 'id' in response:
+        setattr(instance, 'id', response['id'])
+    except:
+      return None, [Fault()]
+    return instance, []
+
+  def update(self, obj_id, **kwargs):
+    """
+    Sends an update request for obj_id with the given kwargs.
+
+    :rtype dict The data retrieved by the request after updating.
+    """
+    try:
+      url = '/{obj_id}'.format(obj_id=obj_id)
+      response = self.post(url, urllib.urlencode(kwargs))
+    except:
+      return None, [Fault()]
+    return response, []
+
+  def clean_params(self, clean_empty_strings=True, **kwargs):
+    """
+    Remove null and falsy values from an argument list.
+    """
+    cleaned_data = dict()
+    for k, v in kwargs.iteritems():
+      if not v:
+        if isinstance(v, str) and not clean_empty_strings:
+          cleaned_data[k] = v
+      else:
+        cleaned_data[k] = v
+    return kwargs
+
   def get( self, resource, params={} ):
     url = self.__graph_endpoint + str( resource )
     if '?' in url:
@@ -89,33 +138,44 @@ class PyFacebook( object ):
     url += 'access_token=' + str( self.__access_token )
     if params:
       url += urllib.urlencode( params )
-    raw_response = urllib.urlopen( url ).read( )
+    response = urllib.urlopen(url)
+    raw_response = response.read( )
     obj = json.loads( raw_response )
     if 'error' in obj:
       raise FacebookException( obj['error'] )
+    response.close()
     return obj
 
   def post(self, resource, payload ):
     """
     Issues an HTTP POST request to the resource with params as the payload
     """
-    url = self.__graph_endpoint + str( resource )
-    raw_response = urllib.urlopen( url, payload ).read()
+    url = '{base_url}{source_url}'.format(base_url=self.__graph_endpoint, source_url=str(resource))
+    url += '&' if '?' in url else '?'
+    url += urllib.urlencode({'access_token': self.access_token()})
+    response = urllib.urlopen(url, payload)
+    raw_response = response.read()
     obj = json.loads( raw_response )
-    if 'error' in obj:
-      raise FacebookException( obj['error'] )
+    try:
+      if 'error' in obj:
+        raise FacebookException( obj['error'] )
+    except TypeError:  # update calls simply return True, so it's not iterable, but correct
+      pass
+    response.close()
     return obj
 
   def delete(self, resource, params, content_type='application/json'):
     """
     Issues an HTTP DELETE request to the resource with params as the payload
     """
-    url = self.__graph_endpoint + str( resource )
-    opener = urllib2.build_opener( urllib2.HTTPSHandler )
-    request = urllib2.Request( url, data=params )
-    request.add_header( 'Content-Type', content_type )
+    url = self.__graph_endpoint + str(resource)
+    opener = urllib2.build_opener(urllib2.HTTPSHandler)
+    request = urllib2.Request(url, data=params)
+    request.add_header('Content-Type', content_type)
     request.get_method = lambda: 'DELETE'
-    raw_response = opener.open(request).read( )
+    response = opener.open(request)
+    raw_response = response.read()
+    response.close()
     return raw_response
 
   def access_token(self, access_token=None):
@@ -161,28 +221,18 @@ class PyFacebook( object ):
   def adcreative( self, o ) :     return utils.wrapper( lambda: AdCreative( o )  )
   def adimage( self, o )    :     return utils.wrapper( lambda: AdImage( o )     )
 
-  def get_instance( self, classname, o ):
-    name = classname.lower( )
-    if name == 'adaccount':
-      return self.adaccount(o)
-    elif name == 'aduser':
-      return self.aduser(o)
-    elif name == 'user':
-      return self.user(o)
-    elif name == 'adstatistic':
-      return self.adstatistic(o)
-    elif name == 'stats':
-      return self.stats(o)
-    elif name == 'adgroup':
-      return self.adgroup(o)
-    elif name == 'adcampaign':
-      return self.adcampaign(o)
-    elif name == 'adcreative':
-      return self.adcreative(o)
-    elif name == 'adimage':
-      return self.adimage(o)
-    else:
-      raise FacebookException( "Unrecognized object requested." )
+  def get_instance(self, classname, o):
+    """
+    Returns an initialized instance of the class given by classname.
+
+    :param string classname The name of the module containing the needed class.
+
+    :param dict o A dictionary containing arguments to initialize a instance of the requested class.
+    """
+    try:
+      return getattr(self, classname.lower())(o)
+    except AttributeError:
+      raise FacebookException("Unrecognized object requested.")
 
   def api(self):
     return FacebookApi( self )

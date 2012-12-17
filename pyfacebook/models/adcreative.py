@@ -1,5 +1,6 @@
 from pyfacebook.models import Model
 
+
 class AdCreative( Model ):
   """
   The AdCreative class represents the adcreative object in the Facebook Ads API:
@@ -21,9 +22,11 @@ class AdCreative( Model ):
     'start_time',
     'end_time',
     'title',
-    'account_id', 
+    'account_id',
     'updated_time',
     'targeting',
     'impression_control_map',
-    'spec'
+    'spec',
+    'action_spec',
+    'type'
   )
