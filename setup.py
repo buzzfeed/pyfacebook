@@ -14,5 +14,9 @@ setup(
     author_email = 'jeff.revesz@buzzfeed.com',
     packages=find_packages(),
     test_suite='test',
-    requires=['nose']
+    install_requires=[
+      'nose==1.2.1', 
+      'BeautifulSoup==3.2.1',
+      'Fabric==1.5.1'
+    ]
 )
