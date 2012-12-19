@@ -39,8 +39,8 @@ class TestAdCreativeApi( ):
 
     param_spec = json.loads(params['action_spec'])
     action_spec = fetched_obj.action_spec
-    eq_(str(action_spec['application']), param_spec['application'])
-    eq_(str(action_spec['action.type']), param_spec['action.type'])
+    eq_(str(action_spec['application']), str(param_spec['application']))
+    eq_(str(action_spec['action.type']), str(param_spec['action.type']))
 
   def test_update(self):
     params = {
