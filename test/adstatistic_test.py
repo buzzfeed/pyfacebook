@@ -1,3 +1,6 @@
+import datetime
+from django.utils.timezone import utc
+
 from pyfacebook.settings import FACEBOOK_APP_SECRET
 from pyfacebook.settings import FACEBOOK_APP_ID
 from pyfacebook.settings import FACEBOOK_TEST_ACCESS_TOKEN
@@ -75,3 +78,50 @@ class TestAdStatisticApi( ):
 
       ok_( val > self.one_percent_less( to_compare ) or val == int( to_compare ) )
       ok_( val < self.one_percent_more( to_compare ) or val == int( to_compare ) )
+
+  def test_find_by_start_time_end_time( self ):
+    include_deleted = True
+
+    expected_stats = {
+      'adgroup_id'                : 6006750140365,
+      'campaign_id'               : 6006664880365,
+      'start_time'                : '2012-12-26T06:00:00+0000',
+      'end_time'                  : '2012-12-27T06:00:00+0000',
+      'impressions'               : 44390,
+      'clicks'                    : 9,
+      'spent'                     : 414,
+      'unique_impressions'        : 0,
+      'unique_clicks'             : 0,
+      'social_impressions'        : 0,
+      'social_clicks'             : 0,
+      'social_spent'              : 0,
+      'social_unique_impressions' : 0,
+      'social_unique_clicks'      : 0
+    }
+
+    # Test single day
+    start_time = datetime.datetime( 2012, 12, 26, 6, 0, 0, tzinfo=utc )
+    end_time   = datetime.datetime( 2012, 12, 27, 6, 0, 0, tzinfo=utc )
+    stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
+
+    eq_( len( errors ), 0 )
+    eq_( len( stats ), 60 )
+
+    stat_to_compare = stats[ 0 ]
+
+    for key, val in expected_stats.items():
+
+      eq_( expected_stats[ key ], getattr( stat_to_compare, key ) )
+
+    # Test one month: paging
+    start_time = datetime.datetime( 2012, 11, 26, 6, 0, 0, tzinfo=utc )
+    end_time   = datetime.datetime( 2012, 12, 27, 6, 0, 0, tzinfo=utc )
+    stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
+
+    for error in errors:
+      print error.message
+      print error.tb
+
+    eq_( len( errors ), 0 )
+    eq_( len( stats ), 428 )
+
