@@ -94,7 +94,7 @@ class AdStatisticApi:
             raise FacebookException( "Must pass a start_time and end_time to this call" )
 
         if 'act_' not in adaccount_id:
-            adaccount_id = 'act_' + str( adaccount_id )
+            adaccount_id = 'act_' + adaccount_id
 
         adstats = [ ]
         base_url       = '/' + adaccount_id + '/adgroupstats'
@@ -113,11 +113,11 @@ class AdStatisticApi:
         adstats = adstats + resp['data']
 
         next_url = resp[ 'paging' ][ 'next' ]
-        count    = int( resp[ 'count' ] or 0 )
-        limit    = int( resp[ 'limit' ] or 0 )
-        offset   = int( resp[ 'offset' ] or 0 )
+        count    = int( resp[ 'count' ] ) if 'count' in resp.keys( ) else 0 #Python ternary operator
+        limit    = int( resp[ 'limit' ] ) if 'limit' in resp.keys( ) else 0
+        offset   = int( resp[ 'offset' ] ) if 'offset' in resp.keys( ) else 0
 
-        while next_url and ( ( limit + offset ) < count ):
+        while ( limit + offset ) < count:
             resp    = self.__fb.get( next_url.replace( 'https://graph.facebook.com', '') )
             next_url = resp[ 'paging' ][ 'next' ]
             count    = int( resp[ 'count' ] or 0 )
