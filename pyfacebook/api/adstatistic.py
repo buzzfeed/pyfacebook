@@ -90,33 +90,39 @@ class AdStatisticApi:
     try:
         if not adaccount_id:
             raise FacebookException( "Must pass an adaccount_id to this call" )
+        if ( not start_time or not end_time):
+            raise FacebookException( "Must pass a start_time and end_time to this call" )
 
-        if str( adaccount_id ).find( 'act_' ) < 0:
+        if 'act_' not in adaccount_id:
             adaccount_id = 'act_' + str( adaccount_id )
 
-        adstats   = [ ]
+        adstats = [ ]
+        base_url       = '/' + adaccount_id + '/adgroupstats'
         start_time_str = start_time.strftime( "%Y-%m-%dT%H:%M:%S" )
-        end_time_str = end_time.strftime( "%Y-%m-%dT%H:%M:%S" )
-        url              = '/' + adaccount_id + '/adgroupstats' + '?start_time=' + start_time_str + '&end_time=' + end_time_str
+        end_time_str   = end_time.strftime( "%Y-%m-%dT%H:%M:%S" )
+        params  = { "start_time" : start_time_str,
+                    "end_time"   : end_time_str
+                  }
+
         if with_delivery:
-            url += '&stats_mode=with_delivery'
+            params[ "stats_mode" ] = "with_delivery"
         if include_deleted:
-            url += '&include_deleted=true'
-        resp             = self.__fb.get( url )
-        adstats          = adstats + resp['data']
+            params[ "include_deleted" ] = "true"
+
+        resp    = self.__fb.get( base_url, params )
+        adstats = adstats + resp['data']
 
         next_url = resp[ 'paging' ][ 'next' ]
-        count    = int( resp[ 'count' ] )
-        limit    = int( resp[ 'limit' ] )
-        offset   = int( resp[ 'offset' ] )
+        count    = int( resp[ 'count' ] or 0 )
+        limit    = int( resp[ 'limit' ] or 0 )
+        offset   = int( resp[ 'offset' ] or 0 )
 
         while next_url and ( ( limit + offset ) < count ):
-            print "NEXT URL: " + next_url
             resp    = self.__fb.get( next_url.replace( 'https://graph.facebook.com', '') )
             next_url = resp[ 'paging' ][ 'next' ]
-            count    = int( resp[ 'count' ] )
-            limit    = int( resp[ 'limit' ] )
-            offset   = int( resp[ 'offset' ] )
+            count    = int( resp[ 'count' ] or 0 )
+            limit    = int( resp[ 'limit' ] or 0 )
+            offset   = int( resp[ 'offset' ] or 0 )
             adstats = adstats + resp['data']
 
         return [ self.__fb.adstatistic( stat )[0] for stat in adstats ] , [ ]

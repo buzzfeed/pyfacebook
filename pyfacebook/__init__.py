@@ -137,6 +137,7 @@ class PyFacebook( object ):
       url += '?'
     url += 'access_token=' + str( self.__access_token )
     if params:
+      url += '&'
       url += urllib.urlencode( params )
     response = urllib.urlopen(url)
     raw_response = response.read( )

@@ -118,10 +118,6 @@ class TestAdStatisticApi( ):
     end_time   = datetime.datetime( 2012, 12, 27, 6, 0, 0, tzinfo=utc )
     stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
 
-    for error in errors:
-      print error.message
-      print error.tb
-
     eq_( len( errors ), 0 )
     eq_( len( stats ), 428 )
 
