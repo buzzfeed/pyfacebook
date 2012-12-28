@@ -112,10 +112,10 @@ class AdStatisticApi:
         resp    = self.__fb.get( base_url, params )
         adstats = adstats + resp['data']
 
-        next_url = resp[ 'paging' ][ 'next' ]
-        count    = int( resp[ 'count' ] ) if 'count' in resp.keys( ) else 0 #Python ternary operator
-        limit    = int( resp[ 'limit' ] ) if 'limit' in resp.keys( ) else 0
-        offset   = int( resp[ 'offset' ] ) if 'offset' in resp.keys( ) else 0
+        next_url = resp[ 'paging' ][ 'next' ] if 'paging' in resp and 'next' in resp[ 'paging' ] else ''
+        count    = int( resp[ 'count' ] ) if 'count' in resp else 0 #Python ternary operator
+        limit    = int( resp[ 'limit' ] ) if 'limit' in resp else 0
+        offset   = int( resp[ 'offset' ] ) if 'offset' in resp else 0
 
         while ( limit + offset ) < count:
             resp    = self.__fb.get( next_url.replace( 'https://graph.facebook.com', '') )

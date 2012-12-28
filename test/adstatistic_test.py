@@ -1,5 +1,5 @@
 import datetime
-from django.utils.timezone import utc
+import pytz
 
 from pyfacebook.settings import FACEBOOK_APP_SECRET
 from pyfacebook.settings import FACEBOOK_APP_ID
@@ -80,6 +80,7 @@ class TestAdStatisticApi( ):
       ok_( val < self.one_percent_more( to_compare ) or val == int( to_compare ) )
 
   def test_find_by_start_time_end_time( self ):
+    utc             = pytz.utc
     include_deleted = True
 
     expected_stats = {
