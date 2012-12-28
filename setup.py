@@ -17,6 +17,7 @@ setup(
     install_requires=[
       'nose==1.2.1', 
       'BeautifulSoup==3.2.1',
-      'Fabric==1.5.1'
+      'Fabric==1.5.1',
+      'pytz==2012h'
     ]
 )
