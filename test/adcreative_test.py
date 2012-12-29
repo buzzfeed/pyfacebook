@@ -15,8 +15,20 @@ class TestAdCreativeApi( ):
                           access_token=FACEBOOK_TEST_ACCESS_TOKEN,
                           app_secret=FACEBOOK_APP_SECRET )
 
+  def test_find_by_adaccount_id(self):
+    adcreatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID, limit=2, offset=2 )
+
+    eq_( 0, len( errors ) )
+    eq_( 2, len( adcreatives ) )
+    adcreative          = adcreatives[0]
+
+    ok_( not not adcreative.body )
+    ok_( not not adcreative.name )
+    ok_( not not adcreative.link_url )
+    ok_( not not adcreative.title )
+
   def test_find_by_adgroup_id(self):
-    adgroups, errors    = self.fb.api().adgroup().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID )
+    adgroups, errors    = self.fb.api().adgroup().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID, limit=2 )
     adgroup             = adgroups[ 0 ]
     adcreatives, errors = self.fb.api().adcreative().find_by_adgroup_id( adgroup.id )
     adcreative          = adcreatives[ 0 ]
@@ -59,3 +71,21 @@ class TestAdCreativeApi( ):
     updated_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
     eq_(updated_obj.id, adcreative.id)
     eq_(updated_obj.name, params['name'])
+
+  def test_find_by_ids( self ):
+    base_adcreatives, errors = self.fb.api( ).adcreative( ).find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID, limit=25 )
+
+    eq_( 0, len( errors ) )
+
+    #Test pulling 10 adcreatives
+    test_adcreative_ids      = map( lambda x: x.id, base_adcreatives ) #cool way of pulling a simple list of attributes from a list of more complex objects
+    adcreatives, errors      = self.fb.api( ).adcreative( ).find_by_ids( test_adcreative_ids[:10] )
+
+    eq_( 0, len( errors ) )
+    eq_( 10, len( adcreatives ) )
+
+    #Test empty adcreative_ids error
+    adcreatives, errors = self.fb.api( ).adcreative( ).find_by_ids( [ ] )
+
+    eq_( 1, len( errors ) )
+    eq_( errors[ 0 ].message, "A list of adcreative_ids is required" )

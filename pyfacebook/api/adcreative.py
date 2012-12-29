@@ -5,6 +5,47 @@ class AdCreativeApi:
   def __init__(self, fb ):
     self.__fb = fb
 
+  def find_by_adaccount_id( self, adaccount_id, include_deleted=False, limit=None, offset=None ):
+    """
+    Pulls ALL adcreatives for a Facebook ads account
+
+    :param int adaccount_id: The id corresponding to the Facebook account to pull adcreatives from.
+    :param boolean include_deleted: A flag that determines whether or not to include deleted adcreatives in the resultset
+    :param int limit: A limit for the number of adcampaign objects to request
+    :param int limit: An offset for the adcampaign resultset
+
+    :rtype ( [ AdCreative ], [ Fault ] ): A tuple of the AdCreatives found, and any Faults encountered
+    """
+    try:
+        if not adaccount_id:
+            raise FacebookException( "Must pass an adaccount_id to this call" )
+
+        if 'act_' not in adaccount_id:
+            adaccount_id = 'act_' + adaccount_id
+
+        adcreatives = [ ]
+        resp     = [ ]
+        base_url       = '/' + adaccount_id + '/adcreatives'
+        params  = { }
+
+        if include_deleted:
+            params[ "include_deleted" ] = "true"
+        if limit:
+            params[ "limit" ] = str( limit )
+        if offset:
+            params[ "offset" ] = str( offset )
+
+        if not limit:
+          resp     = self.__fb.get( base_url, params, with_paging=True )
+        else:
+          resp     = self.__fb.get( base_url, params, with_paging=False )
+
+        adcreatives += resp[ 'data' ]
+
+        return [ self.__fb.adcreative( adcreative )[ 0 ] for adcreative in adcreatives ] , [ ]
+    except:
+      return [ ], [ Fault( ) ]
+
   def find_by_adgroup_id( self, adgroup_id ):
     """
     Retrieves the adcreatives for an adgroup object. Facebook ambiguously defines whether there are many or just one associated.
@@ -94,6 +135,30 @@ class AdCreativeApi:
       return None, [Fault(message='Request could not be completed. Result was <%s>' % res)]
 
     return result, []
+
+  def find_by_ids( self, adcreative_ids ):
+    """
+    Retreives a list of AdCreative objects from a list of adcreative IDs
+
+    :param list adcreative_ids: The list of adcreative IDs we are searching for
+
+    :rtype ( [ AdCreative ], [ Fault ] ): A tuple of AdCreative objects found, and any Faults encountered
+
+    """
+    try:
+      if not adcreative_ids or len( adcreative_ids ) == 0:
+        raise FacebookException( "A list of adcreative_ids is required" )
+      adcreatives = [ ]
+      base_url = ''
+      params   = { }
+      params[ "ids" ] = ",".join( map( str, adcreative_ids ) )
+
+      resp      = self.__fb.get( base_url, params )
+      adcreatives += resp
+
+      return [ self.__fb.adcreative( adcreative )[ 0 ] for adcreative in adcreatives ], [ ]
+    except:
+      return [ ], [ Fault( ) ]
 
   def __result_to_model(self, data):
     ag = self.adgroup()
