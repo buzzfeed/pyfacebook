@@ -9,7 +9,7 @@ except ImportError:
 
 setup(
     name='pyfacebook',
-    version='0.0.3',
+    version='0.0.4rc1',
     author='Jeff Revesz and Andrew Kelleher',
     author_email = 'jeff.revesz@buzzfeed.com',
     packages=find_packages(),
