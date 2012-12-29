@@ -45,7 +45,7 @@ class AdGroupApi:
 
   def find_by_id( self, adgroup_id ):
     """
-    Retrieves AdGroup objects by vendor id
+    Retrieves a single AdGroup object by adgroup ID
 
     :param int adgroup_id: The id for the adgroup
 
@@ -57,3 +57,27 @@ class AdGroupApi:
       return self.__fb.get_one_from_fb( adgroup_id, "AdGroup" ), [ ]
     except:
       return None, [ Fault( ) ]
+
+  def find_by_ids( self, adgroup_ids ):
+    """
+    Retreives a list of AdGroup objects from a list of adgroup IDs
+
+    :param list adgroup_ids: The list of adgroup IDs we are searching for
+
+    :rtype ( [ AdGroup ], [ Fault ] ): A tuple of AdGroup objects found, and any Faults encountered
+
+    """
+    try:
+      if not adgroup_ids or len( adgroup_ids ) == 0:
+        raise FacebookException( "A list of adgroup_ids is required" )
+      adgroups = [ ]
+      base_url = ''
+      params   = { }
+      params[ "ids" ] = ",".join( map( str, adgroup_ids ) )
+
+      resp      = self.__fb.get( base_url, params )
+      adgroups += resp
+
+      return [ self.__fb.adgroup( adgroup )[ 0 ] for adgroup in adgroups ], [ ]
+    except:
+      return [ ], [ Fault( ) ]

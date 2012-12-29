@@ -109,9 +109,9 @@ class AdStatisticApi:
         if include_deleted:
             params[ "include_deleted" ] = "true"
 
-        resp    = self.__fb.get( base_url, params, with_paging=True )
-        adstats = adstats + resp['data']
+        resp     = self.__fb.get( base_url, params, with_paging=True )
+        adstats += resp['data']
 
-        return [ self.__fb.adstatistic( stat )[0] for stat in adstats ] , [ ]
+        return [ self.__fb.adstatistic( adstat )[0] for adstat in adstats ] , [ ]
     except:
       return [ ], [ Fault( ) ]
