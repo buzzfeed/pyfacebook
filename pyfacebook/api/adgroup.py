@@ -1,9 +1,17 @@
 from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.models.adgroup import AdGroup
 
 class AdGroupApi:
 
   def __init__(self, fb ):
     self.__fb = fb
+
+  def __result_to_model(self, data):
+    model = AdGroup()
+    for key in data.keys():
+      if hasattr( model, key ):
+        setattr( model, key, data[key] )
+    return model
 
   def find_by_adaccount_id( self, adaccount_id, include_deleted=False, limit=None, offset=None ):
     """
@@ -78,9 +86,9 @@ class AdGroupApi:
       params   = { }
       params[ "ids" ] = ",".join( map( str, adgroup_ids ) )
 
-      resp      = self.__fb.get( base_url, params )
-      adgroups += resp
+      resp     = self.__fb.get( base_url, params )
+      adgroups = resp.values()
 
-      return [ self.__fb.adgroup( adgroup )[ 0 ] for adgroup in adgroups ], [ ]
+      return [ self.__fb.adgroup( adgroup )[0] for adgroup in adgroups ] , [ ]
     except:
       return [ ], [ Fault( ) ]

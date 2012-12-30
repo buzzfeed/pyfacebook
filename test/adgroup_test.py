@@ -42,9 +42,15 @@ class TestAdGroupApi( ):
     #Test pulling 10 adgroups
     test_adgroup_ids      = map( lambda x: x.id, base_adgroups ) #cool way of pulling a simple list of attributes from a list of more complex objects
     adgroups, errors      = self.fb.api( ).adgroup( ).find_by_ids( test_adgroup_ids[:10] )
+    result_adgroup_ids    = map( lambda x: x.id, adgroups )
+
+    from pprint import pprint
+    print "ADGROUPS[0]:"
+    pprint(vars(adgroups[0]))
 
     eq_( 0, len( errors ) )
     eq_( 10, len( adgroups ) )
+    ok_( test_adgroup_ids[0] in result_adgroup_ids )
 
     #Test empty adgroup_ids error
     adgroups, errors = self.fb.api( ).adgroup( ).find_by_ids( [ ] )

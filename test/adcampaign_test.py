@@ -52,9 +52,11 @@ class TestAdCampaignApi():
     #Test pulling 10 adcampaigns
     test_adcampaign_ids      = map( lambda x: x.id, base_adcampaigns ) #cool way of pulling a simple list of attributes from a list of more complex objects
     adcampaigns, errors      = self.fb.api( ).adcampaign( ).find_by_ids( test_adcampaign_ids[:10] )
+    result_adcampaign_ids      = map( lambda x: x.id, adcampaigns )
 
     eq_( 0, len( errors ) )
     eq_( 10, len( adcampaigns ) )
+    ok_( test_adcampaign_ids[0] in result_adcampaign_ids )
 
     #Test empty adcampaign_ids error
     adcampaigns, errors = self.fb.api( ).adcampaign( ).find_by_ids( [ ] )

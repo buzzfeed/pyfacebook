@@ -97,7 +97,7 @@ class AdCampaignApi:
       params[ "ids" ] = ",".join( map( str, adcampaign_ids ) )
 
       resp      = self.__fb.get( base_url, params )
-      adcampaigns += resp
+      adcampaigns += resp.values()
 
       return [ self.__fb.adcampaign( adcampaign )[ 0 ] for adcampaign in adcampaigns ], [ ]
     except:

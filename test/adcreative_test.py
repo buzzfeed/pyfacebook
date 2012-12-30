@@ -80,9 +80,11 @@ class TestAdCreativeApi( ):
     #Test pulling 10 adcreatives
     test_adcreative_ids      = map( lambda x: x.id, base_adcreatives ) #cool way of pulling a simple list of attributes from a list of more complex objects
     adcreatives, errors      = self.fb.api( ).adcreative( ).find_by_ids( test_adcreative_ids[:10] )
+    result_adcreative_ids      = map( lambda x: x.id, adcreatives )
 
     eq_( 0, len( errors ) )
     eq_( 10, len( adcreatives ) )
+    ok_( test_adcreative_ids[0] in result_adcreative_ids )
 
     #Test empty adcreative_ids error
     adcreatives, errors = self.fb.api( ).adcreative( ).find_by_ids( [ ] )

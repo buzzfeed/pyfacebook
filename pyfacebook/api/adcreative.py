@@ -154,15 +154,8 @@ class AdCreativeApi:
       params[ "ids" ] = ",".join( map( str, adcreative_ids ) )
 
       resp      = self.__fb.get( base_url, params )
-      adcreatives += resp
+      adcreatives += resp.values()
 
       return [ self.__fb.adcreative( adcreative )[ 0 ] for adcreative in adcreatives ], [ ]
     except:
       return [ ], [ Fault( ) ]
-
-  def __result_to_model(self, data):
-    ag = self.adgroup()
-    for key in data.keys():
-      if hasattr( ag ):
-        setattr( ag, key, data[key] )
-    return ag
