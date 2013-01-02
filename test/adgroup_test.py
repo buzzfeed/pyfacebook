@@ -44,10 +44,6 @@ class TestAdGroupApi( ):
     adgroups, errors      = self.fb.api( ).adgroup( ).find_by_ids( test_adgroup_ids[:10] )
     result_adgroup_ids    = map( lambda x: x.id, adgroups )
 
-    from pprint import pprint
-    print "ADGROUPS[0]:"
-    pprint(vars(adgroups[0]))
-
     eq_( 0, len( errors ) )
     eq_( 10, len( adgroups ) )
     ok_( test_adgroup_ids[0] in result_adgroup_ids )

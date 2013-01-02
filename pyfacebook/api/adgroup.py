@@ -87,7 +87,7 @@ class AdGroupApi:
       params[ "ids" ] = ",".join( map( str, adgroup_ids ) )
 
       resp     = self.__fb.get( base_url, params )
-      adgroups = resp.values()
+      adgroups = resp.values( )
 
       return [ self.__fb.adgroup( adgroup )[0] for adgroup in adgroups ] , [ ]
     except:
