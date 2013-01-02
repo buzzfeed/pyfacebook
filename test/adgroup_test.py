@@ -28,6 +28,10 @@ class TestAdGroupApi( ):
 
   def test_find_by_id(self):
     adgroups, errors = self.fb.api().adgroup().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID )
+    for err in errors:
+        print err.message
+        for t in err.tb:
+            print t
     adgroup          = adgroups[0]
 
     adgroup_by_id, errors = self.fb.api().adgroup().find_by_id( adgroup.id )

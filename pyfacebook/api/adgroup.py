@@ -44,11 +44,11 @@ class AdGroupApi:
             params[ "offset" ] = str( offset )
 
         if not limit:
-          resp     = self.__fb.get( base_url, params, with_paging=True )
+          data     = self.__fb.get_all( base_url, params )
         else:
-          resp     = self.__fb.get( base_url, params, with_paging=False )
+          data     = self.__fb.get( base_url, params )['data']
 
-        adgroups += resp[ 'data' ]
+        adgroups = data
 
         return [ self.__fb.adgroup( adgroup )[ 0 ] for adgroup in adgroups ] , [ ]
     except:
@@ -71,7 +71,7 @@ class AdGroupApi:
 
   def find_by_ids( self, adgroup_ids ):
     """
-    Retreives a list of AdGroup objects from a list of adgroup IDs
+    Retreives a list of AdGroup objects from a list of adgroup IDs subject to FB's max values for limit/batch size
 
     :param list adgroup_ids: The list of adgroup IDs we are searching for
 

@@ -36,11 +36,11 @@ class AdCampaignApi:
             params[ "offset" ] = str( offset )
 
         if not limit:
-          resp     = self.__fb.get( base_url, params, with_paging=True )
+          data     = self.__fb.get_all( base_url, params )
         else:
-          resp     = self.__fb.get( base_url, params, with_paging=False )
+          data     = self.__fb.get( base_url, params )['data']
 
-        adcampaigns += resp[ 'data' ]
+        adcampaigns += data
 
         return [ self.__fb.adcampaign( adcampaign )[ 0 ] for adcampaign in adcampaigns ] , [ ]
     except:
@@ -81,7 +81,7 @@ class AdCampaignApi:
 
   def find_by_ids( self, adcampaign_ids ):
     """
-    Retreives a list of AdCampaign objects from a list of adcampaign IDs
+    Retreives a list of AdCampaign objects from a list of adcampaign IDs subject to Facebook's max limit/batch size
 
     :param list adcampaign_ids: The list of adcampaign IDs we are searching for
 

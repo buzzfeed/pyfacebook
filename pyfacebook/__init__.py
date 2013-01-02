@@ -2,7 +2,8 @@ import sys
 import urllib
 import urllib2
 import json
-from urlparse import parse_qsl
+from urlparse import parse_qs
+from urlparse import urlparse
 
 from pyfacebook import utils
 from pyfacebook.fault import Fault, FacebookException
@@ -129,38 +130,41 @@ class PyFacebook( object ):
         cleaned_data[k] = v
     return kwargs
 
-  def get( self, resource, params={}, with_paging=False ):
+  def get_all(self, resource, params, limit=-1, offset=-1):
+    data = []
+    while True:
+        resp  = self.get(resource,params)
+        data += resp['data']
+        if 'paging' in resp and 'next' in resp['paging']:
+            next_url = resp['paging']['next']
+            url      = urlparse(next_url)
+            resource = url.path
+            params   = dict( [ ( key, val[0] ) for key, val in parse_qs( url.query ).items() ] )
+        else:
+            break
+    return data
+
+  def get( self, resource, params={}):
     url = self.__graph_endpoint + str( resource )
     if '?' in url:
       url += '&'
     else:
       url += '?'
     url += 'access_token=' + str( self.__access_token )
+
     if params:
       url += '&'
       url += urllib.urlencode( params )
+
     response = urllib.urlopen(url)
     raw_response = response.read( )
-    obj = json.loads( raw_response )
-    if 'error' in obj:
-      raise FacebookException( obj['error'] )
+    resp = json.loads( raw_response )
     response.close()
 
-    if with_paging:
-      next_url = obj[ 'paging' ][ 'next' ] if 'paging' in obj and 'next' in obj[ 'paging' ] else ''
-      count    = int( obj[ 'count' ] ) if 'count' in obj else 0 #Python ternary operator
-      limit    = int( obj[ 'limit' ] ) if 'limit' in obj else 0
-      offset   = int( obj[ 'offset' ] ) if 'offset' in obj else 0
+    if 'error' in resp:
+      raise FacebookException( resp['error'] )
 
-      while ( limit + offset ) < count:
-        next_obj = self.get( next_url.replace( 'https://graph.facebook.com', '') ) #recurse only once
-        next_url = next_obj[ 'paging' ][ 'next' ]
-        count    = int( next_obj[ 'count' ] or 0 )
-        limit    = int( next_obj[ 'limit' ] or 0 )
-        offset   = int( next_obj[ 'offset' ] or 0 )
-        obj[ 'data' ] += next_obj['data']
-
-    return obj
+    return resp
 
   def post(self, resource, payload ):
     """

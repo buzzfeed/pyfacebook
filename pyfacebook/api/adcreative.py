@@ -12,7 +12,7 @@ class AdCreativeApi:
     :param int adaccount_id: The id corresponding to the Facebook account to pull adcreatives from.
     :param boolean include_deleted: A flag that determines whether or not to include deleted adcreatives in the resultset
     :param int limit: A limit for the number of adcampaign objects to request
-    :param int limit: An offset for the adcampaign resultset
+    :param int offset: An offset for the adcampaign resultset
 
     :rtype ( [ AdCreative ], [ Fault ] ): A tuple of the AdCreatives found, and any Faults encountered
     """
@@ -36,11 +36,11 @@ class AdCreativeApi:
             params[ "offset" ] = str( offset )
 
         if not limit:
-          resp     = self.__fb.get( base_url, params, with_paging=True )
+          data     = self.__fb.get_all( base_url, params )
         else:
-          resp     = self.__fb.get( base_url, params, with_paging=False )
+          data     = self.__fb.get( base_url, params )['data']
 
-        adcreatives += resp[ 'data' ]
+        adcreatives += data
 
         return [ self.__fb.adcreative( adcreative )[ 0 ] for adcreative in adcreatives ] , [ ]
     except:
@@ -138,7 +138,7 @@ class AdCreativeApi:
 
   def find_by_ids( self, adcreative_ids ):
     """
-    Retreives a list of AdCreative objects from a list of adcreative IDs
+    Retreives a list of AdCreative objects from a list of adcreative IDs subject to FB's max batch size/limit
 
     :param list adcreative_ids: The list of adcreative IDs we are searching for
 

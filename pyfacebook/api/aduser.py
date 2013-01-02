@@ -17,18 +17,7 @@ class AdUserApi:
     try:
       if not adaccount_id:
         raise FacebookException( "Must set an id before making this call" )
-      resp  = self.__fb.get( '/act_' + str( adaccount_id ) + '/users' )
-      users = resp['data']
-      while True:
-        if 'paging' in resp:
-          if 'next' in resp['paging']:
-            next = resp['paging']['next']
-          else:
-            break
-        else:
-          break
-        resp   = self.__fb.get( next[26:] )
-        users += resp['data']
+      users = self.__fb.get_all( '/act_' + str( adaccount_id ) + '/users' )
       return [ self.__fb.aduser(aduser)[0] for aduser in users ], [ ]
     except:
       return [ ], [ Fault( ) ]
