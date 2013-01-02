@@ -11,13 +11,13 @@ setup(
     name='pyfacebook',
     version='0.0.3',
     author='Jeff Revesz and Andrew Kelleher',
-    author_email = 'jeff.revesz@buzzfeed.com',
+    author_email='jeff.revesz@buzzfeed.com',
     packages=find_packages(),
     test_suite='test',
     install_requires=[
-      'nose==1.2.1', 
-      'BeautifulSoup==3.2.1',
-      'Fabric==1.5.1',
-      'pytz==2012h'
+        'nose==1.2.1',
+        'BeautifulSoup==3.2.1',
+        'Fabric==1.5.1',
+        'pytz==2012h',
     ]
 )
