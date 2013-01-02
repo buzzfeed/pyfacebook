@@ -1,7 +1,21 @@
-from rose.fault import Fault
-
 import traceback
 import sys
+
+class Fault():
+  """ Returns a java-style like Exception """
+  def __init__(self, message=None, tb=None ):
+    if message is None:
+      self.message = str( sys.exc_info( )[ 1 ] )
+    else:
+      self.message = message
+
+    if tb is None:
+      self.tb = traceback.extract_tb( sys.exc_info( )[ 2 ] )
+    else:
+      self.tb = tb
+
+  def __str__( self ):
+    return "%s" % (self.message)
 
 ## {{{ http://code.activestate.com/recipes/577781/ (r1)
 ABERRANT_PLURAL_MAP = {

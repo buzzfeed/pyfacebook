@@ -8,6 +8,8 @@ class AdStatistic( Model ):
   """
   attrs_to_copy = ( 'id',
                     'account_id',
+                    'adgroup_id',
+                    'campaign_id',
                     'start_time',
                     'end_time',
                     'impressions',
