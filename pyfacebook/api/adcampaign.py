@@ -23,9 +23,6 @@ class AdCampaignApi:
         if 'act_' not in adaccount_id:
             adaccount_id = 'act_' + adaccount_id
 
-        adcampaigns = [ ]
-        data = []
-        base_url = '/' + adaccount_id + '/adcampaigns'
         params = { }
 
         if include_deleted:
@@ -35,16 +32,9 @@ class AdCampaignApi:
         if offset:
             params[ "offset" ] = str( offset )
 
-        if not limit:
-          data     = self.__fb.get_all( base_url, params )
-        else:
-          data     = self.__fb.get( base_url, params )['data']
-
-        adcampaigns += data
-
-        return [ self.__fb.adcampaign( adcampaign )[ 0 ] for adcampaign in adcampaigns ] , [ ]
+        return self.__fb.get_list_from_fb(adaccount_id, 'AdCampaign', params)
     except:
-      return [ ], [ Fault( ) ]
+        return [ ], [ Fault( ) ]
 
   def find_by_adgroup_id( self, adgroup_id ):
     """

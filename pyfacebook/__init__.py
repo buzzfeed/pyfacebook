@@ -53,7 +53,7 @@ class PyFacebook( object ):
     self.__app_secret   = app_secret
     self.__access_token = access_token
 
-  def get_list_from_fb( self, container_obj_id, class_to_get ):
+  def get_list_from_fb( self, container_obj_id, class_to_get, params={} ):
     """
     Retrieves data from Facebook and returns it as a list of objects.
 
@@ -64,8 +64,11 @@ class PyFacebook( object ):
     :rtype: List of objects of Class class_to_get, representing data pulled from the Facebook Graph API
 
     """
-    resp = self.get( '/' + str( container_obj_id ) + '/' + class_to_get.lower() )
-    return [ self.get_instance( class_to_get, obj )[0] for obj in resp ]
+    try:
+        objs = self.get_all( '/' + str( container_obj_id ) + '/' + class_to_get.lower() + 's', params )
+        return [ self.get_instance( class_to_get, obj )[0] for obj in objs ], []
+    except:
+        return [], [Fault()]
 
   def get_many_from_fb(self, obj_ids, class_to_get):
     try:
@@ -146,11 +149,17 @@ class PyFacebook( object ):
         cleaned_data[k] = v
     return kwargs
 
-  def get_all(self, resource, params, limit=-1, offset=-1):
+  def get_all(self, resource, params):
     data = []
+    limit = None
+    offset = None
+    if 'limit' in params: limit = int(params['limit'])
+    if 'offset' in params: offset = int(params['offset'])
     while True:
         resp  = self.get(resource,params)
         data += resp['data']
+        if limit and len(data) >= limit:
+            return data[0:limit]
         if 'paging' in resp and 'next' in resp['paging']:
             next_url = resp['paging']['next']
             url      = urlparse(next_url)

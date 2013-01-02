@@ -31,28 +31,17 @@ class AdGroupApi:
         if 'act_' not in adaccount_id:
             adaccount_id = 'act_' + adaccount_id
 
-        adgroups = [ ]
-        resp     = [ ]
-        base_url       = '/' + adaccount_id + '/adgroups'
         params  = { }
-
         if include_deleted:
             params[ "include_deleted" ] = "true"
         if limit:
             params[ "limit" ] = str( limit )
         if offset:
             params[ "offset" ] = str( offset )
-
-        if not limit:
-          data     = self.__fb.get_all( base_url, params )
-        else:
-          data     = self.__fb.get( base_url, params )['data']
-
-        adgroups = data
-
-        return [ self.__fb.adgroup( adgroup )[ 0 ] for adgroup in adgroups ] , [ ]
+        
+        return self.__fb.get_list_from_fb(adaccount_id, 'AdGroup', params)
     except:
-      return [ ], [ Fault( ) ]
+        return [ ], [ Fault( ) ]
 
   def find_by_id( self, adgroup_id ):
     """

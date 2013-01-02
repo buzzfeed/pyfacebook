@@ -17,17 +17,13 @@ class AdCreativeApi:
     :rtype ( [ AdCreative ], [ Fault ] ): A tuple of the AdCreatives found, and any Faults encountered
     """
     try:
-        if not adaccount_id:
+        if not adaccount_id or type(adaccount_id) not in (str, unicode):
             raise FacebookException( "Must pass an adaccount_id to this call" )
 
         if 'act_' not in adaccount_id:
             adaccount_id = 'act_' + adaccount_id
 
-        adcreatives = [ ]
-        resp     = [ ]
-        base_url       = '/' + adaccount_id + '/adcreatives'
         params  = { }
-
         if include_deleted:
             params[ "include_deleted" ] = "true"
         if limit:
@@ -35,16 +31,9 @@ class AdCreativeApi:
         if offset:
             params[ "offset" ] = str( offset )
 
-        if not limit:
-          data     = self.__fb.get_all( base_url, params )
-        else:
-          data     = self.__fb.get( base_url, params )['data']
-
-        adcreatives += data
-
-        return [ self.__fb.adcreative( adcreative )[ 0 ] for adcreative in adcreatives ] , [ ]
+        return self.__fb.get_list_from_fb(adaccount_id, 'AdCreative', params)
     except:
-      return [ ], [ Fault( ) ]
+        return [ ], [ Fault( ) ]
 
   def find_by_adgroup_id( self, adgroup_id ):
     """
