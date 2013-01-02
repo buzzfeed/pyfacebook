@@ -62,11 +62,7 @@ class TestAdCreativeApi( ):
     adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
     params = {'name': 'test' + str( time.time() * 10000 ) }
     success, errors = self.fb.api().adcreative().update(adcreative.id, **params)
-    if errors:
-        for error in errors:
-            print error.message
-            for t in error.tb:
-                print t
+
     ok_(success)
     updated_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
     eq_(updated_obj.id, adcreative.id)

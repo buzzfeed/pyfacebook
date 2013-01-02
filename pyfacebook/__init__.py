@@ -79,8 +79,6 @@ class PyFacebook( object ):
       resp      = self.get( base_url, params )
       objs += resp.values()
 
-      print "OBJECTS:"
-      print objs
       return [ self.get_instance( class_to_get.lower(), obj )[0] for obj in objs ], [ ]
     except:
       return [ ], [ Fault( ) ]
