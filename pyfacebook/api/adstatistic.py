@@ -109,22 +109,9 @@ class AdStatisticApi:
         if include_deleted:
             params[ "include_deleted" ] = "true"
 
-        resp    = self.__fb.get( base_url, params )
-        adstats = adstats + resp['data']
+        resp     = self.__fb.get( base_url, params, with_paging=True )
+        adstats += resp['data']
 
-        next_url = resp[ 'paging' ][ 'next' ] if 'paging' in resp and 'next' in resp[ 'paging' ] else ''
-        count    = int( resp[ 'count' ] ) if 'count' in resp else 0 #Python ternary operator
-        limit    = int( resp[ 'limit' ] ) if 'limit' in resp else 0
-        offset   = int( resp[ 'offset' ] ) if 'offset' in resp else 0
-
-        while ( limit + offset ) < count:
-            resp    = self.__fb.get( next_url.replace( 'https://graph.facebook.com', '') )
-            next_url = resp[ 'paging' ][ 'next' ]
-            count    = int( resp[ 'count' ] or 0 )
-            limit    = int( resp[ 'limit' ] or 0 )
-            offset   = int( resp[ 'offset' ] or 0 )
-            adstats = adstats + resp['data']
-
-        return [ self.__fb.adstatistic( stat )[0] for stat in adstats ] , [ ]
+        return [ self.__fb.adstatistic( adstat )[0] for adstat in adstats ] , [ ]
     except:
       return [ ], [ Fault( ) ]

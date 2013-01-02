@@ -129,7 +129,7 @@ class PyFacebook( object ):
         cleaned_data[k] = v
     return kwargs
 
-  def get( self, resource, params={} ):
+  def get( self, resource, params={}, with_paging=False ):
     url = self.__graph_endpoint + str( resource )
     if '?' in url:
       url += '&'
@@ -145,6 +145,21 @@ class PyFacebook( object ):
     if 'error' in obj:
       raise FacebookException( obj['error'] )
     response.close()
+
+    if with_paging:
+      next_url = obj[ 'paging' ][ 'next' ] if 'paging' in obj and 'next' in obj[ 'paging' ] else ''
+      count    = int( obj[ 'count' ] ) if 'count' in obj else 0 #Python ternary operator
+      limit    = int( obj[ 'limit' ] ) if 'limit' in obj else 0
+      offset   = int( obj[ 'offset' ] ) if 'offset' in obj else 0
+
+      while ( limit + offset ) < count:
+        next_obj = self.get( next_url.replace( 'https://graph.facebook.com', '') ) #recurse only once
+        next_url = next_obj[ 'paging' ][ 'next' ]
+        count    = int( next_obj[ 'count' ] or 0 )
+        limit    = int( next_obj[ 'limit' ] or 0 )
+        offset   = int( next_obj[ 'offset' ] or 0 )
+        obj[ 'data' ] += next_obj['data']
+
     return obj
 
   def post(self, resource, payload ):
