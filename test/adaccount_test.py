@@ -18,7 +18,6 @@ class TestAdAccountApi( ):
 
     ok_( not errors )
 
-    print "ADACCOUNT: " + str( adaccount ) 
     eq_( adaccount.name, u'BuzzFeed RnD_API Testing' )
     eq_( adaccount.account_status, 1 )
     eq_( adaccount.id, u'act_' + str( FACEBOOK_TEST_ACCOUNT_ID ) )
