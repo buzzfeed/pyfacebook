@@ -78,17 +78,4 @@ class AdGroupApi:
     :rtype ( [ AdGroup ], [ Fault ] ): A tuple of AdGroup objects found, and any Faults encountered
 
     """
-    try:
-      if not adgroup_ids or len( adgroup_ids ) == 0:
-        raise FacebookException( "A list of adgroup_ids is required" )
-      adgroups = [ ]
-      base_url = ''
-      params   = { }
-      params[ "ids" ] = ",".join( map( str, adgroup_ids ) )
-
-      resp     = self.__fb.get( base_url, params )
-      adgroups = resp.values( )
-
-      return [ self.__fb.adgroup( adgroup )[0] for adgroup in adgroups ] , [ ]
-    except:
-      return [ ], [ Fault( ) ]
+    return self.__fb.get_many_from_fb(adgroup_ids, 'AdGroup')

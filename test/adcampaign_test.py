@@ -62,4 +62,4 @@ class TestAdCampaignApi():
     adcampaigns, errors = self.fb.api( ).adcampaign( ).find_by_ids( [ ] )
 
     eq_( 1, len( errors ) )
-    eq_( errors[ 0 ].message, "A list of adcampaign_ids is required" )
+    eq_( errors[ 0 ].message, "A list of ids is required" )

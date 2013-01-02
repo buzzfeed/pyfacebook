@@ -90,4 +90,4 @@ class TestAdCreativeApi( ):
     adcreatives, errors = self.fb.api( ).adcreative( ).find_by_ids( [ ] )
 
     eq_( 1, len( errors ) )
-    eq_( errors[ 0 ].message, "A list of adcreative_ids is required" )
+    eq_( errors[ 0 ].message, "A list of ids is required" )

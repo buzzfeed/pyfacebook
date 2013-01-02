@@ -46,8 +46,14 @@ class TestAdGroupApi( ):
     #Test pulling 10 adgroups
     test_adgroup_ids      = map( lambda x: x.id, base_adgroups ) #cool way of pulling a simple list of attributes from a list of more complex objects
     adgroups, errors      = self.fb.api( ).adgroup( ).find_by_ids( test_adgroup_ids[:10] )
+    print adgroups
+    print errors
     result_adgroup_ids    = map( lambda x: x.id, adgroups )
 
+    for err in errors:
+        print err.message
+        for t in err.tb:
+            print t
     eq_( 0, len( errors ) )
     eq_( 10, len( adgroups ) )
     ok_( test_adgroup_ids[0] in result_adgroup_ids )
@@ -56,4 +62,4 @@ class TestAdGroupApi( ):
     adgroups, errors = self.fb.api( ).adgroup( ).find_by_ids( [ ] )
 
     eq_( 1, len( errors ) )
-    eq_( errors[ 0 ].message, "A list of adgroup_ids is required" )
+    eq_( errors[ 0 ].message, "A list of ids is required" )

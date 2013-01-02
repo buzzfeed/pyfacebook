@@ -12,21 +12,21 @@ class AdCampaignApi:
     :param int adaccount_id: The id corresponding to the Facebook account to pull adcampaigns from.
     :param boolean include_deleted: A flag that determines whether or not to include deleted adcampaigns in the resultset
     :param int limit: A limit for the number of adcampaign objects to request
-    :param int limit: An offset for the adcampaign resultset
+    :param int offset: An offset for the adcampaign resultset
 
     :rtype ( [ AdCampaign ], [ Fault ] ): A tuple of the AdCampaigns found, and any Faults encountered
     """
     try:
-        if not adaccount_id:
-            raise FacebookException( "Must pass an adaccount_id to this call" )
+        if not adaccount_id or type(adaccount_id) not in ( str, unicode ):
+            raise FacebookException( "Must pass an adaccount_id of type in ( str, unicode ) to this call" )
 
         if 'act_' not in adaccount_id:
             adaccount_id = 'act_' + adaccount_id
 
         adcampaigns = [ ]
-        resp        = [ ]
-        base_url       = '/' + adaccount_id + '/adcampaigns'
-        params  = { }
+        data = []
+        base_url = '/' + adaccount_id + '/adcampaigns'
+        params = { }
 
         if include_deleted:
             params[ "include_deleted" ] = "true"
@@ -88,17 +88,4 @@ class AdCampaignApi:
     :rtype ( [ AdCampaign ], [ Fault ] ): A tuple of AdCampaign objects found, and any Faults encountered
 
     """
-    try:
-      if not adcampaign_ids or len( adcampaign_ids ) == 0:
-        raise FacebookException( "A list of adcampaign_ids is required" )
-      adcampaigns = [ ]
-      base_url = ''
-      params   = { }
-      params[ "ids" ] = ",".join( map( str, adcampaign_ids ) )
-
-      resp      = self.__fb.get( base_url, params )
-      adcampaigns += resp.values()
-
-      return [ self.__fb.adcampaign( adcampaign )[ 0 ] for adcampaign in adcampaigns ], [ ]
-    except:
-      return [ ], [ Fault( ) ]
+    return self.__fb.get_many_from_fb(adcampaign_ids, 'AdCampaign')

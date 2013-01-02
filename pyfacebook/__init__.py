@@ -67,6 +67,24 @@ class PyFacebook( object ):
     resp = self.get( '/' + str( container_obj_id ) + '/' + class_to_get.lower() )
     return [ self.get_instance( class_to_get, obj )[0] for obj in resp ]
 
+  def get_many_from_fb(self, obj_ids, class_to_get):
+    try:
+      if not obj_ids:
+        raise FacebookException( "A list of ids is required" )
+      objs = [ ]
+      base_url = ''
+      params   = { }
+      params[ "ids" ] = ",".join( map( str, obj_ids ) )
+
+      resp      = self.get( base_url, params )
+      objs += resp.values()
+
+      print "OBJECTS:"
+      print objs
+      return [ self.get_instance( class_to_get.lower(), obj )[0] for obj in objs ], [ ]
+    except:
+      return [ ], [ Fault( ) ]
+
   def get_one_from_fb( self, reference_obj_id, class_to_get ):
     """
     Retrieves data from Facebook and returns it as an object.

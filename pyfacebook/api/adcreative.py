@@ -145,17 +145,4 @@ class AdCreativeApi:
     :rtype ( [ AdCreative ], [ Fault ] ): A tuple of AdCreative objects found, and any Faults encountered
 
     """
-    try:
-      if not adcreative_ids or len( adcreative_ids ) == 0:
-        raise FacebookException( "A list of adcreative_ids is required" )
-      adcreatives = [ ]
-      base_url = ''
-      params   = { }
-      params[ "ids" ] = ",".join( map( str, adcreative_ids ) )
-
-      resp      = self.__fb.get( base_url, params )
-      adcreatives += resp.values()
-
-      return [ self.__fb.adcreative( adcreative )[ 0 ] for adcreative in adcreatives ], [ ]
-    except:
-      return [ ], [ Fault( ) ]
+    return self.__fb.get_many_from_fb(adcreative_ids, 'AdCreative')
