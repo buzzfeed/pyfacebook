@@ -5,6 +5,36 @@ class AdCreativeApi:
   def __init__(self, fb ):
     self.__fb = fb
 
+  def find_by_adaccount_id( self, adaccount_id, include_deleted=False, limit=None, offset=None ):
+    """
+    Pulls ALL adcreatives for a Facebook ads account
+
+    :param int adaccount_id: The id corresponding to the Facebook account to pull adcreatives from.
+    :param boolean include_deleted: A flag that determines whether or not to include deleted adcreatives in the resultset
+    :param int limit: A limit for the number of adcampaign objects to request
+    :param int offset: An offset for the adcampaign resultset
+
+    :rtype ( [ AdCreative ], [ Fault ] ): A tuple of the AdCreatives found, and any Faults encountered
+    """
+    try:
+        if not adaccount_id or type(adaccount_id) not in (str, unicode):
+            raise FacebookException( "Must pass an adaccount_id to this call" )
+
+        if 'act_' not in adaccount_id:
+            adaccount_id = 'act_' + adaccount_id
+
+        params  = { }
+        if include_deleted:
+            params[ "include_deleted" ] = "true"
+        if limit:
+            params[ "limit" ] = str( limit )
+        if offset:
+            params[ "offset" ] = str( offset )
+
+        return self.__fb.get_list_from_fb(adaccount_id, 'AdCreative', params)
+    except:
+        return [ ], [ Fault( ) ]
+
   def find_by_adgroup_id( self, adgroup_id ):
     """
     Retrieves the adcreatives for an adgroup object. Facebook ambiguously defines whether there are many or just one associated.
@@ -95,9 +125,13 @@ class AdCreativeApi:
 
     return result, []
 
-  def __result_to_model(self, data):
-    ag = self.adgroup()
-    for key in data.keys():
-      if hasattr( ag ):
-        setattr( ag, key, data[key] )
-    return ag
+  def find_by_ids( self, adcreative_ids ):
+    """
+    Retreives a list of AdCreative objects from a list of adcreative IDs subject to FB's max batch size/limit
+
+    :param list adcreative_ids: The list of adcreative IDs we are searching for
+
+    :rtype ( [ AdCreative ], [ Fault ] ): A tuple of AdCreative objects found, and any Faults encountered
+
+    """
+    return self.__fb.get_many_from_fb(adcreative_ids, 'AdCreative')

@@ -7,7 +7,6 @@ class AdCampaign( Model ):
       'account_id',
       'name',
       'start_time',
-      'name',
       'end_time',
       'daily_budget',
       'campaign_status',

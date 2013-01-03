@@ -1,51 +1,51 @@
 from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.models.adgroup import AdGroup
 
 class AdGroupApi:
 
   def __init__(self, fb ):
     self.__fb = fb
 
-  def find_by_adaccount_id( self, account_id, include_deleted=False ):
+  def __result_to_model(self, data):
+    model = AdGroup()
+    for key in data.keys():
+      if hasattr( model, key ):
+        setattr( model, key, data[key] )
+    return model
+
+  def find_by_adaccount_id( self, adaccount_id, include_deleted=False, limit=None, offset=None ):
     """
-    Pulls ALL adgroups from Facebook that don't have SocialAd counterparts locally. This method has no regard for active/inactive adgroups.
+    Pulls ALL adgroups for a Facebook ads account
 
-    :param Facebook fb: An instance of the Facebook api class.
-    :param int account_id: The id corresponding to the Facebook account to pull adgroups from.
+    :param int adaccount_id: The id corresponding to the Facebook account to pull adgroups from.
+    :param boolean include_deleted: A flag that determines whether or not to include deleted adgroups in the resultset
+    :param int limit: A limit for the number of adcampaign objects to request
+    :param int offset: An offset for the adcampaign resultset
 
-    :rtype list(AdGroup): All the new adgroups!
+    :rtype ( [ AdGroup ], [ Fault ] ): A tuple of the AdGroups found, and any Faults encountered
     """
     try:
-      next           = False
-      ad_group_dicts = [ ]
-      ad_groups      = [ ]
-      while True:
-        if next:
-          resp = self.__fb.get( next )
-        else:
-          url  = '/act_' + str( account_id ) + '/adgroups?access_token=' + str( self.__fb.access_token() )
-          if include_deleted:
-            url += '&include_deleted=true'
-          resp = self.__fb.get( url )
-        if 'data' not in resp:
-          raise Exception( "'data' not in response: " + str( resp ) )
-        ad_group_dicts = ad_group_dicts + resp[ 'data' ]
-        if 'paging' in resp:
-          if 'next' in resp['paging']:
-            next = resp['paging'][ 'next' ][26:]
-          else:
-            break
-        else:
-          break
-      for entry in ad_group_dicts:        
-        ad_group, errors   = self.__fb.adgroup( entry )
-        ad_groups.append( ad_group )
+        if not adaccount_id:
+            raise FacebookException( "Must pass an adaccount_id to this call" )
+
+        if 'act_' not in adaccount_id:
+            adaccount_id = 'act_' + adaccount_id
+
+        params  = { }
+        if include_deleted:
+            params[ "include_deleted" ] = "true"
+        if limit:
+            params[ "limit" ] = str( limit )
+        if offset:
+            params[ "offset" ] = str( offset )
+        
+        return self.__fb.get_list_from_fb(adaccount_id, 'AdGroup', params)
     except:
-      return None, [Fault()]
-    return ad_groups, []
+        return [ ], [ Fault( ) ]
 
   def find_by_id( self, adgroup_id ):
     """
-    Retrieves AdGroup objects by vendor id
+    Retrieves a single AdGroup object by adgroup ID
 
     :param int adgroup_id: The id for the adgroup
 
@@ -57,3 +57,14 @@ class AdGroupApi:
       return self.__fb.get_one_from_fb( adgroup_id, "AdGroup" ), [ ]
     except:
       return None, [ Fault( ) ]
+
+  def find_by_ids( self, adgroup_ids ):
+    """
+    Retreives a list of AdGroup objects from a list of adgroup IDs subject to FB's max values for limit/batch size
+
+    :param list adgroup_ids: The list of adgroup IDs we are searching for
+
+    :rtype ( [ AdGroup ], [ Fault ] ): A tuple of AdGroup objects found, and any Faults encountered
+
+    """
+    return self.__fb.get_many_from_fb(adgroup_ids, 'AdGroup')
