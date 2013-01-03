@@ -71,6 +71,14 @@ class PyFacebook( object ):
         return [], [Fault()]
 
   def get_many_from_fb(self, obj_ids, class_to_get):
+    """
+    Retrieves data form Facebook and returns a list of models representing the pulled resources.
+
+    :param list(<int>) obj_ids: A list of ids for the objects to pull from FB
+    :param str class_to_get: The name of the class for the pyfacebook model corresponding to the facebook resources we're pulling.
+
+    :rtype tuple<list<model>, list<Fault>>:
+    """
     try:
       if not obj_ids:
         raise FacebookException( "A list of ids is required" )
@@ -198,6 +206,11 @@ class PyFacebook( object ):
     return data
 
   def get( self, resource, params={}):
+    """
+    GET's a FB response for a given resource and set of parameters. Automatically passes the access_token.
+
+    :rtype dict: The JSON response.
+    """
     url = self.__graph_endpoint + str( resource )
     if '?' in url:
       url += '&'
