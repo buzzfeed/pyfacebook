@@ -149,22 +149,50 @@ class PyFacebook( object ):
         cleaned_data[k] = v
     return kwargs
 
+  def __adjust_limit_and_offset_in_params(self, resp, expected_limit, actual_limit, params):
+    """
+    If a limit is specified greater than FB's max allowed; results will be
+    truncated to the max allowed value while offset will be incremented to
+    the original limit specified for adcreatives only. This is a bug in FB.
+    """
+    adj_params = dict(params)
+    actual_limit = None
+    if 'data' in resp:
+        actual_limit = len(resp['data'])
+    if 'limit' in params:
+        adj_params['limit'] = actual_limit
+    if 'offset' in params and params['offset'] and expected_limit and actual_limit:
+        adj_params['offset'] = str( int( params['offset'] ) + ( actual_limit - expected_limit ) )
+    return adj_params, actual_limit
+
   def get_all(self, resource, params):
+    """
+    Return all the results requested as implied by the params sent regardless of FB's limitations.
+
+    :param str resource: The URI for the resource on the Facebook graph endpoint
+    :param dict params: The additional parameters for the request. These can include but are not limited to limit and offset.
+
+    :rtype list(<mixed>): The return objects
+    """
     data = []
     limit = None
-    offset = None
-    if 'limit' in params: limit = int(params['limit'])
-    if 'offset' in params: offset = int(params['offset'])
+    resp = {}
+    user_defined_limit = 10000000
+    if 'limit' in params:
+        user_defined_limit = int(params['limit'])
+        limit = user_defined_limit
     while True:
         resp  = self.get(resource,params)
         data += resp['data']
-        if limit and len(data) >= limit:
-            return data[0:limit]
+        if user_defined_limit and len(data) >= user_defined_limit:
+            return data[0:user_defined_limit]
         if 'paging' in resp and 'next' in resp['paging']:
             next_url = resp['paging']['next']
             url      = urlparse(next_url)
             resource = url.path
             params   = dict( [ ( key, val[0] ) for key, val in parse_qs( url.query ).items() ] )
+            if 'adcreative' in resource: # TODO: Remove this workaround when FB addresses https://developers.facebook.com/bugs/470980112937400
+                params, limit = self.__adjust_limit_and_offset_in_params( resp, limit, len(resp['data']), params )
         else:
             break
     return data
@@ -247,7 +275,8 @@ class PyFacebook( object ):
         "grant_type":        "fb_exchange_token",
         "fb_exchange_token": self.__access_token
       }
-      auth_exchange_url     = "%s%s%s" % ( facebook_token_url, "?", auth_exchange_params )
+
+      auth_exchange_url     = "%s%s%s" % ( facebook_token_url, "?", urllib.urlencode(auth_exchange_params) )
       response, call_errors = self.get( auth_exchange_url )
       new_token             = response[ 0 ][ 1 ]
       self.__access_token   = new_token

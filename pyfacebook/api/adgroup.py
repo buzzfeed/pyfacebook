@@ -20,7 +20,7 @@ class AdGroupApi:
     :param int adaccount_id: The id corresponding to the Facebook account to pull adgroups from.
     :param boolean include_deleted: A flag that determines whether or not to include deleted adgroups in the resultset
     :param int limit: A limit for the number of adcampaign objects to request
-    :param int limit: An offset for the adcampaign resultset
+    :param int offset: An offset for the adcampaign resultset
 
     :rtype ( [ AdGroup ], [ Fault ] ): A tuple of the AdGroups found, and any Faults encountered
     """

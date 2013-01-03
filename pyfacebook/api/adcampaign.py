@@ -24,7 +24,6 @@ class AdCampaignApi:
             adaccount_id = 'act_' + adaccount_id
 
         params = { }
-
         if include_deleted:
             params[ "include_deleted" ] = "true"
         if limit:

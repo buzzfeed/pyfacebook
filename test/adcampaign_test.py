@@ -13,16 +13,39 @@ class TestAdCampaignApi():
                          app_secret=FACEBOOK_APP_SECRET)
 
   def test_find_by_adaccount_id(self):
-    adcampaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=2, offset=2 )
+    # Check order
+    first_ten_adcampaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=10, offset=0 )
+    second_five_adcampaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=5, offset=5 )
 
-    eq_( 0, len( errors ) )
-    eq_( 2, len( adcampaigns ) )
+    eq_( len( first_ten_adcampaigns ), 10 )
+    eq_( len( second_five_adcampaigns ), 5 )
 
-    adcampaign          = adcampaigns[ 0 ]
+    for c in first_ten_adcampaigns[5:]:
+        index = first_ten_adcampaigns.index(c) - 5
+        eq_( c.id, second_five_adcampaigns[index].id )
 
+    # Check attributes
+    adcampaign = c
     ok_( not not adcampaign.id )
-    ok_( not not adcampaign.account_id )
+    eq_( adcampaign.account_id, int(FACEBOOK_PROD_ACCOUNT_ID) )
     ok_( not not adcampaign.name )
+
+    # Check completeness of paged results
+    all_campaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID )
+    total = len(all_campaigns)
+    limit = 3
+    offset = total - limit + 1
+    last_batch_of_campaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=limit, offset=offset )
+    eq_( len(last_batch_of_campaigns), total - offset )
+
+    # Check empty results
+    no_campaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, offset=total )
+    eq_( no_campaigns, [] )
+
+    # Check full results
+    all_campaigns, errors = self.fb.api().adcampaign().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, offset=0, limit=total+1000)
+    eq_( len(all_campaigns), total )
+
 
   def test_find_by_adgroup_id_and_find_by_id(self):
     adgroups, errors = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_PROD_ACCOUNT_ID, limit=2)

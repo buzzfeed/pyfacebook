@@ -5,6 +5,8 @@ from pyfacebook.settings import FACEBOOK_APP_SECRET
 from pyfacebook.settings import FACEBOOK_APP_ID
 from pyfacebook.settings import FACEBOOK_TEST_ACCESS_TOKEN
 from pyfacebook.settings import FACEBOOK_TEST_ACCOUNT_ID
+from pyfacebook.settings import FACEBOOK_PROD_ACCOUNT_ID
+
 from pyfacebook import PyFacebook
 
 from nose.tools import eq_, ok_
@@ -16,16 +18,41 @@ class TestAdCreativeApi( ):
                           app_secret=FACEBOOK_APP_SECRET )
 
   def test_find_by_adaccount_id(self):
-    adcreatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID, limit=2, offset=2 )
+    # Check order
+    first_ten_adcreatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=10, offset=0 )
+    second_five_adcreatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=5, offset=5 )
 
-    eq_( 0, len( errors ) )
-    eq_( 2, len( adcreatives ) )
-    adcreative          = adcreatives[0]
+    eq_( len( first_ten_adcreatives ), 10 )
+    eq_( len( second_five_adcreatives ), 5 )
 
+    for c in first_ten_adcreatives[5:]:
+        index = first_ten_adcreatives.index(c) - 5
+        eq_( c.id, second_five_adcreatives[index].id )
+
+    # Check attributes
+    adcreative = c
     ok_( not not adcreative.body )
     ok_( not not adcreative.name )
     ok_( not not adcreative.link_url )
     ok_( not not adcreative.title )
+
+    # Check completeness of paged results
+    all_creatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID )
+    total = len(all_creatives)
+
+    limit = 3
+    offset = total - limit + 1
+    last_batch_of_creatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=limit, offset=offset )
+    eq_( len(last_batch_of_creatives), total - offset )
+
+    # Check empty results
+    no_creatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, offset=total )
+    eq_( no_creatives, [] )
+
+    # Check full results
+    offset=0
+    all_creatives, errors = self.fb.api().adcreative().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, offset=offset, limit=total+1000)
+    eq_( len(all_creatives), total )
 
   def test_find_by_adgroup_id(self):
     adgroups, errors    = self.fb.api().adgroup().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID, limit=2 )
