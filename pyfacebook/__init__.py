@@ -4,10 +4,9 @@ import urllib2
 import json
 from urlparse import parse_qs
 from urlparse import urlparse
-
 from pyfacebook import utils
 from pyfacebook.fault import Fault, FacebookException
-
+from caliendo.facade import cache as caliendo_cache
 from pyfacebook import models
 from pyfacebook.models.adaccount import AdAccount
 from pyfacebook.models.aduser import AdUser
@@ -205,6 +204,13 @@ class PyFacebook( object ):
             break
     return data
 
+  def __json_response(self, url, data=None):
+    response = urllib.urlopen(url, data)
+    raw_response = response.read()
+    resp = json.loads(raw_response)
+    response.close()
+    return resp
+
   def get( self, resource, params={}):
     """
     GET's a FB response for a given resource and set of parameters. Automatically passes the access_token.
@@ -222,10 +228,7 @@ class PyFacebook( object ):
       url += '&'
       url += urllib.urlencode( params )
 
-    response = urllib.urlopen(url)
-    raw_response = response.read( )
-    resp = json.loads( raw_response )
-    response.close()
+    resp = caliendo_cache(handle=self.__json_response, kwargs={'url': url})
 
     if 'error' in resp:
       raise FacebookException( resp['error'] )
@@ -239,15 +242,14 @@ class PyFacebook( object ):
     url = '{base_url}{source_url}'.format(base_url=self.__graph_endpoint, source_url=str(resource))
     url += '&' if '?' in url else '?'
     url += urllib.urlencode({'access_token': self.access_token()})
-    response = urllib.urlopen(url, payload)
-    raw_response = response.read()
-    obj = json.loads( raw_response )
+    obj = caliendo_cache(handle=self.__json_response, kwargs={'url': url, 'data': payload})
+
     try:
       if 'error' in obj:
         raise FacebookException( obj['error'] )
     except TypeError:  # update calls simply return True, so it's not iterable, but correct
       pass
-    response.close()
+
     return obj
 
   def delete(self, resource, params, content_type='application/json'):
