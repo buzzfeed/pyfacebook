@@ -9,7 +9,7 @@ from pyfacebook.settings import FACEBOOK_PROD_ACCOUNT_ID
 
 from pyfacebook import PyFacebook
 
-from nose.tools import eq_, ok_, set_trace
+from nose.tools import eq_, ok_
 
 class TestAdStatisticApi( ):
 
