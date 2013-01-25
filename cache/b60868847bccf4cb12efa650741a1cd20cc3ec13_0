@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI3239\nsVinclude_deleted\np2\nNsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=0&limit=500\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=1000\np8\nssVlimit\np9\nI500\nsVoffset\np10\nV500\np11\nsVdata\np12\n(lp13\n(dp14\nVconversion_specs\np15\n(lp16\nsVupdated_time\np17\nV2012-09-21T20:01:32+0000\np18\nsVbid_type\np19\nI1\nsVname\np20\nVHave you seen this? 1\np21\nsVtracking_pixel_ids\np22\n(lp23\nsVtargeting\np24\n(dp25\nVage_max\np26\nI50\nsVcountries\np27\n(lp28\nVUS\np29\nasVbroad_age\np30\nI1\nsVage_min\np31\nI14\nssVbid_info\np32\n(dp33\nV1\np34\nV65\np35\nssVstart_time\np36\nNsVad_status\np37\nI2\nsVcampaign_id\np38\nI6004963636165\nsVlocations\np39\n(lp40\nI3\nasVcreated_time\np41\nV2012-04-24T03:25:49+0000\np42\nsVend_time\np43\nV2012-04-29T06:00:00+0000\np44\nsVadgroup_status\np45\nI8\nsVid\np46\nV6005047809365\np47\nsVad_id\np48\nI6005047809365\nsVimpression_control_map\np49\n(lp50\n(dp51\nVcontrol\np52\n(dp53\nVuser_impression_limit_period\np54\nI24\nsVuser_impression_limit\np55\nI6\nsVuser_impression_limit_period_unit\np56\nI0\nsVimpression_control_type\np57\nI2\nssVlocation\np58\nI3\nsasVcreative_ids\np59\n(lp60\nI6005023460765\nasVmax_bid\np61\nV65\np62\nsVadgroup_id\np63\nI6005047809365\nsVaccount_id\np64\nI40156177\nsa(dp65\nVconversion_specs\np66\n(lp67\nsVupdated_time\np68\nV2012-04-24T21:17:26+0000\np69\nsVbid_type\np70\nI1\nsVname\np71\nVLife a little bland?\np72\nsVtracking_pixel_ids\np73\n(lp74\nsVtargeting\np75\n(dp76\nVage_max\np77\nI65\nsVcountries\np78\n(lp79\nVUS\np80\nasVuser_adclusters\np81\n(lp82\n(dp83\nVid\np84\nV6002714886772\np85\nsVname\np86\nVFood & Dining\np87\nsasVbroad_age\np88\nI1\nsVage_min\np89\nI18\nssVbid_info\np90\n(dp91\nV1\np92\nV75\np93\nssVstart_time\np94\nNsVad_status\np95\nI2\nsVcampaign_id\np96\nI6004963636165\nsVlocations\np97\n(lp98\nI3\nasVcreated_time\np99\nV2012-04-04T20:36:04+0000\np100\nsVend_time\np101\nV2012-04-29T06:00:00+0000\np102\nsVadgroup_status\np103\nI9\nsVid\np104\nV6004963637165\np105\nsVad_id\np106\nI6004963637165\nsVimpression_control_map\np107\n(lp108\n(dp109\nVcontrol\np110\n(dp111\nVuser_impression_limit_period\np112\nI24\nsVuser_impression_limit\np113\nI3\nsVuser_impression_limit_period_unit\np114\nI0\nsVimpression_control_type\np115\nI2\nssVlocation\np116\nI3\nsasVcreative_ids\np117\n(lp118\nI6004963636765\nasVmax_bid\np119\nV75\np120\nsVadgroup_id\np121\nI6004963637165\nsVaccount_id\np122\nI40156177\nsa(dp123\nVconversion_specs\np124\n(lp125\nsVupdated_time\np126\nV2012-04-24T21:17:26+0000\np127\nsVbid_type\np128\nI1\nsVname\np129\nVLife a little bland? 1\np130\nsVtracking_pixel_ids\np131\n(lp132\nsVtargeting\np133\n(dp134\nVage_max\np135\nI65\nsVcountries\np136\n(lp137\nVUS\np138\nasVuser_adclusters\np139\n(lp140\n(dp141\nVid\np142\nV6002714886772\np143\nsVname\np144\nVFood & Dining\np145\nsasVbroad_age\np146\nI1\nsVage_min\np147\nI18\nssVbid_info\np148\n(dp149\nV1\np150\nV75\np151\nssVstart_time\np152\nNsVad_status\np153\nI2\nsVcampaign_id\np154\nI6004963636165\nsVlocations\np155\n(lp156\nI3\nasVcreated_time\np157\nV2012-04-04T20:39:27+0000\np158\nsVend_time\np159\nV2012-04-29T06:00:00+0000\np160\nsVadgroup_status\np161\nI9\nsVid\np162\nV6004963643765\np163\nsVad_id\np164\nI6004963643765\nsVimpression_control_map\np165\n(lp166\n(dp167\nVcontrol\np168\n(dp169\nVuser_impression_limit_period\np170\nI24\nsVuser_impression_limit\np171\nI3\nsVuser_impression_limit_period_unit\np172\nI0\nsVimpression_control_type\np173\nI2\nssVlocation\np174\nI3\nsasVcreative_ids\np175\n(lp176\nI6004963643365\nasVmax_bid\np177\nV75\np178\nsVadgroup_id\np179\nI6004963643765\nsVaccount_id\np180\nI40156177\nsa(dp181\nVconversion_specs\np182\n(lp183\nsVupdated_time\np184\nV2012-04-24T21:17:26+0000\np185\nsVbid_type\np186\nI1\nsVname\np187\nVThe Motivational Chicken\np188\nsVtracking_pixel_ids\np189\n(lp190\nsVtargeting\np191\n(dp192\nVage_max\np193\nI65\nsVcountries\np194\n(lp195\nVUS\np196\nasVbroad_age\np197\nI1\nsVage_min\np198\nI18\nssVbid_info\np199\n(dp200\nV1\np201\nV75\np202\nssVstart_time\np203\nNsVad_status\np204\nI2\nsVcampaign_id\np205\nI6004963636165\nsVlocations\np206\n(lp207\nI3\nasVcreated_time\np208\nV2012-04-0'
+p8
+sS'hash'
+p9
+S'b60868847bccf4cb12efa650741a1cd20cc3ec13'
+p10
+sS'stack'
+p11
+S''
+s.

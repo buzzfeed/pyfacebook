@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I10
+sS'returnval'
+p5
+S'-07T22:00:00-0800\np1561\nsVcreated_time\np1562\nV2013-01-04T10:54:31-0800\np1563\nsVupdated_time\np1564\nV2013-01-07T12:42:00-0800\np1565\nsVcampaign_status\np1566\nI2\nsVid\np1567\nV6007531695165\np1568\nsVaccount_id\np1569\nI40156177\nsa(dp1570\nVdaily_budget\np1571\nI100000\nsVstart_time\np1572\nV2013-01-04T11:47:36-0800\np1573\nsVcampaign_id\np1574\nI6007532628365\nsVaccount_id\np1575\nI40156177\nsVdaily_imps\np1576\nI0\nsVend_time\np1577\nV2013-01-08T12:41:00-0800\np1578\nsVfrequency_cap\np1579\nI0\nsVcreated_time\np1580\nV2013-01-04T11:47:36-0800\np1581\nsVupdated_time\np1582\nV2013-01-07T12:42:13-0800\np1583\nsVcampaign_status\np1584\nI2\nsVid\np1585\nV6007532628365\np1586\nsVname\np1587\nVTWC: Social One: Dec-Jan 2013 | 11-Reasons-Why-Tv-Shows-Are-The-New-Movies\np1588\nsa(dp1589\nVdaily_budget\np1590\nI40000\nsVstart_time\np1591\nV2013-01-09T06:30:00-0800\np1592\nsVcampaign_id\np1593\nI6007602561365\nsVaccount_id\np1594\nI40156177\nsVdaily_imps\np1595\nI0\nsVend_time\np1596\nV2013-01-10T20:30:00-0800\np1597\nsVfrequency_cap\np1598\nI0\nsVcreated_time\np1599\nV2013-01-07T14:52:25-0800\np1600\nsVupdated_time\np1601\nV2013-01-09T18:28:27-0800\np1602\nsVcampaign_status\np1603\nI2\nsVid\np1604\nV6007602561365\np1605\nsVname\np1606\nVABC: Jimmy Kimmel Jan 2012 | 11-Of-The-Nicest-Celebrities-Ever\np1607\nsa(dp1608\nVname\np1609\nVVirgin Mobile: Q1 2013 | 19-mindblowing-historical-doppelgangers\np1610\nsVstart_time\np1611\nV2013-01-14T12:39:00-0800\np1612\nsVcampaign_id\np1613\nI6007764769765\nsVfrequency_cap\np1614\nI0\nsVdaily_imps\np1615\nI0\nsVlifetime_budget\np1616\nI50000\nsVend_time\np1617\nV2013-01-15T21:00:00-0800\np1618\nsVcreated_time\np1619\nV2013-01-14T09:45:07-0800\np1620\nsVupdated_time\np1621\nV2013-01-15T20:24:00-0800\np1622\nsVcampaign_status\np1623\nI2\nsVid\np1624\nV6007764769765\np1625\nsVaccount_id\np1626\nI40156177\nsasVoffset\np1627\nV1400\np1628\ns.'
+p6
+sS'hash'
+p7
+S'ff22ca8ecdb620e643a5bdfc5d5bfef154b09cab'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcampaign.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py __cache /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py <lambda> /home/orozco/development/django/buzzfeed/pyfacebook/test/adcampaign_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/l'
+p10
+s.

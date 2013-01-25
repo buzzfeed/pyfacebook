@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI1485\nsVlimit\np2\nV5\np3\nsVpaging\np4\n(dp5\nVprevious\np6\nVhttps://graph.facebook.com/act_40156177/adcampaigns?limit=5&offset=0&account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&__before_id=6005784330365\np7\nsVnext\np8\nVhttps://graph.facebook.com/act_40156177/adcampaigns?limit=5&offset=10&account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&__after_id=6005801296165\np9\nssVdata\np10\n(lp11\n(dp12\nVname\np13\nVGE: Nostalgia: Sept_2012 | Famous-Geeks-Hanging-Out-In-The-1900S-6Ieg\np14\nsVstart_time\np15\nV2012-09-07T14:53:22-0700\np16\nsVcampaign_id\np17\nI6005784330365\nsVfrequency_cap\np18\nI0\nsVdaily_imps\np19\nI0\nsVlifetime_budget\np20\nI50000\nsVend_time\np21\nV2012-09-30T00:00:00-0700\np22\nsVcreated_time\np23\nV2012-09-07T14:53:22-0700\np24\nsVupdated_time\np25\nV2012-09-21T14:32:14-0700\np26\nsVcampaign_status\np27\nI1\nsVid\np28\nV6005784330365\np29\nsVaccount_id\np30\nI40156177\nsa(dp31\nVname\np32\nVGE: Nostalgia: Sept_2012 | Timeless-Ge-Ads-Through-The-Years-6Ieg\np33\nsVstart_time\np34\nV2012-09-07T14:54:30-0700\np35\nsVcampaign_id\np36\nI6005784334165\nsVfrequency_cap\np37\nI0\nsVdaily_imps\np38\nI0\nsVlifetime_budget\np39\nI50000\nsVend_time\np40\nV2012-09-30T00:00:00-0700\np41\nsVcreated_time\np42\nV2012-09-07T14:54:30-0700\np43\nsVupdated_time\np44\nV2012-09-21T14:32:22-0700\np45\nsVcampaign_status\np46\nI1\nsVid\np47\nV6005784334165\np48\nsVaccount_id\np49\nI40156177\nsa(dp50\nVdaily_budget\np51\nI40000\nsVstart_time\np52\nV2012-09-10T11:30:00-0700\np53\nsVcampaign_id\np54\nI6005798478365\nsVaccount_id\np55\nI40156177\nsVdaily_imps\np56\nI0\nsVend_time\np57\nV2012-10-03T23:57:00-0700\np58\nsVfrequency_cap\np59\nI0\nsVcreated_time\np60\nV2012-09-10T11:02:59-0700\np61\nsVupdated_time\np62\nV2012-10-01T10:40:03-0700\np63\nsVcampaign_status\np64\nI1\nsVid\np65\nV6005798478365\np66\nsVname\np67\nVUniqlo Lucky Cube: Sept-Oct_2012 | The-Best-Gifs-Of-Maru-The-Internets-Favorite-Cat\np68\nsa(dp69\nVname\np70\nVMSFT: IE9 BYLTH: Sept-Oct_2012 | The-13-Most-Common-Misconceptions\np71\nsVstart_time\np72\nV2012-09-11T07:30:57-0700\np73\nsVcampaign_id\np74\nI6005801290565\nsVfrequency_cap\np75\nI0\nsVdaily_imps\np76\nI0\nsVlifetime_budget\np77\nI50000\nsVend_time\np78\nV2012-10-22T00:00:00-0700\np79\nsVcreated_time\np80\nV2012-09-11T07:30:57-0700\np81\nsVupdated_time\np82\nV2012-09-21T14:33:23-0700\np83\nsVcampaign_status\np84\nI1\nsVid\np85\nV6005801290565\np86\nsVaccount_id\np87\nI40156177\nsa(dp88\nVname\np89\nVMSFT: IE9 BYLTH: Sept-Oct_2012 | The-10-Most-Epic-Turnarounds\np90\nsVstart_time\np91\nV2012-09-11T07:32:38-0700\np92\nsVcampaign_id\np93\nI6005801296165\nsVfrequency_cap\np94\nI0\nsVdaily_imps\np95\nI0\nsVlifetime_budget\np96\nI50000\nsVend_time\np97\nV2012-10-22T00:00:00-0700\np98\nsVcreated_time\np99\nV2012-09-11T07:32:38-0700\np100\nsVupdated_time\np101\nV2012-09-21T14:33:24-0700\np102\nsVcampaign_status\np103\nI1\nsVid\np104\nV6005801296165\np105\nsVaccount_id\np106\nI40156177\nsasVoffset\np107\nV5\np108\ns.'
+p8
+sS'hash'
+p9
+S'134623e00e6ec4f78d38fe1d0bd6fdba4f47c2bc'
+p10
+sS'stack'
+p11
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcampaign.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py __cache /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py <lambda> /home/orozco/development/django/buzzfeed/pyfacebook/test/adcampaign_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/develo'
+p12
+s.

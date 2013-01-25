@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I155
+sS'returnval'
+p5
+S'5\nsa(dp19398\nVname\np19399\nVAd from a Page post #6,006,184,237,565\np19400\nsVauto_update\np19401\nI00\nsVstory_id\np19402\nV502958513057387\np19403\nsVcreative_id\np19404\nV6006184237565\np19405\nsVpreview_url\np19406\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006184237565\np19407\nsVobject_id\np19408\nV238205562866018\np19409\nsVaction_spec\np19410\nNsVcount_current_adgroups\np19411\nI1\nsVrun_status\np19412\nI1\nsVtype\np19413\nI27\nsVid\np19414\nV6006184237565\np19415\nsVaction_t\np19416\nVBgABAIAIAAZQl9trCgAJAAAAAI6hhXkKABAAANiljfVJYg0AGgYKAAAACAEKAAAAAAAAAFAArwAByXAnge5rAKsAANiljfVJYgCsAAAAAAAAAAAACgAAAACOoYV5AAEAAclwJ4HuawG2AAAAAFCX22sB5AAByXAnge5rDQAbBgsAAAABQAMAAABfR3JlYXQgU2FuZHdpY2htYWtpbmfigKYgQW55IFdheSBZb3UgTGlrZSBJdC4gRXZlcnlib2R5J3MgZG9pbmcgaXQhIGh0dHA6Ly9iemZkLml0L1B5MkRXTyBvb29vbyAKABwAAclwJ4HuawA=\np19417\nsa(dp19418\nVname\np19419\nVSponsored story #6,006,183,442,765\np19420\nsVcreative_id\np19421\nV6006183442765\np19422\nsVpreview_url\np19423\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006183442765\np19424\nsVobject_id\np19425\nV238205562866018\np19426\nsVaction_spec\np19427\n(lp19428\n(dp19429\nVpost\np19430\nV502958513057387\np19431\nsVaction.type\np19432\nVlike\np19433\nsa(dp19434\nVpost\np19435\nV502958513057387\np19436\nsVaction.type\np19437\nVcomment\np19438\nsa(dp19439\nVpost.object\np19440\nV502958513057387\np19441\nsVaction.type\np19442\nVpost\np19443\nsasVcluster_id\np19444\nI6006183440165\nsVcount_current_adgroups\np19445\nI1\nsVrun_status\np19446\nI1\nsVtype\np19447\nI25\nsVid\np19448\nV6006183442765\np19449\nsa(dp19450\nValt_view_tags\np19451\n(lp19452\nsVbody\np19453\nVThese guys know how to live in style. See more "Guys That Know How To Get The Job Done!"\np19454\nsVimage_hash\np19455\nV7ef9d64d0e3b8386dbe92239f46d0b34\np19456\nsVname\np19457\nViPants?-00-00-00\np19458\nsVtitle\np19459\nVRecliner Bikes?\np19460\nsVcreative_id\np19461\nV6006171403165\np19462\nsVpreview_url\np19463\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006171403165\np19464\nsVid\np19465\nV6006171403165\np19466\nsVimage_url\np19467\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708160_6006844812565_6673_n.png\np19468\nsVcount_current_adgroups\np19469\nI1\nsVrun_status\np19470\nI1\nsVtype\np19471\nI1\nsVlink_url\np19472\nVhttp://ad.doubleclick.net/clk;264705619;90379031;l\np19473\nsVview_tag\np19474\ng35\nsa(dp19475\nValt_view_tags\np19476\n(lp19477\nsVbody\np19478\nVCheck out our Rdio playlist of "Cute Songs That\'ll Make You Feel Happy" on BuzzFeed!\np19479\nsVimage_hash\np19480\nVa928ee4337ba74427691caedccafcdac\np19481\nsVname\np19482\nVWant to Listen to a Hit?-00-00\np19483\nsVtitle\np19484\nVFeelin\' the Warm Fuzzies?\np19485\nsVcreative_id\np19486\nV6006182989365\np19487\nsVpreview_url\np19488\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006182989365\np19489\nsVid\np19490\nV6006182989365\np19491\nsVimage_url\np19492\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708187_6006845069165_27732_n.png\np19493\nsVcount_current_adgroups\np19494\nI2\nsVrun_status\np19495\nI1\nsVtype\np19496\nI1\nsVlink_url\np19497\nVhttp://www.buzzfeed.com/h1/fbad/buzzfeedmusicpartner/10-super-cute-songs-to-make-you-feel-warm-and-happ-7p85\np19498\nsVview_tag\np19499\ng35\nsa(dp19500\nValt_view_tags\np19501\n(lp19502\nsVbody\np19503\nVCheck out our Rdio playlist of "Cute Songs That\'ll Make You Feel Happy" on BuzzFeed!\\u000a\np19504\nsVimage_hash\np19505\nVa928ee4337ba74427691caedccafcdac\np19506\nsVname\np19507\nVWant to Listen to a Hit?-00-01\np19508\nsVtitle\np19509\nVFeelin\' the Warm Fuzzies?\np19510\nsVcreative_id\np19511\nV6006183036565\np19512\nsVpreview_url\np19513\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006183036565\np19514\nsVid\np19515\nV6006183036565\np19516\nsVimage_url\np19517\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708187_6006845069165_27732_n.png\np19518\nsVcount_current_adgroups\np19519\nI2\nsVrun_status\np19520\nI1\nsVtype\np19521\nI1\nsVlink_url\np19522\nVhttp://www.buzzfeed.com/h1/fbad/buzzfeedmusicpartner/10-super-cute-songs-to-make-you-feel-warm-and-happ-7p85\np19523\nsVview_tag\np19524\ng35\nsa(dp19525\nValt_view_tags\np19526\n(lp19527\nsVbody\np19528\nVRednecks have a language of their own. Learn how to "Talk Like A Redneck In 10 Steps!"\np19529\ns'
+p6
+sS'hash'
+p7
+S'f1fc18fbecf6a8166d34ccd8bdb83f16e03675a6'
+p8
+sS'stack'
+p9
+S''
+s.

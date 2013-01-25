@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I87
+sS'returnval'
+p5
+S'0824\nsVpreview_url\np10825\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006787186965\np10826\nsVaction_t\np10827\nVBgABAQcIAAZQyOdrCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAACwEKAAAAAAAAAFAAuAABd/w40QPqALkAAAAAAAAAZAC6AAB556lqu+gCIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAAEAAXf8ONED6gG2AAAAAFDI52sB5AABd/w40QPqDQAbBgsAAAABQAMAAAEdRm9vZCBvciBhcnQ/IFlvdSBiZSB0aGUganVkZ2UuLi5odHRwOi8vYnpmZC5pdC9RVkFSVUggb29vb28gMTQgQmVudG8gQm94IFZlcnNpb25zIE9mIEJpZyBNZWFscyBvb29vbyBJdCdzIG5ldmVyIGJlZW4gZWFzaWVyIHRvIGVhdCBnb29kIGZvb2Qgd2hpbGUgeW91J3JlIG9uIHRoZSBnby4gQ2hlY2sgb3V0IHNvbWUgYW1hemluZyB3YXlzIHlvdSBjYW4gcGFjayBhIGJpZyBtZWFsIGluIGEgc21hbGwgcGFja2FnZSwgYW5kIGNoZWNrIG91dCBDYW1wYmVsbCdzIEdvIOKEoiBzb3VwcyBmb3IgZXZlLi4uCgAcAAF3/DjRA+oA\np10828\nsVaction_spec\np10829\nNsVobject_id\np10830\nV238205562866018\np10831\nsVcount_current_adgroups\np10832\nI1\nsVrun_status\np10833\nI1\nsVtype\np10834\nI27\nsVid\np10835\nV6006787186965\np10836\nsa(dp10837\nVname\np10838\nVSponsored story #6,006,787,188,765\np10839\nsVcreative_id\np10840\nV6006787188765\np10841\nsVpreview_url\np10842\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006787188765\np10843\nsVobject_id\np10844\nV238205562866018\np10845\nsVaction_spec\np10846\n(lp10847\n(dp10848\nVpost\np10849\nV413400145396714\np10850\nsVaction.type\np10851\nVlike\np10852\nsa(dp10853\nVpost\np10854\nV413400145396714\np10855\nsVaction.type\np10856\nVcomment\np10857\nsa(dp10858\nVpost.object\np10859\nV413400145396714\np10860\nsVaction.type\np10861\nVpost\np10862\nsasVcluster_id\np10863\nI6006787183365\nsVcount_current_adgroups\np10864\nI1\nsVrun_status\np10865\nI1\nsVtype\np10866\nI25\nsVid\np10867\nV6006787188765\np10868\nsa(dp10869\nValt_view_tags\np10870\n(lp10871\nsVbody\np10872\nVSee More Charming Vintage Holiday Photos - Only on BuzzFeed!\np10873\nsVimage_hash\np10874\nVbaccb1d798067290989d4576ea456c81\np10875\nsVname\np10876\nVA Vintage Christmas-00\np10877\nsVtitle\np10878\nVA Vintage Christmas\np10879\nsVcreative_id\np10880\nV6006754620565\np10881\nsVpreview_url\np10882\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006754620565\np10883\nsVid\np10884\nV6006754620565\np10885\nsVimage_url\np10886\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708174_6006754618765_30559_n.jpg\np10887\nsVcount_current_adgroups\np10888\nI1\nsVrun_status\np10889\nI1\nsVtype\np10890\nI1\nsVlink_url\np10891\nVhttp://ad.doubleclick.net/clk;266017883;91816170;n\np10892\nsVview_tag\np10893\ng34\nsa(dp10894\nValt_view_tags\np10895\n(lp10896\nsVbody\np10897\nVThat one\'s gotta hurt! Check out the "25 Things That Will Instantly Ruin Your Day!"\np10898\nsVimage_hash\np10899\nV5c4c86ef5379c78624f43cc7b753cb89\np10900\nsVname\np10901\nVPark Next To This Guy?-00-00\np10902\nsVtitle\np10903\nVSwing Too Hard?\np10904\nsVcreative_id\np10905\nV6007097583165\np10906\nsVpreview_url\np10907\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007097583165\np10908\nsVid\np10909\nV6007097583165\np10910\nsVimage_url\np10911\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708188_6007097566165_16108_n.jpg\np10912\nsVcount_current_adgroups\np10913\nI1\nsVrun_status\np10914\nI1\nsVtype\np10915\nI1\nsVlink_url\np10916\nVhttp://www.buzzfeed.com/h1/fbad/floridaorangejuice/25-things-that-will-instantly-ruin-your-day\np10917\nsVview_tag\np10918\ng34\nsa(dp10919\nValt_view_tags\np10920\n(lp10921\nsVbody\np10922\nVSome people are the worst. Check out the "25 Things That Will Instantly Ruin Your Day!"\np10923\nsVimage_hash\np10924\nV3a3b5aa94345a1d699fe6ce9fdc9cec4\np10925\nsVname\np10926\nVPark Next To This Guy?-00\np10927\nsVtitle\np10928\nVPark Next To This Guy?\np10929\nsVcreative_id\np10930\nV6006806682365\np10931\nsVpreview_url\np10932\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006806682365\np10933\nsVid\np10934\nV6006806682365\np10935\nsVimage_url\np10936\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708194_6006806556565_2629_n.jpg\np10937\nsVcount_current_adgroups\np10938\nI1\nsVrun_status\np10939\nI1\nsVtype\np10940\nI1\nsVlink_url\np10941\nVhttp://www.buzzfeed.com/h1/fbad/floridaorangejuice/25-things-that-will-instantly-ruin-your-day\np10942\nsVview_tag\np10943\ng34\nsa(dp10944\nValt_view_tags\np10945\n(lp10946\nsVbody\np10947\nVJust One of the "17 Amazing Things To Do With Money'
+p6
+sS'hash'
+p7
+S'df79a03af479ef13505501f2f633b19e9968d361'
+p8
+sS'stack'
+p9
+S''
+s.

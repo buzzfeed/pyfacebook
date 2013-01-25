@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I12
+sS'returnval'
+p5
+S'\nVname\np1856\nVCanon PowerShot: June_July 2012 | 20-Flickr-Photographers-Everyone-Should-Be-Followi\np1857\nsVstart_time\np1858\nV2012-06-29T16:41:00-0700\np1859\nsVcampaign_id\np1860\nI6005432366965\nsVfrequency_cap\np1861\nI0\nsVdaily_imps\np1862\nI0\nsVlifetime_budget\np1863\nI80000\nsVend_time\np1864\nV2012-07-04T20:00:00-0700\np1865\nsVcreated_time\np1866\nV2012-06-29T13:48:21-0700\np1867\nsVupdated_time\np1868\nV2012-09-21T13:09:33-0700\np1869\nsVcampaign_status\np1870\nI2\nsVid\np1871\nV6005432366965\np1872\nsVaccount_id\np1873\nI40156177\nsa(dp1874\nVname\np1875\nVCanon PowerShot: June_July 2012 | 20-Incredible-Panoramic-Shots-From-Around-The-Worl\np1876\nsVstart_time\np1877\nV2012-06-29T16:52:00-0700\np1878\nsVcampaign_id\np1879\nI6005432378765\nsVfrequency_cap\np1880\nI0\nsVdaily_imps\np1881\nI0\nsVlifetime_budget\np1882\nI80000\nsVend_time\np1883\nV2012-07-12T20:00:00-0700\np1884\nsVcreated_time\np1885\nV2012-06-29T13:55:34-0700\np1886\nsVupdated_time\np1887\nV2012-09-21T13:09:35-0700\np1888\nsVcampaign_status\np1889\nI2\nsVid\np1890\nV6005432378765\np1891\nsVaccount_id\np1892\nI40156177\nsa(dp1893\nVname\np1894\nVOld Navy: June 2012 | The-Best-Music-Videos-From-Boy-Bands-In-The-90S-6Clx\np1895\nsVstart_time\np1896\nV2012-06-30T07:49:26-0700\np1897\nsVcampaign_id\np1898\nI6005435556365\nsVfrequency_cap\np1899\nI0\nsVdaily_imps\np1900\nI0\nsVlifetime_budget\np1901\nI91000\nsVend_time\np1902\nV2012-06-30T20:30:00-0700\np1903\nsVcreated_time\np1904\nV2012-06-30T07:49:27-0700\np1905\nsVupdated_time\np1906\nV2012-09-21T13:09:37-0700\np1907\nsVcampaign_status\np1908\nI2\nsVid\np1909\nV6005435556365\np1910\nsVaccount_id\np1911\nI40156177\nsasVoffset\np1912\nV1100\np1913\ns.'
+p6
+sS'hash'
+p7
+S'41a4986cd31593c9899523de7193c8d58f7177fe'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcampaign.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py __cache /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py <lambda> /home/orozco/development/django/buzzfeed/pyfacebook/test/adcampaign_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfe'
+p10
+s.

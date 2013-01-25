@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I99
+sS'returnval'
+p5
+S'-prn1/s110x80/708170_6006844782365_57839_n.jpg\np11674\nsVcount_current_adgroups\np11675\nI0\nsVrun_status\np11676\nI1\nsVtype\np11677\nI1\nsVlink_url\np11678\nVhttp://www.buzzfeed.com/chevy/hottest-women-drivers\np11679\nsVview_tag\np11680\ng1825\nsa(dp11681\nValt_view_tags\np11682\n(lp11683\nsVbody\np11684\nVThey are really smashing up the prices at Al\xe2s Chevy Dealership, Transformers style! Unbeatable and unstoppable.\np11685\nsVimage_hash\np11686\nV2bf72126e9ab71fd84d8ec9be88cf320\np11687\nsVname\np11688\nVMascot Smashes Camaro-00\np11689\nsVtitle\np11690\nVMascot Smashes Camaro\np11691\nsVcreative_id\np11692\nV6002981512965\np11693\nsVpreview_url\np11694\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6002981512965\np11695\nsVid\np11696\nV6002981512965\np11697\nsVimage_url\np11698\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708181_6006844315365_19988_n.jpg\np11699\nsVcount_current_adgroups\np11700\nI0\nsVrun_status\np11701\nI1\nsVtype\np11702\nI1\nsVlink_url\np11703\nVhttp://www.buzzfeed.com/ht/chevy/never-mess-with-a-camaro/HFAA1\np11704\nsVview_tag\np11705\ng1825\nsa(dp11706\nValt_view_tags\np11707\n(lp11708\nsVbody\np11709\nVNothing pumps up the adrenaline like a good ol\xe2 movie car chase scene. Here are five of the best.\np11710\nsVimage_hash\np11711\nVa39fbfba29b6c6ea5d9f20e347e58098\np11712\nsVname\np11713\nV5 Explosive Car Chases-00\np11714\nsVtitle\np11715\nV5 Explosive Car Chases\np11716\nsVcreative_id\np11717\nV6002981514765\np11718\nsVpreview_url\np11719\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6002981514765\np11720\nsVid\np11721\nV6002981514765\np11722\nsVimage_url\np11723\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708199_6006845032965_58876_n.jpg\np11724\nsVcount_current_adgroups\np11725\nI0\nsVrun_status\np11726\nI1\nsVtype\np11727\nI1\nsVlink_url\np11728\nVhttp://www.buzzfeed.com/ht/chevy/5-explosive-car-chase-scenes/HFAA1\np11729\nsVview_tag\np11730\ng1825\nsa(dp11731\nValt_view_tags\np11732\n(lp11733\nsVbody\np11734\nVHot cars, hot driving, and very hot drivers. On multiple levels, these videos are something amazing to behold.\np11735\nsVimage_hash\np11736\nV79f45a5599c6ef275c45f05883e97f3e\np11737\nsVname\np11738\nVHottest Women Drivers-00\np11739\nsVtitle\np11740\nVHottest Women Drivers\np11741\nsVcreative_id\np11742\nV6002981519165\np11743\nsVpreview_url\np11744\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6002981519165\np11745\nsVid\np11746\nV6002981519165\np11747\nsVimage_url\np11748\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708170_6006844782365_57839_n.jpg\np11749\nsVcount_current_adgroups\np11750\nI0\nsVrun_status\np11751\nI1\nsVtype\np11752\nI1\nsVlink_url\np11753\nVhttp://www.buzzfeed.com/ht/chevy/hottest-women-drivers/HFAA1\np11754\nsVview_tag\np11755\ng1825\nsasVoffset\np11756\nV4000\np11757\ns.'
+p6
+sS'hash'
+p7
+S'6588af62295028c39f7b581390f0d8294223275e'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/no'
+p10
+s.

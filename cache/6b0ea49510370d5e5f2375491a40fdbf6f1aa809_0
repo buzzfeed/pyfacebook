@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5353\nsVlimit\np2\nI500\nsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=3000\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=4000\np8\nssVdata\np9\n(lp10\n(dp11\nVname\np12\nVPage Post Ad #6003993612365\np13\nsVauto_update\np14\nI1\nsVstory_id\np15\nI120759844700703\nsVcreative_id\np16\nV6003993612365\np17\nsVpreview_url\np18\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003993612365\np19\nsVobject_id\np20\nV21898300328\np21\nsVcount_current_adgroups\np22\nI0\nsVrun_status\np23\nI1\nsVtype\np24\nI27\nsVid\np25\nV6003993612365\np26\nsa(dp27\nVname\np28\nVPage Post Ad #6003997484765\np29\nsVauto_update\np30\nI1\nsVstory_id\np31\nI197136727029845\nsVcreative_id\np32\nV6003997484765\np33\nsVpreview_url\np34\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003997484765\np35\nsVobject_id\np36\nV21898300328\np37\nsVcount_current_adgroups\np38\nI0\nsVrun_status\np39\nI1\nsVtype\np40\nI27\nsVid\np41\nV6003997484765\np42\nsa(dp43\nVname\np44\nVPage Post Ad #6003997646965\np45\nsVauto_update\np46\nI1\nsVstory_id\np47\nI287955517891375\nsVcreative_id\np48\nV6003997646965\np49\nsVpreview_url\np50\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003997646965\np51\nsVobject_id\np52\nV21898300328\np53\nsVcount_current_adgroups\np54\nI0\nsVrun_status\np55\nI1\nsVtype\np56\nI27\nsVid\np57\nV6003997646965\np58\nsa(dp59\nVname\np60\nVPage Post Ad #6003998715165\np61\nsVauto_update\np62\nI1\nsVstory_id\np63\nI304555729557368\nsVcreative_id\np64\nV6003998715165\np65\nsVpreview_url\np66\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003998715165\np67\nsVobject_id\np68\nV21898300328\np69\nsVcount_current_adgroups\np70\nI0\nsVrun_status\np71\nI1\nsVtype\np72\nI27\nsVid\np73\nV6003998715165\np74\nsa(dp75\nVname\np76\nVPage Post Ad #6004002207565\np77\nsVauto_update\np78\nI1\nsVstory_id\np79\nI253982281317654\nsVcreative_id\np80\nV6004002207565\np81\nsVpreview_url\np82\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6004002207565\np83\nsVobject_id\np84\nV21898300328\np85\nsVcount_current_adgroups\np86\nI0\nsVrun_status\np87\nI1\nsVtype\np88\nI27\nsVid\np89\nV6004002207565\np90\nsa(dp91\nVname\np92\nVPage Post Ad #6004002605165\np93\nsVauto_update\np94\nI1\nsVstory_id\np95\nI180532168700352\nsVcreative_id\np96\nV6004002605165\np97\nsVpreview_url\np98\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6004002605165\np99\nsVobject_id\np100\nV21898300328\np101\nsVcount_current_adgroups\np102\nI0\nsVrun_status\np103\nI1\nsVtype\np104\nI27\nsVid\np105\nV6004002605165\np106\nsa(dp107\nVname\np108\nVPage Post Ad #6004006213765\np109\nsVauto_update\np110\nI1\nsVstory_id\np111\nI184688294949659\nsVcreative_id\np112\nV6004006213765\np113\nsVpreview_url\np114\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6004006213765\np115\nsVobject_id\np116\nV21898300328\np117\nsVcount_current_adgroups\np118\nI0\nsVrun_status\np119\nI1\nsVtype\np120\nI27\nsVid\np121\nV6004006213765\np122\nsa(dp123\nVname\np124\nVPage Post Ad #6004009762365\np125\nsVauto_update\np126\nI1\nsVstory_id\np127\nI173680969392262\nsVcreative_id\np128\nV6004009762365\np129\nsVpreview_url\np130\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6004009762365\np131\nsVobject_id\np132\nV21898300328\np133\nsVcount_current_adgroups\np134\nI0\nsVrun_status\np135\nI1\nsVtype\np136\nI27\nsVid\np137\nV6004009762365\np138\nsa(dp139\nVname\np140\nVPage Post Ad #6004012939765\np141\nsVauto_update\np142\nI1\nsVstory_id\np143\nI259841350735448\nsVcreative_id\np144\nV6004012939765\np145\nsVpreview_url\np146\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6004012939765\np147\nsVobject_id\np148\nV21898300328\np149\nsVcount_current_adgroups\np150\nI0\nsVrun_status\np151\nI1\nsVtype\np152\nI27\nsVid\np153\nV6004012939765\np154\nsa(dp155\nVname\np156\nVPage Post Ad #6004013452965\np157\nsVauto_update\np158\nI1\nsVstory_id\np159\nI218916828181831\nsVcreative_id\np160\nV6004013452965\np161\nsVpreview_url\np162\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6004013452965\np163\nsVobject_id\np164\nV2189'
+p8
+sS'hash'
+p9
+S'6b0ea49510370d5e5f2375491a40fdbf6f1aa809'
+p10
+sS'stack'
+p11
+S''
+s.

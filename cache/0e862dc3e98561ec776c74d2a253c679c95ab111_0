@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'40156177'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'find_by_adaccount_id'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((lp0\nccopy_reg\n_reconstructor\np1\n(cpyfacebook.models.adcampaign\nAdCampaign\np2\nc__builtin__\nobject\np3\nNtp4\nRp5\n(dp6\nS'daily_budget'\np7\nNsS'start_time'\np8\nV2012-09-07T14:53:22-0700\np9\nsS'account_id'\np10\nI40156177\nsS'lifetime_budget'\np11\nI50000\nsS'end_time'\np12\nV2012-09-30T00:00:00-0700\np13\nsS'campaign_status'\np14\nI1\nsS'id'\np15\nV6005784330365\np16\nsS'name'\np17\nVGE: Nostalgia: Sept_2012 | Famous-Geeks-Hanging-Out-In-The-1900S-6Ieg\np18\nsbag1\n(g2\ng3\nNtp19\nRp20\n(dp21\ng7\nNsg8\nV2012-09-07T14:54:30-0700\np22\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np23\nsg14\nI1\nsg15\nV6005784334165\np24\nsg17\nVGE: Nostalgia: Sept_2012 | Timeless-Ge-Ads-Through-The-Years-6Ieg\np25\nsbag1\n(g2\ng3\nNtp26\nRp27\n(dp28\ng7\nI40000\nsg8\nV2012-09-10T11:30:00-0700\np29\nsg10\nI40156177\nsg11\nNsg12\nV2012-10-03T23:57:00-0700\np30\nsg14\nI1\nsg15\nV6005798478365\np31\nsg17\nVUniqlo Lucky Cube: Sept-Oct_2012 | The-Best-Gifs-Of-Maru-The-Internets-Favorite-Cat\np32\nsbag1\n(g2\ng3\nNtp33\nRp34\n(dp35\ng7\nNsg8\nV2012-09-11T07:30:57-0700\np36\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-10-22T00:00:00-0700\np37\nsg14\nI1\nsg15\nV6005801290565\np38\nsg17\nVMSFT: IE9 BYLTH: Sept-Oct_2012 | The-13-Most-Common-Misconceptions\np39\nsbag1\n(g2\ng3\nNtp40\nRp41\n(dp42\ng7\nNsg8\nV2012-09-11T07:32:38-0700\np43\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-10-22T00:00:00-0700\np44\nsg14\nI1\nsg15\nV6005801296165\np45\nsg17\nVMSFT: IE9 BYLTH: Sept-Oct_2012 | The-10-Most-Epic-Turnarounds\np46\nsba(lp47\ntp48\n."
+p8
+sS'hash'
+p9
+S'0e862dc3e98561ec776c74d2a253c679c95ab111'
+p10
+sS'stack'
+p11
+S'find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py __cache /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py <lambda> /home/orozco/development/django/buzzfeed/pyfacebook/test/adcampaign_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py runTests /usr/lib/python2.7/unittest/main.py __init__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py __init__ /home/orozco/development/django/buzzfeed/bin/nosetests <module> '
+p12
+s.

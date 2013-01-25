@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI3239\nsVinclude_deleted\np2\nNsVpaging\np3\n(dp4\nVnext\np5\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=500\np6\nssVlimit\np7\nI500\nsVoffset\np8\nI0\nsVdata\np9\n(lp10\n(dp11\nVconversion_specs\np12\n(lp13\nsVupdated_time\np14\nV2012-09-21T19:55:19+0000\np15\nsVbid_type\np16\nI1\nsVname\np17\nVSailor Jerry Recipies!\np18\nsVtracking_pixel_ids\np19\n(lp20\nsVtargeting\np21\n(dp22\nVkeywords\np23\n(lp24\nVofficial sailor jerry\np25\naVsailor jerry\np26\naVsailor jerry rum\np27\naV#Sailor Jerry\np28\nasVage_max\np29\nI65\nsVcountries\np30\n(lp31\nVUS\np32\nasVbroad_age\np33\nI1\nsVage_min\np34\nI21\nssVbid_info\np35\n(dp36\nV1\np37\nV30\np38\nssVstart_time\np39\nNsVad_status\np40\nI2\nsVcampaign_id\np41\nI6003997528365\nsVlocations\np42\n(lp43\nI3\nasVcreated_time\np44\nV2011-11-08T16:07:59+0000\np45\nsVend_time\np46\nNsVadgroup_status\np47\nI8\nsVid\np48\nV6003997529365\np49\nsVad_id\np50\nI6003997529365\nsVimpression_control_map\np51\n(lp52\n(dp53\nVcontrol\np54\n(dp55\nVuser_impression_limit_period\np56\nI24\nsVuser_impression_limit\np57\nI3\nsVuser_impression_limit_period_unit\np58\nI0\nsVimpression_control_type\np59\nI2\nssVlocation\np60\nI3\nsasVcreative_ids\np61\n(lp62\nI6003997528965\nasVmax_bid\np63\nV30\np64\nsVadgroup_id\np65\nI6003997529365\nsVaccount_id\np66\nI40156177\nsa(dp67\nVconversion_specs\np68\n(lp69\nsVupdated_time\np70\nV2011-11-09T19:17:04+0000\np71\nsVbid_type\np72\nI1\nsVname\np73\nVSailor Jerry Recipies!\np74\nsVtracking_pixel_ids\np75\n(lp76\nsVtargeting\np77\n(dp78\nVkeywords\np79\n(lp80\nV#Baking\np81\naV#Recipe\np82\naV#Cooking\np83\nasVage_max\np84\nI65\nsVcountries\np85\n(lp86\nVUS\np87\nasVbroad_age\np88\nI1\nsVage_min\np89\nI21\nssVbid_info\np90\n(dp91\nV1\np92\nV80\np93\nssVstart_time\np94\nNsVad_status\np95\nI2\nsVcampaign_id\np96\nI6003997530765\nsVlocations\np97\n(lp98\nI3\nasVcreated_time\np99\nV2011-11-08T16:08:43+0000\np100\nsVend_time\np101\nNsVadgroup_status\np102\nI9\nsVid\np103\nV6003997531565\np104\nsVad_id\np105\nI6003997531565\nsVimpression_control_map\np106\n(lp107\n(dp108\nVcontrol\np109\n(dp110\nVuser_impression_limit_period\np111\nI24\nsVuser_impression_limit\np112\nI3\nsVuser_impression_limit_period_unit\np113\nI0\nsVimpression_control_type\np114\nI2\nssVlocation\np115\nI3\nsasVcreative_ids\np116\n(lp117\nI6003997528965\nasVmax_bid\np118\nV80\np119\nsVadgroup_id\np120\nI6003997531565\nsVaccount_id\np121\nI40156177\nsa(dp122\nVconversion_specs\np123\n(lp124\nsVupdated_time\np125\nV2012-09-21T19:55:21+0000\np126\nsVbid_type\np127\nI1\nsVname\np128\nVCoconut Water Revolution!\np129\nsVtracking_pixel_ids\np130\n(lp131\nsVtargeting\np132\n(dp133\nVkeywords\np134\n(lp135\nV#Vita Coco\np136\naV#Coconut\np137\naV#Zico\np138\naV#Coconut water\np139\nasVage_max\np140\nI65\nsVcountries\np141\n(lp142\nVUS\np143\nasVbroad_age\np144\nI1\nsVage_min\np145\nI18\nssVbid_info\np146\n(dp147\nV1\np148\nV80\np149\nssVstart_time\np150\nNsVad_status\np151\nI2\nsVcampaign_id\np152\nI6004001859165\nsVlocations\np153\n(lp154\nI3\nasVcreated_time\np155\nV2011-11-09T16:50:46+0000\np156\nsVend_time\np157\nNsVadgroup_status\np158\nI8\nsVid\np159\nV6004001860165\np160\nsVad_id\np161\nI6004001860165\nsVimpression_control_map\np162\n(lp163\n(dp164\nVcontrol\np165\n(dp166\nVuser_impression_limit_period\np167\nI24\nsVuser_impression_limit\np168\nI6\nsVuser_impression_limit_period_unit\np169\nI0\nsVimpression_control_type\np170\nI2\nssVlocation\np171\nI3\nsasVcreative_ids\np172\n(lp173\nI6004001859765\nasVmax_bid\np174\nV80\np175\nsVadgroup_id\np176\nI6004001860165\nsVaccount_id\np177\nI40156177\nsa(dp178\nVconversion_specs\np179\n(lp180\nsVupdated_time\np181\nV2012-09-21T19:55:27+0000\np182\nsVbid_type\np183\nI1\nsVname\np184\nVNew Bands Making It Big!\np185\nsVtracking_pixel_ids\np186\n(lp187\nsVtargeting\np188\n(dp189\nVkeywords\np190\n(lp191\nVhardcore punk\np192\naV#Rock and roll\np193\naVpunk\np194\naV#Punk rock\np195\naVbands\np196\naV#Rock music\np197\naV#Heavy metal music\np198\naV#Hard rock\np199\nasVage_max\np200\nI65\nsVcountries\np201\n(lp202\nVUS\np203\nasVbroad_age\np204\nI1\nsVage_min\np205\nI18\nssVbid_info\np206\n(dp207\nV1\np208\nV80\np209\nssVstart_time\np210\nNsVad_status\np211\nI2\nsVcampaign_id\np212\nI6004001891965\nsVlocations\np213\n(lp214\nI3\nasVcreated_time\np215\nV2011-11-09T17:25:21+0000\np216\nsVend_time\np217\nNsVadgroup_status\np218\nI8\n'
+p8
+sS'hash'
+p9
+S'fa4bd2690aff97297b1b4ced0636f91f581a5104'
+p10
+sS'stack'
+p11
+S''
+s.

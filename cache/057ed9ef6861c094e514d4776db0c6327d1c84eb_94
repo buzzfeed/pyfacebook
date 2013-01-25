@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I94
+sS'returnval'
+p5
+S'e-official-mark-wahlberg-aging-timeline-6gxf\np12438\nsVview_tag\np12439\ng36\nsa(dp12440\nValt_view_tags\np12441\n(lp12442\nsVbody\np12443\nVOne of the "10 Movie Plots That Would Completely Change If They Had High-Speed Internet"\np12444\nsVimage_hash\np12445\nVb22f89bf1b3b80ee35ee9e3adc670357\np12446\nsVname\np12447\nVLord of The Rings\np12448\nsVtitle\np12449\nVLord of The Rings\np12450\nsVcreative_id\np12451\nV6005389380365\np12452\nsVpreview_url\np12453\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005389380365\np12454\nsVid\np12455\nV6005389380365\np12456\nsVimage_url\np12457\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/701894_6006845123165_49893_n.jpg\np12458\nsVcount_current_adgroups\np12459\nI3\nsVrun_status\np12460\nI1\nsVtype\np12461\nI1\nsVlink_url\np12462\nVhttp://www.buzzfeed.com/h1/fbad/verizonfios/10-movie-plots-that-would-completely-change-if-the\np12463\nsVview_tag\np12464\ng36\nsa(dp12465\nValt_view_tags\np12466\n(lp12467\nsVbody\np12468\nVOne of the "10 Movie Plots That Would Completely Change If They Had High-Speed Internet"\np12469\nsVimage_hash\np12470\nV55cef2910f93f1824b1a8702e07416b1\np12471\nsVname\np12472\nVLord of The Rings-00\np12473\nsVtitle\np12474\nVThe Usual Suspects\np12475\nsVcreative_id\np12476\nV6005389389165\np12477\nsVpreview_url\np12478\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005389389165\np12479\nsVid\np12480\nV6005389389165\np12481\nsVimage_url\np12482\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708175_6006844585165_22836_n.jpg\np12483\nsVcount_current_adgroups\np12484\nI1\nsVrun_status\np12485\nI1\nsVtype\np12486\nI1\nsVlink_url\np12487\nVhttp://www.buzzfeed.com/h1/fbad/verizonfios/10-movie-plots-that-would-completely-change-if-the\np12488\nsVview_tag\np12489\ng36\nsasVoffset\np12490\nV1000\np12491\ns.'
+p6
+sS'hash'
+p7
+S'057ed9ef6861c094e514d4776db0c6327d1c84eb'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py'
+p10
+s.

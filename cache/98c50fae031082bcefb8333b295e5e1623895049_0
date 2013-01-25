@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5353\nsVlimit\np2\nI500\nsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=2500\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=3500\np8\nssVdata\np9\n(lp10\n(dp11\nValt_view_tags\np12\n(lp13\nsVbody\np14\nVCheck out the "Best Hockey Moments In Movies And TV" on BuzzFeed\np15\nsVimage_hash\np16\nVa42c55880baf3d0bcbcd4eae119691d9\np17\nsVname\np18\nVDucks Fly Together! \np19\nsVtitle\np20\nVDucks Fly Together! \np21\nsVcreative_id\np22\nV6005072679565\np23\nsVpreview_url\np24\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005072679565\np25\nsVid\np26\nV6005072679565\np27\nsVimage_url\np28\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708199_6006845035365_49276_n.jpg\np29\nsVcount_current_adgroups\np30\nI1\nsVrun_status\np31\nI1\nsVtype\np32\nI1\nsVlink_url\np33\nVhttp://www.buzzfeed.com/h1/fbad/nhl/the-best-hockey-moments-in-movies-and-tv\np34\nsVview_tag\np35\nV\np36\nsa(dp37\nValt_view_tags\np38\n(lp39\nsVbody\np40\nVCheck out "11 Ridiculous Ways Social Media Is A Total Ego Boost" only on BuzzFeed\np41\nsVimage_hash\np42\nV14c6645829e029a5124cbc749df5a259\np43\nsVname\np44\nVHey Super Mayors!\np45\nsVtitle\np46\nVHey Super Mayors!\np47\nsVcreative_id\np48\nV6005015449365\np49\nsVpreview_url\np50\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005015449365\np51\nsVid\np52\nV6005015449365\np53\nsVimage_url\np54\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708170_6006844181365_30543_n.jpg\np55\nsVcount_current_adgroups\np56\nI2\nsVrun_status\np57\nI1\nsVtype\np58\nI1\nsVlink_url\np59\nVhttp://www.buzzfeed.com/h1/fbad/microsofthotmail/10-ridiculous-ways-social-media-is-a-total-ego-boo-4iv0\np60\nsVview_tag\np61\ng36\nsa(dp62\nValt_view_tags\np63\n(lp64\nsVbody\np65\nVA newborn Chinese water deer can fit in the palm of your hand. See more at BuzzFeed.com\np66\nsVimage_hash\np67\nV5861c5c17787a2517d52c75830741fa9\np68\nsVname\np69\nVDid You Know?-00\np70\nsVtitle\np71\nVDid You Know?\np72\nsVcreative_id\np73\nV6005013688165\np74\nsVpreview_url\np75\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005013688165\np76\nsVid\np77\nV6005013688165\np78\nsVimage_url\np79\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708167_6006844600165_13663_n.jpg\np80\nsVcount_current_adgroups\np81\nI1\nsVrun_status\np82\nI1\nsVtype\np83\nI1\nsVlink_url\np84\nVhttp://www.buzzfeed.com/H1/FBAD/bbcamerica/amazing-animal-facts-you-probably-didnt-know\np85\nsVview_tag\np86\ng36\nsa(dp87\nValt_view_tags\np88\n(lp89\nsVbody\np90\nVMakes our List of "The 10 Most Badass Vehicles You Wish You Could Drive" See the Rest!\\u000a\np91\nsVimage_hash\np92\nVc345eeeb9f4273d5637285209ef3dc72\np93\nsVname\np94\nVHe-Man\'s Battle Cat\np95\nsVtitle\np96\nVHe-Man\'s Battle Cat\np97\nsVcreative_id\np98\nV6005013428365\np99\nsVpreview_url\np100\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005013428365\np101\nsVid\np102\nV6005013428365\np103\nsVimage_url\np104\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708205_6006845220565_35758_n.jpg\np105\nsVcount_current_adgroups\np106\nI1\nsVrun_status\np107\nI1\nsVtype\np108\nI1\nsVlink_url\np109\nVhttp://www.buzzfeed.com/H1/FBAD/bbcamerica/badass-vehicles-you-wish-you-could-drive\np110\nsVview_tag\np111\ng36\nsa(dp112\nValt_view_tags\np113\n(lp114\nsVbody\np115\nVMakes our List of "The 10 Most Badass Vehicles You Wish You Could Drive" See the Rest!\\u000a\np116\nsVimage_hash\np117\nV9eddd6fcab97d7207df7578b122b9de4\np118\nsVname\np119\nVBack 2 the Future DeLoren\np120\nsVtitle\np121\nVBack 2 the Future DeLoren\np122\nsVcreative_id\np123\nV6005013439965\np124\nsVpreview_url\np125\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005013439965\np126\nsVid\np127\nV6005013439965\np128\nsVimage_url\np129\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701899_6006844999765_54038_n.jpg\np130\nsVcount_current_adgroups\np131\nI0\nsVrun_status\np132\nI1\nsVtype\np133\nI1\nsVlink_url\np134\nVhttp://www.buzzfeed.com/H1/F'
+p8
+sS'hash'
+p9
+S'98c50fae031082bcefb8333b295e5e1623895049'
+p10
+sS'stack'
+p11
+S''
+s.

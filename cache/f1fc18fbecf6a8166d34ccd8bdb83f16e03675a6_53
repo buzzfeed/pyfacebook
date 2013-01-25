@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I53
+sS'returnval'
+p5
+S'Vname\np6613\nVWhat\'s Hidden in Vegas?-01\np6614\nsVtitle\np6615\nVWhat\'s Hidden in Vegas?\np6616\nsVcreative_id\np6617\nV6007316920565\np6618\nsVpreview_url\np6619\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007316920565\np6620\nsVid\np6621\nV6007316920565\np6622\nsVimage_url\np6623\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708176_6007190441765_47010_n.jpg\np6624\nsVcount_current_adgroups\np6625\nI1\nsVrun_status\np6626\nI1\nsVtype\np6627\nI1\nsVlink_url\np6628\nVhttp://www.buzzfeed.com/h1/fbad/vicepalladium/heres-whats-hidden-in-vegas-8etu\np6629\nsVview_tag\np6630\ng35\nsa(dp6631\nValt_view_tags\np6632\n(lp6633\nsVbody\np6634\nVWatch "Undercity: Las Vegas" - a documentary of sin city\'s subterranean tunnel system!\np6635\nsVimage_hash\np6636\nV9d0ea58ce0dfbebf76cbfd14522d7153\np6637\nsVname\np6638\nVWhat\'s Hidden in Vegas?-00\np6639\nsVtitle\np6640\nVHidden Secrets of Vegas\np6641\nsVcreative_id\np6642\nV6007190485965\np6643\nsVpreview_url\np6644\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007190485965\np6645\nsVid\np6646\nV6007190485965\np6647\nsVimage_url\np6648\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708205_6007190481365_35291_n.jpg\np6649\nsVcount_current_adgroups\np6650\nI1\nsVrun_status\np6651\nI1\nsVtype\np6652\nI1\nsVlink_url\np6653\nVhttp://www.buzzfeed.com/h1/fbad/vicepalladium/heres-whats-hidden-in-vegas-8etu\np6654\nsVview_tag\np6655\ng35\nsa(dp6656\nValt_view_tags\np6657\n(lp6658\nsVbody\np6659\nVWatch "Undercity: Las Vegas" - a documentary of sin city\'s subterranean tunnel system!\np6660\nsVimage_hash\np6661\nV151e98dc858e620cc5a2d43d26cb7814\np6662\nsVname\np6663\nVWhat\'s Hidden in Vegas?\np6664\nsVtitle\np6665\nVWhat\'s Hidden in Vegas?\np6666\nsVcreative_id\np6667\nV6007190443165\np6668\nsVpreview_url\np6669\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007190443165\np6670\nsVid\np6671\nV6007190443165\np6672\nsVimage_url\np6673\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708176_6007190441765_47010_n.jpg\np6674\nsVcount_current_adgroups\np6675\nI1\nsVrun_status\np6676\nI1\nsVtype\np6677\nI1\nsVlink_url\np6678\nVhttp://www.buzzfeed.com/h1/fbad/vicepalladium/heres-whats-hidden-in-vegas-8etu\np6679\nsVview_tag\np6680\ng35\nsa(dp6681\nVname\np6682\nVAd from a Page post #6,007,377,444,565\np6683\nsVauto_update\np6684\nI00\nsVurl_tags\np6685\ng35\nsVcreative_id\np6686\nV6007377444565\np6687\nsVcount_current_adgroups\np6688\nI1\nsVpreview_url\np6689\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007377444565\np6690\nsVobject_id\np6691\nV238205562866018\np6692\nsVaction_spec\np6693\nNsVstory_id\np6694\nV318345714936597\np6695\nsVrun_status\np6696\nI1\nsVtype\np6697\nI27\nsVid\np6698\nV6007377444565\np6699\nsVaction_t\np6700\nVBgABAQcIAAZQ3hhlCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAADAEKAAAAAAAAAFAAuAABIYijQSsVALkAAAAAAAAAZAC6AAB9pbb7ZTkCIwAAAAAAAAAIAGUAAAAAAAAAAQDDAAAAT1RSNB4BuwAAAAAAAABqAAoAAAAAia3QzAABAAEhiKNBKxUBtgAAAABQ3hhlAeQAASGIo0ErFQ0AGwYLAAAAAUADAAABVERvIHlvdSBrbm93IHdoYXQgIkplbmdhIiBtZWFucz8gT3IgaG93IGJpZyB0aGUgbGFyZ2VzdCBUd2lzdGVyIE1hdCB3YXM/IEZpbmQgdGhlIGFuc3dlcnMgaGVyZSEgaHR0cDovL2J6ZmQuaXQvVjlFd01aIG9vb29vIDEwIFdlaXJkIEJvYXJkIEdhbWUgRmFjdHMgWW91IFByb2JhYmx5IERpZG4ndCBLbm93IG9vb29vIEJvYXJkIGdhbWVzIGhhdmUgYnJvdWdodCBmcmllbmRzIGFuZCBmYW1pbHkgdG9nZXRoZXIgZm9yIGRlY2FkZXMuIEJ1dCBzb21lIG9mIHRoZW0gaGF2ZSBhIHByZXR0eSBpbnRlcmVzdGluZyBoaXN0b3J5LiBCcmluZyB0aGUgZnVuIGhvbWUgd2l0aCBIYXNicm8gR2FtZSBOaWdodC4KABwAASGIo0ErFQA=\np6701\nsa(dp6702\nValt_view_tags\np6703\n(lp6704\nsVbody\np6705\nVDid you know the film was 5+ hrs long? See more of the Best Epically Long Movies!\np6706\nsVimage_hash\np6707\nVec92859021d872a91905ee8ec3789ec5\np6708\nsVname\np6709\nVLes Miserables-00\np6710\nsVtitle\np6711\nVCleopatra\np6712\nsVcreative_id\np6713\nV6007302870365\np6714\nsVpreview_url\np6715\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007302870365\np6716\nsVid\np6717\nV6007302870365\np6718\nsVimage_url\np6719\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-snc7/s110x80/701902_6007302785165_15549_n.jpg\np6720\nsVcount_current_adgroups\np6721\nI1\nsVrun_status\np6722\nI1\nsVtype\np6723\nI1\nsVlink_url\np6724\nVhttp://ad.doubleclick.net/clk;265908340;91674621;m;pc=[TPAS_ID]?http://www.buzzfeed.com/h1/fbad/motorola/the-10-best-epical'
+p6
+sS'hash'
+p7
+S'f1fc18fbecf6a8166d34ccd8bdb83f16e03675a6'
+p8
+sS'stack'
+p9
+S''
+s.

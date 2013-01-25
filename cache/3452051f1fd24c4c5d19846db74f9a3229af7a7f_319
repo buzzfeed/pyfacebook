@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I319
+sS'returnval'
+p5
+S'info\np62182\n(dp62183\nV1\np62184\nV75\np62185\nssVstart_time\np62186\nNsVad_status\np62187\nI2\nsVcampaign_id\np62188\nI6005323986165\nsVlocations\np62189\n(lp62190\nI3\nasVcreated_time\np62191\nV2012-06-21T15:12:40+0000\np62192\nsVend_time\np62193\nV2012-06-26T03:00:00+0000\np62194\nsVadgroup_status\np62195\nI9\nsVid\np62196\nV6005337676365\np62197\nsVad_id\np62198\nI6005337676365\nsVimpression_control_map\np62199\n(lp62200\n(dp62201\nVcontrol\np62202\n(dp62203\nVuser_impression_limit_period\np62204\nI24\nsVuser_impression_limit\np62205\nI3\nsVuser_impression_limit_period_unit\np62206\nI0\nsVimpression_control_type\np62207\nI2\nssVlocation\np62208\nI3\nsasVcreative_ids\np62209\n(lp62210\nI6005337675965\nasVmax_bid\np62211\nV75\np62212\nsVadgroup_id\np62213\nI6005337676365\nsVaccount_id\np62214\nI40156177\nsa(dp62215\nVconversion_specs\np62216\n(lp62217\nsVupdated_time\np62218\nV2012-06-25T15:51:23+0000\np62219\nsVbid_type\np62220\nI1\nsVname\np62221\nVIntergalactic civil war?\np62222\nsVtracking_pixel_ids\np62223\n(lp62224\nsVtargeting\np62225\n(dp62226\nVkeywords\np62227\n(lp62228\nV#Jason Lee (actor)\np62229\naV#Dogma (film)\np62230\naV#Movies\np62231\naV#Jay and Silent Bob Strike Back\np62232\naV#Kevin Smith\np62233\naV#Clerks\np62234\naV#Jason Mewes\np62235\naVdogma\np62236\naV#Jay and Silent Bob\np62237\naVmall rats\np62238\naV#Clerks II\np62239\naVjay silent bob strike back\np62240\naV#Mallrats\np62241\naV#Chasing Amy\np62242\nasVage_max\np62243\nI65\nsVcountries\np62244\n(lp62245\nVUS\np62246\nasVbroad_age\np62247\nI1\nsVage_min\np62248\nI15\nssVbid_info\np62249\n(dp62250\nV1\np62251\nV66\np62252\nssVstart_time\np62253\nNsVad_status\np62254\nI2\nsVcampaign_id\np62255\nI6005323986165\nsVlocations\np62256\n(lp62257\nI3\nasVcreated_time\np62258\nV2012-06-24T15:08:52+0000\np62259\nsVend_time\np62260\nV2012-06-26T03:00:00+0000\np62261\nsVadgroup_status\np62262\nI9\nsVid\np62263\nV6005368237965\np62264\nsVad_id\np62265\nI6005368237965\nsVimpression_control_map\np62266\n(lp62267\n(dp62268\nVcontrol\np62269\n(dp62270\nVuser_impression_limit_period\np62271\nI24\nsVuser_impression_limit\np62272\nI3\nsVuser_impression_limit_period_unit\np62273\nI0\nsVimpression_control_type\np62274\nI2\nssVlocation\np62275\nI3\nsasVcreative_ids\np62276\n(lp62277\nI6005368237565\nasVmax_bid\np62278\nV66\np62279\nsVadgroup_id\np62280\nI6005368237965\nsVaccount_id\np62281\nI40156177\nsas.'
+p6
+sS'hash'
+p7
+S'3452051f1fd24c4c5d19846db74f9a3229af7a7f'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adgroup.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adgroup_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/o'
+p10
+s.

@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I94
+sS'returnval'
+p5
+S'AA1\np12417\nsVview_tag\np12418\ng36\nsa(dp12419\nValt_view_tags\np12420\n(lp12421\nsVbody\np12422\nVSometimes a city isn39t where you live. It lives in you\np12423\nsVimage_hash\np12424\nV24b80547dbeeace06789b0107e83fae2\np12425\nsVname\np12426\nVThe Oscar Winning Boston\np12427\nsVtitle\np12428\nVThe Oscar Winning Boston\np12429\nsVcreative_id\np12430\nV6003088191765\np12431\nsVpreview_url\np12432\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003088191765\np12433\nsVid\np12434\nV6003088191765\np12435\nsVimage_url\np12436\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701895_6006844280165_38929_n.jpg\np12437\nsVcount_current_adgroups\np12438\nI0\nsVrun_status\np12439\nI1\nsVtype\np12440\nI1\nsVlink_url\np12441\nVhttp://buzzfeed.com/ht/awesomer/the-oscar-winning-boston-movie/HFAA1\np12442\nsVview_tag\np12443\ng36\nsa(dp12444\nValt_view_tags\np12445\n(lp12446\nsVbody\np12447\nVAmericas best and brightest weigh in on the Japanese tsunami over Facebook.\np12448\nsVimage_hash\np12449\nVbad7d305afd563c119b92c9ff493d0ce\np12450\nsVname\np12451\nVFacebook Weighs In\np12452\nsVtitle\np12453\nVFacebook Weighs In\np12454\nsVcreative_id\np12455\nV6003086903165\np12456\nsVpreview_url\np12457\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086903165\np12458\nsVid\np12459\nV6003086903165\np12460\nsVimage_url\np12461\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/701889_6006845168365_1362_n.jpg\np12462\nsVcount_current_adgroups\np12463\nI0\nsVrun_status\np12464\nI1\nsVtype\np12465\nI1\nsVlink_url\np12466\nVhttp://buzzfeed.com/ht/awesomer/idiots-of-facebook-weigh-in-on-the-japanese-tsunam/HFAA1\np12467\nsVview_tag\np12468\ng36\nsa(dp12469\nValt_view_tags\np12470\n(lp12471\nsVbody\np12472\nVAlex Blagg sits down with Nicolas Cage.\np12473\nsVimage_hash\np12474\nV8c58957637893ffa9a05f6438317ac12\np12475\nsVname\np12476\nVCage On Cage\np12477\nsVtitle\np12478\nVCage On Cage\np12479\nsVcreative_id\np12480\nV6003086908165\np12481\nsVpreview_url\np12482\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086908165\np12483\nsVid\np12484\nV6003086908165\np12485\nsVimage_url\np12486\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708171_6006844889165_52272_n.jpg\np12487\nsVcount_current_adgroups\np12488\nI0\nsVrun_status\np12489\nI1\nsVtype\np12490\nI1\nsVlink_url\np12491\nVhttp://buzzfeed.com/ht/awesomer/nicolas-cage-on-nicolas-cage/HFAA1\np12492\nsVview_tag\np12493\ng36\nsa(dp12494\nValt_view_tags\np12495\n(lp12496\nsVbody\np12497\nVUK Naked Men has won the Peoplespan stylefontweight boldspans Choice Award at the Toronto International Film Festival.\np12498\nsVimage_hash\np12499\nV9334c98df4693176c56e4a3274e7b2db\np12500\nsVname\np12501\nVThe Kings Speech \np12502\nsVtitle\np12503\nVThe Kings Speech \np12504\nsVcreative_id\np12505\nV6003086905565\np12506\nsVpreview_url\np12507\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086905565\np12508\nsVid\np12509\nV6003086905565\np12510\nsVimage_url\np12511\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708176_6006844928165_18358_n.jpg\np12512\nsVcount_current_adgroups\np12513\nI0\nsVrun_status\np12514\nI1\nsVtype\np12515\nI1\nsVlink_url\np12516\nVhttp://buzzfeed.com/ht/awesomer/the-kings-speech-was-filmed-on-a-gay-porn-set/HFAA1\np12517\nsVview_tag\np12518\ng36\nsasVoffset\np12519\nV4500\np12520\ns.'
+p6
+sS'hash'
+p7
+S'cce87fa25861c321fdcedcb98e9d355da4042ca9'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages'
+p10
+s.

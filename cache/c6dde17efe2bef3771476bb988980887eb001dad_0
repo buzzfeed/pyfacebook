@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"(dp0\nVcount\np1\nI3239\nsVinclude_deleted\np2\nNsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=1000&offset=0\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=4239&offset=2000\np8\nssVlimit\np9\nI1000\nsVoffset\np10\nV1000\np11\nsVdata\np12\n(lp13\n(dp14\nVconversion_specs\np15\n(lp16\nsVupdated_time\np17\nV2012-09-21T20:08:49+0000\np18\nsVbid_type\np19\nI1\nsVname\np20\nVPuppy Targeted\np21\nsVtracking_pixel_ids\np22\n(lp23\nsVtargeting\np24\n(dp25\nVkeywords\np26\n(lp27\nV#Puppy Bowl\np28\naV#Pets\np29\naV#Cats & Dogs\np30\naV#Puppy love\np31\naV#Dog\np32\naV#Puppy\np33\nasVage_max\np34\nI65\nsVcountries\np35\n(lp36\nVUS\np37\nasVbroad_age\np38\nI1\nsVage_min\np39\nI13\nssVbid_info\np40\n(dp41\nV1\np42\nV65\np43\nssVstart_time\np44\nNsVad_status\np45\nI2\nsVcampaign_id\np46\nI6005324759765\nsVlocations\np47\n(lp48\nI3\nasVcreated_time\np49\nV2012-06-18T19:27:02+0000\np50\nsVend_time\np51\nNsVadgroup_status\np52\nI8\nsVid\np53\nV6005324760765\np54\nsVad_id\np55\nI6005324760765\nsVimpression_control_map\np56\n(lp57\n(dp58\nVcontrol\np59\n(dp60\nVuser_impression_limit_period\np61\nI24\nsVuser_impression_limit\np62\nI6\nsVuser_impression_limit_period_unit\np63\nI0\nsVimpression_control_type\np64\nI2\nssVlocation\np65\nI3\nsasVcreative_ids\np66\n(lp67\nI6005324760365\nasVmax_bid\np68\nV65\np69\nsVadgroup_id\np70\nI6005324760765\nsVaccount_id\np71\nI40156177\nsa(dp72\nVconversion_specs\np73\n(lp74\nsVupdated_time\np75\nV2012-09-21T20:08:49+0000\np76\nsVbid_type\np77\nI1\nsVname\np78\nVBand Targeted\np79\nsVtracking_pixel_ids\np80\n(lp81\nsVtargeting\np82\n(dp83\nVkeywords\np84\n(lp85\nV#AC/DC\np86\naV#Godsmack\np87\naV#Green Day\np88\naV#Staind\np89\naV#Metallica\np90\naV#Lifehouse (band)\np91\naV#Nickelback\np92\naV#Creed (band)\np93\naV#Bon Jovi\np94\naV#3 Doors Down\np95\naV#Disturbed (band)\np96\nasVage_max\np97\nI65\nsVcountries\np98\n(lp99\nVUS\np100\nasVbroad_age\np101\nI1\nsVage_min\np102\nI13\nssVbid_info\np103\n(dp104\nV1\np105\nV65\np106\nssVstart_time\np107\nNsVad_status\np108\nI2\nsVcampaign_id\np109\nI6005324759765\nsVlocations\np110\n(lp111\nI3\nasVcreated_time\np112\nV2012-06-18T19:29:19+0000\np113\nsVend_time\np114\nNsVadgroup_status\np115\nI8\nsVid\np116\nV6005324764365\np117\nsVad_id\np118\nI6005324764365\nsVimpression_control_map\np119\n(lp120\n(dp121\nVcontrol\np122\n(dp123\nVuser_impression_limit_period\np124\nI24\nsVuser_impression_limit\np125\nI6\nsVuser_impression_limit_period_unit\np126\nI0\nsVimpression_control_type\np127\nI2\nssVlocation\np128\nI3\nsasVcreative_ids\np129\n(lp130\nI6005324763965\nasVmax_bid\np131\nV65\np132\nsVadgroup_id\np133\nI6005324764365\nsVaccount_id\np134\nI40156177\nsa(dp135\nVconversion_specs\np136\n(lp137\nsVupdated_time\np138\nV2012-09-21T20:08:50+0000\np139\nsVbid_type\np140\nI1\nsVname\np141\nVShrimp Pimp - LA Targeted\np142\nsVtracking_pixel_ids\np143\n(lp144\nsVtargeting\np145\n(dp146\nVcountries\np147\n(lp148\nVUS\np149\nasVbroad_age\np150\nI1\nsVradius\np151\nV25\np152\nsVage_min\np153\nI13\nsVage_max\np154\nI65\nsVcities\np155\n(lp156\n(dp157\nVid\np158\nV2420379\np159\nsVname\np160\nVLos Angeles, CA\np161\nsassVbid_info\np162\n(dp163\nV1\np164\nV100\np165\nssVstart_time\np166\nNsVad_status\np167\nI2\nsVcampaign_id\np168\nI6005324784965\nsVlocations\np169\n(lp170\nI3\nasVcreated_time\np171\nV2012-06-18T19:39:01+0000\np172\nsVend_time\np173\nV2012-06-22T03:30:00+0000\np174\nsVadgroup_status\np175\nI8\nsVid\np176\nV6005324785965\np177\nsVad_id\np178\nI6005324785965\nsVimpression_control_map\np179\n(lp180\n(dp181\nVcontrol\np182\n(dp183\nVuser_impression_limit_period\np184\nI24\nsVuser_impression_limit\np185\nI6\nsVuser_impression_limit_period_unit\np186\nI0\nsVimpression_control_type\np187\nI2\nssVlocation\np188\nI3\nsasVcreative_ids\np189\n(lp190\nI6005324785565\nasVmax_bid\np191\nV100\np192\nsVadgroup_id\np193\nI6005324785965\nsVaccount_id\np194\nI40156177\nsa(dp195\nVconversion_specs\np196\n(lp197\nsVupdated_time\np198\nV2012-09-21T20:08:50+0000\np199\nsVbid_type\np200\nI1\nsVname\np201\nVFranks 'N' Dawgs, Chicago\np202\nsVtracking_pixel_ids\np203\n(lp204\nsVtargeting\np205\n(dp206\nVcountries\np207\n(lp208\nVUS\np209\nasVbroad_age\np210\nI1\nsV"
+p8
+sS'hash'
+p9
+S'c6dde17efe2bef3771476bb988980887eb001dad'
+p10
+sS'stack'
+p11
+S''
+s.

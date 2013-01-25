@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I13
+sS'returnval'
+p5
+S''
+sS'hash'
+p6
+S'de5c941ecbbc2132bba07b6472af58125e1bb14c'
+p7
+sS'stack'
+p8
+S'es/nose/core.py __init__ /home/orozco/development/django/buzzfeed/bin/nosetests <module> '
+p9
+s.

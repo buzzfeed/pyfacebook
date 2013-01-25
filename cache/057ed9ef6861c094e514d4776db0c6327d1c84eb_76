@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I76
+sS'returnval'
+p5
+S'eview_url\np10136\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005627445965\np10137\nsVid\np10138\nV6005627445965\np10139\nsVimage_url\np10140\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708183_6006844704765_31699_n.jpg\np10141\nsVcount_current_adgroups\np10142\nI1\nsVrun_status\np10143\nI1\nsVtype\np10144\nI1\nsVlink_url\np10145\nVhttp://www.buzzfeed.com/h1/fbad/mcdonalds/11-unforgettable-olympic-moments\np10146\nsVview_tag\np10147\ng36\nsa(dp10148\nValt_view_tags\np10149\n(lp10150\nsVbody\np10151\nVCheck out these "11 Unforgettable Olympic Moments" on BuzzFeed. #Olympics\np10152\nsVimage_hash\np10153\nV6c3dac19346662f9459864ceafab231a\np10154\nsVname\np10155\nVThe Best Olympic Moments!-01-00\np10156\nsVtitle\np10157\nVBest Olympic Moments!\np10158\nsVcreative_id\np10159\nV6005627469965\np10160\nsVpreview_url\np10161\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005627469965\np10162\nsVid\np10163\nV6005627469965\np10164\nsVimage_url\np10165\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708183_6006844704765_31699_n.jpg\np10166\nsVcount_current_adgroups\np10167\nI1\nsVrun_status\np10168\nI1\nsVtype\np10169\nI1\nsVlink_url\np10170\nVhttp://www.buzzfeed.com/h1/fbad/mcdonalds/11-unforgettable-olympic-moments\np10171\nsVview_tag\np10172\ng36\nsa(dp10173\nVrelated_fan_page\np10174\nI1\nsVname\np10175\nVSponsored story #6005574321365\np10176\nsVurl_tags\np10177\nVfb_ref=HFBSS1\np10178\nsVcreative_id\np10179\nV6005574321365\np10180\nsVpreview_url\np10181\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005574321365\np10182\nsVaction_spec\np10183\n(lp10184\n(dp10185\nVpost.object\np10186\nVhttp://www.buzzfeed.com/mjs538/why-the-world-might-actually-end-in-2012\np10187\nsVaction.type\np10188\nVpost\np10189\nsasVcluster_id\np10190\nI6005574321165\nsVcount_current_adgroups\np10191\nI1\nsVrun_status\np10192\nI1\nsVtype\np10193\nI25\nsVid\np10194\nV6005574321365\np10195\nsa(dp10196\nValt_view_tags\np10197\n(lp10198\nsVbody\np10199\nVSteve and Gwyneth made our list of "The Top 5 Funniest Twitter Feuds." Check out the rest.\np10200\nsVimage_hash\np10201\nVd5ee5cb812123bcf2715db75c5aac680\np10202\nsVname\np10203\nVMartin vs. Paltrow\np10204\nsVtitle\np10205\nVMartin vs. Paltrow\np10206\nsVcreative_id\np10207\nV6005568204965\np10208\nsVpreview_url\np10209\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005568204965\np10210\nsVid\np10211\nV6005568204965\np10212\nsVimage_url\np10213\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708164_6006845326965_50660_n.jpg\np10214\nsVcount_current_adgroups\np10215\nI1\nsVrun_status\np10216\nI1\nsVtype\np10217\nI1\nsVlink_url\np10218\nVhttp://ad.doubleclick.net/click;h=v2|3F93|0|0|%2a|s;260122121;0-0;0;83711970;31-1|1;49332344|49327572|1;;;pc=[TPAS_ID]%3fhttp://www.buzzfeed.com/h1/fbad/randomactsoffusion/the-top-5-funniest-twitter-feuds\np10219\nsVview_tag\np10220\ng36\nsa(dp10221\nVname\np10222\nVAd from a Page post #6005567325965\np10223\nsVauto_update\np10224\nI00\nsVstory_id\np10225\nV486767151351283\np10226\nsVcreative_id\np10227\nV6005567325965\np10228\nsVaction_t\np10229\nVBgABAQcIAAZQErb/CgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAADQEKAAAAAAAAAFAAuAABurZPJQXzALkAAAAAAAAAZAC6ACQQRSLZnlUCIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAcoAAbq2TyUF8wEeAAAAAPryo1QAAQABurZPJQXzAbYAAAAAUBK2/wHkAAG6tk8lBfMNABsGCwAAAAFAAwAAAThBd2Vzb21lIHdheXMgdG8gZ2V0IHJlYWR5IGZvciB0b25pZ2h0ISAjT2x5bXBpY3Mgb29vb28gQXdlc29tZWx5IENyZWF0aXZlIFdheXMgT2YgU2hvd2luZyBZb3VyIE9seW1waWMgU3Bpcml0IG9vb29vIFdoeSBub3Qgc2hvdyB5b3VyIHN1cHBvcnQgZm9yIFRlYW0gVVNBIGF0IHRoZSBPbHltcGljcyBieSB3aW5uaW5nIHNvbWUgZ29sZCBvZiB5b3VyIG93bj8gV2hlbiB5b3UgcHVyY2hhc2Ugc2VsZWN0IGl0ZW1zIGZyb20gTWNEb25hbGTigJlzIG5ldyBGYXZvcml0ZXMgVW5kZXIgNDAwIGNhbG9yaWVzIG1lbnUgLCB5b3UgY2FuIHdpbiBwcmkuLi4KABwAAbq2TyUF8wA=\np10230\nsVpreview_url\np10231\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005567325965\np10232\nsVobject_id\np10233\nV238205562866018\np10234\nsVaction_spec\np10235\nNsVcover_photo_id\np10236\nNsVcount_current_adgroups\np10237\nI2\nsVrun_status\np10238\nI1\nsVtype\np10239\nI27\nsVid\np10240\nV6005567325965\np10241\nsVlink_type\np10242\nNsa(dp10243\nValt_view_tags\np10244\n(lp10245\nsVbody\np10246\nVIt\'s one of the "10 Burgers Made Better With One Secret Ingredient."  Get '
+p6
+sS'hash'
+p7
+S'057ed9ef6861c094e514d4776db0c6327d1c84eb'
+p8
+sS'stack'
+p9
+S''
+s.

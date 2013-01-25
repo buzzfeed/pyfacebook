@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I2
+sS'returnval'
+p5
+S'asVage_max\np433\nI65\nssVbid_info\np434\n(dp435\nV1\np436\nV65\np437\nssVstart_time\np438\nNsVad_status\np439\nI2\nsVcampaign_id\np440\nI6004005802165\nsVlocations\np441\n(lp442\nI3\nasVcreated_time\np443\nV2011-11-10T19:43:26+0000\np444\nsVend_time\np445\nNsVadgroup_status\np446\nI8\nsVid\np447\nV6004005803165\np448\nsVad_id\np449\nI6004005803165\nsVimpression_control_map\np450\n(lp451\n(dp452\nVcontrol\np453\n(dp454\nVuser_impression_limit_period\np455\nI24\nsVuser_impression_limit\np456\nI6\nsVuser_impression_limit_period_unit\np457\nI0\nsVimpression_control_type\np458\nI2\nssVlocation\np459\nI3\nsasVcreative_ids\np460\n(lp461\nI6004005802765\nasVmax_bid\np462\nV65\np463\nsVadgroup_id\np464\nI6004005803165\nsVaccount_id\np465\nI40156177\nsa(dp466\nVconversion_specs\np467\n(lp468\n(dp469\nVpage\np470\nI238205562866018\nsVaction.type\np471\nVpage_story\np472\nsasVupdated_time\np473\nV2012-09-21T19:55:36+0000\np474\nsVbid_type\np475\nI1\nsVname\np476\nVBuzzFeed Partner\np477\nsVtracking_pixel_ids\np478\n(lp479\nsVtargeting\np480\n(dp481\nVcountries\np482\n(lp483\nVUS\np484\nasVbroad_age\np485\nI1\nsVexcluded_connections\np486\n(lp487\n(dp488\nVid\np489\nV238205562866018\np490\nsVname\np491\nVBuzzFeed Partner\np492\nsasVage_min\np493\nI18\nsVkeywords\np494\n(lp495\nV#Florida Gators football\np496\naV#Miami Hurricanes football\np497\naV#LSU Tigers football\np498\naV#Texas Longhorns football\np499\naV#Duke Blue Devils football\np500\naV#Iowa Hawkeyes football\np501\naV#Oklahoma Sooners football\np502\naV#Michigan Wolverines football\np503\naV#Arkansas Razorbacks football\np504\naV#Missouri Tigers football\np505\naV#Georgia Bulldogs football\np506\naV#Indiana Hoosiers football\np507\naV#Notre Dame Fighting Irish football\np508\naV#Boise State Broncos football\np509\naV#Auburn Tigers football\np510\naV#Wisconsin Badgers football\np511\naV#Connecticut Huskies football\np512\naV#Arizona State Sun Devils football\np513\naV#Michigan State Spartans football\np514\naV#Alabama Crimson Tide football\np515\naV#Ohio State Buckeyes football\np516\naV#Rose Bowl Game\np517\naV#Tennessee Volunteers football\np518\nasVage_max\np519\nI65\nssVbid_info\np520\n(dp521\nV1\np522\nV65\np523\nssVstart_time\np524\nNsVad_status\np525\nI2\nsVcampaign_id\np526\nI6004005806365\nsVlocations\np527\n(lp528\nI3\nasVcreated_time\np529\nV2011-11-10T19:49:15+0000\np530\nsVend_time\np531\nNsVadgroup_status\np532\nI8\nsVid\np533\nV6004005807165\np534\nsVad_id\np535\nI6004005807165\nsVimpression_control_map\np536\n(lp537\n(dp538\nVcontrol\np539\n(dp540\nVuser_impression_limit_period\np541\nI24\nsVuser_impression_limit\np542\nI6\nsVuser_impression_limit_period_unit\np543\nI0\nsVimpression_control_type\np544\nI2\nssVlocation\np545\nI3\nsasVcreative_ids\np546\n(lp547\nI6004005802765\nasVmax_bid\np548\nV65\np549\nsVadgroup_id\np550\nI6004005807165\nsVaccount_id\np551\nI40156177\nsa(dp552\nVconversion_specs\np553\n(lp554\nsVupdated_time\np555\nV2012-09-21T19:55:38+0000\np556\nsVbid_type\np557\nI1\nsVname\np558\nVPutin and Berlusconi\np559\nsVtracking_pixel_ids\np560\n(lp561\nsVtargeting\np562\n(dp563\nVkeywords\np564\n(lp565\nV#Silvio Berlusconi\np566\naV#Slate\np567\naV#Vladimir Putin\np568\naV#Dmitry Medvedev\np569\nasVage_max\np570\nI65\nsVcountries\np571\n(lp572\nVUS\np573\naVIT\np574\naVRU\np575\nasVbroad_age\np576\nI1\nsVage_min\np577\nI18\nssVbid_info\np578\n(dp579\nV1\np580\nV100\np581\nssVstart_time\np582\nNsVad_status\np583\nI2\nsVcampaign_id\np584\nI6004009811765\nsVlocations\np585\n(lp586\nI3\nasVcreated_time\np587\nV2011-11-11T17:23:38+0000\np588\nsVend_time\np589\nNsVadgroup_status\np590\nI8\nsVid\np591\nV6004009812765\np592\nsVad_id\np593\nI6004009812765\nsVimpression_control_map\np594\n(lp595\n(dp596\nVcontrol\np597\n(dp598\nVuser_impression_limit_period\np599\nI24\nsVuser_impression_limit\np600\nI6\nsVuser_impression_limit_period_unit\np601\nI0\nsVimpression_control_type\np602\nI2\nssVlocation\np603\nI3\nsasVcreative_ids\np604\n(lp605\nI6004009812365\nasVmax_bid\np606\nV100\np607\nsVadgroup_id\np608\nI6004009812765\nsVaccount_id\np609\nI40156177\nsas.'
+p6
+sS'hash'
+p7
+S'bbd65ae4eadef3055392d3cadb4efa4b00cf7695'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb'
+p10
+s.

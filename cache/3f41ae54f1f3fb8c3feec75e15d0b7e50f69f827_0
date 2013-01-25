@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'40156177'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'find_by_adaccount_id'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((lp0\nccopy_reg\n_reconstructor\np1\n(cpyfacebook.models.adcampaign\nAdCampaign\np2\nc__builtin__\nobject\np3\nNtp4\nRp5\n(dp6\nS'daily_budget'\np7\nI40000\nsS'start_time'\np8\nV2013-01-09T06:30:00-0800\np9\nsS'account_id'\np10\nI40156177\nsS'lifetime_budget'\np11\nNsS'end_time'\np12\nV2013-01-10T20:30:00-0800\np13\nsS'campaign_status'\np14\nI2\nsS'id'\np15\nV6007602561365\np16\nsS'name'\np17\nVABC: Jimmy Kimmel Jan 2012 | 11-Of-The-Nicest-Celebrities-Ever\np18\nsbag1\n(g2\ng3\nNtp19\nRp20\n(dp21\ng7\nNsg8\nV2013-01-14T12:39:00-0800\np22\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2013-01-15T21:00:00-0800\np23\nsg14\nI2\nsg15\nV6007764769765\np24\nsg17\nVVirgin Mobile: Q1 2013 | 19-mindblowing-historical-doppelgangers\np25\nsba(lp26\ntp27\n."
+p8
+sS'hash'
+p9
+S'3f41ae54f1f3fb8c3feec75e15d0b7e50f69f827'
+p10
+sS'stack'
+p11
+S'find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py __cache /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py <lambda> /home/orozco/development/django/buzzfeed/pyfacebook/test/adcampaign_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py runTests /usr/lib/python2.7/unittest/main.py __init__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py __init__ /home/orozco/development/django/buzzfeed/bin/nosetests <module> '
+p12
+s.

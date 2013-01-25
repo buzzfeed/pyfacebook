@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I26
+sS'returnval'
+p5
+S'7\nI00\nsVstory_id\np3488\nV302768389827035\np3489\nsVcreative_id\np3490\nV6006246563765\np3491\nsVpreview_url\np3492\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006246563765\np3493\nsVaction_t\np3494\nVBgABAQcIAAZQpCefCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAACwEKAAAAAAAAAFAAuAABE13CUynbALkAAAAAAAAAZAC6AAEPrR4vrh4CIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAAEAARNdwlMp2wG2AAAAAFCkJ58B5AABE13CUynbDQAbBgsAAAABQAMAAAFHWU9VJ1JFIElOVklURUQgdG8gY2hhbmdlIHRoZSB3b3JsZC4gV2F0Y2ggIjI0IEhvdXJzIG9mIFJlYWxpdHk6IFRoZSBEaXJ0eSBXZWF0aGVyIFJlcG9ydCIgTGl2ZSBmb3Igc29sdXRpb25zIHRvIHRoZSBDbGltYXRlIENyaXNpcyEKaHR0cDovL2J6ZmQuaXQvUWVycHdPIG9vb29vIENsaW1hdGUgUmVhbGl0eSBQcm9qZWN0IG9vb29vIENsaW1hdGUgUmVhbGl0eSBQcm9qZWN0IChjbGltYXRlcmVhbGl0eSkgb24gQnV6ekZlZWQuIEJ1enpGZWVkIGlzIHRoZSBiZXN0IHBsYWNlIHRvIHBvc3QsIGZpbmQsIGFuZCBzaGFyZSB0aGUgaG90dGVzdCBjb250ZW50IG9uIHRoZSB3ZWIuCgAcAAETXcJTKdsA\np3495\nsVaction_spec\np3496\nNsVobject_id\np3497\nV238205562866018\np3498\nsVcount_current_adgroups\np3499\nI0\nsVrun_status\np3500\nI1\nsVtype\np3501\nI27\nsVid\np3502\nV6006246563765\np3503\nsa(dp3504\nValt_view_tags\np3505\n(lp3506\nsVbody\np3507\nVThese guys are losing out. Check out the rest of the "27 Cats That Just Can\'t Handle It!"\np3508\nsVimage_hash\np3509\nVfeb67126b6b6984938d901a9687954fc\np3510\nsVname\np3511\nVStay Calm And Carry On!-00\np3512\nsVtitle\np3513\nVStay Calm And Carry On!\np3514\nsVcreative_id\np3515\nV6006196138565\np3516\nsVpreview_url\np3517\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006196138565\np3518\nsVid\np3519\nV6006196138565\np3520\nsVimage_url\np3521\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708201_6006845592965_33617_n.png\np3522\nsVcount_current_adgroups\np3523\nI0\nsVrun_status\np3524\nI1\nsVtype\np3525\nI1\nsVlink_url\np3526\nVhttp://www.buzzfeed.com/h1/fbad/virginmobilelive/27-cats-that-just-cant-handle-it-5l87\np3527\nsVview_tag\np3528\ng36\nsa(dp3529\nVname\np3530\nVSponsored story #6,006,243,819,965\np3531\nsVcreative_id\np3532\nV6006243819965\np3533\nsVpreview_url\np3534\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006243819965\np3535\nsVobject_id\np3536\nV238205562866018\np3537\nsVaction_spec\np3538\n(lp3539\n(dp3540\nVpost\np3541\nV506684636018108\np3542\nsVaction.type\np3543\nVlike\np3544\nsa(dp3545\nVpost\np3546\nV506684636018108\np3547\nsVaction.type\np3548\nVcomment\np3549\nsa(dp3550\nVpost.object\np3551\nV506684636018108\np3552\nsVaction.type\np3553\nVpost\np3554\nsasVcluster_id\np3555\nI6006243817365\nsVcount_current_adgroups\np3556\nI1\nsVrun_status\np3557\nI1\nsVtype\np3558\nI25\nsVid\np3559\nV6006243819965\np3560\nsa(dp3561\nValt_view_tags\np3562\n(lp3563\nsVbody\np3564\nVDon\'t you love it when they get along? See what else Our Pets Do That Make Us Smile!\np3565\nsVimage_hash\np3566\nV626a36ac5be330f6ea32d7fb8fe4b10c\np3567\nsVname\np3568\nVHaving A Great Hair Day?-00-00-01-00\np3569\nsVtitle\np3570\nVCat & Dog Bonding Time!\np3571\nsVcreative_id\np3572\nV6006214509765\np3573\nsVpreview_url\np3574\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006214509765\np3575\nsVid\np3576\nV6006214509765\np3577\nsVimage_url\np3578\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708157_6006844651565_30573_n.png\np3579\nsVcount_current_adgroups\np3580\nI1\nsVrun_status\np3581\nI1\nsVtype\np3582\nI1\nsVlink_url\np3583\nVhttp://ad.doubleclick.net/clk;264963201;90621098;h\np3584\nsVview_tag\np3585\ng36\nsa(dp3586\nValt_view_tags\np3587\n(lp3588\nsVbody\np3589\nVCheck out  "16 Things Our Pets Do That Always Make Us Smile" on BuzzFeed!\np3590\nsVimage_hash\np3591\nVc5e01e3bb51351b5e2eb59a0eed5b52f\np3592\nsVname\np3593\nVHaving A Great Hair Day?-00-00-01\np3594\nsVtitle\np3595\nVKitty likes Obama?\np3596\nsVcreative_id\np3597\nV6006214491565\np3598\nsVpreview_url\np3599\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006214491565\np3600\nsVid\np3601\nV6006214491565\np3602\nsVimage_url\np3603\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701897_6006845237765_29365_n.png\np3604\nsVcount_current_adgroups\np3605\nI1\nsVrun_status\np3606\nI1\nsVtype\np3607\nI1\nsVlink_url\np3608\nVhttp://ad.doubleclick.net/clk;264963201;90621098;h\np3609\nsVview_tag\np3610\ng36\nsa(dp3611\nVname\np3612\nVSponsored story #6,006,220,948,765\np3613\nsVcreative_id\np3614\nV60062209487'
+p6
+sS'hash'
+p7
+S'9045f93cc1c868b9cc2233d65a814621f259d65b'
+p8
+sS'stack'
+p9
+S''
+s.

@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5353\nsVlimit\np2\nV3\np3\nsVpaging\np4\n(dp5\nVprevious\np6\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=3&offset=5348\np7\nsVnext\np8\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=3&offset=5354\np9\nssVdata\np10\n(lp11\n(dp12\nVname\np13\nVAd from a Page post #6005167097765\np14\nsVauto_update\np15\nI1\nsVstory_id\np16\nV10150976276035329\np17\nsVcreative_id\np18\nV6005167097765\np19\nsVpreview_url\np20\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005167097765\np21\nsVobject_id\np22\nV21898300328\np23\nsVcount_current_adgroups\np24\nI0\nsVrun_status\np25\nI1\nsVtype\np26\nI27\nsVid\np27\nV6005167097765\np28\nsa(dp29\nVrelated_fan_page\np30\nI1\nsVname\np31\nVSponsored story #6005515363365\np32\nsVcreative_id\np33\nV6005515363365\np34\nsVpreview_url\np35\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005515363365\np36\nsVaction_spec\np37\n(lp38\n(dp39\nVobject\np40\nVhttp://www.buzzfeed.com/katienotopoulos/the-18-worst-things-for-left-handed-people\np41\nsVaction.type\np42\nVlike\np43\nsa(dp44\nVobject\np45\nVhttp://www.buzzfeed.com/katienotopoulos/the-18-worst-things-for-left-handed-people\np46\nsVaction.type\np47\nVpost\np48\nsasVcluster_id\np49\nI6005515363165\nsVcount_current_adgroups\np50\nI0\nsVrun_status\np51\nI1\nsVtype\np52\nI25\nsVid\np53\nV6005515363365\np54\nsasVoffset\np55\nV5351\np56\ns.'
+p8
+sS'hash'
+p9
+S'0a89708c89ef3f04d53b4f0efbc14a453e01c224'
+p10
+sS'stack'
+p11
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/sit'
+p12
+s.

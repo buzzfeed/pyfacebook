@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI1485\nsVlimit\np2\nV100\np3\nsVpaging\np4\n(dp5\nVprevious\np6\nVhttps://graph.facebook.com/act_40156177/adcampaigns?limit=100&offset=1100&account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&__before_id=6005444406365\np7\nsVnext\np8\nVhttps://graph.facebook.com/act_40156177/adcampaigns?limit=100&offset=1300&account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&__after_id=6005593147765\np9\nssVdata\np10\n(lp11\n(dp12\nVdaily_budget\np13\nI20000\nsVstart_time\np14\nV2012-07-06T06:30:00-0700\np15\nsVcampaign_id\np16\nI6005444406365\nsVaccount_id\np17\nI40156177\nsVdaily_imps\np18\nI0\nsVend_time\np19\nV2012-07-09T20:30:00-0700\np20\nsVfrequency_cap\np21\nI0\nsVcreated_time\np22\nV2012-07-02T12:14:11-0700\np23\nsVupdated_time\np24\nV2012-09-21T13:09:38-0700\np25\nsVcampaign_status\np26\nI2\nsVid\np27\nV6005444406365\np28\nsVname\np29\nVOld Navy: Funnovations July 2012 | The-Most-Awesome-Public-Parties-6Mok\np30\nsa(dp31\nVdaily_budget\np32\nI20000\nsVstart_time\np33\nV2012-07-02T12:35:37-0700\np34\nsVcampaign_id\np35\nI6005444603565\nsVaccount_id\np36\nI40156177\nsVdaily_imps\np37\nI0\nsVend_time\np38\nV2012-07-05T20:30:00-0700\np39\nsVfrequency_cap\np40\nI0\nsVcreated_time\np41\nV2012-07-02T12:35:37-0700\np42\nsVupdated_time\np43\nV2012-09-21T13:09:40-0700\np44\nsVcampaign_status\np45\nI2\nsVid\np46\nV6005444603565\np47\nsVname\np48\nVOld Navy: Funnovations July 2012 | Unexpected-Things-To-Bring-To-A-Block-Party-To-Mak-6Mok\np49\nsa(dp50\nVdaily_budget\np51\nI40000\nsVstart_time\np52\nV2012-07-02T17:16:00-0700\np53\nsVcampaign_id\np54\nI6005444886765\nsVaccount_id\np55\nI40156177\nsVdaily_imps\np56\nI0\nsVend_time\np57\nV2012-09-12T20:30:00-0700\np58\nsVfrequency_cap\np59\nI0\nsVcreated_time\np60\nV2012-07-02T14:25:05-0700\np61\nsVupdated_time\np62\nV2012-09-21T13:09:42-0700\np63\nsVcampaign_status\np64\nI2\nsVid\np65\nV6005444886765\np66\nsVname\np67\nVJose Cuervo: June_Aug 2012 | 14-Of-The-Absolute-Craziest-Shots-6863\np68\nsa(dp69\nVdaily_budget\np70\nI40000\nsVstart_time\np71\nV2012-07-03T13:51:34-0700\np72\nsVcampaign_id\np73\nI6005452072965\nsVaccount_id\np74\nI40156177\nsVdaily_imps\np75\nI0\nsVend_time\np76\nV2012-07-05T20:00:00-0700\np77\nsVfrequency_cap\np78\nI0\nsVcreated_time\np79\nV2012-07-03T13:51:34-0700\np80\nsVupdated_time\np81\nV2012-09-21T13:09:44-0700\np82\nsVcampaign_status\np83\nI2\nsVid\np84\nV6005452072965\np85\nsVname\np86\nVVirgin Mobile: Q2 2012 | 10-awesome-ways-to-hide-beer-at-the-beach-5l87\np87\nsa(dp88\nVdaily_budget\np89\nI20000\nsVstart_time\np90\nV2012-07-05T09:04:00-0700\np91\nsVcampaign_id\np92\nI6005457280165\nsVaccount_id\np93\nI40156177\nsVdaily_imps\np94\nI0\nsVend_time\np95\nV2012-07-09T20:00:00-0700\np96\nsVfrequency_cap\np97\nI0\nsVcreated_time\np98\nV2012-07-05T06:11:35-0700\np99\nsVupdated_time\np100\nV2012-07-09T06:29:04-0700\np101\nsVcampaign_status\np102\nI2\nsVid\np103\nV6005457280165\np104\nsVname\np105\nVAMC: Breaking Bad: July 2012 | The-10-Most-Mouth-Watering-Fictional-Foods-In-Tv-A-61Z6\np106\nsa(dp107\nVdaily_budget\np108\nI20000\nsVstart_time\np109\nV2012-07-05T11:45:00-0700\np110\nsVcampaign_id\np111\nI6005457638965\nsVaccount_id\np112\nI40156177\nsVdaily_imps\np113\nI0\nsVend_time\np114\nV2012-07-08T20:00:00-0700\np115\nsVfrequency_cap\np116\nI0\nsVcreated_time\np117\nV2012-07-05T08:49:50-0700\np118\nsVupdated_time\np119\nV2012-09-21T13:09:46-0700\np120\nsVcampaign_status\np121\nI2\nsVid\np122\nV6005457638965\np123\nsVname\np124\nVPepsi: Power of One: May_July 2012 | 10-Surprising-Pop-Culture-Mashups-That-Just-Work\np125\nsa(dp126\nVname\np127\nVJordan Olympics: July-Aug 2012 | 10-Places-Around-The-World-That-Are-Crazy-About-Ba-6Peo\np128\nsVstart_time\np129\nV2012-07-05T09:13:39-0700\np130\nsVcampaign_id\np131\nI6005457837565\nsVfrequency_cap\np132\nI0\nsVdaily_imps\np133\nI0\nsVlifetime_budget\np134\nI50000\nsVend_time\np135\nV2012-07-05T20:30:00-0700\np136\nsVcreated_time\np137\nV2012-07-05T09:13:39-0700\np138\nsVupdated_time\np139\nV2012-09-21T13:09:48-0700\np140\nsVcampaign_status\np141\nI2\nsVid\np142\nV6005457837565\np143\nsVaccount_id\np144\nI40156177\nsa(dp145\nVname\np146\nVJordan Olympics: July-Aug 2012 | 1'
+p8
+sS'hash'
+p9
+S'1640b524a6203b554b2fedd16130a0379c9354ed'
+p10
+sS'stack'
+p11
+S''
+s.

@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5353\nsVlimit\np2\nI500\nsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=500\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=1500\np8\nssVdata\np9\n(lp10\n(dp11\nValt_view_tags\np12\n(lp13\nsVbody\np14\nVJust One of the Great \\u201cBehind The Scenes\\u201d Moments From Our Favorite TV Shows on BuzzFeed!\np15\nsVimage_hash\np16\nV54e4470f6398ef0cf0042879c7b363c5\np17\nsVname\np18\nVA Gossip Girl Moment\np19\nsVtitle\np20\nVA Gossip Girl Moment\np21\nsVcreative_id\np22\nV6005998455165\np23\nsVpreview_url\np24\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005998455165\np25\nsVid\np26\nV6005998455165\np27\nsVimage_url\np28\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708175_6006844582765_34138_n.jpg\np29\nsVcount_current_adgroups\np30\nI1\nsVrun_status\np31\nI1\nsVtype\np32\nI1\nsVlink_url\np33\nVhttp://ad.doubleclick.net/clk;263671879;86792739;n\np34\nsVview_tag\np35\nV\np36\nsa(dp37\nValt_view_tags\np38\n(lp39\nsVbody\np40\nVCheck out More "Photos Of Athletes Enjoying Their Victories" on BuzzFeed!\np41\nsVimage_hash\np42\nV9f40b6253d6a88367528128f3ea41d2c\np43\nsVname\np44\nVLebron & Durant Win Gold\np45\nsVtitle\np46\nVLebron & Durant Win Gold\np47\nsVcreative_id\np48\nV6005998488565\np49\nsVpreview_url\np50\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005998488565\np51\nsVid\np52\nV6005998488565\np53\nsVimage_url\np54\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708180_6006845006765_2677_n.jpg\np55\nsVcount_current_adgroups\np56\nI1\nsVrun_status\np57\nI1\nsVtype\np58\nI1\nsVlink_url\np59\nVhttp://ad.doubleclick.net/clk;263672838;89375862;g\np60\nsVview_tag\np61\ng36\nsa(dp62\nValt_view_tags\np63\n(lp64\nsVbody\np65\nVJust One of the Great \\u201cBehind The Scenes\\u201d Moments From Our Favorite TV Shows on BuzzFeed!\np66\nsVimage_hash\np67\nV2114378109fd78699ef157987d4b177a\np68\nsVname\np69\nVA Gossip Girl Moment-00-00\np70\nsVtitle\np71\nVKermit & Jim Henson\np72\nsVcreative_id\np73\nV6005998471365\np74\nsVpreview_url\np75\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005998471365\np76\nsVid\np77\nV6005998471365\np78\nsVimage_url\np79\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708159_6006844255765_31881_n.jpg\np80\nsVcount_current_adgroups\np81\nI1\nsVrun_status\np82\nI1\nsVtype\np83\nI1\nsVlink_url\np84\nVhttp://ad.doubleclick.net/clk;263671879;86792739;n\np85\nsVview_tag\np86\ng36\nsa(dp87\nValt_view_tags\np88\n(lp89\nsVbody\np90\nVHe made the list of "18 Working Animals Who Totally Deserve A Raise." Check out the rest!\np91\nsVimage_hash\np92\nV2beea52dd7adbbdc38a8af61bd510fd4\np93\nsVname\np94\nVOffice Dog\np95\nsVtitle\np96\nVOffice Dog\np97\nsVcreative_id\np98\nV6005983232765\np99\nsVpreview_url\np100\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005983232765\np101\nsVid\np102\nV6005983232765\np103\nsVimage_url\np104\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708181_6006844314965_45566_n.jpg\np105\nsVcount_current_adgroups\np106\nI1\nsVrun_status\np107\nI1\nsVtype\np108\nI1\nsVlink_url\np109\nVhttp://www.buzzfeed.com/h1/fbad/gravityfalls/18-working-animals-who-totally-deserve-a-raise\np110\nsVview_tag\np111\ng36\nsa(dp112\nValt_view_tags\np113\n(lp114\nsVbody\np115\nVHe made the list of "18 Working Animals Who Totally Deserve A Raise." Check out the rest!\np116\nsVimage_hash\np117\nVb9a242be49aa573e3b76fbdf56395ce3\np118\nsVname\np119\nVOffice Dog-00\np120\nsVtitle\np121\nVOffice Cat\np122\nsVcreative_id\np123\nV6005983235365\np124\nsVpreview_url\np125\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005983235365\np126\nsVid\np127\nV6005983235365\np128\nsVimage_url\np129\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701889_6006845164965_64287_n.jpg\np130\nsVcount_current_adgroups\np131\nI1\nsVrun_status\np132\nI1\nsVtype\np133\nI1\nsVlink_url\np134\nVhttp://www.buzzfeed.com/h1/fbad/gravityfalls/18-working-animals-who-totally-deserve-a-raise\np135\nsVview_tag\np136\ng36\nsa(d'
+p8
+sS'hash'
+p9
+S'057ed9ef6861c094e514d4776db0c6327d1c84eb'
+p10
+sS'stack'
+p11
+S''
+s.

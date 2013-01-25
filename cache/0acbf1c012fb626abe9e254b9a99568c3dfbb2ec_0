@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI3239\nsVinclude_deleted\np2\nNsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=4239&offset=1000\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=4239&offset=3000\np8\nssVlimit\np9\nI1000\nsVoffset\np10\nV2000\np11\nsVdata\np12\n(lp13\n(dp14\nVbid_info\np15\n(dp16\nV1\np17\nV65\np18\nssVcampaign_id\np19\nI6006026883565\nsVcreated_time\np20\nV2012-10-29T15:41:22+0000\np21\nsVconversion_specs\np22\n(lp23\nsVadgroup_id\np24\nI6006132877765\nsVtargeting\np25\n(dp26\nVkeywords\np27\n(lp28\nV#Saving\np29\naV#Healthy\np30\naV#Coupon\np31\naV#Discount store\np32\naV#Yoga Journal\np33\naV#Yoga\np34\naV#Bikram Yoga\np35\naV#Walmart\np36\naV#Discounting\np37\nasVage_max\np38\nI65\nsVcountries\np39\n(lp40\nVUS\np41\nasVbroad_age\np42\nI1\nsVage_min\np43\nI13\nssVid\np44\nV6006132877765\np45\nsVobjective\np46\nI2\nsVmax_bid\np47\nV65\np48\nsVad_id\np49\nI6006132877765\nsVaccount_id\np50\nI40156177\nsVstart_time\np51\nNsVlocations\np52\n(lp53\nI3\nasVadgroup_status\np54\nI1\nsVad_status\np55\nI1\nsVimpression_control_map\np56\n(lp57\n(dp58\nVcontrol\np59\n(dp60\nVuser_impression_limit_period\np61\nI24\nsVuser_impression_limit\np62\nI6\nsVuser_impression_limit_period_unit\np63\nI0\nsVimpression_control_type\np64\nI2\nssVlocation\np65\nI3\nsasVcreative_ids\np66\n(lp67\nI6006026884165\nasVtracking_pixel_ids\np68\n(lp69\nsVbid_type\np70\nI1\nsVname\np71\nVhttp://ad.doubleclick.net/clk;263755304;89462800;l - Ad 3\np72\nsVupdated_time\np73\nV2012-10-31T15:34:50+0000\np74\nsVend_time\np75\nV2012-11-01T06:23:00+0000\np76\nsa(dp77\nVbid_info\np78\n(dp79\nV1\np80\nV65\np81\nssVcampaign_id\np82\nI6006026883565\nsVlast_updated_by_app_id\np83\nI6802152230\nsVcreated_time\np84\nV2012-10-15T13:27:59+0000\np85\nsVconversion_specs\np86\n(lp87\nsVadgroup_id\np88\nI6006026884565\nsVtargeting\np89\n(dp90\nVcountries\np91\n(lp92\nVUS\np93\nasVbroad_age\np94\nI1\nsVradius\np95\nV25\np96\nsVage_min\np97\nI13\nsVage_max\np98\nI65\nsVcities\np99\n(lp100\n(dp101\nVid\np102\nV2490299\np103\nsVname\np104\nVNew York, NY\np105\nsassVid\np106\nV6006026884565\np107\nsVobjective\np108\nI2\nsVmax_bid\np109\nV65\np110\nsVad_id\np111\nI6006026884565\nsVaccount_id\np112\nI40156177\nsVstart_time\np113\nNsVlocations\np114\n(lp115\nI3\nasVadgroup_status\np116\nI9\nsVad_status\np117\nI2\nsVimpression_control_map\np118\n(lp119\n(dp120\nVcontrol\np121\n(dp122\nVuser_impression_limit_period\np123\nI24\nsVuser_impression_limit\np124\nI6\nsVuser_impression_limit_period_unit\np125\nI0\nsVimpression_control_type\np126\nI2\nssVlocation\np127\nI3\nsasVcreative_ids\np128\n(lp129\nI6006026884165\nasVtracking_pixel_ids\np130\n(lp131\nsVbid_type\np132\nI1\nsVname\np133\nVhttp://ad.doubleclick.net/clk;263755304;89462800;l - Ad\np134\nsVupdated_time\np135\nV2012-10-31T15:34:50+0000\np136\nsVend_time\np137\nV2012-11-01T06:23:00+0000\np138\nsa(dp139\nVbid_info\np140\n(dp141\nV1\np142\nV65\np143\nssVcampaign_id\np144\nI6006026883565\nsVlast_updated_by_app_id\np145\nI6802152230\nsVcreated_time\np146\nV2012-10-15T13:28:24+0000\np147\nsVconversion_specs\np148\n(lp149\nsVadgroup_id\np150\nI6006026886565\nsVtargeting\np151\n(dp152\nVcountries\np153\n(lp154\nVUS\np155\nasVbroad_age\np156\nI1\nsVradius\np157\nV50\np158\nsVage_min\np159\nI13\nsVage_max\np160\nI65\nsVcities\np161\n(lp162\n(dp163\nVid\np164\nV2490299\np165\nsVname\np166\nVNew York, NY\np167\nsassVid\np168\nV6006026886565\np169\nsVobjective\np170\nI2\nsVmax_bid\np171\nV65\np172\nsVad_id\np173\nI6006026886565\nsVaccount_id\np174\nI40156177\nsVstart_time\np175\nNsVlocations\np176\n(lp177\nI3\nasVadgroup_status\np178\nI9\nsVad_status\np179\nI2\nsVimpression_control_map\np180\n(lp181\n(dp182\nVcontrol\np183\n(dp184\nVuser_impression_limit_period\np185\nI24\nsVuser_impression_limit\np186\nI3\nsVuser_impression_limit_period_unit\np187\nI0\nsVimpression_control_type\np188\nI2\nssVlocation\np189\nI3\nsasVcreative_ids\np190\n(lp191\nI6006026886165\nasVtracking_pixel_ids\np192\n(lp193\nsVbid_type\np194\nI1\nsVname\np195\nVhttp://ad.doubleclick.net/clk;263755304;89462800;l - Ad 1\np196\nsVupdated_time\np197\nV2012-10-31T15:34:50+0000\np198\nsVend_time\np199\nV2012-11-01T06:23:00+0000\np200\nsa(dp201\nV'
+p8
+sS'hash'
+p9
+S'0acbf1c012fb626abe9e254b9a99568c3dfbb2ec'
+p10
+sS'stack'
+p11
+S''
+s.

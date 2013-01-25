@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I179
+sS'returnval'
+p5
+S" the Dead (1985 film)\np33441\naV#Land of the Dead\np33442\naV#Halloween Horror Nights\np33443\naV#Saw II\np33444\naV#The Walking Dead (TV series)\np33445\naV#The Apparition\np33446\naV#A Nightmare on Elm Street 5: The Dream Child\np33447\naV#The Grudge (film series)\np33448\naV#The Nightmare Before Christmas\np33449\naV#Child's Play (film series)\np33450\naV#American Horror Story (season 1)\np33451\naV#A Nightmare on Elm Street 2: Freddy's Revenge\np33452\naV#Dawn of the Dead (2004 film)\np33453\naV#The Texas Chainsaw Massacre: The Beginning\np33454\naV#The Texas Chainsaw Massacre (2003 film)\np33455\naV#A Nightmare on Elm Street (franchise)\np33456\naV#Saw (film)\np33457\naV#Chucky (Child's Play)\np33458\naV#Friday the 13th (franchise)\np33459\naV#The Exorcist (film)\np33460\naV#28 Weeks Later\np33461\naV#Halloween (franchise)\np33462\naV#The Texas Chainsaw Massacre (franchise)\np33463\naV#A Nightmare on Elm Street (2010 film)\np33464\naV#Child's Play 3\np33465\naV#Horror film\np33466\naV#Child's Play (1988 film)\np33467\naV#American Horror Story: Asylum\np33468\nasVage_max\np33469\nI65\nsVcountries\np33470\n(lp33471\nVUS\np33472\nasVbroad_age\np33473\nI1\nsVage_min\np33474\nI13\nssVid\np33475\nV6006016313765\np33476\nsVobjective\np33477\nI2\nsVmax_bid\np33478\nV65\np33479\nsVad_id\np33480\nI6006016313765\nsVaccount_id\np33481\nI40156177\nsVstart_time\np33482\nNsVlocations\np33483\n(lp33484\nI3\nasVadgroup_status\np33485\nI9\nsVad_status\np33486\nI2\nsVimpression_control_map\np33487\n(lp33488\n(dp33489\nVcontrol\np33490\n(dp33491\nVuser_impression_limit_period\np33492\nI24\nsVuser_impression_limit\np33493\nI3\nsVuser_impression_limit_period_unit\np33494\nI0\nsVimpression_control_type\np33495\nI2\nssVlocation\np33496\nI3\nsasVcreative_ids\np33497\n(lp33498\nI6006016313365\nasVtracking_pixel_ids\np33499\n(lp33500\nsVbid_type\np33501\nI1\nsVname\np33502\nVhttp://www.buzzfeed.com/h1/fbad/americanhorrorstory/10-terrifying-psychotherapy-treatments-o... - Ad\np33503\nsVupdated_time\np33504\nV2012-10-16T13:40:51+0000\np33505\nsVend_time\np33506\nNsa(dp33507\nVbid_info\np33508\n(dp33509\nV1\np33510\nV65\np33511\nssVcampaign_id\np33512\nI6006019297365\nsVcreated_time\np33513\nV2012-10-12T18:22:36+0000\np33514\nsVconversion_specs\np33515\n(lp33516\nsVadgroup_id\np33517\nI6006019298365\nsVtargeting\np33518\n(dp33519\nVkeywords\np33520\n(lp33521\nV#Gander Mountain\np33522\naV#Hunting\np33523\naV#Camouflage\np33524\naV#Bass Pro Shops\np33525\naV#Orvis\np33526\naV#Tough Mudder\np33527\naV#Deer hunting\np33528\naV#Cabela's\np33529\naV#Realtree Outdoors\np33530\naV#Duck Dynasty\np33531\nasVage_max\np33532\nI65\nsVcountries\np33533\n(lp33534\nVUS\np33535\nasVbroad_age\np33536\nI1\nsVage_min\np33537\nI13\nssVid\np33538\nV6006019298365\np33539\nsVobjective\np33540\nI2\nsVmax_bid\np33541\nV65\np33542\nsVad_id\np33543\nI6006019298365\nsVaccount_id\np33544\nI40156177\nsVstart_time\np33545\nNsVlocations\np33546\n(lp33547\nI3\nasVadgroup_status\np33548\nI1\nsVad_status\np33549\nI1\nsVimpression_control_map\np33550\n(lp33551\n(dp33552\nVcontrol\np33553\n(dp33554\nVuser_impression_limit_period\np33555\nI24\nsVuser_impression_limit\np33556\nI6\nsVuser_impression_limit_period_unit\np33557\nI0\nsVimpression_control_type\np33558\nI2\nssVlocation\np33559\nI3\nsasVcreative_ids\np33560\n(lp33561\nI6006019316165\nasVtracking_pixel_ids\np33562\n(lp33563\nsVbid_type\np33564\nI1\nsVname\np33565\nVhttp://www.buzzfeed.com/h1/fbad/duckdynasty/high-fashion-or-redneck-couture-7d62 - Ad\np33566\nsVupdated_time\np33567\nV2012-10-12T20:04:33+0000\np33568\nsVend_time\np33569\nNsas."
+p6
+sS'hash'
+p7
+S'b6f1b18a28af6af57608860d73e6aa9fed4b58e0'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adgroup.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adgroup_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/deve'
+p10
+s.

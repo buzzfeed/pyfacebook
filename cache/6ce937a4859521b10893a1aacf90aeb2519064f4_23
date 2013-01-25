@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I23
+sS'returnval'
+p5
+S'007103487965\nsVsocial_unique_clicks\np4484\nI0\nsVunique_impressions\np4485\nI0\nsVstart_time\np4486\nV2012-11-26T06:00:00+0000\np4487\nsVspent\np4488\nV148\np4489\nsVactions\np4490\nNsVclicks\np4491\nV3\np4492\nsVconnections\np4493\nI0\nsVsocial_clicks\np4494\nV0\np4495\nsVevents\np4496\n(dp4497\nVvideo_play\np4498\nI0\nsVtitle_clicks\np4499\nI0\nsVinline_like\np4500\nI0\nsVinline_comment\np4501\nI0\nsVrsvp_maybe\np4502\nI0\nsVlink_open\np4503\nI0\nsVphoto_view\np4504\nI0\nsVrsvp_yes\np4505\nI0\nsVfans\np4506\nI0\nsVquestion_vote\np4507\nI0\nssVsocial_impressions\np4508\nV0\np4509\nsVadgroup_id\np4510\nI6007160796765\nsVsocial_unique_impressions\np4511\nI0\nsVsocial_spent\np4512\nV0\np4513\nsVimpressions\np4514\nV11107\np4515\nsVnewsfeed_position\np4516\n(dp4517\nVnewsfeed_clicks\np4518\nV0\np4519\nsVnewsfeed_impressions\np4520\nV0\np4521\nsVnewsfeed_average_position\np4522\nI0\nssVid\np4523\nV6007160796765/stats/1353909600/1356588000\np4524\nsVunique_clicks\np4525\nI0\nsVend_time\np4526\nV2012-12-27T06:00:00+0000\np4527\nsa(dp4528\nVcampaign_id\np4529\nI6007117564365\nsVsocial_unique_clicks\np4530\nI0\nsVunique_impressions\np4531\nI0\nsVstart_time\np4532\nV2012-11-26T06:00:00+0000\np4533\nsVspent\np4534\nV52729\np4535\nsVactions\np4536\nNsVclicks\np4537\nV917\np4538\nsVconnections\np4539\nI0\nsVsocial_clicks\np4540\nV0\np4541\nsVevents\np4542\n(dp4543\nVvideo_play\np4544\nI0\nsVtitle_clicks\np4545\nI0\nsVinline_like\np4546\nI0\nsVinline_comment\np4547\nI0\nsVrsvp_maybe\np4548\nI0\nsVlink_open\np4549\nI0\nsVphoto_view\np4550\nI0\nsVrsvp_yes\np4551\nI0\nsVfans\np4552\nI0\nsVquestion_vote\np4553\nI0\nssVsocial_impressions\np4554\nV0\np4555\nsVadgroup_id\np4556\nI6007117565565\nsVsocial_unique_impressions\np4557\nI0\nsVsocial_spent\np4558\nV0\np4559\nsVimpressions\np4560\nV2466075\np4561\nsVnewsfeed_position\np4562\n(dp4563\nVnewsfeed_clicks\np4564\nV0\np4565\nsVnewsfeed_impressions\np4566\nV0\np4567\nsVnewsfeed_average_position\np4568\nI0\nssVid\np4569\nV6007117565565/stats/1353909600/1356588000\np4570\nsVunique_clicks\np4571\nI0\nsVend_time\np4572\nV2012-12-27T06:00:00+0000\np4573\nsa(dp4574\nVcampaign_id\np4575\nI6007117564365\nsVsocial_unique_clicks\np4576\nI0\nsVunique_impressions\np4577\nI0\nsVstart_time\np4578\nV2012-11-26T06:00:00+0000\np4579\nsVspent\np4580\nV78773\np4581\nsVactions\np4582\nNsVclicks\np4583\nV1352\np4584\nsVconnections\np4585\nI0\nsVsocial_clicks\np4586\nV0\np4587\nsVevents\np4588\n(dp4589\nVvideo_play\np4590\nI0\nsVtitle_clicks\np4591\nI0\nsVinline_like\np4592\nI0\nsVinline_comment\np4593\nI0\nsVrsvp_maybe\np4594\nI0\nsVlink_open\np4595\nI0\nsVphoto_view\np4596\nI0\nsVrsvp_yes\np4597\nI0\nsVfans\np4598\nI0\nsVquestion_vote\np4599\nI0\nssVsocial_impressions\np4600\nV0\np4601\nsVadgroup_id\np4602\nI6007135849365\nsVsocial_unique_impressions\np4603\nI0\nsVsocial_spent\np4604\nV0\np4605\nsVimpressions\np4606\nV2906825\np4607\nsVnewsfeed_position\np4608\n(dp4609\nVnewsfeed_clicks\np4610\nV0\np4611\nsVnewsfeed_impressions\np4612\nV0\np4613\nsVnewsfeed_average_position\np4614\nI0\nssVid\np4615\nV6007135849365/stats/1353909600/1356588000\np4616\nsVunique_clicks\np4617\nI0\nsVend_time\np4618\nV2012-12-27T06:00:00+0000\np4619\nsa(dp4620\nVcampaign_id\np4621\nI6007117564365\nsVsocial_unique_clicks\np4622\nI0\nsVunique_impressions\np4623\nI0\nsVstart_time\np4624\nV2012-11-26T06:00:00+0000\np4625\nsVspent\np4626\nV17492\np4627\nsVactions\np4628\nNsVclicks\np4629\nV308\np4630\nsVconnections\np4631\nI0\nsVsocial_clicks\np4632\nV0\np4633\nsVevents\np4634\n(dp4635\nVvideo_play\np4636\nI0\nsVtitle_clicks\np4637\nI0\nsVinline_like\np4638\nI0\nsVinline_comment\np4639\nI0\nsVrsvp_maybe\np4640\nI0\nsVlink_open\np4641\nI0\nsVphoto_view\np4642\nI0\nsVrsvp_yes\np4643\nI0\nsVfans\np4644\nI0\nsVquestion_vote\np4645\nI0\nssVsocial_impressions\np4646\nV0\np4647\nsVadgroup_id\np4648\nI6007160798365\nsVsocial_unique_impressions\np4649\nI0\nsVsocial_spent\np4650\nV0\np4651\nsVimpressions\np4652\nV789497\np4653\nsVnewsfeed_position\np4654\n(dp4655\nVnewsfeed_clicks\np4656\nV0\np4657\nsVnewsfeed_impressions\np4658\nV0\np4659\nsVnewsfeed_average_position\np4660\nI0\nssVid\np4661\nV6007160798365/stats/1353909600/1356588000\np4662\nsVunique_clicks\np4663\nI0\nsVend_time\np4664\nV2012-12-27T06:00:00+0000\np4665\nsas.'
+p6
+sS'hash'
+p7
+S'6ce937a4859521b10893a1aacf90aeb2519064f4'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/p'
+p10
+s.

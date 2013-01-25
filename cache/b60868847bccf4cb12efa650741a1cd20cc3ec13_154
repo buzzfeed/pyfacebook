@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I154
+sS'returnval'
+p5
+S'Vlocation\np30402\nI3\nsasVcreative_ids\np30403\n(lp30404\nI6005337675965\nasVmax_bid\np30405\nV75\np30406\nsVadgroup_id\np30407\nI6005337676365\nsVaccount_id\np30408\nI40156177\nsa(dp30409\nVconversion_specs\np30410\n(lp30411\nsVupdated_time\np30412\nV2012-06-25T15:51:23+0000\np30413\nsVbid_type\np30414\nI1\nsVname\np30415\nVIntergalactic civil war?\np30416\nsVtracking_pixel_ids\np30417\n(lp30418\nsVtargeting\np30419\n(dp30420\nVkeywords\np30421\n(lp30422\nV#Jason Lee (actor)\np30423\naV#Dogma (film)\np30424\naV#Movies\np30425\naV#Jay and Silent Bob Strike Back\np30426\naV#Kevin Smith\np30427\naV#Clerks\np30428\naV#Jason Mewes\np30429\naVdogma\np30430\naV#Jay and Silent Bob\np30431\naVmall rats\np30432\naV#Clerks II\np30433\naVjay silent bob strike back\np30434\naV#Mallrats\np30435\naV#Chasing Amy\np30436\nasVage_max\np30437\nI65\nsVcountries\np30438\n(lp30439\nVUS\np30440\nasVbroad_age\np30441\nI1\nsVage_min\np30442\nI15\nssVbid_info\np30443\n(dp30444\nV1\np30445\nV66\np30446\nssVstart_time\np30447\nNsVad_status\np30448\nI2\nsVcampaign_id\np30449\nI6005323986165\nsVlocations\np30450\n(lp30451\nI3\nasVcreated_time\np30452\nV2012-06-24T15:08:52+0000\np30453\nsVend_time\np30454\nV2012-06-26T03:00:00+0000\np30455\nsVadgroup_status\np30456\nI9\nsVid\np30457\nV6005368237965\np30458\nsVad_id\np30459\nI6005368237965\nsVimpression_control_map\np30460\n(lp30461\n(dp30462\nVcontrol\np30463\n(dp30464\nVuser_impression_limit_period\np30465\nI24\nsVuser_impression_limit\np30466\nI3\nsVuser_impression_limit_period_unit\np30467\nI0\nsVimpression_control_type\np30468\nI2\nssVlocation\np30469\nI3\nsasVcreative_ids\np30470\n(lp30471\nI6005368237565\nasVmax_bid\np30472\nV66\np30473\nsVadgroup_id\np30474\nI6005368237965\nsVaccount_id\np30475\nI40156177\nsas.'
+p6
+sS'hash'
+p7
+S'b60868847bccf4cb12efa650741a1cd20cc3ec13'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adgroup.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adgroup_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/develo'
+p10
+s.

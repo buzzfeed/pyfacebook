@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI3239\nsVinclude_deleted\np2\nNsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=2000\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=3000\np8\nssVlimit\np9\nI500\nsVoffset\np10\nV2500\np11\nsVdata\np12\n(lp13\n(dp14\nVbid_info\np15\n(dp16\nV1\np17\nV65\np18\nssVcampaign_id\np19\nI6006574752565\nsVlast_updated_by_app_id\np20\nI207192552749284\nsVcreated_time\np21\nV2012-12-03T22:24:29+0000\np22\nsVconversion_specs\np23\n(lp24\nsVadgroup_id\np25\nI6006574832165\nsVtargeting\np26\n(dp27\nVkeywords\np28\n(lp29\nV#Team Pacman\np30\naV#Jr. Pac-Man\np31\naV#Super Mario Bros.\np32\naV#Pac-Man\np33\naV#Ms. Pac-Man Maze Madness\np34\naV#Atari\np35\naV#Tetris\np36\naV#Ms. Pac-Man\np37\naV#Wreck-It Ralph\np38\naV#Pac-Mania\np39\naV#Pac-Man Games\np40\nasVage_max\np41\nI65\nsVcountries\np42\n(lp43\nVUS\np44\nasVbroad_age\np45\nI1\nsVage_min\np46\nI13\nssVid\np47\nV6006574832165\np48\nsVobjective\np49\nI2\nsVmax_bid\np50\nV65\np51\nsVad_id\np52\nI6006574832165\nsVaccount_id\np53\nI40156177\nsVstart_time\np54\nNsVlocations\np55\n(lp56\nI3\nasVadgroup_status\np57\nI1\nsVad_status\np58\nI1\nsVimpression_control_map\np59\n(lp60\n(dp61\nVcontrol\np62\n(dp63\nVuser_impression_limit_period\np64\nI24\nsVuser_impression_limit\np65\nI6\nsVuser_impression_limit_period_unit\np66\nI0\nsVimpression_control_type\np67\nI2\nssVlocation\np68\nI3\nsasVcreative_ids\np69\n(lp70\nI6006574831765\nasVtracking_pixel_ids\np71\n(lp72\nsVbid_type\np73\nI1\nsVname\np74\nVPac Man\np75\nsVupdated_time\np76\nV2012-12-03T23:23:19+0000\np77\nsVend_time\np78\nNsa(dp79\nVbid_info\np80\n(dp81\nV1\np82\nV66\np83\nssVcampaign_id\np84\nI6006574920565\nsVlast_updated_by_app_id\np85\nI6802152230\nsVcreated_time\np86\nV2012-12-03T22:32:38+0000\np87\nsVconversion_specs\np88\n(lp89\nsVadgroup_id\np90\nI6006574921565\nsVtargeting\np91\n(dp92\nVkeywords\np93\n(lp94\nV#Fargo (film)\np95\naV#8-bit\np96\naV#The Big Lebowski\np97\naV#Arcade game\np98\naV#Jeff Bridges\np99\naV#Atari\np100\naV#Tetris\np101\naV#Fear and Loathing in Las Vegas (film)\np102\naV#O Brother, Where Art Thou?\np103\naV#Nintendo Entertainment System\np104\naV#John Goodman\np105\naV#Coen brothers\np106\naV#No Country for Old Men (film)\np107\nasVage_max\np108\nI65\nsVcountries\np109\n(lp110\nVUS\np111\nasVbroad_age\np112\nI1\nsVage_min\np113\nI13\nssVid\np114\nV6006574921565\np115\nsVobjective\np116\nI2\nsVmax_bid\np117\nV66\np118\nsVad_id\np119\nI6006574921565\nsVaccount_id\np120\nI40156177\nsVstart_time\np121\nNsVlocations\np122\n(lp123\nI3\nasVadgroup_status\np124\nI1\nsVad_status\np125\nI1\nsVimpression_control_map\np126\n(lp127\n(dp128\nVcontrol\np129\n(dp130\nVuser_impression_limit_period\np131\nI24\nsVuser_impression_limit\np132\nI3\nsVuser_impression_limit_period_unit\np133\nI0\nsVimpression_control_type\np134\nI2\nssVlocation\np135\nI3\nsasVcreative_ids\np136\n(lp137\nI6006574921165\nasVtracking_pixel_ids\np138\n(lp139\nsVbid_type\np140\nI1\nsVname\np141\nVLebowski\np142\nsVupdated_time\np143\nV2012-12-05T14:40:40+0000\np144\nsVend_time\np145\nNsa(dp146\nVbid_info\np147\n(dp148\nV1\np149\nV66\np150\nssVcampaign_id\np151\nI6006574920565\nsVlast_updated_by_app_id\np152\nI6802152230\nsVcreated_time\np153\nV2012-12-03T22:34:42+0000\np154\nsVconversion_specs\np155\n(lp156\nsVadgroup_id\np157\nI6006574963965\nsVtargeting\np158\n(dp159\nVkeywords\np160\n(lp161\nV#8-bit\np162\naV#Lego\np163\naV#Super Mario Bros.\np164\naV#Arcade game\np165\naV#Legoland\np166\naV#Mario Kart Wii\np167\naV#Atari\np168\naV#Tetris\np169\naV#Mario\np170\naV#Lego Architecture\np171\naV#Nintendo Entertainment System\np172\naV#Luigi\np173\naV#The Lego Group\np174\nasVage_max\np175\nI65\nsVcountries\np176\n(lp177\nVUS\np178\nasVbroad_age\np179\nI1\nsVage_min\np180\nI13\nssVid\np181\nV6006574963965\np182\nsVobjective\np183\nI2\nsVmax_bid\np184\nV66\np185\nsVad_id\np186\nI6006574963965\nsVaccount_id\np187\nI40156177\nsVstart_time\np188\nNsVlocations\np189\n(lp190\nI3\nasVadgroup_status\np191\nI1\nsVad_status\np192\nI1\nsVimpression_control_map\np193\n(lp194\n(dp195\nVcontrol\np196\n(dp197\nVuser_impression_limit_period\np198\nI24\nsVuser_impression_limit\np199\nI6\nsVuser_impression_limit_p'
+p8
+sS'hash'
+p9
+S'3366763720ff57e41930a294da971bf6c8a8acdf'
+p10
+sS'stack'
+p11
+S''
+s.

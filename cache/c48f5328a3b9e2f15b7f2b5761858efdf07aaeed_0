@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI1485\nsVlimit\np2\nI100\nsVpaging\np3\n(dp4\nVnext\np5\nVhttps://graph.facebook.com/act_40156177/adcampaigns?account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&limit=100&offset=100&__after_id=6005955433765\np6\nssVdata\np7\n(lp8\n(dp9\nVdaily_budget\np10\nI36500\nsVstart_time\np11\nV2012-07-25T18:19:00-0700\np12\nsVcampaign_id\np13\nI6005558357365\nsVaccount_id\np14\nI40156177\nsVdaily_imps\np15\nI0\nsVend_time\np16\nV2012-09-26T23:00:00-0700\np17\nsVfrequency_cap\np18\nI0\nsVcreated_time\np19\nV2012-07-25T15:22:35-0700\np20\nsVupdated_time\np21\nV2012-09-25T12:41:14-0700\np22\nsVcampaign_status\np23\nI1\nsVid\np24\nV6005558357365\np25\nsVname\np26\nVSamsung Flight 2: June-Aug_2012 | 10-Things-We-Wish-Took-Less-Than-10-Seconds-6G87\np27\nsa(dp28\nVdaily_budget\np29\nI50000\nsVstart_time\np30\nV2012-09-07T09:24:38-0700\np31\nsVcampaign_id\np32\nI6005782939965\nsVaccount_id\np33\nI40156177\nsVdaily_imps\np34\nI0\nsVend_time\np35\nV2012-09-30T00:00:00-0700\np36\nsVfrequency_cap\np37\nI0\nsVcreated_time\np38\nV2012-09-07T09:24:38-0700\np39\nsVupdated_time\np40\nV2012-09-27T07:47:56-0700\np41\nsVcampaign_status\np42\nI1\nsVid\np43\nV6005782939965\np44\nsVname\np45\nVVirgin Mobile: Q3 2012 | 20-publicly-shamed-animal-twitpics-5l87\np46\nsa(dp47\nVdaily_budget\np48\nI50000\nsVstart_time\np49\nV2012-09-07T11:36:00-0700\np50\nsVcampaign_id\np51\nI6005783865965\nsVaccount_id\np52\nI40156177\nsVdaily_imps\np53\nI0\nsVend_time\np54\nV2012-09-30T00:00:00-0700\np55\nsVfrequency_cap\np56\nI0\nsVcreated_time\np57\nV2012-09-07T11:36:00-0700\np58\nsVupdated_time\np59\nV2012-09-22T10:55:30-0700\np60\nsVcampaign_status\np61\nI1\nsVid\np62\nV6005783865965\np63\nsVname\np64\nVVirgin Mobile: Q3 2012 | 18-mind-boggling-text-fails-5l87\np65\nsa(dp66\nVname\np67\nVGE: Nostalgia: Sept_2012 | The-Evolution-Of-10-Edison-Inventions-We-Still-Use-6Ieg\np68\nsVstart_time\np69\nV2012-09-07T14:44:11-0700\np70\nsVcampaign_id\np71\nI6005784312965\nsVfrequency_cap\np72\nI0\nsVdaily_imps\np73\nI0\nsVlifetime_budget\np74\nI50000\nsVend_time\np75\nV2012-09-30T00:00:00-0700\np76\nsVcreated_time\np77\nV2012-09-07T14:44:11-0700\np78\nsVupdated_time\np79\nV2012-09-21T14:32:17-0700\np80\nsVcampaign_status\np81\nI1\nsVid\np82\nV6005784312965\np83\nsVaccount_id\np84\nI40156177\nsa(dp85\nVname\np86\nVGE: Nostalgia: Sept_2012 | 20-Pictures-Where-Instagram-Actually-Makes-Sense-6Ieg\np87\nsVstart_time\np88\nV2012-09-07T14:50:15-0700\np89\nsVcampaign_id\np90\nI6005784323765\nsVfrequency_cap\np91\nI0\nsVdaily_imps\np92\nI0\nsVlifetime_budget\np93\nI50000\nsVend_time\np94\nV2012-09-30T00:00:00-0700\np95\nsVcreated_time\np96\nV2012-09-07T14:50:15-0700\np97\nsVupdated_time\np98\nV2012-09-21T14:32:12-0700\np99\nsVcampaign_status\np100\nI1\nsVid\np101\nV6005784323765\np102\nsVaccount_id\np103\nI40156177\nsa(dp104\nVname\np105\nVGE: Nostalgia: Sept_2012 | Famous-Geeks-Hanging-Out-In-The-1900S-6Ieg\np106\nsVstart_time\np107\nV2012-09-07T14:53:22-0700\np108\nsVcampaign_id\np109\nI6005784330365\nsVfrequency_cap\np110\nI0\nsVdaily_imps\np111\nI0\nsVlifetime_budget\np112\nI50000\nsVend_time\np113\nV2012-09-30T00:00:00-0700\np114\nsVcreated_time\np115\nV2012-09-07T14:53:22-0700\np116\nsVupdated_time\np117\nV2012-09-21T14:32:14-0700\np118\nsVcampaign_status\np119\nI1\nsVid\np120\nV6005784330365\np121\nsVaccount_id\np122\nI40156177\nsa(dp123\nVname\np124\nVGE: Nostalgia: Sept_2012 | Timeless-Ge-Ads-Through-The-Years-6Ieg\np125\nsVstart_time\np126\nV2012-09-07T14:54:30-0700\np127\nsVcampaign_id\np128\nI6005784334165\nsVfrequency_cap\np129\nI0\nsVdaily_imps\np130\nI0\nsVlifetime_budget\np131\nI50000\nsVend_time\np132\nV2012-09-30T00:00:00-0700\np133\nsVcreated_time\np134\nV2012-09-07T14:54:30-0700\np135\nsVupdated_time\np136\nV2012-09-21T14:32:22-0700\np137\nsVcampaign_status\np138\nI1\nsVid\np139\nV6005784334165\np140\nsVaccount_id\np141\nI40156177\nsa(dp142\nVdaily_budget\np143\nI40000\nsVstart_time\np144\nV2012-09-10T11:30:00-0700\np145\nsVcampaign_id\np146\nI6005798478365\nsVaccount_id\np147\nI40156177\nsVdaily_imps\np148\nI0\nsVend_time\np149\nV2012-10-03T23:57:00-0700\np150\nsVfrequency_cap\np151\nI0\nsVcreated_time\np152\nV2012-09-10T11:02:59-0700\np153\nsVupdated_time\np154\nV2012-10-01T10:40:03-0700\np155\nsVcampaign_status\np156\nI1\nsVid\np157\nV6005798478365\np158\nsVname\np'
+p8
+sS'hash'
+p9
+S'c48f5328a3b9e2f15b7f2b5761858efdf07aaeed'
+p10
+sS'stack'
+p11
+S''
+s.

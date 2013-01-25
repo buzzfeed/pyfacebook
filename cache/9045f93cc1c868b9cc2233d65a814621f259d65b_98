@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I98
+sS'returnval'
+p5
+S'.net/hads-ak-prn1/s110x80/708182_6006845351165_16962_n.jpg\np12471\nsVcount_current_adgroups\np12472\nI1\nsVrun_status\np12473\nI1\nsVtype\np12474\nI1\nsVlink_url\np12475\nVhttp://www.buzzfeed.com/h1/fbad/pepsinext/unbelievably-tasty-foods-from-around-the-world-you\np12476\nsVview_tag\np12477\ng36\nsa(dp12478\nValt_view_tags\np12479\n(lp12480\nsVbody\np12481\nVCruise\'s scaling of Dubai\'s Khalifa makes our list of coolest movie stunts. See more now!\np12482\nsVimage_hash\np12483\nVeab51457386cdb60d7d7a1f3dfde0d10\np12484\nsVname\np12485\nVGhost Protocol Stunt\np12486\nsVtitle\np12487\nVGhost Protocol Stunt\np12488\nsVcreative_id\np12489\nV6005105534565\np12490\nsVpreview_url\np12491\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005105534565\np12492\nsVid\np12493\nV6005105534565\np12494\nsVimage_url\np12495\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708164_6006845470965_50144_n.jpg\np12496\nsVcount_current_adgroups\np12497\nI1\nsVrun_status\np12498\nI1\nsVtype\np12499\nI1\nsVlink_url\np12500\nVhttp://www.buzzfeed.com/h1/fbad/7eleven/the-coolest-movie-stunts-of-the-21st-century\np12501\nsVview_tag\np12502\ng36\nsa(dp12503\nValt_view_tags\np12504\n(lp12505\nsVbody\np12506\nVSpeed\'s 50 foot bus jump makes our list of the "Most Amazing Movie Stunts Of The 90\'s" \\u000a\np12507\nsVimage_hash\np12508\nVfcea2fe5240c5fd595c7398e1f090164\np12509\nsVname\np12510\nVRemember this stunt?\np12511\nsVtitle\np12512\nVRemember this stunt?\np12513\nsVcreative_id\np12514\nV6005105508765\np12515\nsVpreview_url\np12516\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005105508765\np12517\nsVid\np12518\nV6005105508765\np12519\nsVimage_url\np12520\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708187_6006845584965_22379_n.jpg\np12521\nsVcount_current_adgroups\np12522\nI1\nsVrun_status\np12523\nI1\nsVtype\np12524\nI1\nsVlink_url\np12525\nVhttp://www.buzzfeed.com/h1/fbad/7eleven/most-amazing-movie-stunts-of-the-90s\np12526\nsVview_tag\np12527\ng36\nsa(dp12528\nValt_view_tags\np12529\n(lp12530\nsVbody\np12531\nVSee which stunt from "Raiders of the Lost Ark" gets our vote. Only on BuzzFeed!\\u000a\np12532\nsVimage_hash\np12533\nV3b52c3225a7dd38e14e28116e290f4c8\np12534\nsVname\np12535\nVBest 80\'s Movie Stunt\np12536\nsVtitle\np12537\nVBest 80\'s Movie Stunt\np12538\nsVcreative_id\np12539\nV6005105488365\np12540\nsVpreview_url\np12541\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005105488365\np12542\nsVid\np12543\nV6005105488365\np12544\nsVimage_url\np12545\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/701890_6006844400765_16292_n.jpg\np12546\nsVcount_current_adgroups\np12547\nI1\nsVrun_status\np12548\nI1\nsVtype\np12549\nI1\nsVlink_url\np12550\nVhttp://www.buzzfeed.com/h1/fbad/7eleven/awesome-movie-stunts-from-the-80s\np12551\nsVview_tag\np12552\ng36\nsa(dp12553\nValt_view_tags\np12554\n(lp12555\nsVbody\np12556\nVWe\'ve come along. Check out the 10 Ways The World Now Fits In Your Pocket\np12557\nsVimage_hash\np12558\nV20f1e0dd9fc50ebfb0dbaddbf5f482a3\np12559\nsVname\np12560\nVZack Morris Phone Alert!\np12561\nsVtitle\np12562\nVZack Morris Phone Alert!\np12563\nsVcreative_id\np12564\nV6005072867365\np12565\nsVpreview_url\np12566\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005072867365\np12567\nsVid\np12568\nV6005072867365\np12569\nsVimage_url\np12570\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708159_6006844254565_44455_n.jpg\np12571\nsVcount_current_adgroups\np12572\nI0\nsVrun_status\np12573\nI1\nsVtype\np12574\nI1\nsVlink_url\np12575\nVhttp://www.buzzfeed.com/h1/fbad/mioenergy/10-ways-the-world-now-fits-in-your-pocket\np12576\nsVview_tag\np12577\ng36\nsasVoffset\np12578\nV2500\np12579\ns.'
+p6
+sS'hash'
+p7
+S'9045f93cc1c868b9cc2233d65a814621f259d65b'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/oro'
+p10
+s.

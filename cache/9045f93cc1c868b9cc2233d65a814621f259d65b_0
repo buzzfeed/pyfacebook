@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5353\nsVlimit\np2\nI500\nsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=2000\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=3000\np8\nssVdata\np9\n(lp10\n(dp11\nValt_view_tags\np12\n(lp13\nsVbody\np14\nVCheck out "Classic Literature, Reimagined For The Smartphone Era" on BuzzFeed!\np15\nsVimage_hash\np16\nV7675ff3262b5ea38b667c101f0a4e3eb\np17\nsVname\np18\nVInstagram Of Dorian Gray\np19\nsVtitle\np20\nVInstagram Of Dorian Gray\np21\nsVcreative_id\np22\nV6007873237165\np23\nsVpreview_url\np24\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007873237165\np25\nsVid\np26\nV6007873237165\np27\nsVimage_url\np28\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/735348_6007873173765_48041_n.png\np29\nsVcount_current_adgroups\np30\nI0\nsVrun_status\np31\nI1\nsVtype\np32\nI1\nsVlink_url\np33\nVhttp://clk.atdmt.com/CNT/go/428578032/direct;wi.1;hi.1/01/?href=http://www.buzzfeed.com/h1/fbad/atttalkandsurf/the-instagram-of-dorian-gray\np34\nsVview_tag\np35\nV\np36\nsa(dp37\nValt_view_tags\np38\n(lp39\nsVbody\np40\nVBecause "healthy" & "edible" shouldn\'t be mutually exclusive. Rethink the way you eat.\np41\nsVimage_hash\np42\nV686b0404acd573c7b4ab1a0f8f4be9e2\np43\nsVname\np44\nVHealthy Food Substitutes\np45\nsVtitle\np46\nVHealthy Food Substitutes\np47\nsVcreative_id\np48\nV6007971326365\np49\nsVpreview_url\np50\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007971326365\np51\nsVid\np52\nV6007971326365\np53\nsVimage_url\np54\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/735302_6007971324765_55280_n.jpg\np55\nsVcount_current_adgroups\np56\nI1\nsVrun_status\np57\nI1\nsVtype\np58\nI1\nsVlink_url\np59\nVhttp://www.buzzfeed.com/h1/fbad/silkalmond/10-sweet-and-savory-food-substitutes-that-are-bett-8i9r\np60\nsVview_tag\np61\ng36\nsa(dp62\nValt_view_tags\np63\n(lp64\nsVbody\np65\nVCheck out "19 Delightful Pictures Of Celebs Posing With Exotic Animals" on BuzzFeed!\np66\nsVimage_hash\np67\nV70df9021776f1e1e2a9e1db4e70e92fe\np68\nsVname\np69\nVShaq and a panda?-00\np70\nsVtitle\np71\nVGosling and an okapi?\np72\nsVcreative_id\np73\nV6006456850365\np74\nsVpreview_url\np75\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006456850365\np76\nsVid\np77\nV6006456850365\np78\nsVimage_url\np79\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-snc7/s110x80/701899_6006844729965_9431_n.png\np80\nsVcount_current_adgroups\np81\nI0\nsVrun_status\np82\nI1\nsVtype\np83\nI1\nsVlink_url\np84\nVhttp://ad.doubleclick.net/clk;263772516;89472737;z\np85\nsVview_tag\np86\ng36\nsa(dp87\nValt_view_tags\np88\n(lp89\nsVbody\np90\nVCheck out Sean Connery in "The Timeline Of The Suit" - Only on BuzzFeed!\np91\nsVimage_hash\np92\nV8a15e3864371ec0234b67e5250cc902e\np93\nsVname\np94\nVThe Timeline of the Suit\np95\nsVtitle\np96\nVThe Timeline of the Suit\np97\nsVcreative_id\np98\nV6007969150365\np99\nsVpreview_url\np100\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007969150365\np101\nsVid\np102\nV6007969150365\np103\nsVimage_url\np104\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/735313_6007968978565_59432_n.png\np105\nsVcount_current_adgroups\np106\nI0\nsVrun_status\np107\nI1\nsVtype\np108\nI1\nsVlink_url\np109\nVhttp://ad.doubleclick.net/clk;266450459;92417075;p?http://www.buzzfeed.com/h1/fbad/suits/the-timeline-of-the-suit-67u4\np110\nsVview_tag\np111\ng36\nsa(dp112\nValt_view_tags\np113\n(lp114\nsVbody\np115\nVWanna see some awesome photography? Check out these awesome instagrammers and find more\np116\nsVimage_hash\np117\nV70ab5cb7b1eaca4667f3409b066dc12f\np118\nsVname\np119\nVMust Follow Instagrammers\np120\nsVtitle\np121\nVMust Follow Instagrammers\np122\nsVcreative_id\np123\nV6007847532765\np124\nsVpreview_url\np125\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007847532765\np126\nsVid\np127\nV6007847532765\np128\nsVimage_url\np129\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/735355_6007847462365_38766_n.png\np130\nsVcount_current_adgroups\n'
+p8
+sS'hash'
+p9
+S'9045f93cc1c868b9cc2233d65a814621f259d65b'
+p10
+sS'stack'
+p11
+S''
+s.

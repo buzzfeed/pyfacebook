@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVconversion_specs\np1\n(lp2\nsVupdated_time\np3\nV2012-09-21T19:55:19+0000\np4\nsVbid_type\np5\nI1\nsVname\np6\nVSailor Jerry Recipies!\np7\nsVtracking_pixel_ids\np8\n(lp9\nsVtargeting\np10\n(dp11\nVkeywords\np12\n(lp13\nVofficial sailor jerry\np14\naVsailor jerry\np15\naVsailor jerry rum\np16\naV#Sailor Jerry\np17\nasVage_max\np18\nI65\nsVcountries\np19\n(lp20\nVUS\np21\nasVbroad_age\np22\nI1\nsVage_min\np23\nI21\nssVbid_info\np24\n(dp25\nV1\np26\nV30\np27\nssVstart_time\np28\nNsVad_status\np29\nI2\nsVcampaign_id\np30\nI6003997528365\nsVlocations\np31\n(lp32\nI3\nasVcreated_time\np33\nV2011-11-08T16:07:59+0000\np34\nsVend_time\np35\nNsVadgroup_status\np36\nI8\nsVid\np37\nV6003997529365\np38\nsVad_id\np39\nI6003997529365\nsVimpression_control_map\np40\n(lp41\n(dp42\nVcontrol\np43\n(dp44\nVuser_impression_limit_period\np45\nI24\nsVuser_impression_limit\np46\nI3\nsVuser_impression_limit_period_unit\np47\nI0\nsVimpression_control_type\np48\nI2\nssVlocation\np49\nI3\nsasVcreative_ids\np50\n(lp51\nI6003997528965\nasVmax_bid\np52\nV30\np53\nsVadgroup_id\np54\nI6003997529365\nsVaccount_id\np55\nI40156177\ns.'
+p8
+sS'hash'
+p9
+S'9a6d26a8e45da479e48a2e53dd59bc5fc403368e'
+p10
+sS'stack'
+p11
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_one_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adgroup.py find_by_id /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcampaign.py find_by_adgroup_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcampaign_test.py test_find_by_adgroup_id_and_find_by_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py runTests /usr/lib/python2.7/unittest/main.py __init__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py __init__ /home/orozco/development/django/buzzfeed/bin/nosetests <module> '
+p12
+s.

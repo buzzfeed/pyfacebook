@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I97
+sS'returnval'
+p5
+S'44556165_12035_n.jpg\np12399\nsVcount_current_adgroups\np12400\nI0\nsVrun_status\np12401\nI1\nsVtype\np12402\nI2\nsVlink_url\np12403\nVhttp://www.facebook.com/BuzzFeedPartner?sk=wall\np12404\nsVview_tag\np12405\ng21\nsa(dp12406\nValt_view_tags\np12407\n(lp12408\nsVbody\np12409\nV"10 Awesome Vintage Tattoo Parlors From Around The Country" by BuzzFeed and Sailor Jerry give us 10 classic tattoo shops in the USA!\np12410\nsVimage_hash\np12411\nVf4140bf15dfa63675ba76aad236edefd\np12412\nsVname\np12413\nVVintage Tattoo Parlors!\np12414\nsVtitle\np12415\nVVintage Tattoo Parlors!\np12416\nsVcreative_id\np12417\nV6003971028965\np12418\nsVpreview_url\np12419\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003971028965\np12420\nsVid\np12421\nV6003971028965\np12422\nsVimage_url\np12423\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701891_6006845525565_40939_n.jpg\np12424\nsVcount_current_adgroups\np12425\nI0\nsVrun_status\np12426\nI1\nsVtype\np12427\nI1\nsVlink_url\np12428\nVhttp://www.buzzfeed.com/h1/fba/sailorjerryrum/10-awesome-vintage-tattoo-parlors-from-around-the\np12429\nsVview_tag\np12430\ng21\nsa(dp12431\nValt_view_tags\np12432\n(lp12433\nsVbody\np12434\nV"10 Awesome Vintage Tattoo Parlors From Around The Country" by BuzzFeed and Sailor Jerry give us 10 classic tattoo shops in the USA!\np12435\nsVimage_hash\np12436\nVda00716c71a2fc274de4f268fbf5ff2a\np12437\nsVname\np12438\nVVintage Tattoo Parlors!-00\np12439\nsVtitle\np12440\nVVintage Tattoo Parlors!\np12441\nsVcreative_id\np12442\nV6003971033565\np12443\nsVpreview_url\np12444\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003971033565\np12445\nsVid\np12446\nV6003971033565\np12447\nsVimage_url\np12448\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701906_6006845357165_27679_n.jpg\np12449\nsVcount_current_adgroups\np12450\nI0\nsVrun_status\np12451\nI1\nsVtype\np12452\nI1\nsVlink_url\np12453\nVhttp://www.buzzfeed.com/h1/fba/sailorjerryrum/10-awesome-vintage-tattoo-parlors-from-around-the\np12454\nsVview_tag\np12455\ng21\nsa(dp12456\nValt_view_tags\np12457\n(lp12458\nsVbody\np12459\nVHis scene in The Godfather made the list of "12 Iconic Death Scenes From Movies!" \np12460\nsVimage_hash\np12461\nVcd5ae9f678928674357ba3af9f85a358\np12462\nsVname\np12463\nVSamuel Jackson Gets Eaten-00\np12464\nsVtitle\np12465\nVSonny Getting Shot\np12466\nsVcreative_id\np12467\nV6007991645965\np12468\nsVpreview_url\np12469\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007991645965\np12470\nsVid\np12471\nV6007991645965\np12472\nsVimage_url\np12473\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/735336_6007991551565_30457_n.png\np12474\nsVcount_current_adgroups\np12475\nI1\nsVrun_status\np12476\nI1\nsVtype\np12477\nI1\nsVlink_url\np12478\nVhttp://clk.atdmt.com/ULA/go/431167357/direct/01/?href=http://www.buzzfeed.com/h1/fbad/sevenpsychopaths/12-iconic-death-scenes-from-movies-8rf6\np12479\nsVview_tag\np12480\ng21\nsa(dp12481\nValt_view_tags\np12482\n(lp12483\nsVbody\np12484\nVJust one of the "16 Creative Ways to Kill Time!" Check out the entire list on BuzzFeed!\np12485\nsVimage_hash\np12486\nV3ac2446126254b0df1975695ed7169ea\np12487\nsVname\np12488\nVHave A Picnic!\np12489\nsVtitle\np12490\nVHave A Picnic!\np12491\nsVcreative_id\np12492\nV6007986817365\np12493\nsVpreview_url\np12494\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007986817365\np12495\nsVid\np12496\nV6007986817365\np12497\nsVimage_url\np12498\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/735315_6007986814765_20963_n.jpg\np12499\nsVcount_current_adgroups\np12500\nI1\nsVrun_status\np12501\nI1\nsVtype\np12502\nI1\nsVlink_url\np12503\nVhttp://mm.sitecompass.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=6099528&PluID=0&ord=%n&rtu=http://www.buzzfeed.com/h1/fbad/archetypeme/16-creative-ways-to-kill-time\np12504\nsVview_tag\np12505\ng21\nsasVoffset\np12506\nV2000\np12507\ns.'
+p6
+sS'hash'
+p7
+S'b04e82362d7e2efb1f5747f69422cdb7dd2f4ca6'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/'
+p10
+s.

@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I64
+sS'returnval'
+p5
+S'4059565\np8376\nsVaction_spec\np8377\n(dp8378\nVobject\np8379\nVhttp://www.buzzfeed.com/volkswagen/can-you-make-it-through-this-post-without-smiling\np8380\nsVaction.type\np8381\nVlike\np8382\nssVcluster_id\np8383\nI6005854059365\nsVcount_current_adgroups\np8384\nI1\nsVrun_status\np8385\nI1\nsVtype\np8386\nI25\nsVid\np8387\nV6005854059565\np8388\nsa(dp8389\nVname\np8390\nVSponsored story #6,006,132,463,965\np8391\nsVcreative_id\np8392\nV6006132463965\np8393\nsVpreview_url\np8394\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006132463965\np8395\nsVobject_id\np8396\nV238205562866018\np8397\nsVaction_spec\np8398\n(lp8399\n(dp8400\nVpost\np8401\nV364132617012037\np8402\nsVaction.type\np8403\nVlike\np8404\nsa(dp8405\nVpost\np8406\nV364132617012037\np8407\nsVaction.type\np8408\nVcomment\np8409\nsa(dp8410\nVpost.object\np8411\nV364132617012037\np8412\nsVaction.type\np8413\nVpost\np8414\nsasVcluster_id\np8415\nI6006132461365\nsVcount_current_adgroups\np8416\nI1\nsVrun_status\np8417\nI1\nsVtype\np8418\nI25\nsVid\np8419\nV6006132463965\np8420\nsa(dp8421\nVname\np8422\nVAd from a Page post #6,006,132,483,365\np8423\nsVauto_update\np8424\nI00\nsVstory_id\np8425\nV364132617012037\np8426\nsVcreative_id\np8427\nV6006132483365\np8428\nsVpreview_url\np8429\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006132483365\np8430\nsVobject_id\np8431\nV238205562866018\np8432\nsVaction_spec\np8433\nNsVcount_current_adgroups\np8434\nI1\nsVrun_status\np8435\nI1\nsVtype\np8436\nI27\nsVid\np8437\nV6006132483365\np8438\nsVaction_t\np8439\nVBgABAQcIAAZQjpEyCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAACwEKAAAAAAAAAFAAuAABSy07ScNFALkAAAAAAAAAZAC6AAFCRGLobKUCIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAAEAAUstO0nDRQG2AAAAAFCOkTIB5AABSy07ScNFDQAbBgsAAAABQAMAAADWV2UndmUgZ290IGEgbmV3IGZlYXR1cmUgb24gQnV6ekZlZWQgLSBSZWFjdCB3aXRoIGEgU29uZyB1c2luZyBSZGlvISBUcnkgaXQgb3V0ISAtIGh0dHA6Ly9iemZkLml0L1hMYXhobCBvb29vbyBCdXp6RmVlZCBNdXNpYyBvb29vbyBPcmlnaW5hbCBtdXNpYyByZXBvcnRpbmcgYW5kIGFuYWx5c2lzIHBsdXMgdGhlIHJlYWwgY29udmVyc2F0aW9uIG9mIHRoZSBzb2NpYWwgd2ViLgoAHAABSy07ScNFAA==\np8440\nsa(dp8441\nValt_view_tags\np8442\n(lp8443\nsVbody\np8444\nVThey made the list of "11 Awesome TV Doctors You Wish Were Real!" Check out the rest here!\np8445\nsVimage_hash\np8446\nVd8d7415644dc173d07d5f773f3b95ac5\np8447\nsVname\np8448\nVTurk and JD\np8449\nsVtitle\np8450\nVTurk and JD\np8451\nsVcreative_id\np8452\nV6006069162565\np8453\nsVpreview_url\np8454\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006069162565\np8455\nsVid\np8456\nV6006069162565\np8457\nsVimage_url\np8458\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708182_6006845349165_7882_n.jpg\np8459\nsVcount_current_adgroups\np8460\nI2\nsVrun_status\np8461\nI1\nsVtype\np8462\nI1\nsVlink_url\np8463\nVhttp://ad.doubleclick.net/clk;263755293;89462797;h\np8464\nsVview_tag\np8465\ng36\nsa(dp8466\nValt_view_tags\np8467\n(lp8468\nsVbody\np8469\nVHe made the list of "11 Awesome TV Doctors You Wish Were Real!" Check out the rest here!\np8470\nsVimage_hash\np8471\nV3eca8dc9c53e213a80f9b12182f33736\np8472\nsVname\np8473\nVTurk and JD-00\np8474\nsVtitle\np8475\nVMcDreamy\np8476\nsVcreative_id\np8477\nV6006073868765\np8478\nsVpreview_url\np8479\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006073868765\np8480\nsVid\np8481\nV6006073868765\np8482\nsVimage_url\np8483\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708157_6006844419165_6641_n.jpg\np8484\nsVcount_current_adgroups\np8485\nI2\nsVrun_status\np8486\nI1\nsVtype\np8487\nI1\nsVlink_url\np8488\nVhttp://ad.doubleclick.net/clk;263755293;89462797;h\np8489\nsVview_tag\np8490\ng36\nsa(dp8491\nValt_view_tags\np8492\n(lp8493\nsVbody\np8494\nVLove to hate those commercials? Check out "10 GIFs Of The Weirdest Exercise Equipment!"\np8495\nsVimage_hash\np8496\nV78c1ac9fc1b6302dff4fc3fd5250b765\np8497\nsVname\np8498\nVInfomercial Gym Equipment-00-00\np8499\nsVtitle\np8500\nVGym Equipment Infomercial\np8501\nsVcreative_id\np8502\nV6006077768365\np8503\nsVpreview_url\np8504\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006077768365\np8505\nsVid\np8506\nV6006077768365\np8507\nsVimage_url\np8508\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708170_6006844779565_2430_n.jpg\np8509\nsVcount_current_adgroups\np8510\nI2\nsVrun_status\np8511\nI1\nsVtype\np8512\nI1\nsVlink_url\np8'
+p6
+sS'hash'
+p7
+S'42d00dbe6c3c34789f06c3abb7f46220ef3aaad8'
+p8
+sS'stack'
+p9
+S''
+s.

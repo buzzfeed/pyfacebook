@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI1485\nsVlimit\np2\nV100\np3\nsVpaging\np4\n(dp5\nVprevious\np6\nVhttps://graph.facebook.com/act_40156177/adcampaigns?limit=100&offset=600&account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&__before_id=6004048785365\np7\nsVnext\np8\nVhttps://graph.facebook.com/act_40156177/adcampaigns?limit=100&offset=800&account_id=40156177&include_completed=1&access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&__after_id=6004663663565\np9\nssVdata\np10\n(lp11\n(dp12\nVname\np13\nVExperian: Celebrity Endorsements (Seinfeld)\np14\nsVstart_time\np15\nV2011-11-21T09:00:00-0800\np16\nsVcampaign_id\np17\nI6004048785365\nsVfrequency_cap\np18\nI0\nsVdaily_imps\np19\nI0\nsVlifetime_budget\np20\nI10000\nsVend_time\np21\nV2011-11-22T20:30:00-0800\np22\nsVcreated_time\np23\nV2011-11-21T08:30:57-0800\np24\nsVupdated_time\np25\nV2012-09-21T12:56:14-0700\np26\nsVcampaign_status\np27\nI2\nsVid\np28\nV6004048785365\np29\nsVaccount_id\np30\nI40156177\nsa(dp31\nVname\np32\nVExperian: Celebrity Endorsements (Kim)\np33\nsVstart_time\np34\nV2011-11-21T09:00:00-0800\np35\nsVcampaign_id\np36\nI6004048796765\nsVfrequency_cap\np37\nI0\nsVdaily_imps\np38\nI0\nsVlifetime_budget\np39\nI10000\nsVend_time\np40\nV2011-11-22T20:30:00-0800\np41\nsVcreated_time\np42\nV2011-11-21T08:35:18-0800\np43\nsVupdated_time\np44\nV2012-09-21T12:56:16-0700\np45\nsVcampaign_status\np46\nI2\nsVid\np47\nV6004048796765\np48\nsVaccount_id\np49\nI40156177\nsa(dp50\nVname\np51\nVBBC Would You Rather: Facebook Flight 1\np52\nsVstart_time\np53\nV2011-11-21T09:07:42-0800\np54\nsVcampaign_id\np55\nI6004048881565\nsVfrequency_cap\np56\nI0\nsVdaily_imps\np57\nI0\nsVlifetime_budget\np58\nI100000\nsVend_time\np59\nV2011-12-03T17:00:00-0800\np60\nsVcreated_time\np61\nV2011-11-21T09:07:42-0800\np62\nsVupdated_time\np63\nV2012-09-21T12:56:18-0700\np64\nsVcampaign_status\np65\nI2\nsVid\np66\nV6004048881565\np67\nsVaccount_id\np68\nI40156177\nsa(dp69\nVname\np70\nVWould Your Rather: Live in US or UK Gaga (Partner Page)\np71\nsVstart_time\np72\nV2011-11-22T07:30:00-0800\np73\nsVcampaign_id\np74\nI6004059221365\nsVfrequency_cap\np75\nI0\nsVdaily_imps\np76\nI0\nsVlifetime_budget\np77\nI10000\nsVend_time\np78\nV2011-11-22T17:00:00-0800\np79\nsVcreated_time\np80\nV2011-11-22T07:26:38-0800\np81\nsVupdated_time\np82\nV2012-09-21T12:56:20-0700\np83\nsVcampaign_status\np84\nI2\nsVid\np85\nV6004059221365\np86\nsVaccount_id\np87\nI40156177\nsa(dp88\nVname\np89\nVWould Your Rather: Live in US or UK Adele (Partner Page)\np90\nsVstart_time\np91\nV2011-11-22T07:30:00-0800\np92\nsVcampaign_id\np93\nI6004059225165\nsVfrequency_cap\np94\nI0\nsVdaily_imps\np95\nI0\nsVlifetime_budget\np96\nI10000\nsVend_time\np97\nV2011-11-22T17:00:00-0800\np98\nsVcreated_time\np99\nV2011-11-22T07:29:08-0800\np100\nsVupdated_time\np101\nV2012-09-21T12:56:22-0700\np102\nsVcampaign_status\np103\nI2\nsVid\np104\nV6004059225165\np105\nsVaccount_id\np106\nI40156177\nsa(dp107\nVname\np108\nVSailor Jerry: 10 Famous Pranksters\np109\nsVstart_time\np110\nV2011-11-22T12:00:00-0800\np111\nsVcampaign_id\np112\nI6004059734565\nsVfrequency_cap\np113\nI0\nsVdaily_imps\np114\nI0\nsVlifetime_budget\np115\nI25000\nsVend_time\np116\nV2011-11-28T20:30:00-0800\np117\nsVcreated_time\np118\nV2011-11-22T11:38:26-0800\np119\nsVupdated_time\np120\nV2012-09-21T12:56:24-0700\np121\nsVcampaign_status\np122\nI2\nsVid\np123\nV6004059734565\np124\nsVaccount_id\np125\nI40156177\nsa(dp126\nVname\np127\nVExperian: Celebrities Get Out Of Debt\np128\nsVstart_time\np129\nV2011-11-28T08:43:47-0800\np130\nsVcampaign_id\np131\nI6004073091565\nsVfrequency_cap\np132\nI0\nsVdaily_imps\np133\nI0\nsVlifetime_budget\np134\nI20000\nsVend_time\np135\nV2011-12-02T20:30:00-0800\np136\nsVcreated_time\np137\nV2011-11-28T08:24:45-0800\np138\nsVupdated_time\np139\nV2012-09-21T12:56:26-0700\np140\nsVcampaign_status\np141\nI2\nsVid\np142\nV6004073091565\np143\nsVaccount_id\np144\nI40156177\nsa(dp145\nVname\np146\nVSailor Jerry: Travel In Style\np147\nsVstart_time\np148\nV2011-11-28T09:02:38-0800\np149\nsVcampaign_id\np150\nI6004073168165\nsVfrequency_cap\np151\nI0\nsVdaily_imps\np152\nI0\nsVlifetime_budget\np153\nI25000\nsVend_time\np154\nV2011-11-30T20:30:00-0800\np155\nsVcreated_time\np156\nV2011-11-28T0'
+p8
+sS'hash'
+p9
+S'3b79ab28fdac80a5af0b010faa97b340f4087065'
+p10
+sS'stack'
+p11
+S''
+s.

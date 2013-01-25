@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S"(S'40156177'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'find_by_adaccount_id'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((lp0\nccopy_reg\n_reconstructor\np1\n(cpyfacebook.models.adcampaign\nAdCampaign\np2\nc__builtin__\nobject\np3\nNtp4\nRp5\n(dp6\nS'daily_budget'\np7\nI36500\nsS'start_time'\np8\nV2012-07-25T18:19:00-0700\np9\nsS'account_id'\np10\nI40156177\nsS'lifetime_budget'\np11\nNsS'end_time'\np12\nV2012-09-26T23:00:00-0700\np13\nsS'campaign_status'\np14\nI1\nsS'id'\np15\nV6005558357365\np16\nsS'name'\np17\nVSamsung Flight 2: June-Aug_2012 | 10-Things-We-Wish-Took-Less-Than-10-Seconds-6G87\np18\nsbag1\n(g2\ng3\nNtp19\nRp20\n(dp21\ng7\nI50000\nsg8\nV2012-09-07T09:24:38-0700\np22\nsg10\nI40156177\nsg11\nNsg12\nV2012-09-30T00:00:00-0700\np23\nsg14\nI1\nsg15\nV6005782939965\np24\nsg17\nVVirgin Mobile: Q3 2012 | 20-publicly-shamed-animal-twitpics-5l87\np25\nsbag1\n(g2\ng3\nNtp26\nRp27\n(dp28\ng7\nI50000\nsg8\nV2012-09-07T11:36:00-0700\np29\nsg10\nI40156177\nsg11\nNsg12\nV2012-09-30T00:00:00-0700\np30\nsg14\nI1\nsg15\nV6005783865965\np31\nsg17\nVVirgin Mobile: Q3 2012 | 18-mind-boggling-text-fails-5l87\np32\nsbag1\n(g2\ng3\nNtp33\nRp34\n(dp35\ng7\nNsg8\nV2012-09-07T14:44:11-0700\np36\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np37\nsg14\nI1\nsg15\nV6005784312965\np38\nsg17\nVGE: Nostalgia: Sept_2012 | The-Evolution-Of-10-Edison-Inventions-We-Still-Use-6Ieg\np39\nsbag1\n(g2\ng3\nNtp40\nRp41\n(dp42\ng7\nNsg8\nV2012-09-07T14:50:15-0700\np43\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np44\nsg14\nI1\nsg15\nV6005784323765\np45\nsg17\nVGE: Nostalgia: Sept_2012 | 20-Pictures-Where-Instagram-Actually-Makes-Sense-6Ieg\np46\nsbag1\n(g2\ng3\nNtp47\nRp48\n(dp49\ng7\nNsg8\nV2012-09-07T14:53:22-0700\np50\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np51\nsg14\nI1\nsg15\nV6005784330365\np52\nsg17\nVGE: Nostalgia: Sept_2012 | Famous-Geeks-Hanging-Out-In-The-1900S-6Ieg\np53\nsbag1\n(g2\ng3\nNtp54\nRp55\n(dp56\ng7\nNsg8\nV2012-09-07T14:54:30-0700\np57\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np58\nsg14\nI1\nsg15\nV6005784334165\np59\nsg17\nVGE: Nostalgia: Sept_2012 | Timeless-Ge-Ads-Through-The-Years-6Ieg\np60\nsbag1\n(g2\ng3\nNtp61\nRp62\n(dp63\ng7\nI40000\nsg8\nV2012-09-10T11:30:00-0700\np64\nsg10\nI40156177\nsg11\nNsg12\nV2012-10-03T23:57:00-0700\np65\nsg14\nI1\nsg15\nV6005798478365\np66\nsg17\nVUniqlo Lucky Cube: Sept-Oct_2012 | The-Best-Gifs-Of-Maru-The-Internets-Favorite-Cat\np67\nsbag1\n(g2\ng3\nNtp68\nRp69\n(dp70\ng7\nNsg8\nV2012-09-11T07:30:57-0700\np71\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-10-22T00:00:00-0700\np72\nsg14\nI1\nsg15\nV6005801290565\np73\nsg17\nVMSFT: IE9 BYLTH: Sept-Oct_2012 | The-13-Most-Common-Misconceptions\np74\nsbag1\n(g2\ng3\nNtp75\nRp76\n(dp77\ng7\nNsg8\nV2012-09-11T07:32:38-0700\np78\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-10-22T00:00:00-0700\np79\nsg14\nI1\nsg15\nV6005801296165\np80\nsg17\nVMSFT: IE9 BYLTH: Sept-Oct_2012 | The-10-Most-Epic-Turnarounds\np81\nsbag1\n(g2\ng3\nNtp82\nRp83\n(dp84\ng7\nNsg8\nV2012-09-11T08:53:00-0700\np85\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np86\nsg14\nI1\nsg15\nV6005801789965\np87\nsg17\nVGE: Nostalgia: Sept_2012 | Thomas-Edison-And-Henry-Ford-Bffs-6Ieg\np88\nsbag1\n(g2\ng3\nNtp89\nRp90\n(dp91\ng7\nNsg8\nV2012-09-11T08:54:28-0700\np92\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-09-30T00:00:00-0700\np93\nsg14\nI1\nsg15\nV6005801793765\np94\nsg17\nVGE: Nostalgia: Sept_2012 | Hey-Girl-Thomas-Edison-Has-A-Crush-On-You-6Ieg\np95\nsbag1\n(g2\ng3\nNtp96\nRp97\n(dp98\ng7\nI50000\nsg8\nV2012-09-12T08:03:00-0700\np99\nsg10\nI40156177\nsg11\nNsg12\nV2012-09-24T23:03:00-0700\np100\nsg14\nI1\nsg15\nV6005804894365\np101\nsg17\nVIntel/Toshiba: Aug-Sept_2012 | 11-Of-The-Most-Amazing-Celebrity-Transformations-6Wxq\np102\nsbag1\n(g2\ng3\nNtp103\nRp104\n(dp105\ng7\nNsg8\nV2012-09-12T08:06:09-0700\np106\nsg10\nI40156177\nsg11\nI10000\nsg12\nV2012-09-25T00:00:00-0700\np107\nsg14\nI1\nsg15\nV6005805102965\np108\nsg17\nVNBC: Animal Practice : Sept_2012 | 15-Sweet-Animalhuman-Friendships\np109\nsbag1\n(g2\ng3\nNtp110\nRp111\n(dp112\ng7\nNsg8\nV2012-09-12T10:10:12-0700\np113\nsg10\nI40156177\nsg11\nI10000\nsg12\nV2012-09-25T00:00:00-0700\np114\nsg14\nI1\nsg15\nV6005806016565\np115\nsg17\nVNBC: Animal Practice : Sept_2012 | The-Most-Iconic-Animals-In-Showbiz\np116\nsbag1\n(g2\ng3\nNtp117\nRp118\n(dp119\ng7\nNsg8\nV2012-09-13T07:51:18-0700\np120\nsg10\nI40156177\nsg11\nI50000\nsg12\nV2012-10-06T00:00:00-0700\np121\nsg14\nI1\nsg15\nV6005812343965\np122\nsg17\nVStarbucks"
+p8
+sS'hash'
+p9
+S'242270d02626e99ce1fbb3ff5dd331e7bc3cb224'
+p10
+sS'stack'
+p11
+S''
+s.

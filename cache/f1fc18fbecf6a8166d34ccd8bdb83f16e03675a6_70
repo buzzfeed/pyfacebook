@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I70
+sS'returnval'
+p5
+S'id\np8783\nV495687347129390\np8784\nsVcreative_id\np8785\nV6006518505165\np8786\nsVpreview_url\np8787\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006518505165\np8788\nsVaction_t\np8789\nVBgABAQcIAAZQuSgeCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAACwEKAAAAAAAAAFAAuAABwtM0PswuALkAAAAAAAAAZAC6AAFvIvpYQbUCIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAAEAAcLTND7MLgG2AAAAAFC5KB4B5AABwtM0PswuDQAbBgsAAAABQAMAAAFgTmVlZCBhIGxpdHRsZSBIb2xpZGF5IGNoZWVyPyBDaGVjayBvdXQgdGhlc2UgZGVjb3JhdGlvbnMuLi5odHRwOi8vYnpmZC5pdC9TQTFPZVAgb29vb28gMTAgUGxhY2VzIFRoYXQgVGFrZSBDaHJpc3RtYXMgRGVjb3JhdGlvbnMgUmVhbGx5IFNlcmlvdXNseSBvb29vbyBXZSBhbGwgbG92ZSB0aGUgaG9saWRheXMsIGJ1dCB0aGVyZSBhcmUgYSBmZXcgc3BvdHMgdGhhdCByZWFsbHkgZ28gYWJvdmUgYW5kIGJleW9uZCB0aGUgY2FsbCBvZiBkdXR5IHdoZW4gaXQgY29tZXMgdG8gQ2hyaXN0bWFzIGRlY29yYXRpb25zLiBUYWtlIGEgbG9vayBhdCBzb21lIG9mIHRoZSBtb3N0IGZlc3RpdmUgcGxhY2VzIGluIHRoZSBVUy4uLgoAHAABwtM0PswuAA==\np8790\nsVaction_spec\np8791\nNsVobject_id\np8792\nV238205562866018\np8793\nsVcount_current_adgroups\np8794\nI1\nsVrun_status\np8795\nI1\nsVtype\np8796\nI27\nsVid\np8797\nV6006518505165\np8798\nsa(dp8799\nVname\np8800\nVSponsored story #6,006,518,506,965\np8801\nsVcreative_id\np8802\nV6006518506965\np8803\nsVpreview_url\np8804\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006518506965\np8805\nsVobject_id\np8806\nV238205562866018\np8807\nsVaction_spec\np8808\n(lp8809\n(dp8810\nVpost\np8811\nV495687347129390\np8812\nsVaction.type\np8813\nVlike\np8814\nsa(dp8815\nVpost\np8816\nV495687347129390\np8817\nsVaction.type\np8818\nVcomment\np8819\nsa(dp8820\nVpost.object\np8821\nV495687347129390\np8822\nsVaction.type\np8823\nVpost\np8824\nsasVcluster_id\np8825\nI6006518503765\nsVcount_current_adgroups\np8826\nI1\nsVrun_status\np8827\nI1\nsVtype\np8828\nI25\nsVid\np8829\nV6006518506965\np8830\nsa(dp8831\nValt_view_tags\np8832\n(lp8833\nsVbody\np8834\nVNot just your average snack - Check out "15 Fun Ways to Enjoy JELL-O" on BuzzFeed! \np8835\nsVimage_hash\np8836\nVfce9094dec48e214de275a3c0b43d348\np8837\nsVname\np8838\nVRainbow JELL-O Bundt Cake\np8839\nsVtitle\np8840\nVRainbow JELL-O Bundt Cake\np8841\nsVcreative_id\np8842\nV6007099423165\np8843\nsVpreview_url\np8844\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007099423165\np8845\nsVid\np8846\nV6007099423165\np8847\nsVimage_url\np8848\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/701889_6007099320565_6102_n.jpg\np8849\nsVcount_current_adgroups\np8850\nI1\nsVrun_status\np8851\nI1\nsVtype\np8852\nI1\nsVlink_url\np8853\nVhttp://ad.doubleclick.net/clk;265889420;91352643;q?http://www.buzzfeed.com/h1/fbad/jello/15-fun-ways-to-enjoy-jell-o\np8854\nsVview_tag\np8855\ng35\nsa(dp8856\nValt_view_tags\np8857\n(lp8858\nsVbody\np8859\nVNot just your average snack - Check out "15 Fun Ways to Enjoy JELL-O" on BuzzFeed! \np8860\nsVimage_hash\np8861\nV34668727be40807f229910cbfde3cace\np8862\nsVname\np8863\nVRainbow JELL-O Bundt Cake-00\np8864\nsVtitle\np8865\nVIs that JELL-O Bacon?\np8866\nsVcreative_id\np8867\nV6007099445965\np8868\nsVpreview_url\np8869\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007099445965\np8870\nsVid\np8871\nV6007099445965\np8872\nsVimage_url\np8873\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708166_6007099430965_15184_n.jpg\np8874\nsVcount_current_adgroups\np8875\nI1\nsVrun_status\np8876\nI1\nsVtype\np8877\nI1\nsVlink_url\np8878\nVhttp://ad.doubleclick.net/clk;265889420;91352643;q?http://www.buzzfeed.com/h1/fbad/jello/15-fun-ways-to-enjoy-jell-o\np8879\nsVview_tag\np8880\ng35\nsa(dp8881\nValt_view_tags\np8882\n(lp8883\nsVbody\np8884\nVWhat if the web made up of board games? Here\'s what our favorite websites would look like.\np8885\nsVimage_hash\np8886\nV20281e5cb89e7adc30ec8e060ad32f84\np8887\nsVname\np8888\nVWebsites As Board Games?-00-00\np8889\nsVtitle\np8890\nVWebsites As Board Games?\np8891\nsVcreative_id\np8892\nV6007135969565\np8893\nsVpreview_url\np8894\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007135969565\np8895\nsVid\np8896\nV6007135969565\np8897\nsVimage_url\np8898\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708183_6007135955965_6176_n.jpg\np8899\nsVcount_current_adgroups\np8900\nI1\nsVrun_status\np8901\nI1\nsVtype\np8902\nI1\nsVlink_url\np8903\nVhttp://clk.atdmt.com/IEC/go/425109742/direct/01/?href='
+p6
+sS'hash'
+p7
+S'f1fc18fbecf6a8166d34ccd8bdb83f16e03675a6'
+p8
+sS'stack'
+p9
+S''
+s.

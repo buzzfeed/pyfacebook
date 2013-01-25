@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I1
+sS'returnval'
+p5
+S'p137\nValt_view_tags\np138\n(lp139\nsVbody\np140\nVIf you have one, then you make the list of "People Who Take Sports Too Serously!"\np141\nsVimage_hash\np142\nV9df03026c09f8e2dd0a115866f358fe9\np143\nsVname\np144\nVA Shaq Tattoo?\np145\nsVtitle\np146\nVA Shaq Tattoo?\np147\nsVcreative_id\np148\nV6005962037565\np149\nsVpreview_url\np150\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005962037565\np151\nsVid\np152\nV6005962037565\np153\nsVimage_url\np154\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701899_6006844996365_54455_n.jpg\np155\nsVcount_current_adgroups\np156\nI1\nsVrun_status\np157\nI1\nsVtype\np158\nI1\nsVlink_url\np159\nVhttp://www.buzzfeed.com/h1/fbad/theleague/people-who-take-sports-way-too-seriously\np160\nsVview_tag\np161\ng36\nsa(dp162\nValt_view_tags\np163\n(lp164\nsVbody\np165\nVIf you have some, then you make the list of "People Who Take Sports Too Serously!"\np166\nsVimage_hash\np167\nV1b41ae3149d18ff8427b442040c6e8c9\np168\nsVname\np169\nVA Shaq Tattoo?-00\np170\nsVtitle\np171\nVNASCAR Tattoos?\np172\nsVcreative_id\np173\nV6005966857565\np174\nsVpreview_url\np175\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005966857565\np176\nsVid\np177\nV6005966857565\np178\nsVimage_url\np179\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701896_6006844221965_61499_n.jpg\np180\nsVcount_current_adgroups\np181\nI1\nsVrun_status\np182\nI1\nsVtype\np183\nI1\nsVlink_url\np184\nVhttp://www.buzzfeed.com/h1/fbad/theleague/people-who-take-sports-way-too-seriously\np185\nsVview_tag\np186\ng36\nsa(dp187\nVname\np188\nVSponsored story #6005985563365\np189\nsVstory_id\np190\nV161330614005889\np191\nsVcreative_id\np192\nV6005985563365\np193\nsVpreview_url\np194\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005985563365\np195\nsVobject_id\np196\nV238205562866018\np197\nsVaction_spec\np198\n(dp199\nVpost\np200\nV161330614005889\np201\nsVaction.type\np202\nVlike\np203\nssVcluster_id\np204\nI6005985562565\nsVcount_current_adgroups\np205\nI1\nsVrun_status\np206\nI1\nsVtype\np207\nI25\nsVid\np208\nV6005985563365\np209\nsa(dp210\nVname\np211\nVAd from a Page post #6005985589765\np212\nsVauto_update\np213\nI00\nsVstory_id\np214\nV161330614005889\np215\nsVcreative_id\np216\nV6005985589765\np217\nsVpreview_url\np218\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005985589765\np219\nsVaction_t\np220\nVBgABAQcIAAZQb0CgCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAADAEKAAAAAAAAAFAAuAAAkrq18HCBALkAAAAAAAAAZAC6AACn9o27fyICIwAAAAAAAAAIAMMAAABQIpXpSQG7AAAAAAAAAGcACgAAAACJrdDMAR4AAAAAVTPfaAABAACSurXwcIEBtgAAAABQb0CgAeQAAJK6tfBwgQ0AGwYLAAAAAUADAAAAqkRpYXNhcHBvaW50aW5nIEZhY3Q6IEtlJGhhJ3MgIlRpay1Ub2siIHNvbGQgbW9yZSBjb3BpZXMgdGhhbiBhbnkgQmVhdGxlcyBzb25nISBTZWUgdGhlIHJlc3QgLSBodHRwOi8veW91dHUuYmUvYzhaU3BzLTJzTTggb29vb28gRGlzYXBwb2ludGluZyBGYWN0cyBBYm91dCBQb3AgTXVzaWMgb29vb28gCgAcAACSurXwcIEA\np221\nsVaction_spec\np222\nNsVobject_id\np223\nV238205562866018\np224\nsVcount_current_adgroups\np225\nI1\nsVrun_status\np226\nI1\nsVtype\np227\nI27\nsVid\np228\nV6005985589765\np229\nsa(dp230\nVname\np231\nVAd from a Page post #6005984582365\np232\nsVauto_update\np233\nI00\nsVstory_id\np234\nV526205927395261\np235\nsVcreative_id\np236\nV6005984582365\np237\nsVpreview_url\np238\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005984582365\np239\nsVaction_t\np240\nVBgABAQcIAAZQbyGUCgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAADAEKAAAAAAAAAFAAuAAB3pTdYY+9ALkAAAAAAAAAZAC6AACDHH8pMG8CIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAR4AAAAAVjBQbgABAAHelN1hj70BtgAAAABQbyGUAeQAAd6U3WGPvQ0AGwYLAAAAAUADAAABHkhvdyBtYW55IG9mIHRoZXNlIHRveXMgZG8geW91IHJlbWVtYmVyPwpodHRwOi8vYnpmZC5pdC9TUHU3Nkcgb29vb28gMTggT2YgWW91ciBGYXZvcml0ZSBUb3lzIEZyb20gVGhlICc5MHMgb29vb28gU29tZSBvZiB0aGUgYmVzdCBtZW1vcmllcyBvZiBiZWluZyBhIGtpZCBpcyB3aGVuIHlvdXIgcGFyZW50cyB3b3VsZCB0YWtlIHlvdSB0byB0aGUgdG95IHN0b3JlLiBIb3cgbWFueSBvZiB0aGVzZSB0b3lzIGRvIHlvdSByZW1lbWJlcj8gQWRkIHlvdXIgZmF2b3JpdGUgdG95IGluIHRoZSBjb21tZW50cyEKABwAAd6U3WGPvQA=\np241\nsVaction_spec\np242\nNsVobject_id\np243\nV238205562866018\np244\nsVcount_current_adgroups\np245\nI1\nsVrun_status\np246\nI1\nsVtype\np247\nI27\nsVid\np248\nV6005984582365\np249\nsa(dp250\nVname\np251\nVSponsored story #6005984584165\np252\nsVcreative_id\np253\nV6005984584165\np254\nsVpreview_url\np255\nVhttp://www.facebook.com/a'
+p6
+sS'hash'
+p7
+S'057ed9ef6861c094e514d4776db0c6327d1c84eb'
+p8
+sS'stack'
+p9
+S''
+s.

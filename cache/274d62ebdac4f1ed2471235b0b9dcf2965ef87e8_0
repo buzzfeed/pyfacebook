@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI5353\nsVlimit\np2\nI500\nsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=4500\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adcreatives?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=5500\np8\nssVdata\np9\n(lp10\n(dp11\nValt_view_tags\np12\n(lp13\nsVbody\np14\nVAlex Blagg sits down with Nicolas Cage and forces him to confront his worst nightmare:\np15\nsVimage_hash\np16\nV8c58957637893ffa9a05f6438317ac12\np17\nsVname\np18\nVNicolas Cage On Nicolas -01\np19\nsVtitle\np20\nVNicolas Cage On Nicolas \np21\nsVcreative_id\np22\nV6003086891565\np23\nsVpreview_url\np24\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086891565\np25\nsVid\np26\nV6003086891565\np27\nsVimage_url\np28\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708171_6006844889165_52272_n.jpg\np29\nsVcount_current_adgroups\np30\nI0\nsVrun_status\np31\nI1\nsVtype\np32\nI1\nsVlink_url\np33\nVhttp://buzzfeed.com/ht/awesomer/nicolas-cage-on-nicolas-cage/HFAA1\np34\nsVview_tag\np35\nV\np36\nsa(dp37\nValt_view_tags\np38\n(lp39\nsVbody\np40\nVAlex Blagg sits down with Nicolas Cage and forces him to confront his worst nightmare:\np41\nsVimage_hash\np42\nV8c58957637893ffa9a05f6438317ac12\np43\nsVname\np44\nVNicolas Cage On Nicolas -00\np45\nsVtitle\np46\nVNicolas Cage On Nicolas \np47\nsVcreative_id\np48\nV6003086875765\np49\nsVpreview_url\np50\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086875765\np51\nsVid\np52\nV6003086875765\np53\nsVimage_url\np54\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708171_6006844889165_52272_n.jpg\np55\nsVcount_current_adgroups\np56\nI0\nsVrun_status\np57\nI1\nsVtype\np58\nI1\nsVlink_url\np59\nVhttp://buzzfeed.com/ht/awesomer/nicolas-cage-on-nicolas-cage/HFAA1\np60\nsVview_tag\np61\ng36\nsa(dp62\nValt_view_tags\np63\n(lp64\nsVbody\np65\nVA friend in need of small, bent wiener pics is a friend indeed.\np66\nsVimage_hash\np67\nV40dd8777682a5159b2cd59e6b26e4222\np68\nsVname\np69\nVWana See A Pic?-00\np70\nsVtitle\np71\nVWana See A Pic?\np72\nsVcreative_id\np73\nV6003086817965\np74\nsVpreview_url\np75\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086817965\np76\nsVid\np77\nV6003086817965\np78\nsVimage_url\np79\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708192_6006844431565_1821_n.jpg\np80\nsVcount_current_adgroups\np81\nI0\nsVrun_status\np82\nI1\nsVtype\np83\nI1\nsVlink_url\np84\nVhttp://buzzfeed.com/ht/awesomer/wana-see-a-pic/HFAA1\np85\nsVview_tag\np86\ng36\nsa(dp87\nValt_view_tags\np88\n(lp89\nsVbody\np90\nVA friend in need of small, bent wiener pics is a friend indeed.\np91\nsVimage_hash\np92\nV40dd8777682a5159b2cd59e6b26e4222\np93\nsVname\np94\nVWana See A Pic?\np95\nsVtitle\np96\nVWana See A Pic?\np97\nsVcreative_id\np98\nV6003086718165\np99\nsVpreview_url\np100\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086718165\np101\nsVid\np102\nV6003086718165\np103\nsVimage_url\np104\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708192_6006844431565_1821_n.jpg\np105\nsVcount_current_adgroups\np106\nI0\nsVrun_status\np107\nI1\nsVtype\np108\nI1\nsVlink_url\np109\nVhttp://buzzfeed.com/ht/awesomer/wana-see-a-pic/HFAA1\np110\nsVview_tag\np111\ng36\nsa(dp112\nValt_view_tags\np113\n(lp114\nsVbody\np115\nVWhat do you get when you cross The Fonz and a common house cat?\np116\nsVimage_hash\np117\nV98315b3454ed10481e309fc67856a91c\np118\nsVname\np119\nVCat Gives A Thumbs Up\np120\nsVtitle\np121\nVCat Gives A Thumbs Up\np122\nsVcreative_id\np123\nV6003086653965\np124\nsVpreview_url\np125\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6003086653965\np126\nsVid\np127\nV6003086653965\np128\nsVimage_url\np129\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708176_6006844960165_11053_n.jpg\np130\nsVcount_current_adgroups\np131\nI0\nsVrun_status\np132\nI1\nsVtype\np133\nI1\nsVlink_url\np134\nVhttp://buzzfeed.com/ht/awesomer/cat-gives-a-thumbs-up/HFAA1\np135\nsVview_tag\np136\ng36\nsa(dp137\nValt_view_tags\np138\n(lp139\nsVbody\np140\nVThis office suffers from a total lack of accounta'
+p8
+sS'hash'
+p9
+S'274d62ebdac4f1ed2471235b0b9dcf2965ef87e8'
+p10
+sS'stack'
+p11
+S''
+s.

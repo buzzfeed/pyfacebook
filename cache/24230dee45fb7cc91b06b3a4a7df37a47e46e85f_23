@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I23
+sS'returnval'
+p5
+S'Vconnections\np4490\nI0\nsVsocial_clicks\np4491\nV0\np4492\nsVevents\np4493\n(dp4494\nVvideo_play\np4495\nI0\nsVtitle_clicks\np4496\nI0\nsVinline_like\np4497\nI0\nsVinline_comment\np4498\nI0\nsVrsvp_maybe\np4499\nI0\nsVlink_open\np4500\nI0\nsVphoto_view\np4501\nI0\nsVrsvp_yes\np4502\nI0\nsVfans\np4503\nI0\nsVquestion_vote\np4504\nI0\nssVsocial_impressions\np4505\nV0\np4506\nsVadgroup_id\np4507\nI6007103321565\nsVsocial_unique_impressions\np4508\nI0\nsVsocial_spent\np4509\nV0\np4510\nsVimpressions\np4511\nV737792\np4512\nsVnewsfeed_position\np4513\n(dp4514\nVnewsfeed_clicks\np4515\nV0\np4516\nsVnewsfeed_impressions\np4517\nV0\np4518\nsVnewsfeed_average_position\np4519\nI0\nssVid\np4520\nV6007103321565/stats/1353909600/1356588000\np4521\nsVunique_clicks\np4522\nI0\nsVend_time\np4523\nV2012-12-27T06:00:00+0000\np4524\nsa(dp4525\nVcampaign_id\np4526\nI6006734084765\nsVsocial_unique_clicks\np4527\nI0\nsVunique_impressions\np4528\nI0\nsVstart_time\np4529\nV2012-11-26T06:00:00+0000\np4530\nsVspent\np4531\nV4320\np4532\nsVactions\np4533\nNsVclicks\np4534\nV80\np4535\nsVconnections\np4536\nI0\nsVsocial_clicks\np4537\nV0\np4538\nsVevents\np4539\n(dp4540\nVvideo_play\np4541\nI0\nsVtitle_clicks\np4542\nI0\nsVinline_like\np4543\nI0\nsVinline_comment\np4544\nI0\nsVrsvp_maybe\np4545\nI0\nsVlink_open\np4546\nI0\nsVphoto_view\np4547\nI0\nsVrsvp_yes\np4548\nI0\nsVfans\np4549\nI0\nsVquestion_vote\np4550\nI0\nssVsocial_impressions\np4551\nV0\np4552\nsVadgroup_id\np4553\nI6007103342965\nsVsocial_unique_impressions\np4554\nI0\nsVsocial_spent\np4555\nV0\np4556\nsVimpressions\np4557\nV214622\np4558\nsVnewsfeed_position\np4559\n(dp4560\nVnewsfeed_clicks\np4561\nV0\np4562\nsVnewsfeed_impressions\np4563\nV0\np4564\nsVnewsfeed_average_position\np4565\nI0\nssVid\np4566\nV6007103342965/stats/1353909600/1356588000\np4567\nsVunique_clicks\np4568\nI0\nsVend_time\np4569\nV2012-12-27T06:00:00+0000\np4570\nsa(dp4571\nVcampaign_id\np4572\nI6006734200965\nsVsocial_unique_clicks\np4573\nI0\nsVunique_impressions\np4574\nI0\nsVstart_time\np4575\nV2012-11-26T06:00:00+0000\np4576\nsVspent\np4577\nV70379\np4578\nsVactions\np4579\n(dp4580\nVcomment\np4581\nI3\nsVlike\np4582\nI58\nsVpost_like\np4583\nI192\nsVphoto_view\np4584\nI0\nsVlink_click\np4585\nI8\nsVpost\np4586\nI0\nssVclicks\np4587\nV1536\np4588\nsVconnections\np4589\nI42\nsVsocial_clicks\np4590\nV469\np4591\nsVevents\np4592\n(dp4593\nVvideo_play\np4594\nI0\nsVtitle_clicks\np4595\nI6\nsVinline_like\np4596\nI153\nsVinline_comment\np4597\nI3\nsVrsvp_maybe\np4598\nI0\nsVlink_open\np4599\nI584\nsVphoto_view\np4600\nI14\nsVrsvp_yes\np4601\nI0\nsVfans\np4602\nI56\nsVquestion_vote\np4603\nI0\nssVsocial_impressions\np4604\nV68716\np4605\nsVadgroup_id\np4606\nI6006734202165\nsVsocial_unique_impressions\np4607\nI0\nsVsocial_spent\np4608\nV19858\np4609\nsVimpressions\np4610\nV351485\np4611\nsVnewsfeed_position\np4612\n(dp4613\nVnewsfeed_clicks\np4614\nV1514\np4615\nsVnewsfeed_impressions\np4616\nV186739\np4617\nsVnewsfeed_average_position\np4618\nF35.848708625408\nssVid\np4619\nV6006734202165/stats/1353909600/1356588000\np4620\nsVunique_clicks\np4621\nI0\nsVend_time\np4622\nV2012-12-27T06:00:00+0000\np4623\nsas.'
+p6
+sS'hash'
+p7
+S'24230dee45fb7cc91b06b3a4a7df37a47e46e85f'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adstatistic.py find_by_start_time_end_time /home/orozco/development/django/buzzfeed/pyfacebook/test/adstatistic_test.py test_find_by_start_time_end_time /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite'
+p10
+s.

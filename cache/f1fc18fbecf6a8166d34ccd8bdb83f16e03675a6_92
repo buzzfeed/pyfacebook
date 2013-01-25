@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I92
+sS'returnval'
+p5
+S"Vtype\np11466\nI1\nsVlink_url\np11467\nVhttp://ad.doubleclick.net/clk;265997826;91793940;j\np11468\nsVview_tag\np11469\ng35\nsa(dp11470\nValt_view_tags\np11471\n(lp11472\nsVbody\np11473\nVMariah Carey, Boyz ll Men, Destiny's Child, and 'NSYNC - Take the Quiz Now on BuzzFeed!\np11474\nsVimage_hash\np11475\nVaf35959a8e8351b127e7bc01e69655c8\np11476\nsVname\np11477\nVDo You Know the 90s?-00-00\np11478\nsVtitle\np11479\nVDo You Know the 90s?\np11480\nsVcreative_id\np11481\nV6006730769965\np11482\nsVpreview_url\np11483\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006730769965\np11484\nsVid\np11485\nV6006730769965\np11486\nsVimage_url\np11487\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708185_6006730758765_195_n.jpg\np11488\nsVcount_current_adgroups\np11489\nI1\nsVrun_status\np11490\nI1\nsVtype\np11491\nI1\nsVlink_url\np11492\nVhttp://ad.doubleclick.net/clk;265997826;91793940;j\np11493\nsVview_tag\np11494\ng35\nsa(dp11495\nVname\np11496\nVAd from a Page post #6,006,751,113,165\np11497\nsVauto_update\np11498\nI00\nsVstory_id\np11499\nV561356627223824\np11500\nsVcreative_id\np11501\nV6006751113165\np11502\nsVpreview_url\np11503\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006751113165\np11504\nsVaction_t\np11505\nVBgABAQcIAAZQx0k6CgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAACwEKAAAAAAAAAFAAuAAB/o0GW6UQALkAAAAAAAAAZAC6AAFgYIcxlkcCIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAAEAAf6NBlulEAG2AAAAAFDHSToB5AAB/o0GW6UQDQAbBgsAAAABQAMAAAEfRG9uJ3QgYmxpbmsgb3IgeW91J2xsIG1pc3MgaXQhIGh0dHA6Ly9iemZkLml0L1RTTENhMyBvb29vbyAyMSBNb21lbnRzIEZyb3plbiBBdCBUaGUgUGVyZmVjdCBUaW1lIG9vb29vIERvbid0IGJsaW5rIG9yIHlvdSdsbCBtaXNzIGl0ISBEb24ndCBmb3JnZXQgdG8gYnJpbmcgeW91ciBTYW1zdW5nIEdBTEFYWSBDYW1lcmEgd2l0aCB5b3UgdG8gY2FwdHVyZSBpdCBhbGwuIEl0J3MgZGVzaWduZWQgdG8gbGV0IHlvdSB0YWtlIHBlcmZlY3QgcGljdHVyZXMgYXQgYW55IG1vbWVudCwgZXZlbiB0aGUgZmEuLi4KABwAAf6NBlulEAA=\np11506\nsVaction_spec\np11507\nNsVobject_id\np11508\nV238205562866018\np11509\nsVcount_current_adgroups\np11510\nI1\nsVrun_status\np11511\nI1\nsVtype\np11512\nI27\nsVid\np11513\nV6006751113165\np11514\nsa(dp11515\nVname\np11516\nVSponsored story #6,006,751,115,165\np11517\nsVcreative_id\np11518\nV6006751115165\np11519\nsVpreview_url\np11520\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006751115165\np11521\nsVobject_id\np11522\nV238205562866018\np11523\nsVaction_spec\np11524\n(lp11525\n(dp11526\nVpost\np11527\nV561356627223824\np11528\nsVaction.type\np11529\nVlike\np11530\nsa(dp11531\nVpost\np11532\nV561356627223824\np11533\nsVaction.type\np11534\nVcomment\np11535\nsa(dp11536\nVpost.object\np11537\nV561356627223824\np11538\nsVaction.type\np11539\nVpost\np11540\nsasVcluster_id\np11541\nI6006751110965\nsVcount_current_adgroups\np11542\nI1\nsVrun_status\np11543\nI1\nsVtype\np11544\nI25\nsVid\np11545\nV6006751115165\np11546\nsa(dp11547\nVname\np11548\nVSponsored story #6,006,787,139,965\np11549\nsVcreative_id\np11550\nV6006787139965\np11551\nsVpreview_url\np11552\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006787139965\np11553\nsVobject_id\np11554\nV238205562866018\np11555\nsVaction_spec\np11556\n(lp11557\n(dp11558\nVpost\np11559\nV125666884259373\np11560\nsVaction.type\np11561\nVlike\np11562\nsa(dp11563\nVpost\np11564\nV125666884259373\np11565\nsVaction.type\np11566\nVcomment\np11567\nsa(dp11568\nVpost.object\np11569\nV125666884259373\np11570\nsVaction.type\np11571\nVpost\np11572\nsasVcluster_id\np11573\nI6006787137165\nsVcount_current_adgroups\np11574\nI1\nsVrun_status\np11575\nI1\nsVtype\np11576\nI25\nsVid\np11577\nV6006787139965\np11578\nsa(dp11579\nValt_view_tags\np11580\n(lp11581\nsVbody\np11582\nVIf so - BuzzFeed has a great opportunity for someone like you. Check it out.\np11583\nsVimage_hash\np11584\nV16a9022ec6d52d3271c6230647b41b62\np11585\nsVname\np11586\nVAre You a Digital Buyer?-01-00\np11587\nsVtitle\np11588\nVLove Social Media?\np11589\nsVcreative_id\np11590\nV6006754687565\np11591\nsVpreview_url\np11592\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006754687565\np11593\nsVid\np11594\nV6006754687565\np11595\nsVimage_url\np11596\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701899_6006753677965_16561_n.jpg\np11597\nsVcount_current_adgroups\np11598\nI1\nsVrun_status\np11599\nI1\nsVtype\np11600\nI1\nsVlink_url\np11601\nVhttp://smarturl.it/buzzjobs?IQid=sem_smm\np116"
+p6
+sS'hash'
+p7
+S'f1fc18fbecf6a8166d34ccd8bdb83f16e03675a6'
+p8
+sS'stack'
+p9
+S''
+s.

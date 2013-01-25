@@ -1,0 +1,24 @@
+(dp1
+S'args'
+p2
+S'(t.'
+p3
+sS'methodname'
+p4
+S'__json_response'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(dp0\nVcount\np1\nI3239\nsVinclude_deleted\np2\nNsVpaging\np3\n(dp4\nVprevious\np5\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=1000\np6\nsVnext\np7\nVhttps://graph.facebook.com/act_40156177/adgroups?access_token=AAAAACn63CWkBAMqpbBAZCzY9ZAxUwkgZCUeUFd0WWNyXRuxBY2JJahcZBMBO0q2D8Hyp5OZAMKZCFcbZBMWBZClqLQFENvjildZCZCVCSD3vTlfAZDZD&offset=2000\np8\nssVlimit\np9\nI500\nsVoffset\np10\nV1500\np11\nsVdata\np12\n(lp13\n(dp14\nVbid_info\np15\n(dp16\nV1\np17\nV65\np18\nssVcampaign_id\np19\nI6005735303165\nsVlast_updated_by_app_id\np20\nI6802152230\nsVcreated_time\np21\nV2012-08-27T14:43:24+0000\np22\nsVconversion_specs\np23\n(lp24\nsVadgroup_id\np25\nI6005735304565\nsVtargeting\np26\n(dp27\nVkeywords\np28\n(lp29\nV#Doug E. Fresh\np30\naV#Beardyman\np31\naV#Shlomo (beatboxing artist)\np32\naV#Rahzel\np33\naV#Rapping\np34\naV#Beatboxing\np35\naV#8 Mile (film)\np36\nasVage_max\np37\nI65\nsVcountries\np38\n(lp39\nVUS\np40\nasVbroad_age\np41\nI1\nsVage_min\np42\nI13\nssVid\np43\nV6005735304565\np44\nsVmax_bid\np45\nV65\np46\nsVad_id\np47\nI6005735304565\nsVaccount_id\np48\nI40156177\nsVstart_time\np49\nV2012-08-27T15:18:30+0000\np50\nsVlocations\np51\n(lp52\nI3\nasVadgroup_status\np53\nI8\nsVad_status\np54\nI2\nsVimpression_control_map\np55\n(lp56\n(dp57\nVcontrol\np58\n(dp59\nVuser_impression_limit_period\np60\nI24\nsVuser_impression_limit\np61\nI6\nsVuser_impression_limit_period_unit\np62\nI0\nsVimpression_control_type\np63\nI2\nssVlocation\np64\nI3\nsasVcreative_ids\np65\n(lp66\nI6005735303765\nasVtracking_pixel_ids\np67\n(lp68\nsVbid_type\np69\nI1\nsVname\np70\nVBest Beatboxer Ever?\np71\nsVupdated_time\np72\nV2012-09-21T20:14:54+0000\np73\nsVend_time\np74\nNsa(dp75\nVbid_info\np76\n(dp77\nV1\np78\nV65\np79\nssVcampaign_id\np80\nI6005735303165\nsVlast_updated_by_app_id\np81\nI6802152230\nsVcreated_time\np82\nV2012-08-27T14:52:55+0000\np83\nsVconversion_specs\np84\n(lp85\nsVadgroup_id\np86\nI6005735329565\nsVtargeting\np87\n(dp88\nVkeywords\np89\n(lp90\nV#Modern art\np91\naV#Artist\np92\naV#Museum of Contemporary Art, Los Angeles\np93\naV#New York Foundation for the Arts\np94\naV#Visual arts\np95\naV#Contemporary art\np96\naV#Brooklyn Museum\np97\naV#Fine art\np98\naV#Getty Center\np99\naV#Metropolitan Museum of Art\np100\naV#Museum of Modern Art\np101\naV#MoMA PS1\np102\naV#Tate\np103\naV#Rhode Island School of Design\np104\naV#Design Museum\np105\naV#Art Institute of Chicago\np106\naV#Los Angeles County Museum of Art\np107\naVcreators project\np108\naV#Surrealism\np109\naV#Whitney Museum of American Art\np110\naV#Solomon R. Guggenheim Museum\np111\nasVage_max\np112\nI65\nsVcountries\np113\n(lp114\nVUS\np115\nasVbroad_age\np116\nI1\nsVage_min\np117\nI13\nssVid\np118\nV6005735329565\np119\nsVmax_bid\np120\nV65\np121\nsVad_id\np122\nI6005735329565\nsVaccount_id\np123\nI40156177\nsVstart_time\np124\nV2012-08-27T15:18:30+0000\np125\nsVlocations\np126\n(lp127\nI3\nasVadgroup_status\np128\nI9\nsVad_status\np129\nI2\nsVimpression_control_map\np130\n(lp131\n(dp132\nVcontrol\np133\n(dp134\nVuser_impression_limit_period\np135\nI24\nsVuser_impression_limit\np136\nI3\nsVuser_impression_limit_period_unit\np137\nI0\nsVimpression_control_type\np138\nI2\nssVlocation\np139\nI3\nsasVcreative_ids\np140\n(lp141\nI6005735328765\nasVtracking_pixel_ids\np142\n(lp143\nsVbid_type\np144\nI1\nsVname\np145\nVHuman Body Art\np146\nsVupdated_time\np147\nV2012-08-28T13:28:53+0000\np148\nsVend_time\np149\nNsa(dp150\nVbid_info\np151\n(dp152\nV1\np153\nV65\np154\nssVcampaign_id\np155\nI6005735303165\nsVlast_updated_by_app_id\np156\nI6802152230\nsVcreated_time\np157\nV2012-08-27T15:00:06+0000\np158\nsVconversion_specs\np159\n(lp160\nsVadgroup_id\np161\nI6005735354565\nsVtargeting\np162\n(dp163\nVkeywords\np164\n(lp165\nV#Acrobatics\np166\naV#Artistic gymnastics\np167\naV#Damien Walters\np168\naV#Floor (gymnastics)\np169\naV#Trampoline\np170\naV#USA Gymnastics\np171\naV#Parkour\np172\naV#Gymnastics\np173\naV#Acrobatic gymnastics\np174\naV#Freerunning\np175\naV#Tumbling (gymnastics)\np176\nasVage_max\np177\nI65\nsVcountries\np178\n(lp179\nVUS\np180\nasVbroad_age\np181\nI1\nsVage_min\np182\nI13\nssVid\np183\nV6005735354565\np184\nsVmax_bid\np185\nV65\np186\nsVad_id\np187\nI6005735354565\nsVaccount_id\np188\nI40156177\nsVstart_time\np189\nV2012-08-27T15:18:30+0000\np190\nsVlocations\np191\n(lp192\nI3\n'
+p8
+sS'hash'
+p9
+S'b6f1b18a28af6af57608860d73e6aa9fed4b58e0'
+p10
+sS'stack'
+p11
+S''
+s.

@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I148
+sS'returnval'
+p5
+S'51859\nsVcreative_id\np20348\nV6005508228565\np20349\nsVpreview_url\np20350\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6005508228565\np20351\nsVobject_id\np20352\nV21898300328\np20353\nsVaction_t\np20354\nVBgABAQcIAAZQBFYeCgAJAAAAAImt0MwKABAAAAAFGT2LqA0AGgYKAAAADQEKAAAAAAAAAFAAuAABkrhkk7uzALkAAAAAAAAAZAC6ACQQYF/CSG8CIwAAAAAAAAAIAMMAAABPVFI0HgG7AAAAAAAAAGoACgAAAACJrdDMAcoAAZK4ZJO7swEeAAAAALhl4YQAAQABkrhkk7uzAbYAAAAAUARWHgHkAAGSuGSTu7MNABsGCwAAAAFAAwAAAOFUaGlzLiBvb29vbyAyMCBUaGluZ3MgWW91IERpZG4ndCBLbm93IEFib3V0ICJCYXRtYW4gQmVnaW5zIiBvb29vbyBJbnRlcmVzdGluZyBmYWN0b2lkcyBhYm91dCB0aGUgZmlyc3QgZmlsbSBpbiBDaHJpc3RvcGhlciBOb2xhbidzIERhcmsgS25pZ2h0IHRyaWxvZ3kuIEJlY2F1c2UgeW91J3JlIG5vdCBhbHJlYWR5IGV4Y2l0ZWQgZW5vdWdoIHRvIHNlZSAiVGhlIERhcmsgS25pZ2h0IFJpc2VzLiIKABwAAZK4ZJO7swA=\np20355\nsVcount_current_adgroups\np20356\nI0\nsVrun_status\np20357\nI1\nsVtype\np20358\nI27\nsVid\np20359\nV6005508228565\np20360\nsasVoffset\np20361\nV3000\np20362\ns.'
+p6
+sS'hash'
+p7
+S'1583c7c82469013a6afd758f5d0deb803d8f9c3b'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py runTests /usr/lib/python2.7/unittest/main.py __init__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py __init__ /home/orozco/development/django/buzzfeed/bin/nosetests <module> '
+p10
+s.

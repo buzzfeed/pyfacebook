@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I12
+sS'returnval'
+p5
+S"\nsVstory_id\np1601\nV144664012350162\np1602\nsVcreative_id\np1603\nV6007175075765\np1604\nsVpreview_url\np1605\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007175075765\np1606\nsVaction_t\np1607\nVBgABAQcIAAZQ03o8CgAJAAAAAImt0MwKABAAANiljfVJYg0AGgYKAAAADAEKAAAAAAAAAFAAuAAAg5I3EWLSALkAAAAAAAAAZAC6AAGTQDgjELECIwAAAAAAAAAIAGUAAAAAAAAAAQDDAAAAT1RSNB4BuwAAAAAAAABqAAoAAAAAia3QzAABAACDkjcRYtIBtgAAAABQ03o8AeQAAIOSNxFi0g0AGwYLAAAAAUADAAABRldoYXQncyB5b3VyIGZhdm9yaXRlIEhvbGlkYXkgbW92aWUgbW9tZW50P2h0dHA6Ly9iemZkLml0LzEyQ0xvcUEgb29vb28gMTkgTGVzc29ucyBBYm91dCBUaGUgSG9saWRheXMgRnJvbSBPdXIgRmF2b3JpdGUgQ2hyaXN0bWFzIE1vdmllcyBvb29vbyBUaGUgaG9saWRheXMgYXJlbid0IGp1c3QgZm9yIGNlbGVicmF0aW5nIOKAlCB0aGV5J3JlIGFsc28gYSB0aW1lIGZvciBsZWFybmluZyEgQ2hlY2sgb3V0IGEgZmV3IG9mIHRoZSBsaWZlIGxlc3NvbnMgd2UndmUgcGlja2VkIHVwIGFsb25nIHRoZSB3YXkgZnJvbSBvdXIgZmF2b3JpdGUgQ2hyaXN0bWFzIGZsaWNrcywgLi4uCgAcAACDkjcRYtIA\np1608\nsVaction_spec\np1609\nNsVobject_id\np1610\nV238205562866018\np1611\nsVcount_current_adgroups\np1612\nI0\nsVrun_status\np1613\nI1\nsVtype\np1614\nI27\nsVid\np1615\nV6007175075765\np1616\nsa(dp1617\nValt_view_tags\np1618\n(lp1619\nsVbody\np1620\nVBy Adding Leatherface To Your Christmas Card- Try it now on BuzzFeed!\np1621\nsVimage_hash\np1622\nVcd28bc1e99635ca82affbb020f52ee5c\np1623\nsVname\np1624\nVCreepy Santa-01\np1625\nsVtitle\np1626\nVTerrorize Your Loved Ones\np1627\nsVcreative_id\np1628\nV6007162841165\np1629\nsVpreview_url\np1630\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007162841165\np1631\nsVid\np1632\nV6007162841165\np1633\nsVimage_url\np1634\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708178_6007162638565_57609_n.jpg\np1635\nsVcount_current_adgroups\np1636\nI0\nsVrun_status\np1637\nI1\nsVtype\np1638\nI1\nsVlink_url\np1639\nVhttp://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=5969649&PluID=0&ord=%n&rtu=http://www.buzzfeed.com/h1/fbad/texaschainsaw3d/turn-your-christmas-card-into-a-chainsaw-massacre-7rul\np1640\nsVview_tag\np1641\ng36\nsa(dp1642\nValt_view_tags\np1643\n(lp1644\nsVbody\np1645\nVCheck out BuzzFeed's WIN playlist on Rdio because it's the 10 Epic Songs for Champions!\\u000a\np1646\nsVimage_hash\np1647\nV5895dc8acef797a324eae3a0c299fca1\np1648\nsVname\np1649\nVYou Can't Touch This!-00\np1650\nsVtitle\np1651\nVQueen - So Much WIN\np1652\nsVcreative_id\np1653\nV6007136240365\np1654\nsVpreview_url\np1655\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007136240365\np1656\nsVid\np1657\nV6007136240365\np1658\nsVimage_url\np1659\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-prn1/s110x80/708175_6007136166565_7483_n.jpg\np1660\nsVcount_current_adgroups\np1661\nI2\nsVrun_status\np1662\nI1\nsVtype\np1663\nI1\nsVlink_url\np1664\nVhttp://www.rdio.com/people/BuzzFeed/playlists/1269016/WIN/\np1665\nsVview_tag\np1666\ng36\nsa(dp1667\nVname\np1668\nVSponsored story #6,007,167,781,165\np1669\nsVcreative_id\np1670\nV6007167781165\np1671\nsVpreview_url\np1672\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007167781165\np1673\nsVobject_id\np1674\nV238205562866018\np1675\nsVaction_spec\np1676\n(lp1677\n(dp1678\nVpost\np1679\nV294294140690950\np1680\nsVaction.type\np1681\nVlike\np1682\nsa(dp1683\nVpost\np1684\nV294294140690950\np1685\nsVaction.type\np1686\nVcomment\np1687\nsa(dp1688\nVpost.object\np1689\nV294294140690950\np1690\nsVaction.type\np1691\nVpost\np1692\nsasVcluster_id\np1693\nI6007167776965\nsVcount_current_adgroups\np1694\nI1\nsVrun_status\np1695\nI1\nsVtype\np1696\nI25\nsVid\np1697\nV6007167781165\np1698\nsa(dp1699\nValt_view_tags\np1700\n(lp1701\nsVbody\np1702\nVCheck out this post and add your own annoyance for a chance to win a trip to Chicago!\np1703\nsVimage_hash\np1704\nV19616a4e45ebb7f23a7ad060390f6688\np1705\nsVname\np1706\nVPrizes For Annoyances-00-00-00\np1707\nsVtitle\np1708\nVRewards For Annoyances?\np1709\nsVcreative_id\np1710\nV6007121099965\np1711\nsVpreview_url\np1712\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6007121099965\np1713\nsVid\np1714\nV6007121099965\np1715\nsVimage_url\np1716\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/708161_6006807078765_43692_n.jpg\np1717\nsVcount_current_adgroups\np1718\nI1\nsVrun_status\np1719\nI1\nsVtype\np1720\nI1\nsVlink_url\np1721\nVhttp://www.buzzfeed.com/h1/fbad/floridaorangejuice/little-annoya"
+p6
+sS'hash'
+p7
+S'9045f93cc1c868b9cc2233d65a814621f259d65b'
+p8
+sS'stack'
+p9
+S''
+s.
