@@ -1,0 +1,23 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I1
+sS'returnval'
+p5
+S'p159\nsVview_tag\np160\ng35\nsa(dp161\nValt_view_tags\np162\n(lp163\nsVbody\np164\nVjdklsfdsfds\np165\nsVimage_hash\np166\nV43d3e4de45f056cbcfd32da819623b21\np167\nsVname\np168\nVtest test 2-01\np169\nsVtitle\np170\nVtest test 2\np171\nsVcreative_id\np172\nV6006011748151\np173\nsVpreview_url\np174\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006011748151\np175\nsVid\np176\nV6006011748151\np177\nsVimage_url\np178\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-ash3/s110x80/701905_6006616685751_43589_n.jpg\np179\nsVcount_current_adgroups\np180\nI1\nsVrun_status\np181\nI1\nsVtype\np182\nI1\nsVlink_url\np183\nVhttp://track.grapheffect.com/redirect/22f3179c-6803-4c24-bed8-defa46604d62\np184\nsVview_tag\np185\ng35\nsa(dp186\nValt_view_tags\np187\n(lp188\nsVbody\np189\nVjdklsfdsfds\np190\nsVimage_hash\np191\nV1c19d4adaa3d02df9c43fa3636974310\np192\nsVname\np193\nVtest test 2-06\np194\nsVtitle\np195\nVtest test 2\np196\nsVcreative_id\np197\nV6006011768151\np198\nsVpreview_url\np199\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006011768151\np200\nsVid\np201\nV6006011768151\np202\nsVimage_url\np203\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-snc7/s110x80/701905_6006616685551_48002_n.jpg\np204\nsVcount_current_adgroups\np205\nI1\nsVrun_status\np206\nI1\nsVtype\np207\nI1\nsVlink_url\np208\nVhttp://track.grapheffect.com/redirect/ac45d66e-0fcc-47fd-af8d-a8971b732c8f\np209\nsVview_tag\np210\ng35\nsa(dp211\nValt_view_tags\np212\n(lp213\nsVbody\np214\nVfdhjksfdhsk\np215\nsVimage_hash\np216\nV1c19d4adaa3d02df9c43fa3636974310\np217\nsVname\np218\nVtest test-00\np219\nsVtitle\np220\nVtest test\np221\nsVcreative_id\np222\nV6006011744151\np223\nsVpreview_url\np224\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006011744151\np225\nsVid\np226\nV6006011744151\np227\nsVimage_url\np228\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-snc7/s110x80/701905_6006616685551_48002_n.jpg\np229\nsVcount_current_adgroups\np230\nI1\nsVrun_status\np231\nI1\nsVtype\np232\nI1\nsVlink_url\np233\nVhttp://track.grapheffect.com/redirect/3b5d5fe6-d1aa-4855-8466-92c1dc8a56c4\np234\nsVview_tag\np235\ng35\nsa(dp236\nValt_view_tags\np237\n(lp238\nsVbody\np239\nVjdklsfdsfds\np240\nsVimage_hash\np241\nV1c19d4adaa3d02df9c43fa3636974310\np242\nsVname\np243\nVtest test-03\np244\nsVtitle\np245\nVtest test\np246\nsVcreative_id\np247\nV6006011766751\np248\nsVpreview_url\np249\nVhttp://www.facebook.com/ads/api/creative_preview.php?cid=6006011766751\np250\nsVid\np251\nV6006011766751\np252\nsVimage_url\np253\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-snc7/s110x80/701905_6006616685551_48002_n.jpg\np254\nsVcount_current_adgroups\np255\nI1\nsVrun_status\np256\nI1\nsVtype\np257\nI1\nsVlink_url\np258\nVhttp://track.grapheffect.com/redirect/bd4eae6d-3550-4da1-930b-434f48e4c3b5\np259\nsVview_tag\np260\ng35\nsasVoffset\np261\nI0\ns.'
+p6
+sS'hash'
+p7
+S'2ce0f022969af50a2fcd006069ad183913411081'
+p8
+sS'stack'
+p9
+S'__json_response /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/caliendo/facade.py cache /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_all /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/__init__.py get_list_from_fb /home/orozco/development/django/buzzfeed/pyfacebook/pyfacebook/api/adcreative.py find_by_adaccount_id /home/orozco/development/django/buzzfeed/pyfacebook/test/adcreative_test.py test_find_by_adaccount_id /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /usr/lib/python2.7/unittest/case.py run /usr/lib/python2.7/unittest/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py runTest /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/case.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development'
+p10
+s.

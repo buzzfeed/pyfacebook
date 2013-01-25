@@ -1,3 +1,4 @@
+import hashlib
 import json
 import time
 
@@ -87,7 +88,7 @@ class TestAdCreativeApi( ):
       'action_spec': json.dumps({'action.type': 'app_use', 'application': FACEBOOK_APP_ID})
     }
     adcreative, errors = self.fb.api().adcreative().create(FACEBOOK_TEST_ACCOUNT_ID, **params)
-    params = {'name': 'test' + str( time.time() * 10000 ) }
+    params = {'name': 'test_' + hashlib.sha1(adcreative.id).hexdigest() }
     success, errors = self.fb.api().adcreative().update(adcreative.id, **params)
 
     ok_(success)

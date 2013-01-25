@@ -1,0 +1,22 @@
+(dp1
+S'args'
+p2
+S''
+sS'methodname'
+p3
+S''
+sS'packet_num'
+p4
+I3
+sS'returnval'
+p5
+S''
+sS'hash'
+p6
+S'59ec6aa53b0989d54ecc0caa7041581a24e8c71b'
+p7
+sS'stack'
+p8
+S'ozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/suite.py __call__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py run /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py runTests /usr/lib/python2.7/unittest/main.py __init__ /home/orozco/development/django/buzzfeed/local/lib/python2.7/site-packages/nose/core.py __init__ /home/orozco/development/django/buzzfeed/bin/nosetests <module> '
+p9
+s.
