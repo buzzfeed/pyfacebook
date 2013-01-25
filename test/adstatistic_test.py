@@ -106,7 +106,7 @@ class TestAdStatisticApi( ):
     stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
 
     eq_( len( errors ), 0 )
-    eq_( len( stats ), 0)
+    eq_( len( stats ), 49)
 
     if stats:
       stat_to_compare = stats[ 0 ]
@@ -120,4 +120,4 @@ class TestAdStatisticApi( ):
     stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
 
     eq_( len( errors ), 0 )
-    eq_( len( stats ), 0)
+    eq_( len( stats ), 428)

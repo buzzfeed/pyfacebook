@@ -17,8 +17,8 @@ class TestAdCampaignApi():
     # Check order
     first_ten_adcampaigns, errors = adcampaign_api.find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=10, offset=0 )
     second_five_adcampaigns, errors = adcampaign_api.find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=5, offset=5 )
-    eq_( len( first_ten_adcampaigns ), 1 )
-    eq_( len( second_five_adcampaigns ), 0 )
+    eq_( len( first_ten_adcampaigns ), 10 )
+    eq_( len( second_five_adcampaigns ), 5 )
 
     for c in first_ten_adcampaigns[5:]:
         index = first_ten_adcampaigns.index(c) - 5
@@ -51,6 +51,7 @@ class TestAdCampaignApi():
 
   def test_find_by_adgroup_id_and_find_by_id(self):
     adgroups, errors = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_PROD_ACCOUNT_ID, limit=2)
+
     adgroup = adgroups[0]
 
     adcampaign, errors = self.fb.api().adcampaign().find_by_adgroup_id(adgroup.id)
@@ -63,12 +64,11 @@ class TestAdCampaignApi():
   def test_find_by_ids( self ):
     adcampaign_api = Facade(self.fb.api().adcampaign())
     base_adcampaigns, errors = adcampaign_api.find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=25 )
-
     eq_( 0, len( errors ) )
 
     #Test pulling 10 adcampaigns
-    test_adcampaign_ids      = map( lambda x: x.id, base_adcampaigns ) #cool way of pulling a simple list of attributes from a list of more complex objects
-    adcampaigns, errors      = adcampaign_api.find_by_ids( test_adcampaign_ids[:10] )
+    test_adcampaign_ids      = map( lambda x: x.id, base_adcampaigns )[:10] #cool way of pulling a simple list of attributes from a list of more complex objects
+    adcampaigns, errors      = adcampaign_api.find_by_ids( test_adcampaign_ids )
     result_adcampaign_ids      = map( lambda x: x.id, adcampaigns )
 
     eq_( 0, len( errors ) )
