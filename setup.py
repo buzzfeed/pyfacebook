@@ -19,5 +19,9 @@ setup(
         'BeautifulSoup==3.2.1',
         'Fabric==1.5.1',
         'pytz==2012h',
+        'caliendo==0.2.1'
+    ],
+    dependency_links=[
+        'git+https://github.com/buzzfeed/caliendo.git@v0.2.1#egg=caliendo-0.2.1'
     ]
 )
