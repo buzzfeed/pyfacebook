@@ -22,6 +22,6 @@ setup(
         'caliendo==0.2.1'
     ],
     dependency_links=[
-        'http://github.com/buzzfeed/caliendo/tarball/v0.2.1#egg=caliendo-0.2.1'
+        'git+git://github.com/buzzfeed/caliendo.git@v0.2.1#egg=caliendo-0.2.1'
     ]
 )
