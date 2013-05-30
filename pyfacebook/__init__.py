@@ -290,8 +290,12 @@ class PyFacebook( object ):
       }
 
       auth_exchange_url     = "%s%s%s" % ( facebook_token_url, "?", urllib.urlencode(auth_exchange_params) )
-      response, call_errors = self.get( auth_exchange_url )
-      new_token             = response[ 0 ][ 1 ]
+      
+      response = urllib.urlopen(auth_exchange_url)
+      raw_response = response.read( )
+      response.close()
+      
+      new_token             = parse_qs(raw_response)["access_token"]
       self.__access_token   = new_token
       return ( new_token, [ ] )
     except:

@@ -6,3 +6,5 @@ settings.py
 nbproject
 pyfacebook.egg-info
 nosetests.xml
+.project
+.pydevproject
