@@ -15,6 +15,12 @@ If you have virtualenvwrapper installed you can create and work in one like so:
     mkvirtualenv pyfacebook
     workon pyfacebook
 
+### Installation
+
+Run setup script:
+
+    python setup.py install
+
 ### Settings
 
 Copy the settings file into place:
