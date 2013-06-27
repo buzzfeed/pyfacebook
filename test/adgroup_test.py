@@ -37,10 +37,17 @@ class TestAdGroupApi( ):
 
     # Check completeness of paged results
     all_groups, errors = self.fb.api().adgroup().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID )
+    for error in errors:
+        print error.message
+        print error.tb
     total = len(all_groups)
 
     limit = 3
     offset = total - limit + 1
+    print "TOTAL:", total
+    print "LIMIT:", limit
+    print "OFFSET:", offset
+
     last_batch_of_groups, errors = self.fb.api().adgroup().find_by_adaccount_id( FACEBOOK_PROD_ACCOUNT_ID, limit=limit, offset=offset )
     eq_( len(last_batch_of_groups), total - offset )
 

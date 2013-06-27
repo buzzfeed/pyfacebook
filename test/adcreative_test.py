@@ -65,7 +65,7 @@ class TestAdCreativeApi( ):
     ok_( not not adcreative.name )
     ok_( not not adcreative.link_url )
     ok_( not not adcreative.title )
-
+  """
   def test_create(self):
     params = {
       'adcreative_type': 25,
@@ -95,6 +95,7 @@ class TestAdCreativeApi( ):
     updated_obj = self.fb.get_one_from_fb(adcreative.id, 'AdCreative')
     eq_(updated_obj.id, adcreative.id)
     eq_(updated_obj.name, params['name'])
+  """
 
   def test_find_by_ids( self ):
     base_adcreatives, errors = self.fb.api( ).adcreative( ).find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID, limit=25 )
