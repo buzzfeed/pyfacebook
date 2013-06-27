@@ -38,7 +38,7 @@ class AdGroupApi:
             params[ "limit" ] = str( limit )
         if offset:
             params[ "offset" ] = str( offset )
-        
+
         return self.__fb.get_list_from_fb(adaccount_id, 'AdGroup', params)
     except:
         return [ ], [ Fault( ) ]
