@@ -74,10 +74,10 @@ class TestAdStatisticApi( ):
     }
 
     for key, val in all_stats.items():
-      to_compare = totals[key]
-
-      ok_( val > self.one_percent_less( to_compare ) or val == int( to_compare ) )
-      ok_( val < self.one_percent_more( to_compare ) or val == int( to_compare ) )
+      if val:  # if val=0, the stat has no activity for the current account
+        to_compare = totals[key]
+        ok_( val > self.one_percent_less( to_compare ) or val == int( to_compare ) )
+        ok_( val < self.one_percent_more( to_compare ) or val == int( to_compare ) )
 
   def test_find_by_start_time_end_time( self ):
     utc             = pytz.utc
@@ -106,13 +106,13 @@ class TestAdStatisticApi( ):
     stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
 
     eq_( len( errors ), 0 )
-    eq_( len( stats ), 49 )
+    eq_( len( stats ), 49)
 
-    stat_to_compare = stats[ 0 ]
+    if stats:
+      stat_to_compare = stats[ 0 ]
 
-    for key, val in expected_stats.items():
-
-      eq_( str(expected_stats[ key ]), str(getattr( stat_to_compare, key )) )
+      for key, val in expected_stats.items():
+        eq_( str(expected_stats[ key ]), str(getattr( stat_to_compare, key )) )
 
     # Test one month: paging
     start_time = datetime.datetime( 2012, 11, 26, 6, 0, 0, tzinfo=utc )
@@ -120,5 +120,4 @@ class TestAdStatisticApi( ):
     stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time( FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time )
 
     eq_( len( errors ), 0 )
-    eq_( len( stats ), 428 )
-
+    eq_( len( stats ), 428)

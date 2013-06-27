@@ -19,5 +19,9 @@ setup(
         'BeautifulSoup==3.2.1',
         'Fabric==1.5.1',
         'pytz==2012h',
+        'caliendo'
+    ],
+    dependency_links=[
+        'https://github.com/buzzfeed/caliendo/tarball/v0.2.3#egg=caliendo-0.2.3'
     ]
 )
