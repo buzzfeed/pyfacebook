@@ -16,6 +16,7 @@ from pyfacebook.models.adgroup import AdGroup
 from pyfacebook.models.adcampaign import AdCampaign
 from pyfacebook.models.adcreative import AdCreative
 from pyfacebook.models.adimage import AdImage
+from pyfacebook.models.broadtargetingcategory import BroadTargetingCategory
 
 from pyfacebook.api.adaccount import AdAccountApi
 from pyfacebook.api.aduser import AdUserApi
@@ -23,6 +24,7 @@ from pyfacebook.api.adstatistic import AdStatisticApi
 from pyfacebook.api.adgroup import AdGroupApi
 from pyfacebook.api.adcampaign import AdCampaignApi
 from pyfacebook.api.adcreative import AdCreativeApi
+from pyfacebook.api.broadtargetingcategory import BroadTargetingCategoryApi
 
 
 class PyFacebook(object):
@@ -310,6 +312,9 @@ class PyFacebook(object):
     def adimage(self, o):
         return utils.wrapper(lambda: AdImage(o))
 
+    def broadtargetingcategory(self, o):
+        return utils.wrapper(lambda: BroadTargetingCategory(o))
+
     def get_instance(self, classname, o):
         """
         Returns an initialized instance of the class given by classname.
@@ -349,3 +354,6 @@ class FacebookApi(PyFacebook):
 
     def aduser(self):
         return AdUserApi(self.__fb)
+
+    def broadtargetingcategory(self):
+        return BroadTargetingCategoryApi(self.__fb)
