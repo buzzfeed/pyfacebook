@@ -8,3 +8,5 @@ pyfacebook.egg-info
 nosetests.xml
 cache/
 seeds/
+.project
+.pydevproject
