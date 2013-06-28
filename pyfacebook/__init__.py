@@ -160,7 +160,7 @@ class PyFacebook(object):
                 cleaned_data[k] = v
         return kwargs
 
-    def get_all(self, resource, params):
+    def get_all(self, resource, params={}):
         """
         Return all the results requested as implied by the params sent regardless of FB's limitations.
 

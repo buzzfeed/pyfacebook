@@ -10,4 +10,4 @@ class BroadTargetingCategory(Model):
 
     """
 
-    attrs_to_copy = ('id', 'adaccounts', 'role')
+    attrs_to_copy = ('id', 'name', 'parent_category', 'size')

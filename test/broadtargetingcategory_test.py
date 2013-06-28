@@ -21,3 +21,4 @@ class TestBroadTargetingCategoryApi():
             ok_(hasattr(btc, 'id'))
             ok_(hasattr(btc, 'name'))
             ok_(hasattr(btc, 'parent_category'))
+            ok_(hasattr(btc, 'size'))
