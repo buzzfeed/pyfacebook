@@ -10,3 +10,4 @@ cache/
 seeds/
 .project
 .pydevproject
+.env
