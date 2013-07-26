@@ -1,8 +1,9 @@
-from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.fault import FacebookException
+
 
 class AdCampaignApi:
 
-  def __init__(self, fb ):
+  def __init__(self, fb):
     self.__fb = fb
 
   def find_by_adaccount_id( self, adaccount_id, include_deleted=False, limit=None, offset=None ):
@@ -14,26 +15,23 @@ class AdCampaignApi:
     :param int limit: A limit for the number of adcampaign objects to request
     :param int offset: An offset for the adcampaign resultset
 
-    :rtype ( [ AdCampaign ], [ Fault ] ): A tuple of the AdCampaigns found, and any Faults encountered
+    :rtype [ AdCampaign ]: A list of the AdCampaigns found.
     """
-    try:
-        if not adaccount_id or type(adaccount_id) not in ( str, unicode ):
-            raise FacebookException( "Must pass an adaccount_id of type in ( str, unicode ) to this call" )
+    if not adaccount_id or type(adaccount_id) not in (str, unicode):
+        raise FacebookException("Must pass an adaccount_id of type in ( str, unicode ) to this call")
 
-        if 'act_' not in adaccount_id:
-            adaccount_id = 'act_' + adaccount_id
+    if 'act_' not in adaccount_id:
+        adaccount_id = 'act_' + adaccount_id
 
-        params = { }
-        if include_deleted:
-            params[ "include_deleted" ] = "true"
-        if limit:
-            params[ "limit" ] = str( limit )
-        if offset:
-            params[ "offset" ] = str( offset )
+    params = {}
+    if include_deleted:
+        params["include_deleted"] = "true"
+    if limit:
+        params["limit"] = str(limit)
+    if offset:
+        params["offset"] = str(offset)
 
-        return self.__fb.get_list_from_fb(adaccount_id, 'AdCampaign', params)
-    except:
-        return [ ], [ Fault( ) ]
+    return self.__fb.get_list_from_fb(adaccount_id, 'AdCampaign', params)
 
   def find_by_adgroup_id( self, adgroup_id ):
     """
@@ -43,17 +41,11 @@ class AdCampaignApi:
 
     :rtype: AdCampaign the AdCampaign object associated with this AdGroup
     """
-
-    try:
-      if not adgroup_id:
-        raise FacebookException( "Must set an id before making this call" )
-      adgroup, errs = self.__fb.api().adgroup().find_by_id( adgroup_id )
-      if errs:
-        return None, errs
-      campaign_id = adgroup.campaign_id
-      return self.__fb.get_one_from_fb( campaign_id, "AdCampaign" ), []
-    except:
-      return [], [Fault()]
+    if not adgroup_id:
+      raise FacebookException("Must set an id before making this call")
+    adgroup = self.__fb.api().adgroup().find_by_id(adgroup_id)
+    campaign_id = adgroup.campaign_id
+    return self.__fb.get_one_from_fb(campaign_id, "AdCampaign")
 
   def find_by_id( self, adcampaign_id ):
     """
@@ -63,10 +55,7 @@ class AdCampaignApi:
 
     :rtype AdCampaign:
     """
-    try:
-      return self.__fb.get_one_from_fb( adcampaign_id, "AdCampaign" ), []
-    except:
-      return None, [Fault()]
+    return self.__fb.get_one_from_fb(adcampaign_id, "AdCampaign")
 
   def find_by_ids( self, adcampaign_ids ):
     """
@@ -74,7 +63,7 @@ class AdCampaignApi:
 
     :param list adcampaign_ids: The list of adcampaign IDs we are searching for
 
-    :rtype ( [ AdCampaign ], [ Fault ] ): A tuple of AdCampaign objects found, and any Faults encountered
+    :rtype [AdCampaign]: A list of AdCampaign objects found.
 
     """
     return self.__fb.get_many_from_fb(adcampaign_ids, 'AdCampaign')

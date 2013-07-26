@@ -20,10 +20,10 @@ class TestAdStatisticApi():
                              app_secret=FACEBOOK_APP_SECRET)
 
     def test_find_by_id(self):
-        adgroups, errors = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID)
+        adgroups = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID)
         adgroup = adgroups[0]
 
-        adgroup_by_id, errors = self.fb.api().adgroup().find_by_id(adgroup.id)
+        adgroup_by_id = self.fb.api().adgroup().find_by_id(adgroup.id)
 
         eq_(adgroup.__dict__, adgroup_by_id.__dict__)
 
@@ -35,10 +35,8 @@ class TestAdStatisticApi():
 
     def test_find_by_adaccount_id_and_find_by_adgroup_ids(self):
         include_deleted = True
-        adgroups, errors = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
-        ok_(not errors)
-        adstat_by_account_id, errors = self.fb.api().adstatistic().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
-        ok_(not errors)
+        adgroups = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
+        adstat_by_account_id = self.fb.api().adstatistic().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
 
         all_stats = {
             'social_unique_clicks': 0,
@@ -52,7 +50,7 @@ class TestAdStatisticApi():
             'unique_clicks': 0
         }
 
-        stats, errors = self.fb.api().adstatistic().find_by_adgroup_ids([adgroup.id for adgroup in adgroups], FACEBOOK_PROD_ACCOUNT_ID, include_deleted=include_deleted)
+        stats = self.fb.api().adstatistic().find_by_adgroup_ids([adgroup.id for adgroup in adgroups], FACEBOOK_PROD_ACCOUNT_ID, include_deleted=include_deleted)
 
         for stat in stats:
             for key, val in all_stats.items():
@@ -87,15 +85,13 @@ class TestAdStatisticApi():
         # Test single day
         start_time = datetime.datetime(2012, 12, 26, 6, 0, 0, tzinfo=utc)
         end_time = datetime.datetime(2012, 12, 27, 6, 0, 0, tzinfo=utc)
-        stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time(FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
+        stats = self.fb.api().adstatistic().find_by_start_time_end_time(FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
 
-        eq_(len(errors), 0)
         ok_(len(stats) > 0)
 
         # Test one month: paging
         start_time = datetime.datetime(2012, 11, 26, 6, 0, 0, tzinfo=utc)
         end_time = datetime.datetime(2012, 12, 27, 6, 0, 0, tzinfo=utc)
-        stats, errors = self.fb.api().adstatistic().find_by_start_time_end_time(FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
+        stats = self.fb.api().adstatistic().find_by_start_time_end_time(FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
 
-        eq_(len(errors), 0)
         ok_(len(stats) > 0)

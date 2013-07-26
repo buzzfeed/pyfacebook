@@ -1,4 +1,4 @@
-from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.fault import FacebookException
 
 
 class BroadTargetingCategoryApi:
@@ -13,12 +13,8 @@ class BroadTargetingCategoryApi:
         :param int adaccount_id: The adaccount id
 
         :rtype: List of BroadTargetingCategory objects contained by this AdAccount
-
         """
-        try:
-            if not adaccount_id:
-                raise FacebookException("Must set an id before making this call")
-            btcs = self.__fb.get_all('/act_' + str(adaccount_id) + '/broadtargetingcategories')
-            return [self.__fb.broadtargetingcategory(btc)[0] for btc in btcs], []
-        except:
-            return [], [Fault()]
+        if not adaccount_id:
+            raise FacebookException("Must set an id before making this call")
+        btcs = self.__fb.get_all('/act_' + str(adaccount_id) + '/broadtargetingcategories')
+        return [self.__fb.broadtargetingcategory(btc) for btc in btcs]

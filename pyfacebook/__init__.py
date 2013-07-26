@@ -1,14 +1,11 @@
-import sys
 import urllib
 import urllib2
 import json
 import time
 from urlparse import parse_qs
 from urlparse import urlparse
-from pyfacebook import utils
-from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.fault import FacebookException
 from caliendo.facade import cache as caliendo_cache
-from pyfacebook import models
 from pyfacebook.models.adaccount import AdAccount
 from pyfacebook.models.aduser import AdUser
 from pyfacebook.models.adstatistic import AdStatistic
@@ -67,11 +64,8 @@ class PyFacebook(object):
         :rtype: List of objects of Class class_to_get, representing data pulled from the Facebook Graph API
 
         """
-        try:
-            objs = self.get_all('/' + str(container_obj_id) + '/' + class_to_get.lower() + 's', params)
-            return [self.get_instance(class_to_get, obj)[0] for obj in objs], []
-        except:
-            return [], [Fault()]
+        objs = self.get_all('/' + str(container_obj_id) + '/' + class_to_get.lower() + 's', params)
+        return [self.get_instance(class_to_get, obj) for obj in objs]
 
     def get_many_from_fb(self, obj_ids, class_to_get):
         """
@@ -80,22 +74,19 @@ class PyFacebook(object):
         :param list(<int>) obj_ids: A list of ids for the objects to pull from FB
         :param str class_to_get: The name of the class for the pyfacebook model corresponding to the facebook resources we're pulling.
 
-        :rtype tuple<list<model>, list<Fault>>:
+        :rtype <list<model>:
         """
-        try:
-            if not obj_ids:
-                raise FacebookException("A list of ids is required")
-            objs = []
-            base_url = ''
-            params = {}
-            params["ids"] = ",".join(map(str, obj_ids))
+        if not obj_ids:
+            raise FacebookException("A list of ids is required")
+        objs = []
+        base_url = ''
+        params = {}
+        params["ids"] = ",".join(map(str, obj_ids))
 
-            resp = self.get(base_url, params)
-            objs += resp.values()
+        resp = self.get(base_url, params)
+        objs += resp.values()
 
-            return [self.get_instance(class_to_get.lower(), obj)[0] for obj in objs], []
-        except:
-            return [], [Fault()]
+        return [self.get_instance(class_to_get.lower(), obj) for obj in objs]
 
     def get_one_from_fb(self, reference_obj_id, class_to_get):
         """
@@ -109,7 +100,7 @@ class PyFacebook(object):
 
         """
         resp = self.get('/' + str(reference_obj_id))
-        return self.get_instance(class_to_get, resp)[0]
+        return self.get_instance(class_to_get, resp)
 
     def create(self, model, **kwargs):
         """
@@ -117,22 +108,19 @@ class PyFacebook(object):
 
         :param string model The handle of the model we're creating
 
-        :rtype tuple A dict with the attributes of the remote obj, the new model instance with the given attributes and the errors raised, if any.
+        :rtype A dict with the attributes of the remote obj, the new model instance with the given attribute.
         """
         try:
             account_id = kwargs.pop('account_id')
         except KeyError:
             raise FacebookException('An account_id is required to make the request!')
 
-        try:
-            url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
-            response = self.post(url, urllib.urlencode(kwargs))
-            instance, errors = self.get_instance(model, kwargs)
-            if 'id' in response:
-                setattr(instance, 'id', response['id'])
-        except:
-            return None, [Fault()]
-        return instance, []
+        url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
+        response = self.post(url, urllib.urlencode(kwargs))
+        instance = self.get_instance(model, kwargs)
+        if 'id' in response:
+            setattr(instance, 'id', response['id'])
+        return instance
 
     def update(self, obj_id, **kwargs):
         """
@@ -140,12 +128,9 @@ class PyFacebook(object):
 
         :rtype dict The data retrieved by the request after updating.
         """
-        try:
-            url = '/{obj_id}'.format(obj_id=obj_id)
-            response = self.post(url, urllib.urlencode(kwargs))
-        except:
-            return None, [Fault()]
-        return response, []
+        url = '/{obj_id}'.format(obj_id=obj_id)
+        response = self.post(url, urllib.urlencode(kwargs))
+        return response
 
     def clean_params(self, clean_empty_strings=True, **kwargs):
         """
@@ -262,58 +247,52 @@ class PyFacebook(object):
 
         :rtype: New Facebook token
         """
-        errors = []
+        facebook_token_url = self.__graph_endpoint + '/oauth/access_token'
+        if self.__app_id is None or self.__app_secret is None or self.__access_token is None:
+            raise FacebookException("Must set app_id, app_secret and access_token before calling exchange_token")
 
-        try:
-            facebook_token_url = self.__graph_endpoint + '/oauth/access_token'
-            if self.__app_id is None or self.__app_secret is None or self.__access_token is None:
-                raise FacebookException("Must set app_id, app_secret and access_token before calling exchange_token")
+        auth_exchange_params = {
+            "client_id": self.__app_id,
+            "client_secret": self.__app_secret,
+            "grant_type": "fb_exchange_token",
+            "fb_exchange_token": self.__access_token
+        }
 
-            auth_exchange_params = {
-                "client_id": self.__app_id,
-                "client_secret": self.__app_secret,
-                "grant_type": "fb_exchange_token",
-                "fb_exchange_token": self.__access_token
-            }
-
-            auth_exchange_url = "%s%s%s" % (facebook_token_url, "?", urllib.urlencode(auth_exchange_params))
-            response, call_errors = self.get(auth_exchange_url)
-            new_token = response[0][1]
-            self.__access_token = new_token
-            return (new_token, [])
-        except:
-            errors = errors + [Fault()]
-            return [], errors
+        auth_exchange_url = "%s%s%s" % (facebook_token_url, "?", urllib.urlencode(auth_exchange_params))
+        response = self.get(auth_exchange_url)
+        new_token = response[0][1]
+        self.__access_token = new_token
+        return new_token
 
     def adaccount(self, o):
-        return utils.wrapper(lambda: AdAccount(o))
+        return AdAccount(o)
 
     def aduser(self, o):
-        return utils.wrapper(lambda: AdUser(o))
+        return AdUser(o)
 
     def user(self, o):
-        return utils.wrapper(lambda: AdUser(o))
+        return AdUser(o)
 
     def adstatistic(self, o):
-        return utils.wrapper(lambda: AdStatistic(o))
+        return AdStatistic(o)
 
     def stats(self, o):
-        return utils.wrapper(lambda: AdStatistic(o))
+        return AdStatistic(o)
 
     def adgroup(self, o):
-        return utils.wrapper(lambda: AdGroup(o))
+        return AdGroup(o)
 
     def adcampaign(self, o):
-        return utils.wrapper(lambda: AdCampaign(o))
+        return AdCampaign(o)
 
     def adcreative(self, o):
-        return utils.wrapper(lambda: AdCreative(o))
+        return AdCreative(o)
 
     def adimage(self, o):
-        return utils.wrapper(lambda: AdImage(o))
+        return AdImage(o)
 
     def broadtargetingcategory(self, o):
-        return utils.wrapper(lambda: BroadTargetingCategory(o))
+        return BroadTargetingCategory(o)
 
     def get_instance(self, classname, o):
         """

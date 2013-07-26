@@ -14,9 +14,7 @@ class TestAdAccountApi( ):
                           app_secret=FACEBOOK_APP_SECRET )
 
   def test_find_by_id(self):
-    adaccount, errors = self.fb.api().adaccount().find_by_id( 'act_' + str( FACEBOOK_TEST_ACCOUNT_ID ) ) # Buzzfeed account id
-
-    ok_( not errors )
+    adaccount = self.fb.api().adaccount().find_by_id('act_' + str(FACEBOOK_TEST_ACCOUNT_ID))  # Buzzfeed account id
 
     eq_( adaccount.name, u'BuzzFeed RnD_API Testing' )
     eq_( adaccount.account_status, 1 )

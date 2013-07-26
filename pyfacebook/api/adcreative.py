@@ -1,4 +1,4 @@
-from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.fault import FacebookException
 
 
 class AdCreativeApi:
@@ -15,26 +15,23 @@ class AdCreativeApi:
         :param int limit: A limit for the number of adcampaign objects to request
         :param int offset: An offset for the adcampaign resultset
 
-        :rtype ( [ AdCreative ], [ Fault ] ): A tuple of the AdCreatives found, and any Faults encountered
+        :rtype [ AdCreative ]: A list of the AdCreatives found.
         """
-        try:
-            if not adaccount_id or type(adaccount_id) not in (str, unicode):
-                raise FacebookException("Must pass an adaccount_id to this call")
+        if not adaccount_id or type(adaccount_id) not in (str, unicode):
+            raise FacebookException("Must pass an adaccount_id to this call")
 
-            if 'act_' not in adaccount_id:
-                adaccount_id = 'act_' + adaccount_id
+        if 'act_' not in adaccount_id:
+            adaccount_id = 'act_' + adaccount_id
 
-            params = {}
-            if include_deleted:
-                params["include_deleted"] = "true"
-            if limit:
-                params["limit"] = str(limit)
-            if offset:
-                params["offset"] = str(offset)
+        params = {}
+        if include_deleted:
+            params["include_deleted"] = "true"
+        if limit:
+            params["limit"] = str(limit)
+        if offset:
+            params["offset"] = str(offset)
 
-            return self.__fb.get_list_from_fb(adaccount_id, 'AdCreative', params)
-        except:
-            return [], [Fault()]
+        return self.__fb.get_list_from_fb(adaccount_id, 'AdCreative', params)
 
     def find_by_adgroup_id(self, adgroup_id):
         """
@@ -44,16 +41,13 @@ class AdCreativeApi:
 
         :rtype: AdCreative object associated with the AdGroup
         """
-        try:
-            if not adgroup_id:
-                raise FacebookException("Must set an id before making this call")
-            adgroup = self.__fb.get_one_from_fb(adgroup_id, "AdCreative")
-            adcreatives = []
-            for creative_id in adgroup.creative_ids:
-                adcreatives.append(self.__fb.get_one_from_fb(creative_id, "AdCreative"))  # TODO: This should be a batch request
-            return adcreatives, []
-        except:
-            return None, [Fault()]
+        if not adgroup_id:
+            raise FacebookException("Must set an id before making this call")
+        adgroup = self.__fb.get_one_from_fb(adgroup_id, "AdCreative")
+        adcreatives = []
+        for creative_id in adgroup.creative_ids:
+            adcreatives.append(self.__fb.get_one_from_fb(creative_id, "AdCreative"))  # TODO: This should be a batch request
+        return adcreatives
 
     def create(self, account_id, name=None, adcreative_type='25', object_id=None, body=None, image_hash=None, image_url=None, creative_id=None, count_current_adgroups=None, title=None, run_status=None, link_url=None, url_tags=None, preview_url=None, related_fan_page=None, follow_redirect=None, auto_update=None, story_id=None, action_spec=None):
         """
@@ -101,12 +95,8 @@ class AdCreativeApi:
             'action_spec': action_spec
         }
         kwargs = self.__fb.clean_params(**kwargs)
-        model, errors = self.__fb.create('AdCreative', **kwargs)
-        if errors:
-            errors.append(Fault(message='AdCreative Type is %s' % adcreative_type))
-            return None, errors
-
-        return model, []
+        model = self.__fb.create('AdCreative', **kwargs)
+        return model
 
     def update(self, adcreative_id, **kwargs):
         """
@@ -118,13 +108,10 @@ class AdCreativeApi:
         :rtype tuple The success status (i.e. True, None) of the process and the errors occured, if any.
         """
         kwargs = self.__fb.clean_params(**kwargs)
-        result, errors = self.__fb.update(adcreative_id, **kwargs)
-        if errors:
-            return None, errors
+        result = self.__fb.update(adcreative_id, **kwargs)
         if result != True:
-            return None, [Fault(message='Request could not be completed. Result was <%s>' % res)]
-
-        return result, []
+            return None
+        return result
 
     def find_by_ids(self, adcreative_ids):
         """
@@ -132,7 +119,7 @@ class AdCreativeApi:
 
         :param list adcreative_ids: The list of adcreative IDs we are searching for
 
-        :rtype ( [ AdCreative ], [ Fault ] ): A tuple of AdCreative objects found, and any Faults encountered
+        :rtype [AdCreative]: A list of AdCreative objects found.
 
         """
         return self.__fb.get_many_from_fb(adcreative_ids, 'AdCreative')
