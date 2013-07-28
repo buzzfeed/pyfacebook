@@ -15,7 +15,7 @@ class TestBroadTargetingCategoryApi():
                         access_token=FACEBOOK_TEST_ACCESS_TOKEN,
                         app_secret=FACEBOOK_APP_SECRET)
 
-        btcs, errors = fb.api().broadtargetingcategory().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID)
+        btcs = fb.api().broadtargetingcategory().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID)
 
         for btc in btcs:
             ok_(hasattr(btc, 'id'))

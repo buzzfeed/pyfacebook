@@ -1,23 +1,5 @@
-import traceback
-import sys
-
-class Fault():
-  """ Returns a java-style like Exception """
-  def __init__(self, message=None, tb=None ):
-    if message is None:
-      self.message = str( sys.exc_info( )[ 1 ] )
-    else:
-      self.message = message
-
-    if tb is None:
-      self.tb = traceback.extract_tb( sys.exc_info( )[ 2 ] )
-    else:
-      self.tb = tb
-
-  def __str__( self ):
-    return "%s" % (self.message)
-
 ## {{{ http://code.activestate.com/recipes/577781/ (r1)
+
 ABERRANT_PLURAL_MAP = {
     'appendix': 'appendices',
     'barracks': 'barracks',
@@ -52,6 +34,7 @@ ABERRANT_PLURAL_MAP = {
     }
 
 VOWELS = set('aeiou')
+
 
 def pluralize(singular):
     """Return plural form of given lowercase singular word (English only). Based on
@@ -111,22 +94,5 @@ def pluralize(singular):
         suffix = 's'
     plural = root + suffix
     return plural
-
-def wrapper( f ):
-    """
-    Given a function, execute, and catch exceptions.
-
-    If an exception is thrown (None, Fault(...)) is returned, else returns the
-    tuple of (result of f(), [])
-
-    :param f: The function to call
-    :rtype f: lambda
-
-    :return: Tuple: ( result from f, an array of errors )
-    """
-    try:
-        return f( ), [ ]
-    except Exception, e:
-        return None, [ Fault( ) ]
 
 ## end of http://code.activestate.com/recipes/577781/ }}}

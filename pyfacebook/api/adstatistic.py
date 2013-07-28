@@ -1,4 +1,4 @@
-from pyfacebook.fault import Fault, FacebookException
+from pyfacebook.fault import FacebookException
 
 class AdStatisticApi:
 
@@ -14,18 +14,15 @@ class AdStatisticApi:
 
     :rtype: AdStatistic object associated with this AdAccount
     """
-    try:
-      resp       = {}
-      inc_del = 'false'
-      if include_deleted:
-        inc_del = 'true'
-      if not adaccount_id:
-        raise FacebookException( "Must pass an adaccount_id to this call" )
-      resp = self.__fb.get( '/act_' + str( adaccount_id ) + '/stats?include_deleted=' + str( inc_del ) )
-      stat, errors = self.__fb.adstatistic(resp)
-    except:
-      return None, [ Fault( ) ]
-    return stat, [ ]
+    resp = {}
+    inc_del = 'false'
+    if include_deleted:
+      inc_del = 'true'
+    if not adaccount_id:
+      raise FacebookException( "Must pass an adaccount_id to this call" )
+    resp = self.__fb.get( '/act_' + str( adaccount_id ) + '/stats?include_deleted=' + str( inc_del ) )
+    stat = self.__fb.adstatistic(resp)
+    return stat, []
 
   def find_by_adgroup_ids( self, adgroup_ids, adaccount_id, include_deleted=False ):
     """
@@ -35,42 +32,39 @@ class AdStatisticApi:
 
     :rtype: AdStatistic object associated with this AdGroup
     """
-    try:
-      if not adgroup_ids:
-        raise FacebookException( "Must pass an adgroup_id list to this call" )
+    if not adgroup_ids:
+      raise FacebookException( "Must pass an adgroup_id list to this call" )
 
-      if not adaccount_id:
-        raise FacebookException( "Must pass an adaccount_id to this call" )
+    if not adaccount_id:
+      raise FacebookException( "Must pass an adaccount_id to this call" )
 
-      if str( adaccount_id ).find( 'act_' ) < 0:
-        adaccount_id = 'act_' + str( adaccount_id )
+    if str( adaccount_id ).find( 'act_' ) < 0:
+      adaccount_id = 'act_' + str( adaccount_id )
 
-      num_ids   = len( adgroup_ids )
-      batch     = 0
-      batchsize = 50
-      adstats   = [ ]
+    num_ids   = len( adgroup_ids )
+    batch     = 0
+    batchsize = 50
+    adstats   = [ ]
 
-      while True:
-        adgroup_id_batch = adgroup_ids[batch*batchsize:batch*batchsize+batchsize]
-        url              = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(adgroup_id_batch) + ']'
-        if include_deleted:
-          url += '&include_deleted=true'
-        resp             = self.__fb.get( url )
-        batch            = batch + 1
-        adstats          = adstats + resp['data']
+    while True:
+      adgroup_id_batch = adgroup_ids[batch*batchsize:batch*batchsize+batchsize]
+      url              = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(adgroup_id_batch) + ']'
+      if include_deleted:
+        url += '&include_deleted=true'
+      resp             = self.__fb.get( url )
+      batch            = batch + 1
+      adstats          = adstats + resp['data']
 
-        if batch * batchsize + batchsize > num_ids:
-          if num_ids is not batch*batchsize:
-            url     = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(adgroup_ids[batch*batchsize:num_ids]) + ']'
-            if include_deleted:
-              url += '&include_deleted=true'
-            resp    = self.__fb.get( url )
-            adstats = adstats + resp['data']
-          break
+      if batch * batchsize + batchsize > num_ids:
+        if num_ids is not batch*batchsize:
+          url     = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(adgroup_ids[batch*batchsize:num_ids]) + ']'
+          if include_deleted:
+            url += '&include_deleted=true'
+          resp    = self.__fb.get( url )
+          adstats = adstats + resp['data']
+        break
 
-      return [ self.__fb.adstatistic( stat )[0] for stat in adstats ] , []
-    except:
-      return [ ], [ Fault( ) ]
+    return [self.__fb.adstatistic(stat) for stat in adstats]
 
   def find_by_start_time_end_time( self, adaccount_id, start_time, end_time, with_delivery=True, include_deleted=False ):
     """
@@ -83,33 +77,28 @@ class AdStatisticApi:
     :param boolean with_delivery: If True, the call returns AdStatistics for ONLY AdGroups that generated data within the datetime range
     :param boolean include_deleted: Flag to determine whether we include AdStatistics for deleted AdGroup objects
 
-    :rtype ( [ AdStatistic ] , [ Fault ] ): A tuple which includes a list of AdStatistic objects found, and a list of any Faults encountered
+    :rtype [AdStatistic]: A tuple which includes a list of AdStatistic objects found.
 
     """
+    if not adaccount_id:
+        raise FacebookException("Must pass an adaccount_id to this call")
+    if (not start_time or not end_time):
+        raise FacebookException("Must pass a start_time and end_time to this call")
 
-    try:
-        if not adaccount_id:
-            raise FacebookException( "Must pass an adaccount_id to this call" )
-        if ( not start_time or not end_time):
-            raise FacebookException( "Must pass a start_time and end_time to this call" )
+    if 'act_' not in adaccount_id:
+        adaccount_id = 'act_' + adaccount_id
 
-        if 'act_' not in adaccount_id:
-            adaccount_id = 'act_' + adaccount_id
+    adstats = [ ]
+    base_url       = '/' + adaccount_id + '/adgroupstats'
+    start_time_str = start_time.strftime( "%Y-%m-%dT%H:%M:%S" )
+    end_time_str   = end_time.strftime( "%Y-%m-%dT%H:%M:%S" )
+    params = {"start_time": start_time_str,
+              "end_time": end_time_str}
 
-        adstats = [ ]
-        base_url       = '/' + adaccount_id + '/adgroupstats'
-        start_time_str = start_time.strftime( "%Y-%m-%dT%H:%M:%S" )
-        end_time_str   = end_time.strftime( "%Y-%m-%dT%H:%M:%S" )
-        params  = { "start_time" : start_time_str,
-                    "end_time"   : end_time_str
-                  }
+    if with_delivery:
+        params["stats_mode"] = "with_delivery"
+    if include_deleted:
+        params["include_deleted"] = "true"
 
-        if with_delivery:
-            params[ "stats_mode" ] = "with_delivery"
-        if include_deleted:
-            params[ "include_deleted" ] = "true"
-
-        adstats = self.__fb.get_all( base_url, params )
-        return [ self.__fb.adstatistic( adstat )[0] for adstat in adstats ] , [ ]
-    except:
-      return [ ], [ Fault( ) ]
+    adstats = self.__fb.get_all(base_url, params)
+    return [self.__fb.adstatistic(adstat) for adstat in adstats]

@@ -14,7 +14,7 @@ class TestAdUserApi( ):
                      access_token=FACEBOOK_TEST_ACCESS_TOKEN,
                      app_secret=FACEBOOK_APP_SECRET )
 
-    adusers, errors = fb.api().aduser().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID )
+    adusers = fb.api().aduser().find_by_adaccount_id( FACEBOOK_TEST_ACCOUNT_ID )
 
     for aduser in adusers:
       ok_( hasattr( aduser, 'role' ) )
