@@ -1,10 +1,21 @@
+from pyfacebook.api import Model, FieldDef
 from pyfacebook.fault import FacebookException
 
 
-class AdCreativeApi:
-
-    def __init__(self, fb):
-        self.__fb = fb
+class AdCreative(Model):
+    """
+    The AdCreative class represents the adcreative object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/adcreative
+    """
+    FIELD_DEFS = [
+        FieldDef(title='id', required=False, allowed_types=[unicode]),
+        FieldDef(title='name', required=False, allowed_types=[unicode]),
+        FieldDef(title='body', required=False, allowed_types=[unicode]),
+        FieldDef(title='link_url', required=False, allowed_types=[unicode]),
+        FieldDef(title='title', required=False, allowed_types=[unicode]),
+        FieldDef(title='action_spec', required=False, allowed_types=[['pyfacebook.api.actionspec.ActionSpec'], type(None)]),
+        FieldDef(title='type', required=False, allowed_types=[unicode]),
+    ]
 
     def find_by_adaccount_id(self, adaccount_id, include_deleted=False, limit=None, offset=None):
         """
@@ -31,7 +42,7 @@ class AdCreativeApi:
         if offset:
             params["offset"] = str(offset)
 
-        return self.__fb.get_list_from_fb(adaccount_id, 'AdCreative', params)
+        return self._fb.get_list_from_fb(adaccount_id, self, params, fields=self.FIELDS_NAME_LIST)
 
     def find_by_adgroup_id(self, adgroup_id):
         """
@@ -41,12 +52,14 @@ class AdCreativeApi:
 
         :rtype: AdCreative object associated with the AdGroup
         """
+        from pyfacebook.api.adgroup import AdGroup
         if not adgroup_id:
             raise FacebookException("Must set an id before making this call")
-        adgroup = self.__fb.get_one_from_fb(adgroup_id, "AdCreative")
+
+        adgroup = self._fb.get_one_from_fb(adgroup_id, AdGroup())
         adcreatives = []
         for creative_id in adgroup.creative_ids:
-            adcreatives.append(self.__fb.get_one_from_fb(creative_id, "AdCreative"))  # TODO: This should be a batch request
+            adcreatives.append(self._fb.get_one_from_fb(creative_id, self, fields=self.FIELDS_NAME_LIST))  # TODO: This should be a batch request
         return adcreatives
 
     def create(self, account_id, name=None, adcreative_type='25', object_id=None, body=None, image_hash=None, image_url=None, creative_id=None, count_current_adgroups=None, title=None, run_status=None, link_url=None, url_tags=None, preview_url=None, related_fan_page=None, follow_redirect=None, auto_update=None, story_id=None, action_spec=None):
@@ -94,8 +107,8 @@ class AdCreativeApi:
             'story_id': story_id,
             'action_spec': action_spec
         }
-        kwargs = self.__fb.clean_params(**kwargs)
-        model = self.__fb.create('AdCreative', **kwargs)
+        kwargs = self._fb.clean_params(**kwargs)
+        model = self._fb.create('AdCreative', **kwargs)
         return model
 
     def update(self, adcreative_id, **kwargs):
@@ -107,8 +120,8 @@ class AdCreativeApi:
 
         :rtype tuple The success status (i.e. True, None) of the process and the errors occured, if any.
         """
-        kwargs = self.__fb.clean_params(**kwargs)
-        result = self.__fb.update(adcreative_id, **kwargs)
+        kwargs = self._fb.clean_params(**kwargs)
+        result = self._fb.update(adcreative_id, **kwargs)
         if result != True:
             return None
         return result
@@ -122,4 +135,4 @@ class AdCreativeApi:
         :rtype [AdCreative]: A list of AdCreative objects found.
 
         """
-        return self.__fb.get_many_from_fb(adcreative_ids, 'AdCreative')
+        return self._fb.get_many_from_fb(adcreative_ids, self, fields=self.FIELDS_NAME_LIST)

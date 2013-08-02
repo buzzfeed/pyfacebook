@@ -1,31 +1,21 @@
 import datetime
 import pytz
-
-from pyfacebook.settings import FACEBOOK_APP_SECRET
-from pyfacebook.settings import FACEBOOK_APP_ID
-from pyfacebook.settings import FACEBOOK_TEST_ACCESS_TOKEN
-from pyfacebook.settings import FACEBOOK_TEST_ACCOUNT_ID
-from pyfacebook.settings import FACEBOOK_PROD_ACCOUNT_ID
-
-from pyfacebook import PyFacebook
-
-from nose.tools import eq_, ok_
+from . import ApiTest
+from pyfacebook.api.adgroup import AdGroup
+from pyfacebook.api.adstatistic import AdStatistic
 
 
-class TestAdStatisticApi():
-
+class TestAdStatisticApi(ApiTest):
     def setUp(self):
-        self.fb = PyFacebook(app_id=FACEBOOK_APP_ID,
-                             access_token=FACEBOOK_TEST_ACCESS_TOKEN,
-                             app_secret=FACEBOOK_APP_SECRET)
+        super(TestAdStatisticApi, self).setUp(apis=[AdStatistic, AdGroup])
 
     def test_find_by_id(self):
-        adgroups = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID)
+        adgroups = self.adgroup_api.find_by_adaccount_id(self.FACEBOOK_TEST_ACCOUNT_ID)
         adgroup = adgroups[0]
 
-        adgroup_by_id = self.fb.api().adgroup().find_by_id(adgroup.id)
+        adgroup_by_id = self.adgroup_api.find_by_id(adgroup.id)
 
-        eq_(adgroup.__dict__, adgroup_by_id.__dict__)
+        self.eq_(adgroup.to_json(return_dict=True), adgroup_by_id.to_json(return_dict=True))
 
     def one_percent_more(self, somevalue):
         return somevalue + 0.01 * somevalue
@@ -35,8 +25,8 @@ class TestAdStatisticApi():
 
     def test_find_by_adaccount_id_and_find_by_adgroup_ids(self):
         include_deleted = True
-        adgroups = self.fb.api().adgroup().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
-        adstat_by_account_id = self.fb.api().adstatistic().find_by_adaccount_id(FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
+        adgroups = self.adgroup_api.find_by_adaccount_id(self.FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
+        adstat_by_account_id = self.adstatistic_api.find_by_adaccount_id(self.FACEBOOK_TEST_ACCOUNT_ID, include_deleted=include_deleted)
 
         all_stats = {
             'social_unique_clicks': 0,
@@ -50,7 +40,7 @@ class TestAdStatisticApi():
             'unique_clicks': 0
         }
 
-        stats = self.fb.api().adstatistic().find_by_adgroup_ids([adgroup.id for adgroup in adgroups], FACEBOOK_PROD_ACCOUNT_ID, include_deleted=include_deleted)
+        stats = self.adstatistic_api.find_by_adgroup_ids([adgroup.id for adgroup in adgroups], self.FACEBOOK_PROD_ACCOUNT_ID, include_deleted=include_deleted)
 
         for stat in stats:
             for key, val in all_stats.items():
@@ -58,7 +48,7 @@ class TestAdStatisticApi():
                 if hasattr(stat, key):
                     addtl_val = getattr(stat, key)
                 if addtl_val:
-                    all_stats[key] = val + addtl_val
+                    all_stats[key] = val + int(addtl_val)
 
         totals = {
             'social_spent': 84,
@@ -75,23 +65,21 @@ class TestAdStatisticApi():
         for key, val in all_stats.items():
             if val:  # if val=0, the stat has no activity for the current account
                 to_compare = totals[key]
-                ok_(val > self.one_percent_less(to_compare) or val == int(to_compare))
-                ok_(val < self.one_percent_more(to_compare) or val == int(to_compare))
+                self.ok_(val > self.one_percent_less(to_compare) or val == int(to_compare))
+                self.ok_(val < self.one_percent_more(to_compare) or val == int(to_compare))
 
     def test_find_by_start_time_end_time(self):
         utc = pytz.utc
-        include_deleted = True
-
         # Test single day
         start_time = datetime.datetime(2012, 12, 26, 6, 0, 0, tzinfo=utc)
         end_time = datetime.datetime(2012, 12, 27, 6, 0, 0, tzinfo=utc)
-        stats = self.fb.api().adstatistic().find_by_start_time_end_time(FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
+        stats = self.adstatistic_api.find_by_start_time_end_time(self.FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
 
-        ok_(len(stats) > 0)
+        self.ok_(len(stats) > 0)
 
         # Test one month: paging
         start_time = datetime.datetime(2012, 11, 26, 6, 0, 0, tzinfo=utc)
         end_time = datetime.datetime(2012, 12, 27, 6, 0, 0, tzinfo=utc)
-        stats = self.fb.api().adstatistic().find_by_start_time_end_time(FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
+        stats = self.adstatistic_api.find_by_start_time_end_time(self.FACEBOOK_PROD_ACCOUNT_ID, start_time, end_time)
 
-        ok_(len(stats) > 0)
+        self.ok_(len(stats) > 0)

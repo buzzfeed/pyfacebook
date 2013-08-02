@@ -1,104 +1,123 @@
+from pyfacebook.api import Model, FieldDef
 from pyfacebook.fault import FacebookException
 
-class AdStatisticApi:
 
-  def __init__( self, fb ):
-    self.__fb = fb
-
-  def find_by_adaccount_id( self, adaccount_id, include_deleted=False ):
+class AdStatistic(Model):
     """
-    Retrieves Statistic objects associated with this AdAccount
-
-    :param int adaccount_id: The adaccount id
-    :param bool include_deleted: Includes deleted adstatistics if set to True
-
-    :rtype: AdStatistic object associated with this AdAccount
+    The AdStatistic class represents an adstatistic objects in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/adstatistics
     """
-    resp = {}
-    inc_del = 'false'
-    if include_deleted:
-      inc_del = 'true'
-    if not adaccount_id:
-      raise FacebookException( "Must pass an adaccount_id to this call" )
-    resp = self.__fb.get( '/act_' + str( adaccount_id ) + '/stats?include_deleted=' + str( inc_del ) )
-    stat = self.__fb.adstatistic(resp)
-    return stat, []
+    FIELD_DEFS = [
+        FieldDef(title='id', required=False, allowed_types=[str]),
+        FieldDef(title='account_id', required=False, allowed_types=[long]),
+        FieldDef(title='start_time', required=False, allowed_types=[str]),
+        FieldDef(title='end_time', required=False, allowed_types=[str]),
+        FieldDef(title='impressions', required=False, allowed_types=[unicode]),
+        FieldDef(title='clicks', required=False, allowed_types=[unicode]),
+        FieldDef(title='spent', required=False, allowed_types=[unicode]),
+        FieldDef(title='social_impressions', required=False, allowed_types=[unicode]),
+        FieldDef(title='social_clicks', required=False, allowed_types=[unicode]),
+        FieldDef(title='social_spent', required=False, allowed_types=[unicode]),
+        FieldDef(title='unique_impressions', required=False, allowed_types=[unicode]),
+        FieldDef(title='unique_clicks', required=False, allowed_types=[unicode]),
+        FieldDef(title='social_unique_impressions', required=False, allowed_types=[int]),
+        FieldDef(title='social_unique_clicks', required=False, allowed_types=[unicode]),
+    ]
 
-  def find_by_adgroup_ids( self, adgroup_ids, adaccount_id, include_deleted=False ):
-    """
-    Retrieves the Statistic object associated with this AdGroup
+    def find_by_adaccount_id(self, adaccount_id, include_deleted=False):
+        """
+        Retrieves Statistic objects associated with this AdAccount
 
-    :param boolean force_get: Set to true to force retrieval directly from Facebook. Otherwise this method will return objects from memory if available.
+        :param int adaccount_id: The adaccount id
+        :param bool include_deleted: Includes deleted adstatistics if set to True
 
-    :rtype: AdStatistic object associated with this AdGroup
-    """
-    if not adgroup_ids:
-      raise FacebookException( "Must pass an adgroup_id list to this call" )
+        :rtype: AdStatistic object associated with this AdAccount
+        """
+        resp = {}
+        inc_del = 'false'
+        if include_deleted:
+            inc_del = 'true'
+        if not adaccount_id:
+            raise FacebookException("Must pass an adaccount_id to this call")
+        resp = self._fb.get('/act_' + str(adaccount_id) + '/stats?include_deleted=' + str(inc_del))
+        stat = self.from_json(resp, preprocessed=True)
+        return stat, []
 
-    if not adaccount_id:
-      raise FacebookException( "Must pass an adaccount_id to this call" )
+    def find_by_adgroup_ids(self, adgroup_ids, adaccount_id, include_deleted=False):
+        """
+        Retrieves the Statistic object associated with this AdGroup
 
-    if str( adaccount_id ).find( 'act_' ) < 0:
-      adaccount_id = 'act_' + str( adaccount_id )
+        :param boolean force_get: Set to true to force retrieval directly from Facebook. Otherwise this method will return objects from memory if available.
 
-    num_ids   = len( adgroup_ids )
-    batch     = 0
-    batchsize = 50
-    adstats   = [ ]
+        :rtype: AdStatistic object associated with this AdGroup
+        """
+        if not adgroup_ids:
+            raise FacebookException("Must pass an adgroup_id list to this call")
 
-    while True:
-      adgroup_id_batch = adgroup_ids[batch*batchsize:batch*batchsize+batchsize]
-      url              = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(adgroup_id_batch) + ']'
-      if include_deleted:
-        url += '&include_deleted=true'
-      resp             = self.__fb.get( url )
-      batch            = batch + 1
-      adstats          = adstats + resp['data']
+        if not adaccount_id:
+            raise FacebookException("Must pass an adaccount_id to this call")
 
-      if batch * batchsize + batchsize > num_ids:
-        if num_ids is not batch*batchsize:
-          url     = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(adgroup_ids[batch*batchsize:num_ids]) + ']'
-          if include_deleted:
-            url += '&include_deleted=true'
-          resp    = self.__fb.get( url )
-          adstats = adstats + resp['data']
-        break
+        if str(adaccount_id).find('act_') < 0:
+            adaccount_id = 'act_' + str(adaccount_id)
 
-    return [self.__fb.adstatistic(stat) for stat in adstats]
+        num_ids = len(adgroup_ids)
+        batch = 0
+        batchsize = 50
+        adstats = []
 
-  def find_by_start_time_end_time( self, adaccount_id, start_time, end_time, with_delivery=True, include_deleted=False ):
-    """
-    Retrieves a list of AdStatisics objects for a given AdAccount ID within a datetime range.
-    AdStatistics returned will contain ONLY data that was generated within the specified datetime range.
+        while True:
+            adgroup_id_batch = adgroup_ids[batch*batchsize:batch*batchsize+batchsize]
+            url = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(map(str, adgroup_id_batch)) + ']'
+            if include_deleted:
+                url += '&include_deleted=true'
+            resp = self._fb.get(url)
+            batch = batch + 1
+            adstats = adstats + resp['data']
 
-    :param str adaccount_id: The adaccount ID that contains the desired adstatistics
-    :param datetime start_time: The start of the datetime range. UTC only.
-    :param datetime end_time: The end of the datetime range. UTC only.
-    :param boolean with_delivery: If True, the call returns AdStatistics for ONLY AdGroups that generated data within the datetime range
-    :param boolean include_deleted: Flag to determine whether we include AdStatistics for deleted AdGroup objects
+            if batch * batchsize + batchsize > num_ids:
+                if num_ids is not batch*batchsize:
+                    url = '/' + adaccount_id + '/adgroupstats?adgroup_ids=' + '[' + ",".join(map(str, adgroup_ids[batch*batchsize:num_ids])) + ']'
+                    if include_deleted:
+                        url += '&include_deleted=true'
+                    resp = self._fb.get(url)
+                    adstats = adstats + resp['data']
+                break
 
-    :rtype [AdStatistic]: A tuple which includes a list of AdStatistic objects found.
+        return [self.from_json(stat, preprocessed=True) for stat in adstats]
 
-    """
-    if not adaccount_id:
-        raise FacebookException("Must pass an adaccount_id to this call")
-    if (not start_time or not end_time):
-        raise FacebookException("Must pass a start_time and end_time to this call")
+    def find_by_start_time_end_time(self, adaccount_id, start_time, end_time, with_delivery=True, include_deleted=False):
+        """
+        Retrieves a list of AdStatisics objects for a given AdAccount ID within a datetime range.
+        AdStatistics returned will contain ONLY data that was generated within the specified datetime range.
 
-    if 'act_' not in adaccount_id:
-        adaccount_id = 'act_' + adaccount_id
+        :param str adaccount_id: The adaccount ID that contains the desired adstatistics
+        :param datetime start_time: The start of the datetime range. UTC only.
+        :param datetime end_time: The end of the datetime range. UTC only.
+        :param boolean with_delivery: If True, the call returns AdStatistics for ONLY AdGroups that generated data within the datetime range
+        :param boolean include_deleted: Flag to determine whether we include AdStatistics for deleted AdGroup objects
 
-    adstats = [ ]
-    base_url       = '/' + adaccount_id + '/adgroupstats'
-    start_time_str = start_time.strftime( "%Y-%m-%dT%H:%M:%S" )
-    end_time_str   = end_time.strftime( "%Y-%m-%dT%H:%M:%S" )
-    params = {"start_time": start_time_str,
-              "end_time": end_time_str}
+        :rtype [AdStatistic]: A tuple which includes a list of AdStatistic objects found.
 
-    if with_delivery:
-        params["stats_mode"] = "with_delivery"
-    if include_deleted:
-        params["include_deleted"] = "true"
+        """
+        if not adaccount_id:
+            raise FacebookException("Must pass an adaccount_id to this call")
+        if (not start_time or not end_time):
+            raise FacebookException("Must pass a start_time and end_time to this call")
 
-    adstats = self.__fb.get_all(base_url, params)
-    return [self.__fb.adstatistic(adstat) for adstat in adstats]
+        if 'act_' not in adaccount_id:
+            adaccount_id = 'act_' + adaccount_id
+
+        adstats = []
+        base_url = '/' + adaccount_id + '/adgroupstats'
+        start_time_str = start_time.strftime("%Y-%m-%dT%H:%M:%S")
+        end_time_str = end_time.strftime("%Y-%m-%dT%H:%M:%S")
+        params = {"start_time": start_time_str,
+                  "end_time": end_time_str}
+
+        if with_delivery:
+            params["stats_mode"] = "with_delivery"
+        if include_deleted:
+            params["include_deleted"] = "true"
+
+        adstats = self._fb.get_all(base_url, params)
+        return [self.from_json(adstat, preprocessed=True) for adstat in adstats]
