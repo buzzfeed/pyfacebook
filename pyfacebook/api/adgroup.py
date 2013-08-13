@@ -1,18 +1,26 @@
+from pyfacebook.api import Model, FieldDef
 from pyfacebook.fault import FacebookException
-from pyfacebook.models.adgroup import AdGroup
 
 
-class AdGroupApi:
-
-    def __init__(self, fb):
-        self.__fb = fb
-
-    def __result_to_model(self, data):
-        model = AdGroup()
-        for key in data.keys():
-            if hasattr(model, key):
-                setattr(model, key, data[key])
-        return model
+class AdGroup(Model):
+    """
+    The AdGroup class represents an adgroup object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/adgroup
+    """
+    FIELD_DEFS = [
+        FieldDef(title='id', required=False, allowed_types=[long]),
+        FieldDef(title='campaign_id', required=False, allowed_types=[long]),
+        FieldDef(title='name', required=False, allowed_types=[str]),
+        FieldDef(title='disapprove_reason_descriptions', required=False, allowed_types=[str]),
+        FieldDef(title='adgroup_status', required=False, allowed_types=[int]),
+        FieldDef(title='ad_status', required=False, allowed_types=[int]),
+        FieldDef(title='bid_info', required=False, allowed_types=[{str: int}, type(None)]),
+        FieldDef(title='bid_type', required=False, allowed_types=[int]),
+        FieldDef(title='updated_time', required=False, allowed_types=[int, unicode]),
+        FieldDef(title='account_id', required=False, allowed_types=[int]),
+        FieldDef(title='targeting', required=False, allowed_types=['pyfacebook.api.targeting.Targeting']),
+        FieldDef(title='creative_ids', required=False, allowed_types=[[int]]),
+    ]
 
     def find_by_adaccount_id(self, adaccount_id, include_deleted=False, limit=None, offset=None):
         """
@@ -39,7 +47,7 @@ class AdGroupApi:
         if offset:
             params["offset"] = str(offset)
 
-        return self.__fb.get_list_from_fb(adaccount_id, 'AdGroup', params)
+        return self._fb.get_list_from_fb(adaccount_id, self, params)
 
     def find_by_id(self, adgroup_id):
         """
@@ -51,7 +59,7 @@ class AdGroupApi:
         """
         if not adgroup_id:
             raise FacebookException("An adgroup_id is required.")
-        return self.__fb.get_one_from_fb(adgroup_id, "AdGroup")
+        return self._fb.get_one_from_fb(adgroup_id, self, fields=self.FIELDS_NAME_LIST)
 
     def find_by_ids(self, adgroup_ids):
         """
@@ -62,4 +70,4 @@ class AdGroupApi:
         :rtype [AdGroup]: A tuple of AdGroup objects found.
 
         """
-        return self.__fb.get_many_from_fb(adgroup_ids, 'AdGroup')
+        return self._fb.get_many_from_fb(adgroup_ids, self, fields=self.FIELDS_NAME_LIST)

@@ -1,21 +1,30 @@
+import json as j
+
+from pyfacebook.api import Model, FieldDef
 from pyfacebook.fault import FacebookException
 
 
-class AdUserApi:
-
-  def __init__(self, fb ):
-    self.__fb = fb
-
-  def find_by_adaccount_id( self, adaccount_id ):
+class AdUser(Model):
     """
-    Retrieves User objects associated with this AdAccount
-
-    :param int adaccount_id: The adaccount id
-
-    :rtype: List of AdUsers contained by this AdAccount
-
+    The AdUser class represents the aduser object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/aduser/
+    We extend the functionality in the documentation with custom calls for adaccounts
     """
-    if not adaccount_id:
-      raise FacebookException( "Must set an id before making this call" )
-    users = self.__fb.get_all( '/act_' + str( adaccount_id ) + '/users' )
-    return [ self.__fb.aduser(aduser) for aduser in users ]
+    FIELD_DEFS = [
+        FieldDef(title='id', required=False, allowed_types=[long]),
+        FieldDef(title='role', required=False, allowed_types=[int]),
+    ]
+
+    def find_by_adaccount_id(self, adaccount_id):
+        """
+        Retrieves User objects associated with this AdAccount
+
+        :param int adaccount_id: The adaccount id
+
+        :rtype: List of AdUsers contained by this AdAccount
+        """
+        if not adaccount_id:
+            raise FacebookException("Must set an id before making this call")
+        users = self._fb.get_all('/act_' + str(adaccount_id) + '/users')
+
+        return [self.from_json(j.dumps(aduser)) for aduser in users]

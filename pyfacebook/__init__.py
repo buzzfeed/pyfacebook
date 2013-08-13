@@ -6,22 +6,6 @@ from urlparse import parse_qs
 from urlparse import urlparse
 from pyfacebook.fault import FacebookException
 from caliendo.facade import cache as caliendo_cache
-from pyfacebook.models.adaccount import AdAccount
-from pyfacebook.models.aduser import AdUser
-from pyfacebook.models.adstatistic import AdStatistic
-from pyfacebook.models.adgroup import AdGroup
-from pyfacebook.models.adcampaign import AdCampaign
-from pyfacebook.models.adcreative import AdCreative
-from pyfacebook.models.adimage import AdImage
-from pyfacebook.models.broadtargetingcategory import BroadTargetingCategory
-
-from pyfacebook.api.adaccount import AdAccountApi
-from pyfacebook.api.aduser import AdUserApi
-from pyfacebook.api.adstatistic import AdStatisticApi
-from pyfacebook.api.adgroup import AdGroupApi
-from pyfacebook.api.adcampaign import AdCampaignApi
-from pyfacebook.api.adcreative import AdCreativeApi
-from pyfacebook.api.broadtargetingcategory import BroadTargetingCategoryApi
 
 
 class PyFacebook(object):
@@ -53,26 +37,29 @@ class PyFacebook(object):
         self.__app_secret = app_secret
         self.__access_token = access_token
 
-    def get_list_from_fb(self, container_obj_id, class_to_get, params={}):
+    def get_list_from_fb(self, container_obj_id, converter, params={}, fields=[]):
         """
         Retrieves data from Facebook and returns it as a list of objects.
 
         :param string container_obj_id: The id of the container object.
+        :param ValidatedModel converter: The object to translate dict to.
+        :param dict params: A dictionary containing lookup parameters.
+        :param list fields: A list of fields to be retrieved in request.
 
-        :param string class_to_get: The class name of the object we are retrieving.
-
-        :rtype: List of objects of Class class_to_get, representing data pulled from the Facebook Graph API
+        :rtype: List of objects of Class converter, representing data pulled from the Facebook Graph API
 
         """
-        objs = self.get_all('/' + str(container_obj_id) + '/' + class_to_get.lower() + 's', params)
-        return [self.get_instance(class_to_get, obj) for obj in objs]
+        resource = '/' + str(container_obj_id) + '/' + converter.__class__.__name__.lower() + 's'
+        objs = self.get_all(resource, params, fields=fields)
+        return [converter.__class__().from_json(self.preprocess_json(obj), preprocessed=True) for obj in objs]
 
-    def get_many_from_fb(self, obj_ids, class_to_get):
+    def get_many_from_fb(self, obj_ids, converter, fields=[]):
         """
         Retrieves data form Facebook and returns a list of models representing the pulled resources.
 
         :param list(<int>) obj_ids: A list of ids for the objects to pull from FB
-        :param str class_to_get: The name of the class for the pyfacebook model corresponding to the facebook resources we're pulling.
+        :param ValidatedModel converter: The object to translate dict to.
+        :param list fields: A list of fields to be retrieved in request.
 
         :rtype <list<model>:
         """
@@ -83,30 +70,30 @@ class PyFacebook(object):
         params = {}
         params["ids"] = ",".join(map(str, obj_ids))
 
-        resp = self.get(base_url, params)
+        resp = self.get(base_url, params, fields=fields)
         objs += resp.values()
 
-        return [self.get_instance(class_to_get.lower(), obj) for obj in objs]
+        return [converter.__class__().from_json(self.preprocess_json(obj), preprocessed=True) for obj in objs]
 
-    def get_one_from_fb(self, reference_obj_id, class_to_get):
+    def get_one_from_fb(self, reference_obj_id, converter, fields=[]):
         """
         Retrieves data from Facebook and returns it as an object.
 
         :param string reference_obj_id: The id of the reference object.
+        :param ValidatedModel converter: The object to translate dict to.
+        :param list fields: A list of fields to be retrieved in request.
 
-        :param string class_to_get: The class name of the object we are retrieving.
-
-        :rtype: Object of Class class_to_get, representing data pulled from the Facebook Graph API
+        :rtype: Object of Class converter, representing data pulled from the Facebook Graph API
 
         """
         resp = self.get('/' + str(reference_obj_id))
-        return self.get_instance(class_to_get, resp)
+        return converter.__class__().from_json(self.preprocess_json(resp), preprocessed=True)
 
-    def create(self, model, **kwargs):
+    def create(self, converter, **kwargs):
         """
         Creates a new instance on type <model> with the given <kwargs>
 
-        :param string model The handle of the model we're creating
+        :param ValidatedModel converter: The handle of the model we're creating
 
         :rtype A dict with the attributes of the remote obj, the new model instance with the given attribute.
         """
@@ -115,12 +102,9 @@ class PyFacebook(object):
         except KeyError:
             raise FacebookException('An account_id is required to make the request!')
 
-        url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=model.lower())
+        url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=converter.__class__.__name__.lower())
         response = self.post(url, urllib.urlencode(kwargs))
-        instance = self.get_instance(model, kwargs)
-        if 'id' in response:
-            setattr(instance, 'id', response['id'])
-        return instance
+        return converter.__class__.from_json(self.preprocess_json(response), preprocessed=True)
 
     def update(self, obj_id, **kwargs):
         """
@@ -145,12 +129,13 @@ class PyFacebook(object):
                 cleaned_data[k] = v
         return kwargs
 
-    def get_all(self, resource, params={}):
+    def get_all(self, resource, params={}, fields=[]):
         """
         Return all the results requested as implied by the params sent regardless of FB's limitations.
 
         :param str resource: The URI for the resource on the Facebook graph endpoint
         :param dict params: The additional parameters for the request. These can include but are not limited to limit and offset.
+        :param list fields: A list of fields to be retrieved in request.
 
         :rtype list(<mixed>): The return objects
         """
@@ -158,7 +143,7 @@ class PyFacebook(object):
         limit = int(params.get('limit', 0))
         resp = {}
         while True:
-            resp = self.get(resource, params)
+            resp = self.get(resource, params, fields=fields)
             data += resp['data']
             if limit and len(data) >= limit:
                 return data[0:limit]
@@ -178,7 +163,7 @@ class PyFacebook(object):
         response.close()
         return resp
 
-    def get(self, resource, params={}):
+    def get(self, resource, params={}, fields=[]):
         """
         GET's a FB response for a given resource and set of parameters. Automatically passes the access_token.
 
@@ -190,6 +175,9 @@ class PyFacebook(object):
         else:
             url += '?'
         url += 'access_token=' + str(self.__access_token)
+
+        if fields:
+            url += '{}{}'.format('&fields=', ','.join(fields))
 
         if params:
             url += '&'
@@ -264,75 +252,28 @@ class PyFacebook(object):
         self.__access_token = new_token
         return new_token
 
-    def adaccount(self, o):
-        return AdAccount(o)
-
-    def aduser(self, o):
-        return AdUser(o)
-
-    def user(self, o):
-        return AdUser(o)
-
-    def adstatistic(self, o):
-        return AdStatistic(o)
-
-    def stats(self, o):
-        return AdStatistic(o)
-
-    def adgroup(self, o):
-        return AdGroup(o)
-
-    def adcampaign(self, o):
-        return AdCampaign(o)
-
-    def adcreative(self, o):
-        return AdCreative(o)
-
-    def adimage(self, o):
-        return AdImage(o)
-
-    def broadtargetingcategory(self, o):
-        return BroadTargetingCategory(o)
-
-    def get_instance(self, classname, o):
+    def preprocess_json(self, resp):
         """
-        Returns an initialized instance of the class given by classname.
+        Add support for strings like 'Testing "testing"' and makes facebook api friendly for ValidatedModel
 
-        :param string classname The name of the module containing the needed class.
+        :param dict resp: Dict response to fix.
 
-        :param dict o A dictionary containing arguments to initialize a instance of the requested class.
+        :rtype str: The fixed response.
         """
-        try:
-            return getattr(self, classname.lower())(o)
-        except AttributeError:
-            raise FacebookException("Unrecognized object requested.")
-
-    def api(self):
-        return FacebookApi(self)
-
-
-class FacebookApi(PyFacebook):
-
-    def __init__(self, fb):
-        self.__fb = fb
-
-    def adaccount(self):
-        return AdAccountApi(self.__fb)
-
-    def adcampaign(self):
-        return AdCampaignApi(self.__fb)
-
-    def adcreative(self):
-        return AdCreativeApi(self.__fb)
-
-    def adgroup(self):
-        return AdGroupApi(self.__fb)
-
-    def adstatistic(self):
-        return AdStatisticApi(self.__fb)
-
-    def aduser(self):
-        return AdUserApi(self.__fb)
-
-    def broadtargetingcategory(self):
-        return BroadTargetingCategoryApi(self.__fb)
+        for key, value in resp.items():
+            if not type(value) in [list, dict]:
+                if type(value) in [unicode, str]:
+                    if key in ['body', 'name', 'title'] and ("'" in value or '"' in value or '\n' in value or '\t' in value):
+                        resp[key] = unicode(json.dumps(value))
+            if key == 'action_spec' and type(value) not in [type(None)]:
+                if type(value) == dict:
+                    if value.get('action.type'):
+                        if type(value['action.type']) not in [list, type(None)]:
+                            value['action.type'] = [value.get('action.type')]
+                    resp[key] = [value]
+                if type(value) == list:
+                    for index, val in enumerate(value):
+                        if val.get('action.type'):
+                            if type(val['action.type']) not in [list, type(None)]:
+                                value[index]['action.type'] = [val.get('action.type')]
+        return resp
