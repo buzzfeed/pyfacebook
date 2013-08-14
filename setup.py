@@ -21,6 +21,7 @@ setup(
         'pytz==2012h',
         'caliendo',
         'python-dateutil==2.1',
+        'mock==1.0.1',
     ],
     dependency_links=[
         'https://github.com/buzzfeed/caliendo/tarball/v0.2.3#egg=caliendo-0.2.3'

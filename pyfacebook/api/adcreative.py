@@ -56,7 +56,7 @@ class AdCreative(Model):
         if not adgroup_id:
             raise FacebookException("Must set an id before making this call")
 
-        adgroup = self._fb.get_one_from_fb(adgroup_id, AdGroup())
+        adgroup = AdGroup(fb=self._fb).find_by_id(adgroup_id)
         adcreatives = []
         for creative_id in adgroup.creative_ids:
             adcreatives.append(self._fb.get_one_from_fb(creative_id, self, fields=self.FIELDS_NAME_LIST))  # TODO: This should be a batch request
