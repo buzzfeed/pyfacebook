@@ -72,7 +72,6 @@ class PyFacebook(object):
 
         resp = self.get(base_url, params, fields=fields)
         objs += resp.values()
-
         return [converter.__class__().from_json(self.preprocess_json(obj), preprocessed=True) for obj in objs]
 
     def get_one_from_fb(self, reference_obj_id, converter, fields=[]):
@@ -141,12 +140,17 @@ class PyFacebook(object):
         """
         data = []
         limit = int(params.get('limit', 0))
+        offset = int(params.get('offset', 0))
         resp = {}
         while True:
             resp = self.get(resource, params, fields=fields)
             data += resp['data']
-            if limit and len(data) >= limit:
+            if limit and not offset:
                 return data[0:limit]
+            if limit and offset:
+                return data[offset:offset + limit]
+            if not limit and offset:
+                return data[offset:]
             if 'paging' in resp and 'next' in resp['paging']:
                 next_url = resp['paging']['next']
                 url = urlparse(next_url)
@@ -156,7 +160,7 @@ class PyFacebook(object):
                 break
         return data
 
-    def __json_response(self, url, data=None):
+    def _json_response(self, url, data=None):
         response = urllib.urlopen(url, data)
         raw_response = response.read()
         resp = json.loads(raw_response)
@@ -183,11 +187,11 @@ class PyFacebook(object):
             url += '&'
             url += urllib.urlencode(params)
 
-        resp = caliendo_cache(handle=self.__json_response, kwargs={'url': url})
+        resp = caliendo_cache(handle=self._json_response, kwargs={'url': url})
 
         if 'error' in resp:
             time.sleep(5)
-            resp = caliendo_cache(handle=self.__json_response, kwargs={'url': url})
+            resp = caliendo_cache(handle=self._json_response, kwargs={'url': url})
             if 'error' in resp:
                 raise FacebookException(resp['error'])
 
@@ -200,7 +204,7 @@ class PyFacebook(object):
         url = '{base_url}{source_url}'.format(base_url=self.__graph_endpoint, source_url=str(resource))
         url += '&' if '?' in url else '?'
         url += urllib.urlencode({'access_token': self.access_token()})
-        obj = caliendo_cache(handle=self.__json_response, kwargs={'url': url, 'data': payload})
+        obj = caliendo_cache(handle=self._json_response, kwargs={'url': url, 'data': payload})
 
         try:
             if 'error' in obj:
