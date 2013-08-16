@@ -1,4 +1,6 @@
-from pyfacebook.api import FieldDef, Model
+from pyfacebook.api import Model
+
+from tinymodel import FieldDef
 
 
 class Targeting(Model):

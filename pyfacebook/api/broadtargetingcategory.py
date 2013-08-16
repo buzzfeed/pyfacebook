@@ -1,4 +1,5 @@
-from pyfacebook.api import Model, FieldDef
+from pyfacebook.api import Model
+from tinymodel import FieldDef
 from pyfacebook.fault import FacebookException
 
 
@@ -26,4 +27,4 @@ class BroadTargetingCategory(Model):
         if not adaccount_id:
             raise FacebookException("Must set an id before making this call")
         btcs = self._fb.get_all('/act_' + str(adaccount_id) + '/broadtargetingcategories')
-        return [self.from_json(btc, preprocessed=True) for btc in btcs]
+        return [self.__class__(from_json=btc, preprocessed=True) for btc in btcs]

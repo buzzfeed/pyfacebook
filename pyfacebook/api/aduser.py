@@ -1,6 +1,6 @@
 import json as j
-
-from pyfacebook.api import Model, FieldDef
+from pyfacebook.api import Model
+from tinymodel import FieldDef
 from pyfacebook.fault import FacebookException
 
 
@@ -27,4 +27,4 @@ class AdUser(Model):
             raise FacebookException("Must set an id before making this call")
         users = self._fb.get_all('/act_' + str(adaccount_id) + '/users')
 
-        return [self.from_json(j.dumps(aduser)) for aduser in users]
+        return [self.__class__(from_json=j.dumps(aduser)) for aduser in users]

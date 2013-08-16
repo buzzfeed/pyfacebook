@@ -15,15 +15,17 @@ setup(
     packages=find_packages(),
     test_suite='test',
     install_requires=[
-        'nose==1.2.1',
+        'nose==1.3.0',
         'BeautifulSoup==3.2.1',
         'Fabric==1.5.1',
-        'pytz==2012h',
+        'pytz==2013b',
         'caliendo',
         'python-dateutil==2.1',
         'mock==1.0.1',
+        'tinymodel',
     ],
     dependency_links=[
-        'https://github.com/buzzfeed/caliendo/tarball/v0.2.3#egg=caliendo-0.2.3'
+        'https://github.com/buzzfeed/caliendo/tarball/v0.2.3#egg=caliendo-0.2.3',
+        'https://github.com/buzzfeed/tinymodel/tarball/0.0.1#egg=tinymodel-0.0.1'
     ]
 )

@@ -1,4 +1,5 @@
-from pyfacebook.api import Model, FieldDef
+from pyfacebook.api import Model
+from tinymodel import FieldDef
 
 
 class ActionSpec(Model):

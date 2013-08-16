@@ -42,7 +42,7 @@ class PyFacebook(object):
         Retrieves data from Facebook and returns it as a list of objects.
 
         :param string container_obj_id: The id of the container object.
-        :param ValidatedModel converter: The object to translate dict to.
+        :param TinyModel converter: The object to translate dict to.
         :param dict params: A dictionary containing lookup parameters.
         :param list fields: A list of fields to be retrieved in request.
 
@@ -51,14 +51,14 @@ class PyFacebook(object):
         """
         resource = '/' + str(container_obj_id) + '/' + converter.__class__.__name__.lower() + 's'
         objs = self.get_all(resource, params, fields=fields)
-        return [converter.__class__().from_json(self.preprocess_json(obj), preprocessed=True) for obj in objs]
+        return [converter.__class__(from_json=self.preprocess_json(obj), preprocessed=True) for obj in objs]
 
     def get_many_from_fb(self, obj_ids, converter, fields=[]):
         """
         Retrieves data form Facebook and returns a list of models representing the pulled resources.
 
         :param list(<int>) obj_ids: A list of ids for the objects to pull from FB
-        :param ValidatedModel converter: The object to translate dict to.
+        :param TinyModel converter: The object to translate dict to.
         :param list fields: A list of fields to be retrieved in request.
 
         :rtype <list<model>:
@@ -72,27 +72,27 @@ class PyFacebook(object):
 
         resp = self.get(base_url, params, fields=fields)
         objs += resp.values()
-        return [converter.__class__().from_json(self.preprocess_json(obj), preprocessed=True) for obj in objs]
+        return [converter.__class__(from_json=self.preprocess_json(obj), preprocessed=True) for obj in objs]
 
     def get_one_from_fb(self, reference_obj_id, converter, fields=[]):
         """
         Retrieves data from Facebook and returns it as an object.
 
         :param string reference_obj_id: The id of the reference object.
-        :param ValidatedModel converter: The object to translate dict to.
+        :param TinyModel converter: The object to translate dict to.
         :param list fields: A list of fields to be retrieved in request.
 
         :rtype: Object of Class converter, representing data pulled from the Facebook Graph API
 
         """
         resp = self.get('/' + str(reference_obj_id))
-        return converter.__class__().from_json(self.preprocess_json(resp), preprocessed=True)
+        return converter.__class__(from_json=self.preprocess_json(resp), preprocessed=True)
 
     def create(self, converter, **kwargs):
         """
         Creates a new instance on type <model> with the given <kwargs>
 
-        :param ValidatedModel converter: The handle of the model we're creating
+        :param TinyModel converter: The handle of the model we're creating
 
         :rtype A dict with the attributes of the remote obj, the new model instance with the given attribute.
         """
@@ -103,7 +103,7 @@ class PyFacebook(object):
 
         url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=converter.__class__.__name__.lower())
         response = self.post(url, urllib.urlencode(kwargs))
-        return converter.__class__.from_json(self.preprocess_json(response), preprocessed=True)
+        return converter.__class__(from_json=self.preprocess_json(response), preprocessed=True)
 
     def update(self, obj_id, **kwargs):
         """
@@ -258,7 +258,7 @@ class PyFacebook(object):
 
     def preprocess_json(self, resp):
         """
-        Add support for strings like 'Testing "testing"' and makes facebook api friendly for ValidatedModel
+        Add support for strings like 'Testing "testing"' and makes facebook api friendly for TinyModel
 
         :param dict resp: Dict response to fix.
 

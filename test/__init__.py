@@ -10,6 +10,7 @@ from pyfacebook.settings import (
     FACEBOOK_TEST_ACCOUNT_ID
 )
 
+
 class ApiTest(object):
     def __init__(self, *args, **kwargs):
         self.fb = PyFacebook(app_id=FACEBOOK_APP_ID,
