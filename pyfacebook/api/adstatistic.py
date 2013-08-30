@@ -1,4 +1,5 @@
-from pyfacebook.api import Model, FieldDef
+from pyfacebook.api import Model
+from tinymodel import FieldDef
 from pyfacebook.fault import FacebookException
 
 
@@ -40,7 +41,7 @@ class AdStatistic(Model):
         if not adaccount_id:
             raise FacebookException("Must pass an adaccount_id to this call")
         resp = self._fb.get('/act_' + str(adaccount_id) + '/stats?include_deleted=' + str(inc_del))
-        stat = self.from_json(resp, preprocessed=True)
+        stat = self.__class__(from_json=resp, preprocessed=True)
         return stat, []
 
     def find_by_adgroup_ids(self, adgroup_ids, adaccount_id, include_deleted=False):
@@ -83,7 +84,7 @@ class AdStatistic(Model):
                     adstats = adstats + resp['data']
                 break
 
-        return [self.from_json(stat, preprocessed=True) for stat in adstats]
+        return [self.__class__(from_json=stat, preprocessed=True) for stat in adstats]
 
     def find_by_start_time_end_time(self, adaccount_id, start_time, end_time, with_delivery=True, include_deleted=False):
         """
@@ -120,4 +121,4 @@ class AdStatistic(Model):
             params["include_deleted"] = "true"
 
         adstats = self._fb.get_all(base_url, params)
-        return [self.from_json(adstat, preprocessed=True) for adstat in adstats]
+        return [self.__class__(from_json=adstat, preprocessed=True) for adstat in adstats]
