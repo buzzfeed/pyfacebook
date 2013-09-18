@@ -5,3 +5,5 @@ FACEBOOK_TEST_ACCOUNT_ID   = ''
 # This one needs to have adstatistics data
 FACEBOOK_PROD_ACCOUNT_ID   = ''
 FACEBOOK_TEST_ACCESS_TOKEN = ''
+
+LONG_LIVED_TOKENS = True

@@ -1,11 +1,17 @@
-import urllib
-import urllib2
 import json
 import time
+import requests
+import datetime
+import warnings
+
 from urlparse import parse_qs
-from urlparse import urlparse
+from pyfacebook import models
 from pyfacebook.fault import FacebookException
-from caliendo.facade import cache as caliendo_cache
+from tinymodel.service import Service
+
+from pyfacebook.settings import(
+    USE_LONG_LIVED_TOKENS,
+)
 
 
 class PyFacebook(object):
@@ -14,12 +20,11 @@ class PyFacebook(object):
     The Facebook class's methods will return an object reflecting the Facebook Graph API
 
     """
-    __app_id = None
-    __app_secret = None
-    __access_token = None
-    __graph_endpoint = "https://graph.facebook.com"
+    __graph_url = "https://graph.facebook.com"
+    #__service = Service(return_type='tinymodel', find=get)
 
-    def __init__(self, app_id, access_token=None, app_secret=None, raw_data=False):
+
+    def __init__(self, app_id=None, app_secret=None, token_text=None, account_id=None):
         """
         Initializes an object of the Facebook class. Sets local vars and establishes a connection.
 
@@ -33,251 +38,119 @@ class PyFacebook(object):
 
         """
 
-        self.__app_id = app_id
-        self.__app_secret = app_secret
-        self.__access_token = access_token
+        self.app_id = app_id
+        self.app_secret = app_secret
+        self.access_token = self.validate_access_token(token_text=token_text)
+        self.account_id = account_id
 
-    def get_list_from_fb(self, container_obj_id, converter, params={}, fields=[]):
+    def __call_token_debug(self, token_text, input_token_text):
         """
-        Retrieves data from Facebook and returns it as a list of objects.
+        Calls the Facebook debug_token endpoint and returns a Token object.
 
-        :param string container_obj_id: The id of the container object.
-        :param TinyModel converter: The object to translate dict to.
-        :param dict params: A dictionary containing lookup parameters.
-        :param list fields: A list of fields to be retrieved in request.
+        :param str token_text: The oauth token used to access your Facebook app
+        :param str input_token_text: The token you wish to validate.
 
-        :rtype: List of objects of Class converter, representing data pulled from the Facebook Graph API
-
-        """
-        resource = '/' + str(container_obj_id) + '/' + converter.__class__.__name__.lower() + 's'
-        objs = self.get_all(resource, params, fields=fields)
-        return [converter.__class__(from_json=self.preprocess_json(obj), preprocessed=True) for obj in objs]
-
-    def get_many_from_fb(self, obj_ids, converter, fields=[]):
-        """
-        Retrieves data form Facebook and returns a list of models representing the pulled resources.
-
-        :param list(<int>) obj_ids: A list of ids for the objects to pull from FB
-        :param TinyModel converter: The object to translate dict to.
-        :param list fields: A list of fields to be retrieved in request.
-
-        :rtype <list<model>:
-        """
-        if not obj_ids:
-            raise FacebookException("A list of ids is required")
-        objs = []
-        base_url = ''
-        params = {}
-        params["ids"] = ",".join(map(str, obj_ids))
-
-        resp = self.get(base_url, params, fields=fields)
-        objs += resp.values()
-        return [converter.__class__(from_json=self.preprocess_json(obj), preprocessed=True) for obj in objs]
-
-    def get_one_from_fb(self, reference_obj_id, converter, fields=[]):
-        """
-        Retrieves data from Facebook and returns it as an object.
-
-        :param string reference_obj_id: The id of the reference object.
-        :param TinyModel converter: The object to translate dict to.
-        :param list fields: A list of fields to be retrieved in request.
-
-        :rtype: Object of Class converter, representing data pulled from the Facebook Graph API
+        :rtype models.Token:
 
         """
-        resp = self.get('/' + str(reference_obj_id))
-        return converter.__class__(from_json=self.preprocess_json(resp), preprocessed=True)
+        token_debug_params = {'access_token': token_text,
+                              'input_token': input_token_text}
+        debug_response = self.call_graph_api(endpoint='debug_token', params=token_debug_params)
+        token_dict = debug_response['data'][0]
+        token_dict['text'] = input_token_text
+        return models.Token(from_json=json.dumps(token_dict))
 
-    def create(self, converter, **kwargs):
+    def validate_access_token(self, token_text, input_token_text=None, use_long_lived_tokens=USE_LONG_LIVED_TOKENS):
         """
-        Creates a new instance on type <model> with the given <kwargs>
+        Calls the Facebook token debug endpoint, to validate the access token and provide token info.
 
-        :param TinyModel converter: The handle of the model we're creating
-
-        :rtype A dict with the attributes of the remote obj, the new model instance with the given attribute.
+        :param str token_text: The oauth token used to access your Facebook app
+        :param str input_token_text: The token you wish to validate. This will default to token_text if not provided.
+        :param bool use_long_lived_tokens: A flag to indicate whether you wish to use long-lived tokens.
+                                           If True, this will automatically exchange any tokens
+                                           about to expire in 24 hours and raise a warning.
         """
-        try:
-            account_id = kwargs.pop('account_id')
-        except KeyError:
-            raise FacebookException('An account_id is required to make the request!')
+        if not input_token_text:
+            input_token_text = token_text
 
-        url = '/act_{account_id}/{model}s'.format(account_id=account_id, model=converter.__class__.__name__.lower())
-        response = self.post(url, urllib.urlencode(kwargs))
-        return converter.__class__(from_json=self.preprocess_json(response), preprocessed=True)
+        my_token = self.__call_token_debug(token_text, input_token_text)
 
-    def update(self, obj_id, **kwargs):
-        """
-        Sends an update request for obj_id with the given kwargs.
-
-        :rtype dict The data retrieved by the request after updating.
-        """
-        url = '/{obj_id}'.format(obj_id=obj_id)
-        response = self.post(url, urllib.urlencode(kwargs))
-        return response
-
-    def clean_params(self, clean_empty_strings=True, **kwargs):
-        """
-        Remove null and falsy values from an argument list.
-        """
-        cleaned_data = dict()
-        for k, v in kwargs.iteritems():
-            if not v:
-                if isinstance(v, str) and not clean_empty_strings:
-                    cleaned_data[k] = v
-            else:
-                cleaned_data[k] = v
-        return kwargs
-
-    def get_all(self, resource, params={}, fields=[]):
-        """
-        Return all the results requested as implied by the params sent regardless of FB's limitations.
-
-        :param str resource: The URI for the resource on the Facebook graph endpoint
-        :param dict params: The additional parameters for the request. These can include but are not limited to limit and offset.
-        :param list fields: A list of fields to be retrieved in request.
-
-        :rtype list(<mixed>): The return objects
-        """
-        data = []
-        limit = int(params.get('limit', 0))
-        offset = int(params.get('offset', 0))
-        resp = {}
-        while True:
-            resp = self.get(resource, params, fields=fields)
-            data += resp['data']
-            if limit and not offset:
-                return data[0:limit]
-            if limit and offset:
-                return data[offset:offset + limit]
-            if not limit and offset:
-                return data[offset:]
-            if 'paging' in resp and 'next' in resp['paging']:
-                next_url = resp['paging']['next']
-                url = urlparse(next_url)
-                resource = url.path
-                params = dict([(key, val[0]) for key, val in parse_qs(url.query).items()])
-            else:
-                break
-        return data
-
-    def _json_response(self, url, data=None):
-        response = urllib.urlopen(url, data)
-        raw_response = response.read()
-        resp = json.loads(raw_response)
-        response.close()
-        return resp
-
-    def get(self, resource, params={}, fields=[]):
-        """
-        GET's a FB response for a given resource and set of parameters. Automatically passes the access_token.
-
-        :rtype dict: The JSON response.
-        """
-        url = self.__graph_endpoint + str(resource)
-        if '?' in url:
-            url += '&'
+        if USE_LONG_LIVED_TOKENS and (my_token.expires_at - datetime.datetime.utcnow()).days < 1:
+            my_new_token = self.exchange_access_token(current_token=my_token, app_id=self.app_id, app_secret=self.app_secret)
+            warnings.warn("""WARNING: Your current Facebook API token is about to expire.
+                           Replace your stored token with this new one: """ + "\n" + my_new_token.text)
+            return my_new_token
         else:
-            url += '?'
-        url += 'access_token=' + str(self.__access_token)
+            return my_token
 
-        if fields:
-            url += '{}{}'.format('&fields=', ','.join(fields))
-
-        if params:
-            url += '&'
-            url += urllib.urlencode(params)
-
-        resp = caliendo_cache(handle=self._json_response, kwargs={'url': url})
-
-        if 'error' in resp:
-            time.sleep(5)
-            resp = caliendo_cache(handle=self._json_response, kwargs={'url': url})
-            if 'error' in resp:
-                raise FacebookException(resp['error'])
-
-        return resp
-
-    def post(self, resource, payload):
+    def exchange_access_token(self, current_token, app_id, app_secret):
         """
-        Issues an HTTP POST request to the resource with params as the payload
-        """
-        url = '{base_url}{source_url}'.format(base_url=self.__graph_endpoint, source_url=str(resource))
-        url += '&' if '?' in url else '?'
-        url += urllib.urlencode({'access_token': self.access_token()})
-        obj = caliendo_cache(handle=self._json_response, kwargs={'url': url, 'data': payload})
+        Exchange an existing token for a new long-term token.
+        :param models.Token token: A Token object representing the current access_token.
+        :param str app_id: A Facebook app_id.
+        :param str app_secret: A Facebook app_secret.
 
-        try:
-            if 'error' in obj:
-                raise FacebookException(obj['error'])
-        except TypeError:  # update calls simply return True, so it's not iterable, but correct
-            pass
-
-        return obj
-
-    def delete(self, resource, params, content_type='application/json'):
-        """
-        Issues an HTTP DELETE request to the resource with params as the payload
-        """
-        url = self.__graph_endpoint + str(resource)
-        opener = urllib2.build_opener(urllib2.HTTPSHandler)
-        request = urllib2.Request(url, data=params)
-        request.add_header('Content-Type', content_type)
-        request.get_method = lambda: 'DELETE'
-        response = opener.open(request)
-        raw_response = response.read()
-        response.close()
-        return raw_response
-
-    def access_token(self, access_token=None):
-        if access_token:
-            self.__access_token = access_token
-        return self.__access_token
-
-    def exchange_token(self):
-        """
-        Exchange an existing token for a new one. Token should be set ( and valid! ) before you call this.
-
-        :rtype: New Facebook token
+        :rtype models.Token: New Facebook token
         """
         facebook_token_url = self.__graph_endpoint + '/oauth/access_token'
-        if self.__app_id is None or self.__app_secret is None or self.__access_token is None:
-            raise FacebookException("Must set app_id, app_secret and access_token before calling exchange_token")
+        if not(current_token and app_id and app_secret):
+            raise Exception("Must set app_id, app_secret and access_token before calling exchange_token")
 
         auth_exchange_params = {
-            "client_id": self.__app_id,
-            "client_secret": self.__app_secret,
             "grant_type": "fb_exchange_token",
-            "fb_exchange_token": self.__access_token
+            "client_id": app_id,
+            "client_secret": app_secret,
+            "fb_exchange_token": current_token.text,
         }
 
-        auth_exchange_url = "%s%s%s" % (facebook_token_url, "?", urllib.urlencode(auth_exchange_params))
-        response = self.get(auth_exchange_url)
-        new_token = response[0][1]
-        self.__access_token = new_token
-        return new_token
+        resp = requests.get(self.__graph_url + "/oauth/access_token", params=auth_exchange_params)
+        new_token_text = parse_qs(resp.text)['access_token'][0]
+        return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
 
-    def preprocess_json(self, resp):
+
+    def call_graph_api(self, endpoint, url=__graph_url, params={}):
         """
-        Add support for strings like 'Testing "testing"' and makes facebook api friendly for TinyModel
+        This method calls the Facebook graph api, given an endpoint and a set of params.
 
-        :param dict resp: Dict response to fix.
+        :param str endpoint: The endpoint to call.
+        :param str url: The URL to call. This defaults to the standard graph API url.
+        :param dict params: A dict of params to attach to the graph API call.
 
-        :rtype str: The fixed response.
+        :rtype dict: A dict representing the json-decoded result from Facebook.
         """
-        for key, value in resp.items():
-            if not type(value) in [list, dict]:
-                if type(value) in [unicode, str]:
-                    if key in ['body', 'name', 'title'] and ("'" in value or '"' in value or '\n' in value or '\t' in value):
-                        resp[key] = unicode(json.dumps(value))
-            if key == 'action_spec' and type(value) not in [type(None)]:
-                if type(value) == dict:
-                    if value.get('action.type'):
-                        if type(value['action.type']) not in [list, type(None)]:
-                            value['action.type'] = [value.get('action.type')]
-                    resp[key] = [value]
-                if type(value) == list:
-                    for index, val in enumerate(value):
-                        if val.get('action.type'):
-                            if type(val['action.type']) not in [list, type(None)]:
-                                value[index]['action.type'] = [val.get('action.type')]
-        return resp
+        #Append access_token if not sent in params
+        if not params.get('access_token') and self.__access_token:
+            params['access_token'] = self.__access_token
+
+        #Pop account_id and append to url if it exists in params
+        if params.get('account_id'):
+            account_id = params.pop('account_id')
+            if type(account_id) in (str, unicode) and 'act_' in account_id:
+                url += ('/' + account_id)
+            else:
+                url += ('/act_' + str(account_id))
+
+        #Get response and standardize for edge cases, raising Facebook errors if they exist
+        response = requests.get(url + '/' + endpoint, params=params)
+        json_response = response.json()
+        if json_response.get('error'):
+            raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
+        elif json_response.get('data') and json_response['data'].get('error'):
+            raise FacebookException(message=json_response['data']['error']['message'], code=json_response['data']['error']['code'])
+        elif not json_response.get('data'):
+            json_response = {'data': [json_response]}
+        elif not isinstance(json_response['data'], list):
+            json_response['data'] = [json_response['data']]
+
+        return json_response
+
+    def get(self, model, limit=None, offset=None, **kwargs):
+        """
+        Sends an Ads API call to Facebook and retrieves a JSON response
+        Search params are sent as keyword args.
+
+        :rtype dict: A dict with results. Typical keys are data, errors and paging.
+                     Data is always a list of TinyModels.
+        """
+        pass
+

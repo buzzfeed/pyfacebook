@@ -1,27 +1,11 @@
-import traceback
-import sys
-import os
-import datetime
+class FacebookException(Exception):
+    """
+    A custom Facebook Exception class
 
-class Fault(object):
-  def __init__(self, message=None, tb=None ):
-    if message is None:
-      self.message = str( sys.exc_info( )[ 1 ] )
-    else:
-      self.message = message
+    """
+    def __init__(self, message, code=None):
+        custom_message = "Facebook API Error: " + message
+        if code:
+            custom_message += "\nError Code: " + str(code)
 
-    if tb is None:
-      self.tb = traceback.extract_tb( sys.exc_info( )[ 2 ] )
-    else:
-      self.tb = tb
-
-  def __unicode__( self ):
-    "%s" % (self.message)
-
-
-class FacebookException( Exception ):
-  """
-  A custom Facebook exception class
-
-  """
-  pass
+        Exception.__init__(self, custom_message)

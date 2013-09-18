@@ -19,13 +19,12 @@ setup(
         'BeautifulSoup==3.2.1',
         'Fabric==1.5.1',
         'pytz==2013b',
-        'caliendo',
         'python-dateutil==2.1',
         'mock==1.0.1',
-        'tinymodel',
+        'tinymodel==0.0.14',
+        'requests==1.2.3',
     ],
     dependency_links=[
-        'https://github.com/buzzfeed/caliendo/tarball/v0.2.3#egg=caliendo-0.2.3',
-        'https://github.com/buzzfeed/tinymodel/tarball/0.0.1#egg=tinymodel-0.0.1'
+        'https://github.com/buzzfeed/tinymodel/tarball/0.0.14#egg=tinymodel-0.0.14'
     ]
 )
