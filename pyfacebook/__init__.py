@@ -23,7 +23,6 @@ class PyFacebook(object):
     __graph_url = "https://graph.facebook.com"
     #__service = Service(return_type='tinymodel', find=get)
 
-
     def __init__(self, app_id=None, app_secret=None, token_text=None, account_id=None):
         """
         Initializes an object of the Facebook class. Sets local vars and establishes a connection.
@@ -107,7 +106,6 @@ class PyFacebook(object):
         new_token_text = parse_qs(resp.text)['access_token'][0]
         return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
 
-
     def call_graph_api(self, endpoint, url=__graph_url, params={}):
         """
         This method calls the Facebook graph api, given an endpoint and a set of params.
@@ -118,11 +116,11 @@ class PyFacebook(object):
 
         :rtype dict: A dict representing the json-decoded result from Facebook.
         """
-        #Append access_token if not sent in params
+        # Append access_token if not sent in params
         if not params.get('access_token') and self.__access_token:
             params['access_token'] = self.__access_token
 
-        #Pop account_id and append to url if it exists in params
+        # Pop account_id and append to url if it exists in params
         if params.get('account_id'):
             account_id = params.pop('account_id')
             if type(account_id) in (str, unicode) and 'act_' in account_id:
@@ -130,7 +128,7 @@ class PyFacebook(object):
             else:
                 url += ('/act_' + str(account_id))
 
-        #Get response and standardize for edge cases, raising Facebook errors if they exist
+        # Get response and standardize for edge cases, raising Facebook errors if they exist
         response = requests.get(url + '/' + endpoint, params=params)
         json_response = response.json()
         if json_response.get('error'):
@@ -153,4 +151,3 @@ class PyFacebook(object):
                      Data is always a list of TinyModels.
         """
         pass
-

@@ -7,7 +7,8 @@ from tinymodel import TinyModel, FieldDef
 unix_datetime_translators = {'to_json': lambda obj: calendar.timegm(utcfromtimestamp(obj.utctimetuple())),
                              'from_json': lambda json_value: datetime.datetime.utcfromtimestamp(long(json_value)),
                              'random': lambda: (datetime.datetime.utcnow() - timedelta(seconds=random.randrange(2592000))).replace(tzinfo=pytz.utc),
-                            }
+                             }
+
 
 class Token(TinyModel):
     FIELD_DEFS = [
@@ -21,7 +22,9 @@ class Token(TinyModel):
         FieldDef(title='scopes', allowed_types=[[unicode], [str]]),
     ]
 
+
 class ActionSpec(TinyModel):
+
     """
     The ActionSpec class represents the action-spec object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/action-specs/
@@ -33,7 +36,9 @@ class ActionSpec(TinyModel):
         FieldDef(title='post.object', allowed_types=[unicode, type(None)]),
     ]
 
+
 class AdCampaign(TinyModel):
+
     """
     The AdCampaign class represents the aduser object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adcampaign/
@@ -50,7 +55,9 @@ class AdCampaign(TinyModel):
         FieldDef(title='lifetime_budget', allowed_types=[int]),
     ]
 
+
 class AdStatistic(TinyModel):
+
     """
     The AdStatistic class represents an adstatistic objects in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adstatistics
@@ -72,7 +79,9 @@ class AdStatistic(TinyModel):
         FieldDef(title='social_unique_clicks', allowed_types=[unicode]),
     ]
 
+
 class Targeting(TinyModel):
+
     """
     The Targeting class represents an targeting object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -89,7 +98,9 @@ class Targeting(TinyModel):
         FieldDef(title='keywords', allowed_types=[[unicode]]),
     ]
 
+
 class AdCreative(TinyModel):
+
     """
     The AdCreative class represents the adcreative object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adcreative
@@ -104,7 +115,9 @@ class AdCreative(TinyModel):
         FieldDef(title='type', allowed_types=[unicode]),
     ]
 
+
 class AdUser(TinyModel):
+
     """
     The AdUser class represents the aduser object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/aduser/
@@ -115,7 +128,9 @@ class AdUser(TinyModel):
         FieldDef(title='role', allowed_types=[int]),
     ]
 
+
 class BroadTargetingCategory(TinyModel):
+
     """
     The BroadTargetingCategory class represents the broadtargetingcategory object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -128,7 +143,9 @@ class BroadTargetingCategory(TinyModel):
         FieldDef(title='size', allowed_types=[int]),
     ]
 
+
 class AdGroup(TinyModel):
+
     """
     The AdGroup class represents an adgroup object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adgroup
@@ -148,7 +165,9 @@ class AdGroup(TinyModel):
         FieldDef(title='creative_ids', allowed_types=[[int]]),
     ]
 
+
 class AdAccount(TinyModel):
+
     """
     The AdAccount class represents the adaccount object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adaccount/
@@ -169,4 +188,3 @@ class AdAccount(TinyModel):
         FieldDef(title='stats', allowed_types=[[AdStatistic], type(None)]),
         FieldDef(title='broadtargetingcategories', allowed_types=[[BroadTargetingCategory], type(None)]),
     ]
-

@@ -3,6 +3,7 @@ from nose.tools import ok_, eq_
 from pyfacebook import settings
 from pyfacebook import PyFacebook
 
+
 class InternalsTest(unittest.TestCase):
 
     def test_validate_access_token(self):

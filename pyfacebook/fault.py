@@ -1,8 +1,10 @@
 class FacebookException(Exception):
+
     """
     A custom Facebook Exception class
 
     """
+
     def __init__(self, message, code=None):
         custom_message = "Facebook API Error: " + message
         if code:
