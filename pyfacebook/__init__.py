@@ -150,7 +150,7 @@ class PyFacebook(object):
         """
         fields_to_get = [f.title for f in model.FIELD_DEFS
                          if f.title not in getattr(model, 'CONNECTIONS', []) and
-                            f.title not in getattr(model, 'CREATE_ONLY', []) ]
+                         f.title not in getattr(model, 'CREATE_ONLY', [])]
         params = {key: val for key, val in {'limit': limit,
                                             'offset': offset,
                                             'fields': ','.join(fields_to_get),
