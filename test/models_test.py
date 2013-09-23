@@ -37,6 +37,7 @@ class FacebookModelsTest(unittest.TestCase):
     app_secret = settings.__dict__.get('FACEBOOK_APP_SECRET')
     test_token_text = settings.__dict__.get('FACEBOOK_TEST_ACCESS_TOKEN')
     account_id = settings.__dict__.get('FACEBOOK_TEST_ACCOUNT_ID')
+    mock_account_id = settings.__dict__.get('MOCK_DATA_ACCOUNT_ID')
 
     if test_live_endpoints:
         print "TESTING LIVE ENDPOINTS WITH LIMIT", (limit_live_results or "INFINITE")
@@ -47,6 +48,7 @@ class FacebookModelsTest(unittest.TestCase):
         delete_shelf_files(shelf_filename)
     else:
         print "TESTING MOCK ENDPOINTS USING SHELVED DATA"
+        account_id = mock_account_id
 
     def setUp(self):
         """
