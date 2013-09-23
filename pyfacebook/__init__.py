@@ -101,6 +101,12 @@ class PyFacebook(object):
         }
 
         resp = requests.get(FACEBOOK_GRAPH_URL + "/oauth/access_token", params=auth_exchange_params)
+        try:
+            json_response = resp.json()
+            if json_response.get('error'):
+                raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
+        except ValueError:
+            pass
         new_token_text = parse_qs(resp.text)['access_token'][0]
         return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
 

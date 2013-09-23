@@ -93,6 +93,8 @@ class FacebookModelsTest(unittest.TestCase):
             if self.test_live_endpoints:
                 results = self.pyfb.get(test_model, id=test_id, connection=connection, limit=self.limit_live_results, return_json=True)
                 self.shelf[str(test_id) + "__" + connection + "__GET__"] = results
+                print "GOT RESULTS:"
+                pprint(results)
                 results['data'] = json_to_objects(results['data'], test_model)
             else:
                 results = self.shelf[str(test_id) + "__" + connection + "__GET__"]
