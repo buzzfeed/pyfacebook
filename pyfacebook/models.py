@@ -9,7 +9,9 @@ unix_datetime_translators = {'to_json': lambda obj: calendar.timegm(utcfromtimes
                              'random': lambda: (datetime.datetime.utcnow() - timedelta(seconds=random.randrange(2592000))).replace(tzinfo=pytz.utc),
                              }
 
+
 class FacebookModel(TinyModel):
+
     """
     Represents a model defined by Facebook. See documentation at:
     https://developers.facebook.com/docs/ads-api/
@@ -20,7 +22,9 @@ class FacebookModel(TinyModel):
     """
     pass
 
+
 class SupportModel(TinyModel):
+
     """
     Represents models which Facebook uses, but do not have their own endpoints.
     These models generally don't have their own page in the Facebook documentation,
@@ -29,7 +33,9 @@ class SupportModel(TinyModel):
     """
     pass
 
+
 class Token(SupportModel):
+
     """
     Represents an oauth token for the Facebook Graph API.
     Fields are taken mostly from the return structure of the debug_token call documented at:
@@ -47,7 +53,9 @@ class Token(SupportModel):
         FieldDef(title='scopes', allowed_types=[[str], [str]]),
     ]
 
+
 class AdImage(FacebookModel):
+
     """
     Represents an adimage object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adimage/
@@ -58,7 +66,9 @@ class AdImage(FacebookModel):
         FieldDef(title='url', allowed_types=[str]),
     ]
 
+
 class AdUser(FacebookModel):
+
     """
     Represents the aduser object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/aduser/
@@ -67,10 +77,12 @@ class AdUser(FacebookModel):
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='permissions', allowed_types=[[int]]),
-        FieldDef(title='role', allowed_types=[int], choices=[1001,1002,1003]),
+        FieldDef(title='role', allowed_types=[int], choices=[1001, 1002, 1003]),
     ]
 
+
 class AdStatistic(FacebookModel):
+
     """
     Represents an adstatistic objects in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adstatistics
@@ -95,7 +107,9 @@ class AdStatistic(FacebookModel):
         FieldDef(title='end_time', allowed_types=[datetime.datetime, type(None)]),
     ]
 
+
 class AdCreative(FacebookModel):
+
     """
     Represents the adcreative object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adcreative
@@ -103,7 +117,7 @@ class AdCreative(FacebookModel):
     """
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
-        FieldDef(title='type', allowed_types=[int], choices=[1,2,3,4,12,25,27,32]),
+        FieldDef(title='type', allowed_types=[int], choices=[1, 2, 3, 4, 12, 25, 27, 32]),
         FieldDef(title='object_id', allowed_types=[int]),
         FieldDef(title='name', allowed_types=[str]),
         FieldDef(title='title', allowed_types=[str]),
@@ -119,7 +133,9 @@ class AdCreative(FacebookModel):
         FieldDef(title='auto_update', allowed_types=[bool]),
     ]
 
+
 class BroadTargetingCategory(SupportModel):
+
     """
     Represents the broadtargetingcategory object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -134,7 +150,9 @@ class BroadTargetingCategory(SupportModel):
         FieldDef(title='type_name', allowed_types=[str]),
     ]
 
+
 class Region(SupportModel):
+
     """
     Represents a region for ad targeting purposes. See documentation:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -145,7 +163,9 @@ class Region(SupportModel):
         FieldDef(title='name', allowed_types=[str]),
     ]
 
+
 class Country(SupportModel):
+
     """
     Represents a country for ad targeting purposes. See documentation:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -158,7 +178,9 @@ class Country(SupportModel):
         FieldDef(title='supports_city', allowed_types=[bool]),
     ]
 
+
 class City(SupportModel):
+
     """
     Represents a city for ad targeting purposes. See documentation:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -169,7 +191,9 @@ class City(SupportModel):
         FieldDef(title='name', allowed_types=[str]),
     ]
 
+
 class CollegeNetwork(SupportModel):
+
     """
     Represents a college network for ad targeting purposes. See documentation:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -180,7 +204,9 @@ class CollegeNetwork(SupportModel):
         FieldDef(title='name', allowed_types=[str]),
     ]
 
+
 class WorkNetwork(SupportModel):
+
     """
     Represents a work network for ad targeting purposes. See documentation:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
@@ -191,17 +217,19 @@ class WorkNetwork(SupportModel):
         FieldDef(title='name', allowed_types=[str]),
     ]
 
+
 class Targeting(FacebookModel):
+
     """
     Represents a targeting object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
 
     """
     FIELD_DEFS = [
-        FieldDef(title='genders', allowed_types=[[int]], choices=[[1],[2],[1,2]]),
+        FieldDef(title='genders', allowed_types=[[int]], choices=[[1], [2], [1, 2]]),
         FieldDef(title='age_min', allowed_types=[int]),
         FieldDef(title='age_max', allowed_types=[int]),
-        FieldDef(title='broad_age', allowed_types=[int], choices=[0,1]),
+        FieldDef(title='broad_age', allowed_types=[int], choices=[0, 1]),
         FieldDef(title='countries', allowed_types=[[str]]),
         FieldDef(title='cities', allowed_types=[[City]]),
         FieldDef(title='regions', allowed_types=[[Region]]),
@@ -218,17 +246,19 @@ class Targeting(FacebookModel):
         FieldDef(title='friends_of_connections', allowed_types=[[long]]),
         FieldDef(title='college_networks', allowed_types=[[CollegeNetwork]]),
         FieldDef(title='work_networks', allowed_types=[[WorkNetwork]]),
-        FieldDef(title='education_statuses', allowed_types=[[int]], choices=[1,2,3]),
+        FieldDef(title='education_statuses', allowed_types=[[int]], choices=[1, 2, 3]),
         FieldDef(title='college_years', allowed_types=[[int]]),
         FieldDef(title='college_majors', allowed_types=[[str]]),
         FieldDef(title='page_types', allowed_types=[[str]], choices=['desktop', 'feed', 'desktopfeed', 'mobile', 'rightcolumn', 'home']),
-        FieldDef(title='relationship_statuses', allowed_types=[[int]], choices=[1,2,3,4,6]),
-        FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1],[2],[1,2]]),
+        FieldDef(title='relationship_statuses', allowed_types=[[int]], choices=[1, 2, 3, 4, 6]),
+        FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2], [1, 2]]),
         FieldDef(title='locales', allowed_types=[[int]]),
         FieldDef(title='zips', allowed_types=[[int]]),
     ]
 
+
 class AdGroup(FacebookModel):
+
     """
     Represents an adgroup object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adgroup
@@ -255,7 +285,9 @@ class AdGroup(FacebookModel):
 
     CONNECTIONS = ['stats', 'adcreatives']
 
+
 class AdCampaign(FacebookModel):
+
     """
     Represents the aduser object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adcampaign/
@@ -272,7 +304,7 @@ class AdCampaign(FacebookModel):
         FieldDef(title='daily_budget', allowed_types=[int]),
         FieldDef(title='lifetime_budget', allowed_types=[int]),
         FieldDef(title='budget_remaining', allowed_types=[int]),
-        FieldDef(title='campaign_status', allowed_types=[int], choices=[1,2,3]),
+        FieldDef(title='campaign_status', allowed_types=[int], choices=[1, 2, 3]),
         FieldDef(title='redownload', allowed_types=[bool]),
         FieldDef(title='adcreatives', allowed_types=[[AdCreative]]),
         FieldDef(title='adgroups', allowed_types=[[AdGroup]]),
@@ -281,7 +313,9 @@ class AdCampaign(FacebookModel):
 
     CONNECTIONS = ['adcreatives', 'adgroups', 'stats']
 
+
 class AdAccount(FacebookModel):
+
     """
     Represents the adaccount object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adaccount/

@@ -1,4 +1,6 @@
-import unittest, shelve, anydbm
+import unittest
+import shelve
+import anydbm
 
 from operator import itemgetter
 from nose.tools import ok_, eq_
@@ -14,9 +16,11 @@ from pyfacebook.utils import(
     json_to_objects,
 )
 
-anydbm._defaultmod=__import__('dumbdbm')
+anydbm._defaultmod = __import__('dumbdbm')
+
 
 class FacebookModelsTest(unittest.TestCase):
+
     """
     Tests PyFacebook functionality for all Facebook models.
     If TEST_LIVE_ENDPOINTS is set to True, then this actually calls the Facebook Graph API.

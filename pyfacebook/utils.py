@@ -1,4 +1,6 @@
-import os, json
+import os
+import json
+
 
 def first_item(list_or_dict):
     """
@@ -15,17 +17,19 @@ def first_item(list_or_dict):
     else:
         raise Exception("Must pass a list or a dict to first_item")
 
+
 def delete_shelf_files(filename):
     """
     Delete the shelf dumbdbm files if they exist.
 
     """
-    shelf_extensions = ['.bak','.dat','.dir']
+    shelf_extensions = ['.bak', '.dat', '.dir']
     for ext in shelf_extensions:
         try:
             os.remove(filename + ext)
         except OSError:
             pass
+
 
 def json_to_objects(list_or_dict, model):
     """

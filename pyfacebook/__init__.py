@@ -88,7 +88,7 @@ class PyFacebook(object):
 
         :rtype models.Token: New Facebook token
         """
-        #Response is not even JSON so it requires a custom call to the graph api
+        # Response is not even JSON so it requires a custom call to the graph api
         facebook_token_url = FACEBOOK_GRAPH_URL + '/oauth/access_token'
         if not(current_token and app_id and app_secret):
             raise Exception("Must set app_id, app_secret and access_token before calling exchange_token")
@@ -144,7 +144,7 @@ class PyFacebook(object):
         """
         params = {key: val for key, val in {'limit': limit,
                                             'offset': offset,
-                                           }.items() if val}
+                                            }.items() if val}
         if id:
             endpoint = str(id)
         else:
