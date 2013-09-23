@@ -148,8 +148,12 @@ class PyFacebook(object):
         :rtype dict: A dict with results. Typical keys are data, errors and paging.
                      Data is always an iterable of TinyModels.
         """
+        fields_to_get = [f.title for f in model.FIELD_DEFS
+                         if f.title not in getattr(model, 'CONNECTIONS', []) and
+                            f.title not in getattr(model, 'CREATE_ONLY', []) ]
         params = {key: val for key, val in {'limit': limit,
                                             'offset': offset,
+                                            'fields': ','.join(fields_to_get),
                                             }.items() if val}
         if id:
             endpoint = str(id)

@@ -80,6 +80,8 @@ class AdUser(FacebookModel):
         FieldDef(title='role', allowed_types=[int], choices=[1001, 1002, 1003]),
     ]
 
+    CREATE_ONLY = ['role']
+
 
 class AdStatistic(FacebookModel):
 
@@ -132,6 +134,8 @@ class AdCreative(FacebookModel):
         FieldDef(title='follow_redirect', allowed_types=[bool]),
         FieldDef(title='auto_update', allowed_types=[bool]),
     ]
+
+    CREATE_ONLY = ['follow_redirect']
 
 
 class BroadTargetingCategory(SupportModel):
@@ -276,7 +280,7 @@ class AdGroup(FacebookModel):
         FieldDef(title='max_bid', allowed_types=[int]),
         FieldDef(title='creative_ids', allowed_types=[[int]]),
         FieldDef(title='targeting', allowed_types=[Targeting, type(None)]),
-        FieldDef(title='last_updated_by_app', allowed_types=[long]),
+        FieldDef(title='last_updated_by_app_id', allowed_types=[long]),
         FieldDef(title='created_time', allowed_types=[datetime.datetime]),
         FieldDef(title='updated_time', allowed_types=[datetime.datetime]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
@@ -312,6 +316,7 @@ class AdCampaign(FacebookModel):
     ]
 
     CONNECTIONS = ['adcreatives', 'adgroups', 'stats']
+    CREATE_ONLY = ['redownload']
 
 
 class AdAccount(FacebookModel):
