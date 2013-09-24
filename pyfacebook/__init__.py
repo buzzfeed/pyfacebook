@@ -1,13 +1,16 @@
 import json
-import time
 import requests
 import datetime
 import warnings
+import inflection
 
 from urlparse import parse_qs
 from pyfacebook import models
-from pyfacebook.fault import FacebookException
-from pyfacebook.utils import json_to_objects
+
+from pyfacebook.utils import(
+    FacebookException,
+    json_to_objects,
+)
 
 from pyfacebook.settings import(
     USE_LONG_LIVED_TOKENS,
@@ -22,18 +25,22 @@ class PyFacebook(object):
 
     """
 
-    def __init__(self, app_id=None, app_secret=None, token_text=None):
+    def __init__(self, app_id=None, app_secret=None, token_text=None, get_from_shelf=None, put_on_shelf=None):
         """
         Initializes an object of the Facebook class. Sets local vars and establishes a connection.
 
         :param str app_id: Facebook app_id
         :param str app_secret: Facebook app_secret
         :param str token_text: Facebook access_token
+        :param shelve.Shelf get_from_shelf: An open Shelf object to get data from, instead of a live API endpoint.
+        :param shelve.Shelf put_on_shelf: An open Shelf object to put data on.
 
         """
         self.app_id = app_id
         self.app_secret = app_secret
         self.access_token = self.validate_access_token(token_text=token_text)
+        self.get_from_shelf = get_from_shelf
+        self.put_on_shelf = put_on_shelf
 
     def __call_token_debug(self, token_text, input_token_text):
         """
@@ -54,6 +61,30 @@ class PyFacebook(object):
         token_dict['text'] = input_token_text
         return models.Token(from_json=json.dumps(token_dict))
 
+    def __call_endpoint(self, model, id, connection, http_method, params, return_json):
+        """
+        Creates a properly-formatted Facebook Graph API endpoint from id and connection parameters.
+        Performs an endpoint call and returns the result.
+
+        :param tinymodel.TinyModel model: The class associated with the objects we're getting.
+        :param str id: The id of the parent object
+        :param str connection: The name of connection to call
+        :param str http_method: The type of call to make
+        :param dict params: The params to send in the call
+        :param bool return_json: If True, the call returns a dict instead of TinyModel objects
+
+        """
+        endpoint = str(id or model.__name__.lower())
+
+        if connection:
+            endpoint += ('/' + connection)
+
+        fb_response = self.call_graph_api(endpoint=endpoint, http_method=http_method, params=params)
+        if not return_json:
+            fb_response['data'] = json_to_objects(fb_response['data'], model)
+
+        return fb_response
+
     def validate_access_token(self, token_text, input_token_text=None, use_long_lived_tokens=USE_LONG_LIVED_TOKENS):
         """
         Calls the Facebook token debug endpoint, to validate the access token and provide token info.
@@ -73,8 +104,8 @@ class PyFacebook(object):
 
         if USE_LONG_LIVED_TOKENS and (my_token.expires_at - datetime.datetime.utcnow()).days < 1:
             my_new_token = self.exchange_access_token(current_token=my_token, app_id=self.app_id, app_secret=self.app_secret)
-            warnings.warn("""WARNING: Your current Facebook API token is about to expire.
-                           Replace your stored token with this new one: """ + "\n" + my_new_token.text)
+            warnings.warn("WARNING: Your current Facebook API token is about to expire.\n"
+                          "Replace your stored token with this new one:\n" + my_new_token.text)
             return my_new_token
         else:
             return my_token
@@ -87,6 +118,7 @@ class PyFacebook(object):
         :param str app_secret: A Facebook app_secret.
 
         :rtype models.Token: New Facebook token
+
         """
         # Response is not even JSON so it requires a custom call to the graph api
         facebook_token_url = FACEBOOK_GRAPH_URL + '/oauth/access_token'
@@ -99,18 +131,11 @@ class PyFacebook(object):
             "client_secret": app_secret,
             "fb_exchange_token": current_token.text,
         }
-
-        resp = requests.get(FACEBOOK_GRAPH_URL + "/oauth/access_token", params=auth_exchange_params)
-        try:
-            json_response = resp.json()
-            if json_response.get('error'):
-                raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
-        except ValueError:
-            pass
-        new_token_text = parse_qs(resp.text)['access_token'][0]
+        resp = self.call_graph_api('oauth/access_token', expect_json=False, params=auth_exchange_params)
+        new_token_text = parse_qs(resp)['access_token'][0]
         return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
 
-    def call_graph_api(self, endpoint, url=FACEBOOK_GRAPH_URL, params={}):
+    def call_graph_api(self, endpoint, url=FACEBOOK_GRAPH_URL, http_method='GET', expect_json=True, params={}):
         """
         This method calls the Facebook graph api, given an endpoint and a set of params.
 
@@ -121,55 +146,108 @@ class PyFacebook(object):
         :rtype dict: A dict representing the json-decoded result from Facebook.
 
         """
-        # Append access_token if not sent in params
-        if not params.get('access_token') and self.access_token.text:
-            params['access_token'] = self.access_token.text
+        shelf_key = endpoint + "__" + http_method
+        if getattr(self, 'get_from_shelf', None) is not None:
+            response = self.get_from_shelf[shelf_key]
+        else:
+            # Append access_token if not sent in params
+            if not params.get('access_token') and self.access_token.text:
+                params['access_token'] = self.access_token.text
 
-        # Get response and standardize for edge cases, raising Facebook errors if they exist
-        response = requests.get(url + '/' + endpoint, params=params)
-        json_response = response.json()
-        if json_response.get('error'):
-            raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
-        elif not json_response.get('data'):
-            json_response = {'data': [json_response]}
-        return json_response
+            # MAKE THE CALL
+            if http_method == 'GET':
+                response = requests.get(url + '/' + endpoint, params=params)
+            elif http_method == 'POST':
+                post_file = params.pop('file', None)
+                if post_file:
+                    response = requests.post(url + '/' + endpoint, files=post_file, data=params)
+                else:
+                    for key, val in params.items():
+                        if isinstance(val, (list, dict)):
+                            params[key] = json.dumps(val)
+                    response = requests.post(url + '/' + endpoint, data=params)
+            elif http_method == 'DELETE':
+                response = requests.delete(url + '/' + endpoint, params=params)
+            else:
+                raise Exception("Called Facebook Graph API with unsupported method: " + http_method)
 
-    def get(self, model, id=None, connection=None, return_json=False, **kwargs):
+        if getattr(self, 'put_on_shelf', None) is not None:
+            response.connection.close()
+            self.put_on_shelf[shelf_key] = response
+
+        # Parse response and standardize for edge cases, raising Facebook errors if they exist
+        try:
+            json_response = response.json()
+            if not isinstance(json_response, dict):
+                raise ValueError
+            elif json_response.get('error'):
+                raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
+            elif json_response.get('images'):
+                json_response = {'data': json_response['images']}
+            elif not json_response.get('data'):
+                json_response = {'data': [json_response]}
+            return json_response
+        except ValueError:
+            if expect_json:
+                raise
+            else:
+                return response.text
+
+    def get(self, model, id, connection=None, return_json=False, **kwargs):
         """
-        Sends an Ads API call to Facebook and retrieves a JSON response
-        Search params are sent as keyword args.
+        Sends an Ads API GET call to Facebook and retrieves a JSON response
 
         :param tinymodel.TinyModel model: The class associated with the objects we're getting.
+        :param str id: The Facebook id of the object we're getting.
         :param str connection: The name of the connection, if we're getting connected objects.
-        :param int limit: A limit on the number of objects returned.
-        :param int offset: The offset of the objects returned, as defined by Facebook.
         :param bool return_json: Should return a json string
-        :param dict kwargs: Aditional arguments to send in the request for various retrieval options.
 
         :rtype dict: A dict with results. Typical keys are data, errors and paging.
-                     Data is always an iterable of TinyModels.
+                     If return_json is False, data is an iterable of TinyModels.
+
         """
+        if not id:
+            raise Exception("Need an ID in order to make a GET request to the Facebook API.")
+
         fields_to_get = [f.title for f in model.FIELD_DEFS
                          if f.title not in getattr(model, 'CONNECTIONS', []) and
                          f.title not in getattr(model, 'CREATE_ONLY', [])]
         params = {'fields': fields_to_get}
-
         for key, val in kwargs.items():
             if isinstance(val, (list, tuple, set)):
                 kwargs[key] = ','.join(map(str, val))
-
         params.update(kwargs)
+        return self.__call_endpoint(model=model, id=id, connection=connection, http_method='GET', params=params, return_json=return_json)
 
-        if id:
-            endpoint = str(id)
+    def post(self, model, id=None, connection=None, return_json=False, **kwargs):
+        """
+        Sends an Ads API POST call to Facebook and retrieves a JSON response
+        POST params are recevied as keyword args.
+
+        :param tinymodel.TinyModel model: The class associated with the object we're POSTing.
+        :param bool return_json: Should return a json string
+
+        :rtype dict: A dict with the POST response. JSON models are translated to TinyModels where appropriate.
+
+        """
+        if not connection:
+            connection = inflection.pluralize(model.__name__.lower())
+        return self.__call_endpoint(model=model, id=id, connection=connection, http_method='POST', params=kwargs, return_json=return_json)
+
+    def delete(self, id, **kwargs):
+        """
+        Sends an Ads API DELETE call to Facebook and retrieves a JSON response
+        POST params are recevied as keyword args.
+
+        :param str id: The Facebook id of the parent object if we need to specify one
+
+        :rtype bool: A flag indicating whether the object was deleted successfully.
+
+        """
+        resp = self.call_graph_api(endpoint=str(id), http_method='DELETE', expect_json=False)
+        if resp != 'true':
+            warnings.warn("WARNING: DELETE called on Facebook object with id " + str(id) + ""
+                          "But the object may not have been deleted. Facebook says:\n" + resp)
+            return False
         else:
-            endpoint = model.__name__.lower()
-
-        if connection:
-            endpoint += ('/' + connection)
-
-        fb_response = self.call_graph_api(endpoint=endpoint, params=params)
-        if not return_json:
-            fb_response['data'] = json_to_objects(fb_response['data'], model)
-
-        return fb_response
+            return True
