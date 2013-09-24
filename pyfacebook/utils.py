@@ -1,98 +1,50 @@
-## {{{ http://code.activestate.com/recipes/577781/ (r1)
-
-ABERRANT_PLURAL_MAP = {
-    'appendix': 'appendices',
-    'barracks': 'barracks',
-    'cactus': 'cacti',
-    'child': 'children',
-    'criterion': 'criteria',
-    'deer': 'deer',
-    'echo': 'echoes',
-    'elf': 'elves',
-    'embargo': 'embargoes',
-    'focus': 'foci',
-    'fungus': 'fungi',
-    'goose': 'geese',
-    'hero': 'heroes',
-    'hoof': 'hooves',
-    'index': 'indices',
-    'knife': 'knives',
-    'leaf': 'leaves',
-    'life': 'lives',
-    'man': 'men',
-    'mouse': 'mice',
-    'nucleus': 'nuclei',
-    'person': 'people',
-    'phenomenon': 'phenomena',
-    'potato': 'potatoes',
-    'self': 'selves',
-    'syllabus': 'syllabi',
-    'tomato': 'tomatoes',
-    'torpedo': 'torpedoes',
-    'veto': 'vetoes',
-    'woman': 'women',
-    }
-
-VOWELS = set('aeiou')
+import os
+import json
 
 
-def pluralize(singular):
-    """Return plural form of given lowercase singular word (English only). Based on
-    ActiveState recipe http://code.activestate.com/recipes/413172/
+def first_item(list_or_dict):
+    """
+    If passed a list, this returns the first item of the list.
+    If passed a dict, this returns the value of the first key of the dict.
 
-    >>> pluralize('')
-    ''
-    >>> pluralize('goose')
-    'geese'
-    >>> pluralize('dolly')
-    'dollies'
-    >>> pluralize('genius')
-    'genii'
-    >>> pluralize('jones')
-    'joneses'
-    >>> pluralize('pass')
-    'passes'
-    >>> pluralize('zero')
-    'zeros'
-    >>> pluralize('casino')
-    'casinos'
-    >>> pluralize('hero')
-    'heroes'
-    >>> pluralize('church')
-    'churches'
-    >>> pluralize('x')
-    'xs'
-    >>> pluralize('car')
-    'cars'
+    :param < list | dict > list_or_dict: A list or a dict.
+    :rtype obj: The first item of the list, or the first value of the dict
+    """
+    if isinstance(list_or_dict, list):
+        return next(iter(list_or_dict), None)
+    elif isinstance(list_or_dict, dict):
+        return next(iter(list_or_dict.values()), None)
+    else:
+        raise Exception("Must pass a list or a dict to first_item")
+
+
+def delete_shelf_files(filename):
+    """
+    Delete the shelf dumbdbm files if they exist.
 
     """
-    if not singular:
-        return ''
-    plural = ABERRANT_PLURAL_MAP.get(singular)
-    if plural:
-        return plural
-    root = singular
-    try:
-        if singular[-1] == 'y' and singular[-2] not in VOWELS:
-            root = singular[:-1]
-            suffix = 'ies'
-        elif singular[-1] == 's':
-            if singular[-2] in VOWELS:
-                if singular[-3:] == 'ius':
-                    root = singular[:-2]
-                    suffix = 'i'
-                else:
-                    root = singular[:-1]
-                    suffix = 'ses'
-            else:
-                suffix = 'es'
-        elif singular[-2:] in ('ch', 'sh'):
-            suffix = 'es'
-        else:
-            suffix = 's'
-    except IndexError:
-        suffix = 's'
-    plural = root + suffix
-    return plural
+    shelf_extensions = ['.bak', '.dat', '.dir']
+    for ext in shelf_extensions:
+        try:
+            os.remove(filename + ext)
+        except OSError:
+            pass
 
-## end of http://code.activestate.com/recipes/577781/ }}}
+
+def json_to_objects(list_or_dict, model):
+    """
+    Translates a list or a dict of json objects into a list or a dict of TinyModel objects
+    :param < list | dict > list_or_dict: A list or a dict of JSON objects
+
+    :rtype < list | dict >: A list or a dict of TinyModel objects
+    """
+    if isinstance(list_or_dict, list):
+        for index, obj in enumerate(list_or_dict):
+            list_or_dict[index] = model(from_json=json.dumps(obj))
+    elif isinstance(list_or_dict, dict):
+        for key, val in list_or_dict.items():
+            list_or_dict[key] = model(from_json=json.dumps(val))
+    else:
+        raise Exception("Facebook data returned in an unrecognized type: " + str(type(list_or_dict)))
+
+    return list_or_dict
