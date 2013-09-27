@@ -134,7 +134,7 @@ class PyFacebook(object):
             json_response = {'data': [json_response]}
         return json_response
 
-    def get(self, model, id=None, connection=None, limit=None, offset=None, return_json=False):
+    def get(self, model, id=None, connection=None, return_json=False, **kwargs):
         """
         Sends an Ads API call to Facebook and retrieves a JSON response
         Search params are sent as keyword args.
@@ -144,6 +144,7 @@ class PyFacebook(object):
         :param int limit: A limit on the number of objects returned.
         :param int offset: The offset of the objects returned, as defined by Facebook.
         :param bool return_json: Should return a json string
+        :param dict kwargs: Aditional arguments to send in the request for various retrieval options.
 
         :rtype dict: A dict with results. Typical keys are data, errors and paging.
                      Data is always an iterable of TinyModels.
@@ -151,10 +152,14 @@ class PyFacebook(object):
         fields_to_get = [f.title for f in model.FIELD_DEFS
                          if f.title not in getattr(model, 'CONNECTIONS', []) and
                          f.title not in getattr(model, 'CREATE_ONLY', [])]
-        params = {key: val for key, val in {'limit': limit,
-                                            'offset': offset,
+        params = {key: val for key, val in {'limit': kwagrs.get('limit'),
+                                            'offset': kwargs.get('offset'),
                                             'fields': ','.join(fields_to_get),
                                             }.items() if val}
+        for key, val in kwargs.items():
+            if isinstance(val, (list, tuple, set)):
+                kwargs[key] = ','.join(map(str, val))
+        params.update(kwargs)
         if id:
             endpoint = str(id)
         else:
