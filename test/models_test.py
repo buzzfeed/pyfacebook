@@ -91,7 +91,7 @@ class FacebookModelsTest(unittest.TestCase):
         if connection:
             print "TEST GET FOR CONNECTION", parent_model.__name__, connection, "WITH ID", test_id
             if self.test_live_endpoints:
-                results = self.pyfb.get(test_model, id=test_id, connection=connection, limit=self.limit_live_results, return_json=True)
+                results = self.pyfb.get(test_model, id=test_id, connection=connection, return_json=True, limit=self.limit_live_results)
                 self.shelf[str(test_id) + "__" + connection + "__GET__"] = results
                 print "GOT RESULTS:"
                 pprint(results)
@@ -102,7 +102,7 @@ class FacebookModelsTest(unittest.TestCase):
         else:
             print "TEST GET FOR", test_model.__name__, "WITH ID", test_id
             if self.test_live_endpoints:
-                results = self.pyfb.get(test_model, id=test_id, limit=self.limit_live_results, return_json=True)
+                results = self.pyfb.get(test_model, id=test_id, return_json=True, limit=self.limit_live_results)
                 self.shelf[str(test_id) + "__GET__"] = results
                 results['data'] = json_to_objects(results['data'], test_model)
             else:

@@ -152,14 +152,14 @@ class PyFacebook(object):
         fields_to_get = [f.title for f in model.FIELD_DEFS
                          if f.title not in getattr(model, 'CONNECTIONS', []) and
                          f.title not in getattr(model, 'CREATE_ONLY', [])]
-        params = {key: val for key, val in {'limit': kwagrs.get('limit'),
-                                            'offset': kwargs.get('offset'),
-                                            'fields': ','.join(fields_to_get),
-                                            }.items() if val}
+        params = {'fields': fields_to_get}
+
         for key, val in kwargs.items():
             if isinstance(val, (list, tuple, set)):
                 kwargs[key] = ','.join(map(str, val))
+
         params.update(kwargs)
+
         if id:
             endpoint = str(id)
         else:
