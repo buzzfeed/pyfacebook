@@ -64,6 +64,7 @@ class AdImage(FacebookModel):
     FIELD_DEFS = [
         FieldDef(title='hash', allowed_types=[unicode]),
         FieldDef(title='url', allowed_types=[unicode]),
+        FieldDef(title='file', allowed_types=[{unicode: file}], validate=False),
     ]
 
 
@@ -110,34 +111,6 @@ class AdStatistic(FacebookModel):
     ]
 
 
-class AdCreative(FacebookModel):
-
-    """
-    Represents the adcreative object in the Facebook Ads API:
-    https://developers.facebook.com/docs/reference/ads-api/adcreative
-
-    """
-    FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[long]),
-        FieldDef(title='type', allowed_types=[int], choices=[1, 2, 3, 4, 12, 25, 27, 32]),
-        FieldDef(title='object_id', allowed_types=[int]),
-        FieldDef(title='name', allowed_types=[unicode]),
-        FieldDef(title='title', allowed_types=[unicode]),
-        FieldDef(title='body', allowed_types=[unicode]),
-        FieldDef(title='image_hash', allowed_types=[unicode]),
-        FieldDef(title='image_url', allowed_types=[unicode]),
-        FieldDef(title='link_url', allowed_types=[unicode]),
-        FieldDef(title='preview_url', allowed_types=[unicode]),
-        FieldDef(title='url_tags', allowed_types=[unicode]),
-        FieldDef(title='related_fan_page', allowed_types=[long]),
-        FieldDef(title='story_id', allowed_types=[long]),
-        FieldDef(title='follow_redirect', allowed_types=[bool]),
-        FieldDef(title='auto_update', allowed_types=[bool]),
-    ]
-
-    CREATE_ONLY = ['follow_redirect']
-
-
 class BroadTargetingCategory(SupportModel):
 
     """
@@ -148,7 +121,7 @@ class BroadTargetingCategory(SupportModel):
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='name', allowed_types=[unicode]),
-        FieldDef(title='parent_category', allowed_types=[str, type(None)]),
+        FieldDef(title='parent_category', allowed_types=[unicode, type(None)]),
         FieldDef(title='size', allowed_types=[int]),
         FieldDef(title='type', allowed_types=[int]),
         FieldDef(title='type_name', allowed_types=[unicode]),
@@ -222,7 +195,7 @@ class WorkNetwork(SupportModel):
     ]
 
 
-class Targeting(FacebookModel):
+class Targeting(SupportModel):
 
     """
     Represents a targeting object in the Facebook Ads API:
@@ -238,7 +211,7 @@ class Targeting(FacebookModel):
         FieldDef(title='cities', allowed_types=[[City]]),
         FieldDef(title='regions', allowed_types=[[Region]]),
         FieldDef(title='radius', allowed_types=[int]),
-        FieldDef(title='user_adclusters', allowed_types=[[BroadTargetingCategory]]),
+        FieldDef(title='conjunctive_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='excluded_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='keywords', allowed_types=[[unicode]]),
         FieldDef(title='user_os', allowed_types=[[unicode]]),
@@ -250,15 +223,62 @@ class Targeting(FacebookModel):
         FieldDef(title='friends_of_connections', allowed_types=[[long]]),
         FieldDef(title='college_networks', allowed_types=[[CollegeNetwork]]),
         FieldDef(title='work_networks', allowed_types=[[WorkNetwork]]),
-        FieldDef(title='education_statuses', allowed_types=[[int]], choices=[1, 2, 3]),
-        FieldDef(title='college_years', allowed_types=[[int]]),
+        FieldDef(title='education_statuses', allowed_types=[[int]], choices=[[1], [2], [3]]),
         FieldDef(title='college_majors', allowed_types=[[unicode]]),
-        FieldDef(title='page_types', allowed_types=[[unicode]], choices=['desktop', 'feed', 'desktopfeed', 'mobile', 'rightcolumn', 'home']),
-        FieldDef(title='relationship_statuses', allowed_types=[[int]], choices=[1, 2, 3, 4, 6]),
-        FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2], [1, 2]]),
+        FieldDef(title='page_types', allowed_types=[[unicode]], choices=[['desktop'], ['feed'], ['desktopfeed'], ['mobile'], ['rightcolumn'], ['home']]),
+        FieldDef(title='relationship_statuses', allowed_types=[int], choices=[1, 2, 3, 4, 6]),
+        FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2]]),
         FieldDef(title='locales', allowed_types=[[int]]),
-        FieldDef(title='zips', allowed_types=[[int]]),
     ]
+
+
+class ActionSpec(SupportModel):
+
+    """
+    Represents the actionspec object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/action-specs/
+
+    Currently this supports ONLY on-site objects and actions
+
+    """
+    FIELD_DEFS = [
+        FieldDef(title='action.type', allowed_types=[[unicode]]),
+        FieldDef(title='applicaton', allowed_types=[[long]]),
+        FieldDef(title='offer', allowed_types=[[long]]),
+        FieldDef(title='event', allowed_types=[[long]]),
+        FieldDef(title='question', allowed_types=[[long]]),
+        FieldDef(title='page', allowed_types=[[long]]),
+        FieldDef(title='post', allowed_types=[[long]]),
+    ]
+
+
+class AdCreative(FacebookModel):
+
+    """
+    Represents the adcreative object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/adcreative
+
+    """
+    FIELD_DEFS = [
+        FieldDef(title='id', allowed_types=[long]),
+        FieldDef(title='type', allowed_types=[int], choices=[1, 2, 3, 4, 12, 25, 27]),
+        FieldDef(title='object_id', allowed_types=[long]),
+        FieldDef(title='name', allowed_types=[unicode]),
+        FieldDef(title='title', allowed_types=[unicode]),
+        FieldDef(title='body', allowed_types=[unicode]),
+        FieldDef(title='image_hash', allowed_types=[unicode, type(None)]),
+        FieldDef(title='image_url', allowed_types=[unicode]),
+        FieldDef(title='link_url', allowed_types=[unicode]),
+        FieldDef(title='preview_url', allowed_types=[unicode]),
+        FieldDef(title='url_tags', allowed_types=[[unicode]]),
+        FieldDef(title='related_fan_page', allowed_types=[long]),
+        FieldDef(title='story_id', allowed_types=[long]),
+        FieldDef(title='follow_redirect', allowed_types=[bool]),
+        FieldDef(title='auto_update', allowed_types=[bool]),
+        FieldDef(title='action_spec', allowed_types=[[ActionSpec]]),
+    ]
+
+    CREATE_ONLY = ['follow_redirect']
 
 
 class AdGroup(FacebookModel):
@@ -276,9 +296,10 @@ class AdGroup(FacebookModel):
         FieldDef(title='adgroup_status', allowed_types=[unicode], choices=['ACTIVE', 'DELETED', 'PENDING_REVIEW', 'DISAPPROVED', 'PENDING_BILLING_INFO', 'CAMPAIGN_PAUSED', 'ADGROUP_PAUSED']),
         FieldDef(title='disapprove_reason_descriptions', allowed_types=[unicode]),
         FieldDef(title='bid_type', allowed_types=[unicode], choices=['CPC', 'CPM', 'MULTI_PREMIUM', 'RELATIVE_OCPM', 'ABSOLUTE_OCPM', 'CPA']),
-        FieldDef(title='bid_info', allowed_types=[{str: int}, type(None)]),
+        FieldDef(title='bid_info', allowed_types=[{unicode: int}, type(None)]),
         FieldDef(title='max_bid', allowed_types=[int]),
-        FieldDef(title='creative_ids', allowed_types=[[int]]),
+        FieldDef(title='creative_ids', allowed_types=[[long]]),
+        FieldDef(title='creative', allowed_types=[{unicode: long}]),
         FieldDef(title='targeting', allowed_types=[Targeting, type(None)]),
         FieldDef(title='last_updated_by_app_id', allowed_types=[long]),
         FieldDef(title='created_time', allowed_types=[datetime.datetime]),
@@ -309,14 +330,12 @@ class AdCampaign(FacebookModel):
         FieldDef(title='lifetime_budget', allowed_types=[int]),
         FieldDef(title='budget_remaining', allowed_types=[int]),
         FieldDef(title='campaign_status', allowed_types=[int], choices=[1, 2, 3]),
-        FieldDef(title='redownload', allowed_types=[bool]),
         FieldDef(title='adcreatives', allowed_types=[[AdCreative]]),
         FieldDef(title='adgroups', allowed_types=[[AdGroup]]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
     ]
 
     CONNECTIONS = ['adcreatives', 'adgroups', 'stats']
-    CREATE_ONLY = ['redownload']
 
 
 class AdAccount(FacebookModel):
