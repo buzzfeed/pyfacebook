@@ -1,4 +1,5 @@
 import json
+import pytz
 import requests
 import datetime
 import warnings
@@ -85,6 +86,29 @@ class PyFacebook(object):
 
         return fb_response
 
+    def __convert_datetime_to_facebook(self, field_name, this_datetime):
+        """
+        Converts any date or datetime to the proper format for a Facebook call
+
+        Facebook expects UTC times so if we get anything other than UTC than we raise a warning and convert if possible
+
+        :param str field_name: The name of the field we're converting
+        :param datetime this_datetime: The datetime we want to convert
+        :rtype str: A string representing the Facebook time
+
+        """
+        if not this_datetime.tzinfo:
+            warnings.warn("WARNING: Your parameter " + field_name + " was sent as a naive datetime.\n"
+                          "Facebook expects UTC datetimes only, so we are sending as UTC.\n"
+                          "Please send timezone-aware datetimes in the future.")
+        elif not this_datetime.tzinfo == pytz.utc:
+            warnings.warn("WARNING: Your parameter " + field_name + " was not sent as UTC.\n"
+                          "Facebook expects UTC datetimes only, so we are converting it to UTC.\n"
+                          "Please send UTC datetimes in the future.")
+            this_datetime = this_datetime.astimezone(pytz.utc)
+
+        return this_datetime.replace(tzinfo=pytz.utc, minute=0, second=0, microsecond=0).isoformat()
+
     def validate_access_token(self, token_text, input_token_text=None, use_long_lived_tokens=USE_LONG_LIVED_TOKENS):
         """
         Calls the Facebook token debug endpoint, to validate the access token and provide token info.
@@ -141,6 +165,7 @@ class PyFacebook(object):
 
         :param str endpoint: The endpoint to call.
         :param str url: The URL to call. This defaults to the standard graph API url.
+        :param str http_method: The http method to use. Currently supports only GET, POST and DELETE
         :param dict params: A dict of params to attach to the graph API call.
 
         :rtype dict: A dict representing the json-decoded result from Facebook.
@@ -148,11 +173,22 @@ class PyFacebook(object):
         """
         shelf_key = endpoint + "__" + http_method
         if getattr(self, 'get_from_shelf', None) is not None:
-            response = self.get_from_shelf[shelf_key]
+            shelved_response = self.get_from_shelf[shelf_key]
+            return shelved_response
         else:
             # Append access_token if not sent in params
             if not params.get('access_token') and self.access_token.text:
                 params['access_token'] = self.access_token.text
+
+            # Dump iterable params to JSON if possible
+            for key, val in params.items():
+                if isinstance(val, (list, dict, tuple, set)):
+                    try:
+                        params[key] = json.dumps(val)
+                    except (TypeError, ValueError):
+                        pass
+                elif isinstance(val, (datetime.date, datetime.datetime)):
+                    params[key] = self.__convert_datetime_to_facebook(key, val)
 
             # MAKE THE CALL
             if http_method == 'GET':
@@ -162,35 +198,33 @@ class PyFacebook(object):
                 if post_file:
                     response = requests.post(url + '/' + endpoint, files=post_file, data=params)
                 else:
-                    for key, val in params.items():
-                        if isinstance(val, (list, dict)):
-                            params[key] = json.dumps(val)
                     response = requests.post(url + '/' + endpoint, data=params)
             elif http_method == 'DELETE':
                 response = requests.delete(url + '/' + endpoint, params=params)
             else:
                 raise Exception("Called Facebook Graph API with unsupported method: " + http_method)
 
-        if getattr(self, 'put_on_shelf', None) is not None:
-            response.connection.close()
-            self.put_on_shelf[shelf_key] = response
-
         # Parse response and standardize for edge cases, raising Facebook errors if they exist
         try:
             json_response = response.json()
             if not isinstance(json_response, dict):
-                raise ValueError
+                raise ValueError()
             elif json_response.get('error'):
                 raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
             elif json_response.get('images'):
                 json_response = {'data': json_response['images']}
             elif not json_response.get('data'):
                 json_response = {'data': [json_response]}
+
+            if getattr(self, 'put_on_shelf', None) is not None:
+                self.put_on_shelf[shelf_key] = json_response
             return json_response
         except ValueError:
             if expect_json:
                 raise
             else:
+                if getattr(self, 'put_on_shelf', None) is not None:
+                    self.put_on_shelf[shelf_key] = response.text
                 return response.text
 
     def get(self, model, id, connection=None, return_json=False, **kwargs):
@@ -209,13 +243,13 @@ class PyFacebook(object):
         if not id:
             raise Exception("Need an ID in order to make a GET request to the Facebook API.")
 
-        fields_to_get = [f.title for f in model.FIELD_DEFS
-                         if f.title not in getattr(model, 'CONNECTIONS', []) and
-                         f.title not in getattr(model, 'CREATE_ONLY', [])]
-        params = {'fields': fields_to_get}
-        for key, val in kwargs.items():
-            if isinstance(val, (list, tuple, set)):
-                kwargs[key] = ','.join(map(str, val))
+        params = {}
+        if not kwargs.get('fields'):
+            fields_to_get = [f.title for f in model.FIELD_DEFS
+                             if f.title not in getattr(model, 'CONNECTIONS', []) and
+                             f.title not in getattr(model, 'CREATE_ONLY', [])]
+            params = {'fields': fields_to_get}
+
         params.update(kwargs)
         return self.__call_endpoint(model=model, id=id, connection=connection, http_method='GET', params=params, return_json=return_json)
 

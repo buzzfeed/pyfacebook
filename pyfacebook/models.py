@@ -67,6 +67,8 @@ class AdImage(FacebookModel):
         FieldDef(title='file', allowed_types=[{unicode: file}], validate=False),
     ]
 
+    CREATE_ONLY = ['file']
+
 
 class AdUser(FacebookModel):
 
@@ -226,7 +228,7 @@ class Targeting(SupportModel):
         FieldDef(title='education_statuses', allowed_types=[[int]], choices=[[1], [2], [3]]),
         FieldDef(title='college_majors', allowed_types=[[unicode]]),
         FieldDef(title='page_types', allowed_types=[[unicode]], choices=[['desktop'], ['feed'], ['desktopfeed'], ['mobile'], ['rightcolumn'], ['home']]),
-        FieldDef(title='relationship_statuses', allowed_types=[int], choices=[1, 2, 3, 4, 6]),
+        FieldDef(title='relationship_statuses', allowed_types=[[int]]),
         FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2]]),
         FieldDef(title='locales', allowed_types=[[int]]),
     ]
@@ -270,7 +272,7 @@ class AdCreative(FacebookModel):
         FieldDef(title='image_url', allowed_types=[unicode]),
         FieldDef(title='link_url', allowed_types=[unicode]),
         FieldDef(title='preview_url', allowed_types=[unicode]),
-        FieldDef(title='url_tags', allowed_types=[[unicode]]),
+        FieldDef(title='url_tags', allowed_types=[unicode]),
         FieldDef(title='related_fan_page', allowed_types=[long]),
         FieldDef(title='story_id', allowed_types=[long]),
         FieldDef(title='follow_redirect', allowed_types=[bool]),
@@ -308,6 +310,7 @@ class AdGroup(FacebookModel):
         FieldDef(title='adcreatives', allowed_types=[[AdCreative]]),
     ]
 
+    CREATE_ONLY = ['creative']
     CONNECTIONS = ['stats', 'adcreatives']
 
 

@@ -100,7 +100,7 @@ FIXTURES[m.AdCreative] = {
     m.AdCreative(**{
                  'type': 25,
                  'name': 'test_type_25_creative_name',
-                 'url_tags': ['foo=bar', 'bat=baz'],
+                 'url_tags': 'foo=bar&bat=baz',
                  'object_id': 238205562866018,
                  'action_spec': [m.ActionSpec(**{'action.type': ['like'], 'post': [609718625714708]})],
                  }),
@@ -108,7 +108,7 @@ FIXTURES[m.AdCreative] = {
     m.AdCreative(**{
                  'type': 27,
                  'name': 'test_type_27_creative_name',
-                 'url_tags': ['foo=bar', 'bat=baz'],
+                 'url_tags': 'foo=bar&bat=baz',
                  'object_id': 238205562866018,
                  'story_id': 609720135714557,
                  }),
