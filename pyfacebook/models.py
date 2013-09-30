@@ -43,14 +43,14 @@ class Token(SupportModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='text', allowed_types=[str]),
-        FieldDef(title='app_id', allowed_types=[str]),
+        FieldDef(title='text', allowed_types=[unicode]),
+        FieldDef(title='app_id', allowed_types=[unicode]),
         FieldDef(title='is_valid', allowed_types=[bool]),
-        FieldDef(title='application', allowed_types=[str]),
-        FieldDef(title='user_id', allowed_types=[str]),
+        FieldDef(title='application', allowed_types=[unicode]),
+        FieldDef(title='user_id', allowed_types=[unicode]),
         FieldDef(title='issued_at', allowed_types=[datetime.datetime], custom_translators=unix_datetime_translators),
         FieldDef(title='expires_at', allowed_types=[datetime.datetime], custom_translators=unix_datetime_translators),
-        FieldDef(title='scopes', allowed_types=[[str], [str]]),
+        FieldDef(title='scopes', allowed_types=[[unicode], [unicode]]),
     ]
 
 
@@ -62,8 +62,8 @@ class AdImage(FacebookModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='hash', allowed_types=[str]),
-        FieldDef(title='url', allowed_types=[str]),
+        FieldDef(title='hash', allowed_types=[unicode]),
+        FieldDef(title='url', allowed_types=[unicode]),
     ]
 
 
@@ -91,7 +91,7 @@ class AdStatistic(FacebookModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[str]),
+        FieldDef(title='id', allowed_types=[unicode]),
         FieldDef(title='account_id', allowed_types=[long]),
         FieldDef(title='adcampaign_id', allowed_types=[long]),
         FieldDef(title='adgroup_id', allowed_types=[long]),
@@ -121,14 +121,14 @@ class AdCreative(FacebookModel):
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='type', allowed_types=[int], choices=[1, 2, 3, 4, 12, 25, 27, 32]),
         FieldDef(title='object_id', allowed_types=[int]),
-        FieldDef(title='name', allowed_types=[str]),
-        FieldDef(title='title', allowed_types=[str]),
-        FieldDef(title='body', allowed_types=[str]),
-        FieldDef(title='image_hash', allowed_types=[str]),
-        FieldDef(title='image_url', allowed_types=[str]),
-        FieldDef(title='link_url', allowed_types=[str]),
-        FieldDef(title='preview_url', allowed_types=[str]),
-        FieldDef(title='url_tags', allowed_types=[str]),
+        FieldDef(title='name', allowed_types=[unicode]),
+        FieldDef(title='title', allowed_types=[unicode]),
+        FieldDef(title='body', allowed_types=[unicode]),
+        FieldDef(title='image_hash', allowed_types=[unicode]),
+        FieldDef(title='image_url', allowed_types=[unicode]),
+        FieldDef(title='link_url', allowed_types=[unicode]),
+        FieldDef(title='preview_url', allowed_types=[unicode]),
+        FieldDef(title='url_tags', allowed_types=[unicode]),
         FieldDef(title='related_fan_page', allowed_types=[long]),
         FieldDef(title='story_id', allowed_types=[long]),
         FieldDef(title='follow_redirect', allowed_types=[bool]),
@@ -147,11 +147,11 @@ class BroadTargetingCategory(SupportModel):
     """
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='parent_category', allowed_types=[str, type(None)]),
         FieldDef(title='size', allowed_types=[int]),
         FieldDef(title='type', allowed_types=[int]),
-        FieldDef(title='type_name', allowed_types=[str]),
+        FieldDef(title='type_name', allowed_types=[unicode]),
     ]
 
 
@@ -163,8 +163,8 @@ class Region(SupportModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[str]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='id', allowed_types=[unicode]),
+        FieldDef(title='name', allowed_types=[unicode]),
     ]
 
 
@@ -176,8 +176,8 @@ class Country(SupportModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='country_code', allowed_types=[str]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='country_code', allowed_types=[unicode]),
+        FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='supports_region', allowed_types=[bool]),
         FieldDef(title='supports_city', allowed_types=[bool]),
     ]
@@ -191,8 +191,8 @@ class City(SupportModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[str]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='id', allowed_types=[unicode]),
+        FieldDef(title='name', allowed_types=[unicode]),
     ]
 
 
@@ -204,8 +204,8 @@ class CollegeNetwork(SupportModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[str]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='id', allowed_types=[unicode]),
+        FieldDef(title='name', allowed_types=[unicode]),
     ]
 
 
@@ -217,8 +217,8 @@ class WorkNetwork(SupportModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[str]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='id', allowed_types=[unicode]),
+        FieldDef(title='name', allowed_types=[unicode]),
     ]
 
 
@@ -234,17 +234,17 @@ class Targeting(FacebookModel):
         FieldDef(title='age_min', allowed_types=[int]),
         FieldDef(title='age_max', allowed_types=[int]),
         FieldDef(title='broad_age', allowed_types=[int], choices=[0, 1]),
-        FieldDef(title='countries', allowed_types=[[str]]),
+        FieldDef(title='countries', allowed_types=[[unicode]]),
         FieldDef(title='cities', allowed_types=[[City]]),
         FieldDef(title='regions', allowed_types=[[Region]]),
         FieldDef(title='radius', allowed_types=[int]),
         FieldDef(title='user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='excluded_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
-        FieldDef(title='keywords', allowed_types=[[str]]),
-        FieldDef(title='user_os', allowed_types=[[str]]),
-        FieldDef(title='user_device', allowed_types=[[str]], choices=['iPhone', 'iPod', 'android_tablet', 'android_smartphone']),
-        FieldDef(title='wireless_carrier', allowed_types=[[str]], choices=['WiFi']),
-        FieldDef(title='site_category', allowed_types=[[str]], choices=['feature_phones']),
+        FieldDef(title='keywords', allowed_types=[[unicode]]),
+        FieldDef(title='user_os', allowed_types=[[unicode]]),
+        FieldDef(title='user_device', allowed_types=[[unicode]], choices=['iPhone', 'iPod', 'android_tablet', 'android_smartphone']),
+        FieldDef(title='wireless_carrier', allowed_types=[[unicode]], choices=['WiFi']),
+        FieldDef(title='site_category', allowed_types=[[unicode]], choices=['feature_phones']),
         FieldDef(title='connections', allowed_types=[[long]]),
         FieldDef(title='excluded_connections', allowed_types=[[long]]),
         FieldDef(title='friends_of_connections', allowed_types=[[long]]),
@@ -252,8 +252,8 @@ class Targeting(FacebookModel):
         FieldDef(title='work_networks', allowed_types=[[WorkNetwork]]),
         FieldDef(title='education_statuses', allowed_types=[[int]], choices=[1, 2, 3]),
         FieldDef(title='college_years', allowed_types=[[int]]),
-        FieldDef(title='college_majors', allowed_types=[[str]]),
-        FieldDef(title='page_types', allowed_types=[[str]], choices=['desktop', 'feed', 'desktopfeed', 'mobile', 'rightcolumn', 'home']),
+        FieldDef(title='college_majors', allowed_types=[[unicode]]),
+        FieldDef(title='page_types', allowed_types=[[unicode]], choices=['desktop', 'feed', 'desktopfeed', 'mobile', 'rightcolumn', 'home']),
         FieldDef(title='relationship_statuses', allowed_types=[[int]], choices=[1, 2, 3, 4, 6]),
         FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2], [1, 2]]),
         FieldDef(title='locales', allowed_types=[[int]]),
@@ -270,12 +270,12 @@ class AdGroup(FacebookModel):
     """
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='account_id', allowed_types=[int]),
         FieldDef(title='campaign_id', allowed_types=[long]),
-        FieldDef(title='adgroup_status', allowed_types=[str], choices=['ACTIVE', 'DELETED', 'PENDING_REVIEW', 'DISAPPROVED', 'PENDING_BILLING_INFO', 'CAMPAIGN_PAUSED', 'ADGROUP_PAUSED']),
-        FieldDef(title='disapprove_reason_descriptions', allowed_types=[str]),
-        FieldDef(title='bid_type', allowed_types=[str], choices=['CPC', 'CPM', 'MULTI_PREMIUM', 'RELATIVE_OCPM', 'ABSOLUTE_OCPM', 'CPA']),
+        FieldDef(title='adgroup_status', allowed_types=[unicode], choices=['ACTIVE', 'DELETED', 'PENDING_REVIEW', 'DISAPPROVED', 'PENDING_BILLING_INFO', 'CAMPAIGN_PAUSED', 'ADGROUP_PAUSED']),
+        FieldDef(title='disapprove_reason_descriptions', allowed_types=[unicode]),
+        FieldDef(title='bid_type', allowed_types=[unicode], choices=['CPC', 'CPM', 'MULTI_PREMIUM', 'RELATIVE_OCPM', 'ABSOLUTE_OCPM', 'CPA']),
         FieldDef(title='bid_info', allowed_types=[{str: int}, type(None)]),
         FieldDef(title='max_bid', allowed_types=[int]),
         FieldDef(title='creative_ids', allowed_types=[[int]]),
@@ -299,7 +299,7 @@ class AdCampaign(FacebookModel):
     """
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='account_id', allowed_types=[long]),
         FieldDef(title='start_time', allowed_types=[datetime.datetime]),
         FieldDef(title='end_time', allowed_types=[datetime.datetime]),
@@ -327,13 +327,13 @@ class AdAccount(FacebookModel):
 
     """
     FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[str]),
+        FieldDef(title='id', allowed_types=[unicode]),
         FieldDef(title='account_id', allowed_types=[long]),
-        FieldDef(title='name', allowed_types=[str]),
+        FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='account_status', allowed_types=[int]),
-        FieldDef(title='currency', allowed_types=[str]),
+        FieldDef(title='currency', allowed_types=[unicode]),
         FieldDef(title='timezone_id', allowed_types=[int]),
-        FieldDef(title='timezone_name', allowed_types=[str]),
+        FieldDef(title='timezone_name', allowed_types=[unicode]),
         FieldDef(title='timezone_offset_hours_utc', allowed_types=[int]),
         FieldDef(title='vat_status', allowed_types=[int]),
         FieldDef(title='daily_spend_limit', allowed_types=[int]),
