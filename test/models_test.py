@@ -16,6 +16,7 @@ from pyfacebook import(
 )
 
 import post_fixtures
+import get_fixtures
 
 from pyfacebook.utils import(
     first_item,
@@ -193,7 +194,8 @@ class FacebookModelsTest(unittest.TestCase):
                     for connection in getattr(model, 'CONNECTIONS', []):
                         connection_field_def = next(f for f in model.FIELD_DEFS if f.title == connection)
                         child_model = first_item(connection_field_def.allowed_types[0])
-                        self.__test_single_endpoint(model=child_model, http_method='GET', id=id, connection=connection, limit=self.limit_live_results)
+                        extra_params = get_fixtures.CONNECTIONS.get(model, {}).get(connection, {})
+                        self.__test_single_endpoint(model=child_model, http_method='GET', id=id, connection=connection, limit=self.limit_live_results, **extra_params)
 
         # test DELETE by deleting posted models from above
         post_fixtures.POST_MODELS.reverse()
