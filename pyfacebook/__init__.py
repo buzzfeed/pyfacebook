@@ -13,11 +13,6 @@ from pyfacebook.utils import(
     json_to_objects,
 )
 
-from pyfacebook.settings import(
-    USE_LONG_LIVED_TOKENS,
-    FACEBOOK_GRAPH_URL,
-)
-
 
 class PyFacebook(object):
 
@@ -26,7 +21,8 @@ class PyFacebook(object):
 
     """
 
-    def __init__(self, app_id=None, app_secret=None, token_text=None, get_from_shelf=None, put_on_shelf=None):
+    def __init__(self, app_id=None, app_secret=None, token_text=None, get_from_shelf=None,
+                 put_on_shelf=None, use_long_lived_tokens=True, facebook_graph_url='https://graph.facebook.com'):
         """
         Initializes an object of the Facebook class. Sets local vars and establishes a connection.
 
@@ -37,6 +33,9 @@ class PyFacebook(object):
         :param shelve.Shelf put_on_shelf: An open Shelf object to put data on.
 
         """
+        self.__use_long_lived_tokens = use_long_lived_tokens
+        self.__facebook_graph_url = facebook_graph_url
+
         self.app_id = app_id
         self.app_secret = app_secret
         self.access_token = self.validate_access_token(token_text=token_text)
@@ -109,15 +108,12 @@ class PyFacebook(object):
 
         return this_datetime.replace(tzinfo=pytz.utc, minute=0, second=0, microsecond=0).isoformat()
 
-    def validate_access_token(self, token_text, input_token_text=None, use_long_lived_tokens=USE_LONG_LIVED_TOKENS):
+    def validate_access_token(self, token_text, input_token_text=None):
         """
         Calls the Facebook token debug endpoint, to validate the access token and provide token info.
 
         :param str token_text: The oauth token used to access your Facebook app
         :param str input_token_text: The token you wish to validate. This will default to token_text if not provided.
-        :param bool use_long_lived_tokens: A flag to indicate whether you wish to use long-lived tokens.
-                                           If True, this will automatically exchange any tokens
-                                           about to expire in 24 hours and raise a warning.
         :rtype models.Token: A model representing the access_token
 
         """
@@ -126,7 +122,7 @@ class PyFacebook(object):
 
         my_token = self.__call_token_debug(token_text, input_token_text)
 
-        if USE_LONG_LIVED_TOKENS and (my_token.expires_at - datetime.datetime.utcnow()).days < 1:
+        if self.__use_long_lived_tokens and (my_token.expires_at - datetime.datetime.utcnow()).days < 1:
             my_new_token = self.exchange_access_token(current_token=my_token, app_id=self.app_id, app_secret=self.app_secret)
             warnings.warn("WARNING: Your current Facebook API token is about to expire.\n"
                           "Replace your stored token with this new one:\n" + my_new_token.text)
@@ -145,7 +141,7 @@ class PyFacebook(object):
 
         """
         # Response is not even JSON so it requires a custom call to the graph api
-        facebook_token_url = FACEBOOK_GRAPH_URL + '/oauth/access_token'
+        facebook_token_url = self.__facebook_graph_url + '/oauth/access_token'
         if not(current_token and app_id and app_secret):
             raise Exception("Must set app_id, app_secret and access_token before calling exchange_token")
 
@@ -159,12 +155,11 @@ class PyFacebook(object):
         new_token_text = parse_qs(resp)['access_token'][0]
         return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
 
-    def call_graph_api(self, endpoint, url=FACEBOOK_GRAPH_URL, http_method='GET', expect_json=True, params={}):
+    def call_graph_api(self, endpoint, http_method='GET', expect_json=True, params={}):
         """
         This method calls the Facebook graph api, given an endpoint and a set of params.
 
         :param str endpoint: The endpoint to call.
-        :param str url: The URL to call. This defaults to the standard graph API url.
         :param str http_method: The http method to use. Currently supports only GET, POST and DELETE
         :param dict params: A dict of params to attach to the graph API call.
 
@@ -191,6 +186,7 @@ class PyFacebook(object):
                     params[key] = self.__convert_datetime_to_facebook(key, val)
 
             # MAKE THE CALL
+            url = self.__facebook_graph_url
             if http_method == 'GET':
                 response = requests.get(url + '/' + endpoint, params=params)
             elif http_method == 'POST':
