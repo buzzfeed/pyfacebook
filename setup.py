@@ -21,7 +21,7 @@ setup(
         'pytz==2013b',
         'python-dateutil==2.1',
         'mock==1.0.1',
-        'tinymodel==0.0.17',
+        'tinymodel==0.0.19',
         'requests==1.2.3',
         'inflection==0.2.0',
     ],
