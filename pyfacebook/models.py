@@ -4,10 +4,11 @@ import datetime
 import calendar
 from tinymodel import TinyModel, FieldDef
 
-unix_datetime_translators = {'to_json': lambda obj: calendar.timegm(utcfromtimestamp(obj.utctimetuple())),
-                             'from_json': lambda json_value: datetime.datetime.utcfromtimestamp(long(json_value)),
-                             'random': lambda: (datetime.datetime.utcnow() - timedelta(seconds=random.randrange(2592000))).replace(tzinfo=pytz.utc),
-                             }
+unix_datetime_translators = {
+    'to_json': lambda obj: calendar.timegm(datetime.datetime.utcfromtimestamp(obj.utctimetuple())),
+    'from_json': lambda json_value: datetime.datetime.utcfromtimestamp(long(json_value)),
+    'random': lambda: (datetime.datetime.utcnow() - datetime.timedelta(seconds=random.randrange(2592000))).replace(tzinfo=pytz.utc),
+}
 
 
 class FacebookModel(TinyModel):
@@ -197,6 +198,13 @@ class WorkNetwork(SupportModel):
     ]
 
 
+class UserConnection(SupportModel):
+    FIELD_DEFS = [
+        FieldDef(title='id', allowed_types=[unicode]),
+        FieldDef(title='name', allowed_types=[unicode]),
+    ]
+
+
 class Targeting(SupportModel):
 
     """
@@ -220,9 +228,9 @@ class Targeting(SupportModel):
         FieldDef(title='user_device', allowed_types=[[unicode]], choices=['iPhone', 'iPod', 'android_tablet', 'android_smartphone']),
         FieldDef(title='wireless_carrier', allowed_types=[[unicode]], choices=['WiFi']),
         FieldDef(title='site_category', allowed_types=[[unicode]], choices=['feature_phones']),
-        FieldDef(title='connections', allowed_types=[[long]]),
-        FieldDef(title='excluded_connections', allowed_types=[[long]]),
-        FieldDef(title='friends_of_connections', allowed_types=[[long]]),
+        FieldDef(title='connections', allowed_types=[[UserConnection]]),
+        FieldDef(title='excluded_connections', allowed_types=[[UserConnection]]),
+        FieldDef(title='friends_of_connections', allowed_types=[[UserConnection]]),
         FieldDef(title='college_networks', allowed_types=[[CollegeNetwork]]),
         FieldDef(title='work_networks', allowed_types=[[WorkNetwork]]),
         FieldDef(title='education_statuses', allowed_types=[[int]], choices=[[1], [2], [3]]),
@@ -299,7 +307,6 @@ class AdGroup(FacebookModel):
         FieldDef(title='disapprove_reason_descriptions', allowed_types=[unicode]),
         FieldDef(title='bid_type', allowed_types=[unicode], choices=['CPC', 'CPM', 'MULTI_PREMIUM', 'RELATIVE_OCPM', 'ABSOLUTE_OCPM', 'CPA']),
         FieldDef(title='bid_info', allowed_types=[{unicode: int}, type(None)]),
-        FieldDef(title='max_bid', allowed_types=[int]),
         FieldDef(title='creative_ids', allowed_types=[[long]]),
         FieldDef(title='creative', allowed_types=[{unicode: long}]),
         FieldDef(title='targeting', allowed_types=[Targeting, type(None)]),

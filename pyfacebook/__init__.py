@@ -141,7 +141,6 @@ class PyFacebook(object):
 
         """
         # Response is not even JSON so it requires a custom call to the graph api
-        facebook_token_url = self.__facebook_graph_url + '/oauth/access_token'
         if not(current_token and app_id and app_secret):
             raise Exception("Must set app_id, app_secret and access_token before calling exchange_token")
 
@@ -172,7 +171,7 @@ class PyFacebook(object):
             return shelved_response
         else:
             # Append access_token if not sent in params
-            if not params.get('access_token') and self.access_token.text:
+            if not (params.get('access_token') or params.get('fb_exchange_token')) and self.access_token.text:
                 params['access_token'] = self.access_token.text
 
             # Dump iterable params to JSON if possible
