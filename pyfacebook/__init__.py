@@ -38,9 +38,9 @@ class PyFacebook(object):
 
         self.app_id = app_id
         self.app_secret = app_secret
-        self.access_token = self.validate_access_token(token_text=token_text)
         self.get_from_shelf = get_from_shelf
         self.put_on_shelf = put_on_shelf
+        self.access_token = self.validate_access_token(token_text=token_text)
 
     def __call_token_debug(self, token_text, input_token_text):
         """
@@ -171,7 +171,7 @@ class PyFacebook(object):
             return shelved_response
         else:
             # Append access_token if not sent in params
-            if not (params.get('access_token') or params.get('fb_exchange_token')) and self.access_token.text:
+            if not (params.get('access_token') or params.get('fb_exchange_token')) and hasattr(self, 'access_token'):
                 params['access_token'] = self.access_token.text
 
             # Dump iterable params to JSON if possible

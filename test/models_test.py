@@ -70,13 +70,12 @@ class FacebookModelsTest(unittest.TestCase):
         get_models.insert(0, get_models.pop(get_models.index(models.AdAccount)))
         self.get_models = get_models
         self.get_model_ids = {models.AdAccount: [self.account_id]}
-        self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text)
 
         self.shelf = shelve.open(self.shelf_filename, protocol=-1)
         if self.test_live_endpoints:
-            self.pyfb.put_on_shelf = self.shelf
+            self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text, put_on_shelf=self.shelf)
         else:
-            self.pyfb.get_from_shelf = self.shelf
+            self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text, get_from_shelf=self.shelf)
 
     def tearDown(self):
         self.shelf.close()
@@ -141,7 +140,6 @@ class FacebookModelsTest(unittest.TestCase):
         Test for the fb_exchange_token functionality of the /oauth/access_token endpoint
 
         """
-        self.pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text)
         new_token = self.pyfb.exchange_access_token(current_token=self.pyfb.access_token, app_id=self.app_id, app_secret=self.app_secret)
 
     def test_graph_api(self):
@@ -164,7 +162,8 @@ class FacebookModelsTest(unittest.TestCase):
         """
         # test POST using fixtures
         for post_dict in post_fixtures.POST_MODELS:
-            time.sleep(5)
+            if self.test_live_endpoints:
+                time.sleep(7)
             model = post_dict['model']
             for fixture_name, fixture_obj in post_fixtures.FIXTURES[model].items():
                 # set ids or hashes of dependent objects if appropriate
