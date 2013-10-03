@@ -130,7 +130,7 @@ class PyFacebook(object):
         else:
             return my_token
 
-    def exchange_access_token(self, current_token, app_id, app_secret):
+    def exchange_access_token(self, current_token=None, app_id='', app_secret=''):
         """
         Exchange an existing token for a new long-term token.
         :param models.Token current_token: A Token object representing the current access_token.
@@ -140,10 +140,6 @@ class PyFacebook(object):
         :rtype models.Token: New Facebook token
 
         """
-        # Response is not even JSON so it requires a custom call to the graph api
-        if not(current_token and app_id and app_secret):
-            raise Exception("Must set app_id, app_secret and access_token before calling exchange_token")
-
         auth_exchange_params = {
             "grant_type": "fb_exchange_token",
             "client_id": app_id,
