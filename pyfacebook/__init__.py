@@ -96,6 +96,12 @@ class PyFacebook(object):
         :rtype str: A string representing the Facebook time
 
         """
+        if not isinstance(this_datetime, datetime.datetime):
+            if not isinstance(this_datetime, datetime.date):
+                raise Exception(field_name + " needs to be either a date or a datetime object")
+            else:
+                this_datetime = datetime.datetime(this_datetime.year, this_datetime.month, this_datetime.day)
+
         if not this_datetime.tzinfo:
             warnings.warn("WARNING: Your parameter " + field_name + " was sent as a naive datetime.\n"
                           "Facebook expects UTC datetimes only, so we are sending as UTC.\n"

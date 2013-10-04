@@ -5,7 +5,7 @@ from pyfacebook import models as m
 # This list stores the order in which models should be tested for GET
 # Order matters because some models contain others
 
-today = datetime.datetime.now().replace(tzinfo=pytz.utc)
+today = datetime.date.today()
 tomorrow = today + datetime.timedelta(days=1)
 
 CONNECTIONS = {
