@@ -114,6 +114,27 @@ class PyFacebook(object):
 
         return this_datetime.replace(tzinfo=pytz.utc, minute=0, second=0, microsecond=0).isoformat()
 
+    def __delete_everything(self, account_id):
+        """
+        Utility function for testing purposes. Deletes all adgroups, adcampaigns and adcreatives in the passed-in account.
+        This is obviously an extremely destructive method so USE CAUTION!!!
+
+        """
+        adgroups = self.get(model=models.AdGroup, id=account_id, connection='adgroups')['data']
+        for adgroup in adgroups:
+            self.delete(id=adgroup.id)
+        print "DELETED", len(adgroups), "ADGROUPS"
+
+        adcreatives = self.get(model=models.AdCreative, id=account_id, connection='adcreatives')['data']
+        for adcreative in adcreatives:
+            self.delete(id=adcreative.id)
+        print "DELETED", len(adcreatives), "ADCREATIVES"
+
+        adcampaigns = self.get(model=models.AdCampaign, id=account_id, connection='adcampaigns')['data']
+        for adcampaign in adcampaigns:
+            self.delete(id=adcampaign.id)
+        print "DELETED", len(adcampaigns), "ADCAMPAIGNS"
+
     def validate_access_token(self, token_text, input_token_text=None):
         """
         Calls the Facebook token debug endpoint, to validate the access token and provide token info.
