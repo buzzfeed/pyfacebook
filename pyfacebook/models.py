@@ -262,6 +262,26 @@ class ActionSpec(SupportModel):
     ]
 
 
+class AdPreviewCss(FacebookModel):
+    """
+    Represents the AdPreview Css object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/generatepreview/#adpreviewcss
+    """
+    FIELD_DEFS = [
+        FieldDef(title='result', allowed_types=[unicode]),
+    ]
+
+
+class Preview(FacebookModel):
+    """
+    Represents the Preview object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/generatepreview/
+    """
+    FIELD_DEFS = [
+        FieldDef(title='body', allowed_types=[unicode]),
+    ]
+
+
 class AdCreative(FacebookModel):
 
     """
@@ -286,9 +306,11 @@ class AdCreative(FacebookModel):
         FieldDef(title='follow_redirect', allowed_types=[bool]),
         FieldDef(title='auto_update', allowed_types=[bool]),
         FieldDef(title='action_spec', allowed_types=[[ActionSpec]]),
+        FieldDef(title='previews', allowed_types=[[Preview]]),
     ]
 
     CREATE_ONLY = ['follow_redirect']
+    CONNECTIONS = ['previews']
 
 
 class AdGroup(FacebookModel):
@@ -315,10 +337,11 @@ class AdGroup(FacebookModel):
         FieldDef(title='updated_time', allowed_types=[datetime.datetime]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
         FieldDef(title='adcreatives', allowed_types=[[AdCreative]]),
+        FieldDef(title='previews', allowed_types=[[Preview]]),
     ]
 
     CREATE_ONLY = ['creative']
-    CONNECTIONS = ['stats', 'adcreatives']
+    CONNECTIONS = ['stats', 'adcreatives', 'previews']
 
 
 class AdCampaign(FacebookModel):
@@ -374,6 +397,8 @@ class AdAccount(FacebookModel):
         FieldDef(title='adgroups', allowed_types=[[AdGroup]]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
         FieldDef(title='adgroupstats', allowed_types=[[AdStatistic]]),
+        FieldDef(title='adpreviewscss', allowed_types=[[AdPreviewCss]]),
     ]
 
-    CONNECTIONS = ['users', 'adcampaigns', 'adimages', 'adcreatives', 'adgroups', 'stats', 'adgroupstats']
+    CONNECTIONS = ['users', 'adcampaigns', 'adimages', 'adcreatives',
+                   'adgroups', 'stats', 'adgroupstats', 'adpreviewscss']

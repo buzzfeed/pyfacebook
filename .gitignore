@@ -11,3 +11,4 @@ seeds/
 .project
 .pydevproject
 .env
+.DS_Store
