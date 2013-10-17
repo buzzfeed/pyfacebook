@@ -402,3 +402,12 @@ class AdAccount(FacebookModel):
 
     CONNECTIONS = ['users', 'adcampaigns', 'adimages', 'adcreatives',
                    'adgroups', 'stats', 'adgroupstats', 'adpreviewscss']
+
+
+class Post(FacebookModel):
+    FIELD_DEFS = [
+        FieldDef(title='id', allowed_types=[unicode]),
+        FieldDef(title='message', allowed_types=[unicode]),
+        FieldDef(title='picture', allowed_types=[unicode, type(None)]),
+        FieldDef(title='link', allowed_types=[unicode, type(None)]),
+    ]
