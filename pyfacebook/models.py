@@ -410,4 +410,5 @@ class Post(FacebookModel):
         FieldDef(title='message', allowed_types=[unicode]),
         FieldDef(title='picture', allowed_types=[unicode, type(None)]),
         FieldDef(title='link', allowed_types=[unicode, type(None)]),
+        FieldDef(title='published', allowed_types=[bool]),
     ]
