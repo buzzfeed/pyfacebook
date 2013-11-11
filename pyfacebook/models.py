@@ -261,6 +261,24 @@ class ActionSpec(SupportModel):
         FieldDef(title='post', allowed_types=[[long]]),
     ]
 
+class TrackingSpec(SupportModel):
+    """
+    Represents the trackingspec object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/tracking-specs
+
+    """
+    FIELD_DEFS = [
+        FieldDef(title='action.type', allowed_types=[[unicode]]),
+        FieldDef(title='page', allowed_types=[[long]]),
+        FieldDef(title='application', allowed_types=[[long]]),
+        FieldDef(title='object', allowed_types=[[unicode]]),
+        FieldDef(title='object.domain', allowed_types=[[unicode]]),
+        FieldDef(title='post', allowed_types=[[long]]),
+        FieldDef(title='post.wall', allowed_types=[[long]]),
+        FieldDef(title='offer', allowed_types=[[long]]),
+    ]
+
+
 
 class AdPreviewCss(FacebookModel):
     """
@@ -332,6 +350,7 @@ class AdGroup(FacebookModel):
         FieldDef(title='creative_ids', allowed_types=[[long]]),
         FieldDef(title='creative', allowed_types=[{unicode: long}]),
         FieldDef(title='targeting', allowed_types=[Targeting, type(None)]),
+        FieldDef(title='tracking_specs', allowed_types=[[TrackingSpec]]),
         FieldDef(title='last_updated_by_app_id', allowed_types=[long]),
         FieldDef(title='created_time', allowed_types=[datetime.datetime]),
         FieldDef(title='updated_time', allowed_types=[datetime.datetime]),
