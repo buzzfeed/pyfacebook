@@ -261,7 +261,9 @@ class ActionSpec(SupportModel):
         FieldDef(title='post', allowed_types=[[long]]),
     ]
 
+
 class TrackingSpec(SupportModel):
+
     """
     Represents the trackingspec object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/tracking-specs
@@ -279,8 +281,8 @@ class TrackingSpec(SupportModel):
     ]
 
 
-
 class AdPreviewCss(FacebookModel):
+
     """
     Represents the AdPreview Css object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/generatepreview/#adpreviewcss
@@ -291,6 +293,7 @@ class AdPreviewCss(FacebookModel):
 
 
 class Preview(FacebookModel):
+
     """
     Represents the Preview object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/generatepreview/
