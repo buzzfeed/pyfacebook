@@ -41,8 +41,8 @@ class FacebookModelsTest(unittest.TestCase):
     limit_live_results = settings.__dict__.get('LIVE_TEST_RESULTSET_LIMIT')
     shelf_filename = str(__file__).split(".")[0]
 
-    app_id = settings.__dict__.get('FACEBOOK_APP_ID')
-    app_secret = settings.__dict__.get('FACEBOOK_APP_SECRET')
+    app_id = settings.__dict__.get('FACEBOOK_TEST_APP_ID')
+    app_secret = settings.__dict__.get('FACEBOOK_TEST_APP_SECRET')
     test_token_text = settings.__dict__.get('FACEBOOK_TEST_ACCESS_TOKEN')
     account_id = settings.__dict__.get('FACEBOOK_TEST_ACCOUNT_ID')
     mock_account_id = settings.__dict__.get('MOCK_DATA_ACCOUNT_ID')
@@ -51,7 +51,7 @@ class FacebookModelsTest(unittest.TestCase):
         print "TESTING LIVE ENDPOINTS WITH LIMIT", (limit_live_results or "INFINITE")
         if not(app_id and app_secret and test_token_text and account_id):
             raise Exception("MISSING SETTINGS FOR LIVE TEST!\n"
-                            "FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, FACEBOOK_TEST_ACCESS_TOKEN\n"
+                            "FACEBOOK_TEST_APP_ID, FACEBOOK_TEST_APP_SECRET, FACEBOOK_TEST_ACCESS_TOKEN\n"
                             "AND FACEBOOK_TEST_ACCOUNT_ID ALL NEED TO BE DEFINED!")
         account_id = account_id if account_id[0:4] == 'act_' else 'act_' + account_id
         delete_shelf_files(shelf_filename)
