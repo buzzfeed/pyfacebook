@@ -150,8 +150,8 @@ class PyFacebook(object):
         my_token = self.__call_token_debug(token_text, input_token_text)
 
         token_expires_soon = my_token.expires_at and \
-                             my_token.expires_at > datetime.datetime(1970, 1, 1, 0, 0) and \
-                             (my_token.expires_at - datetime.datetime.utcnow()).days < 1
+            my_token.expires_at > datetime.datetime(1970, 1, 1, 0, 0) and \
+            (my_token.expires_at - datetime.datetime.utcnow()).days < 1
         if self.__use_long_lived_tokens and token_expires_soon:
             my_new_token = self.exchange_access_token(current_token=my_token, app_id=self.app_id, app_secret=self.app_secret)
             warnings.warn("WARNING: Your current Facebook API token is about to expire.\n"
