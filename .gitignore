@@ -6,9 +6,8 @@ settings.py
 nbproject
 pyfacebook.egg-info
 nosetests.xml
-cache/
-seeds/
 .project
 .pydevproject
 .env
 .DS_Store
+caliendo/used

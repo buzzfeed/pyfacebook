@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'patch_with'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"(dp0\nS'AdAccount'\np1\n(lp2\nS'act_106929496119713'\np3\nas."
+p8
+sS'hash'
+p9
+S'38f3992d8d504feaa885a6d8dfc66af2dbe55d0a'
+p10
+sS'stack'
+p11
+S'patch_with util.py get_stack facade.py cache patch.py patch_with models_test.py setUp patch.py patched_test '
+p12
+s.

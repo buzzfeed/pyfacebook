@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'_test_single_endpoint'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((dp0\nVtargeting\np1\n(dp2\nVconnections\np3\n(lp4\n(dp5\nVid\np6\nV481523265256333\np7\nsVname\np8\nVDiscotech\np9\nsasVage_max\np10\nI50\nsVrelationship_statuses\np11\n(lp12\nI1\naI2\naI3\nasVcountries\np13\n(lp14\nVUS\np15\naVGB\np16\nasVeducation_statuses\np17\n(lp18\nI3\nasVwork_networks\np19\n(lp20\n(dp21\nVid\np22\nV50431654\np23\nsVname\np24\nVMicrosoft\np25\nsa(dp26\nVid\np27\nV50446992\np28\nsVname\np29\nVMindShare\np30\nsasVage_min\np31\nI18\nsVpage_types\np32\n(lp33\nVdesktop\np34\nasVexcluded_connections\np35\n(lp36\n(dp37\nVid\np38\nV481523265256333\np39\nsVname\np40\nVDiscotech\np41\nsasVregions\np42\n(lp43\n(dp44\nVid\np45\nV1\np46\nsVname\np47\nVAlabama\np48\nsa(dp49\nVid\np50\nV2\np51\nsVname\np52\nVAlaska\np53\nsasVradius\np54\nV10\np55\nsVcollege_networks\np56\n(lp57\n(dp58\nVid\np59\nV16777217\np60\nsVname\np61\nVHarvard\np62\nsa(dp63\nVid\np64\nV16777445\np65\nsVname\np66\nVHartford\np67\nsasVbroad_age\np68\nI1\nsVgenders\np69\n(lp70\nI1\nasVcollege_majors\np71\n(lp72\nVenglish\np73\naVmathematics\np74\nasVcities\np75\n(lp76\n(dp77\nVid\np78\nV2418956\np79\nsVname\np80\nVDublin, CA\np81\nsa(dp82\nVid\np83\nV2421215\np84\nsVname\np85\nVPalo Alto, CA\np86\nsasVinterested_in\np87\n(lp88\nI1\nasVlocales\np89\n(lp90\nV24\np91\naV6\np92\nasVexcluded_user_adclusters\np93\n(lp94\n(dp95\nVparent_category\np96\nNsVid\np97\nI6002714898572\nsVname\np98\nVSmall Business Owners\np99\nsassVname\np100\nVtest_adgroup\np101\nsVbid_info\np102\n(dp103\nVIMPRESSIONS\np104\nI2\nssVcampaign_id\np105\nI6013003220351\nsVlast_updated_by_app_id\np106\nI481523265256333\nsVupdated_time\np107\nV2013-12-11T07:50:56-08:00\np108\nsVtracking_specs\np109\n(lp110\n(dp111\nVpage\np112\n(lp113\nI238205562866018\nasVaction.type\np114\n(lp115\nVpage_engagement\np116\nasasVadgroup_status\np117\nVPENDING_REVIEW\np118\nsVcreated_time\np119\nV2013-12-11T07:50:56-08:00\np120\nsVbid_type\np121\nVCPM\np122\nsVcreative_ids\np123\n(lp124\nI6012233586351\nasVid\np125\nI6013003221351\nsVaccount_id\np126\nI106929496119713\ns(S'AdGroup'\np127\n(lp128\nL6013003221351L\natp129\ntp130\n."
+p8
+sS'hash'
+p9
+S'cbbda8c29e556ea570061b8ab2bc874d9707e9c7'
+p10
+sS'stack'
+p11
+S'_test_single_endpoint util.py get_stack facade.py cache patch.py patch_with models_test.py test_graph_api patch.py patched_test '
+p12
+s.

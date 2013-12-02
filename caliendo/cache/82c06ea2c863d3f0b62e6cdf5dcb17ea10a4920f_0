@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ncpyfacebook.models\nAdImage\np1\nS'adimages'\np2\ntp3\n."
+p3
+sS'methodname'
+p4
+S'_run_post_call'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'((dp0\nVurl\np1\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-frc3/1354164_6012062867751_1697211487_n.png\np2\nsVhash\np3\nV68e07662e829b8330cc740b523ff7847\np4\ns(N(lp5\ntp6\ntp7\n.'
+p8
+sS'hash'
+p9
+S'82c06ea2c863d3f0b62e6cdf5dcb17ea10a4920f'
+p10
+sS'stack'
+p11
+S'_run_post_call util.py get_stack facade.py cache patch.py patch_with models_test.py test_graph_api patch.py patched_test '
+p12
+s.
