@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'_test_single_endpoint'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((dp0\nVamount_spent\np1\nI3750\nsVdaily_spend_limit\np2\nI15338647\nsVname\np3\nVBuzzFeed RnD_API Testing\np4\nsVtimezone_id\np5\nI1\nsVtimezone_offset_hours_utc\np6\nI-8\nsVtimezone_name\np7\nVAmerica/Los_Angeles\np8\nsVcurrency\np9\nVUSD\np10\nsVaccount_status\np11\nI1\nsVid\np12\nVact_106929496119713\np13\nsVaccount_id\np14\nI106929496119713\ns(S'AdAccount'\np15\n(lp16\nVact_106929496119713\np17\natp18\ntp19\n."
+p8
+sS'hash'
+p9
+S'a5256a6ce7583eb1e32007451247518d8043a141'
+p10
+sS'stack'
+p11
+S'_test_single_endpoint util.py get_stack facade.py cache patch.py patch_with models_test.py test_graph_api patch.py patched_test '
+p12
+s.

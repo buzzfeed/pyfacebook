@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'_test_single_endpoint'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S'(I01\n(N(lp0\ntp1\ntp2\n.'
+p8
+sS'hash'
+p9
+S'6ea8fd31799d658191e60fc1d27e33f2a7a9a6ef'
+p10
+sS'stack'
+p11
+S'_test_single_endpoint util.py get_stack facade.py cache patch.py patch_with models_test.py test_graph_api patch.py patched_test '
+p12
+s.

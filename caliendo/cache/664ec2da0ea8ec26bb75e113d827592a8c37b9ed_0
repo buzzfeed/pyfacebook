@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'_test_single_endpoint'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((dp0\nVaccount_id\np1\nI106929496119713\nsVstart_time\np2\nV2014-02-28T16:00:00-08:00\np3\nsVupdated_time\np4\nV2013-12-17T10:39:59-08:00\np5\nsVlifetime_budget\np6\nI100\nsVend_time\np7\nV2014-03-01T16:00:00-08:00\np8\nsVcreated_time\np9\nV2013-12-17T10:39:59-08:00\np10\nsVcampaign_status\np11\nI2\nsVid\np12\nI6013094266551\nsVbudget_remaining\np13\nI100\nsVname\np14\nVtest_campaign\np15\ns(S'AdCampaign'\np16\n(lp17\nL6013094266551L\natp18\ntp19\n."
+p8
+sS'hash'
+p9
+S'664ec2da0ea8ec26bb75e113d827592a8c37b9ed'
+p10
+sS'stack'
+p11
+S'_test_single_endpoint util.py get_stack facade.py cache patch.py patch_with models_test.py test_graph_api patch.py patched_test '
+p12
+s.

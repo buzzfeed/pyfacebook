@@ -1,0 +1,25 @@
+(dp1
+S'args'
+p2
+S"(S'FacebookModelsTest'\np0\ntp1\n."
+p3
+sS'methodname'
+p4
+S'_test_single_endpoint'
+p5
+sS'packet_num'
+p6
+I0
+sS'returnval'
+p7
+S"((dp0\nVimage_hash\np1\nV68e07662e829b8330cc740b523ff7847\np2\nsVname\np3\nVtest_type_27_creativ-2013-12-10-1ffa2b91a846928e5010b105bacb050c\np4\nsVstory_id\np5\nI693645777321992\nsVpreview_url\np6\nVhttps://www.facebook.com/ads/api/creative_preview.php?cid=6012988340351\np7\nsVobject_id\np8\nI238205562866018\nsVimage_url\np9\nVhttps://fbcdn-creative-a.akamaihd.net/hads-ak-frc3/t45/1354164_6012062867751_1697211487_n.png\np10\nsVurl_tags\np11\nVfoo=bar&bat=baz\np12\nsVtype\np13\nI27\nsVid\np14\nI6012988340351\ns(S'AdCreative'\np15\n(lp16\nL6012988340351L\natp17\ntp18\n."
+p8
+sS'hash'
+p9
+S'fb7f7482c34bd1c0e512b168a5a013894fc71c8c'
+p10
+sS'stack'
+p11
+S'_test_single_endpoint util.py get_stack facade.py cache patch.py patch_with models_test.py test_graph_api patch.py patched_test '
+p12
+s.
