@@ -21,16 +21,14 @@ class PyFacebook(object):
 
     """
 
-    def __init__(self, app_id=None, app_secret=None, token_text=None, get_from_shelf=None,
-                 put_on_shelf=None, use_long_lived_tokens=True, facebook_graph_url='https://graph.facebook.com'):
+    def __init__(self, app_id=None, app_secret=None, token_text=None,
+                 use_long_lived_tokens=True, facebook_graph_url='https://graph.facebook.com'):
         """
         Initializes an object of the Facebook class. Sets local vars and establishes a connection.
 
         :param str app_id: Facebook app_id
         :param str app_secret: Facebook app_secret
         :param str token_text: Facebook access_token
-        :param shelve.Shelf get_from_shelf: An open Shelf object to get data from, instead of a live API endpoint.
-        :param shelve.Shelf put_on_shelf: An open Shelf object to put data on.
 
         """
         self.__use_long_lived_tokens = use_long_lived_tokens
@@ -38,8 +36,6 @@ class PyFacebook(object):
 
         self.app_id = app_id
         self.app_secret = app_secret
-        self.get_from_shelf = get_from_shelf
-        self.put_on_shelf = put_on_shelf
         self.access_token = self.validate_access_token(token_text=token_text)
 
     def __call_token_debug(self, token_text, input_token_text):
@@ -146,7 +142,6 @@ class PyFacebook(object):
         """
         if not input_token_text:
             input_token_text = token_text
-
         my_token = self.__call_token_debug(token_text, input_token_text)
 
         token_expires_soon = my_token.expires_at and \
@@ -191,62 +186,51 @@ class PyFacebook(object):
         :rtype dict: A dict representing the json-decoded result from Facebook.
 
         """
-        shelf_key = endpoint + "__" + http_method
-        if getattr(self, 'get_from_shelf', None) is not None:
-            shelved_response = self.get_from_shelf[shelf_key]
-            return shelved_response
-        else:
-            # Append access_token if not sent in params
-            if not (params.get('access_token') or params.get('fb_exchange_token')) and hasattr(self, 'access_token'):
-                params['access_token'] = self.access_token.text
+        # Append access_token if not sent in params
+        if not (params.get('access_token') or params.get('fb_exchange_token')) and hasattr(self, 'access_token'):
+            params['access_token'] = self.access_token.text
 
-            # Dump iterable params to JSON if possible
-            for key, val in params.items():
-                if isinstance(val, (list, dict, tuple, set)):
-                    try:
-                        params[key] = json.dumps(val)
-                    except (TypeError, ValueError):
-                        pass
-                elif isinstance(val, (datetime.date, datetime.datetime)):
-                    params[key] = self.__convert_datetime_to_facebook(key, val)
+        # Dump iterable params to JSON if possible
+        for key, val in params.items():
+            if isinstance(val, (list, dict, tuple, set)):
+                try:
+                    params[key] = json.dumps(val)
+                except (TypeError, ValueError):
+                    pass
+            elif isinstance(val, (datetime.date, datetime.datetime)):
+                params[key] = self.__convert_datetime_to_facebook(key, val)
 
-            # MAKE THE CALL
-            url = self.__facebook_graph_url
-            if http_method == 'GET':
-                response = requests.get(url + '/' + endpoint, params=params)
-            elif http_method == 'POST':
-                post_file = params.pop('file', None)
-                if post_file:
-                    response = requests.post(url + '/' + endpoint, files=post_file, data=params)
-                else:
-                    response = requests.post(url + '/' + endpoint, data=params)
-            elif http_method == 'DELETE':
-                response = requests.delete(url + '/' + endpoint, params=params)
+        # MAKE THE CALL
+        url = self.__facebook_graph_url
+        if http_method == 'GET':
+            response = requests.get(url + '/' + endpoint, params=params)
+        elif http_method == 'POST':
+            post_file = params.pop('file', None)
+            if post_file:
+                response = requests.post(url + '/' + endpoint, files=post_file, data=params)
             else:
-                raise Exception("Called Facebook Graph API with unsupported method: " + http_method)
+                response = requests.post(url + '/' + endpoint, data=params)
+        elif http_method == 'DELETE':
+            response = requests.delete(url + '/' + endpoint, params=params)
+        else:
+            raise Exception("Called Facebook Graph API with unsupported method: " + http_method)
 
         # Parse response and standardize for edge cases, raising Facebook errors if they exist
         try:
             json_response = response.json()
             if not isinstance(json_response, dict):
-                raise ValueError()
+                raise ValueError
             elif json_response.get('error'):
                 raise FacebookException(message=json_response['error']['message'], code=json_response['error']['code'])
             elif json_response.get('images'):
                 json_response = {'data': json_response['images']}
             elif not json_response.get('data'):
                 json_response = {'data': [json_response]}
-
-            if getattr(self, 'put_on_shelf', None) is not None:
-                self.put_on_shelf[shelf_key] = json_response
             return json_response
         except ValueError:
             if expect_json:
                 raise
-            else:
-                if getattr(self, 'put_on_shelf', None) is not None:
-                    self.put_on_shelf[shelf_key] = response.text
-                return response.text
+            return response.text
 
     def get(self, model, id, connection=None, return_json=False, **kwargs):
         """

@@ -1,5 +1,4 @@
 import os
-import random
 import datetime
 import pytz
 from pyfacebook import models as m
@@ -59,8 +58,8 @@ FIXTURES[m.AdCampaign] = {
                  'name': 'test_campaign',
                  'campaign_status': 2,
                  'lifetime_budget': 100,
-                 'start_time': datetime.datetime.today().replace(tzinfo=pytz.utc) + datetime.timedelta(days=30),
-                 'end_time': datetime.datetime.today().replace(tzinfo=pytz.utc) + datetime.timedelta(days=31),
+                 'start_time': datetime.datetime(2014, 3, 1).replace(tzinfo=pytz.utc),
+                 'end_time': datetime.datetime(2014, 3, 2).replace(tzinfo=pytz.utc),
                  }),
 }
 
@@ -68,7 +67,7 @@ FIXTURES[m.AdCampaign] = {
 FIXTURES[m.AdImage] = {
     'test_image':
     m.AdImage(**{
-              'file': {'test_image.png': open(MY_DIR + '/test_image.png', 'r')},
+              'file': {'test_image.png': open(MY_DIR + '/test_image.png', 'r').read()},
               }),
 }
 
@@ -113,7 +112,7 @@ FIXTURES[m.AdCreative] = {
                  'name': 'test_type_27_creative_name',
                  'url_tags': 'foo=bar&bat=baz',
                  'object_id': 238205562866018,
-                 'story_id': 609720135714557,
+                 'story_id': 693645777321992,
                  }),
 }
 
