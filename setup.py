@@ -23,7 +23,7 @@ setup(
         'tinymodel==0.0.19',
         'requests==1.2.3',
         'inflection==0.2.0',
-        'caliendo'
+        'caliendo==v2.0.5'
     ],
     dependency_links=[
         'https://github.com/buzzfeed/tinymodel/tarball/0.0.19#egg=tinymodel-0.0.19',
