@@ -25,25 +25,22 @@ class FacebookModelsTest(unittest.TestCase):
     """ Tests PyFacebook functionality for all Facebook models. """
 
     limit_live_results = settings.__dict__.get('LIVE_TEST_RESULTSET_LIMIT')
+    __DEFAULT_FACEBOOK_TEST_ACCOUNT_ID = 'act_106929496119713'
 
     app_id = settings.__dict__.get('FACEBOOK_TEST_APP_ID')
     app_secret = settings.__dict__.get('FACEBOOK_TEST_APP_SECRET')
     test_token_text = settings.__dict__.get('FACEBOOK_TEST_ACCESS_TOKEN')
-    account_id = settings.__dict__.get('FACEBOOK_TEST_ACCOUNT_ID')
+    account_id = settings.__dict__.get('FACEBOOK_TEST_ACCOUNT_ID', __DEFAULT_FACEBOOK_TEST_ACCOUNT_ID)
     if account_id:
         account_id = account_id if account_id[0:4] == 'act_' else 'act_' + account_id
 
-    def set_up_get_model_ids(self):
-        return {models.AdAccount.__name__: [self.account_id]}
-
-    @patch('test.models_test.FacebookModelsTest.set_up_get_model_ids')
     def setUp(self):
         """ Set up models list and PyFacebook instance """
 
         get_models = [val for key, val in models.__dict__.items() if isinstance(val, type) and models.FacebookModel in val.__bases__]
         get_models.insert(0, get_models.pop(get_models.index(models.AdAccount)))
         self.get_models = get_models
-        self.get_model_ids = self.set_up_get_model_ids()
+        self.get_model_ids = {models.AdAccount: [self.account_id]}
 
     def _test_exchange_access_token(self):
         pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text)
@@ -76,9 +73,9 @@ class FacebookModelsTest(unittest.TestCase):
                 dependent_value = getattr(dependent_obj, 'id', None) or getattr(dependent_obj, 'hash')
                 setattr(fixture_obj, field_name, dependent_value)
 
-    def _test_single_endpoint(self, model, http_method, id=None, connection=None, return_json=True, **kwargs):
+    def _test_single_endpoint(self):
         """
-        Tests a single Facebook Ads endpoint
+        Tests a single Facebook Ads endpoint, params are set as class attrs in order to play nice with caliendo
 
         :param FacebookModel model: The model returned by this endpoint
         :param str connection: The name of the connection, if we are testing one.
@@ -87,11 +84,11 @@ class FacebookModelsTest(unittest.TestCase):
         model_name = None
         this_model_ids = []
         pyfb = PyFacebook(app_id=self.app_id, app_secret=self.app_secret, token_text=self.test_token_text)
-        test_method = getattr(pyfb, http_method.lower())
-        results = test_method(model=model, id=id, connection=connection, return_json=return_json, **kwargs)
+        test_method = getattr(pyfb, self.HTTP_METHOD.lower())
+        results = test_method(model=self.MODEL, id=self.ID, connection=self.CONNECTION, return_json=self.RETURN_JSON, **self.KWARGS)
 
-        if return_json:
-            results['data'] = json_to_objects(results['data'], model)
+        if self.RETURN_JSON:
+            results['data'] = json_to_objects(results['data'], self.MODEL)
             first_obj = first_item(results['data'])
             if first_obj and hasattr(first_obj, 'id'):
                 first_obj.validate()
@@ -102,11 +99,7 @@ class FacebookModelsTest(unittest.TestCase):
             results = results.to_json(return_dict=True)
         return results, (model_name, this_model_ids)
 
-    def _run_post_call(self, model, connection, **params):
-        return self._test_single_endpoint(model=model, http_method='POST', id=self.account_id, connection=connection, **params)
-
     @patch('test.models_test.FacebookModelsTest._test_single_endpoint')
-    @patch('test.models_test.FacebookModelsTest._run_post_call')
     def test_graph_api(self):
         """
         Test for the POST, GET and DELETE functionality (in that order) of all defined FacebookModels and their connections.
@@ -139,9 +132,16 @@ class FacebookModelsTest(unittest.TestCase):
                 post_params.pop('id', None)
                 post_params.pop('hash', None)
                 connection = inflection.pluralize(model.__name__.lower())
-                return_obj, (model_name, model_ids) = self._run_post_call(model, connection, **post_params)
+                # set params as class attrs in order to place nice with caliendo
+                self.MODEL = model
+                self.HTTP_METHOD = 'POST'
+                self.ID = self.account_id
+                self.CONNECTION = connection
+                self.RETURN_JSON = True
+                self.KWARGS = post_params
+                return_obj, (model_name, model_ids) = self._test_single_endpoint()
                 if model_name and model_ids:
-                    self.get_model_ids[model_name] = model_ids
+                    self.get_model_ids[getattr(models, model_name)] = model_ids
                 if 'id' in return_obj:
                     fixture_obj.id = return_obj['id']
                 elif 'hash' in return_obj:
@@ -149,16 +149,32 @@ class FacebookModelsTest(unittest.TestCase):
 
         # test GET using fixtures
         for model in self.get_models:
-            if model.__name__ not in self.get_model_ids.keys():
+            if model not in self.get_model_ids.keys():
                 print "==== SKIPPING GET TEST! NO TEST ID FOR", model.__name__, "===="
                 continue
-            for id in self.get_model_ids[model.__name__]:
-                self._test_single_endpoint(model=model, http_method='GET', id=id, limit=self.limit_live_results)
+            for id in self.get_model_ids[model]:
+                # set params as class attrs in order to place nice with caliendo
+                self.MODEL = model
+                self.HTTP_METHOD = 'GET'
+                self.ID = id
+                self.CONNECTION = None
+                self.RETURN_JSON = True
+                self.KWARGS = {'limit': self.limit_live_results}
+                self._test_single_endpoint()
                 for connection in getattr(model, 'CONNECTIONS', []):
                     connection_field_def = next(f for f in model.FIELD_DEFS if f.title == connection)
                     child_model = first_item(connection_field_def.allowed_types[0])
                     extra_params = get_fixtures.CONNECTIONS.get(model, {}).get(connection, {})
-                    self._test_single_endpoint(model=child_model, http_method='GET', id=id, connection=connection, limit=self.limit_live_results, **extra_params)
+                    # set params as class attrs in order to place nice with caliendo
+                    self.MODEL = child_model
+                    self.HTTP_METHOD = 'GET'
+                    self.ID = id
+                    self.CONNECTION = connection
+                    self.RETURN_JSON = True
+                    kwargs = {'limit': self.limit_live_results}
+                    kwargs.update(extra_params)
+                    self.KWARGS = kwargs
+                    self._test_single_endpoint()
 
         # test DELETE by deleting posted models from above
         post_fixtures.POST_MODELS.reverse()
@@ -166,4 +182,11 @@ class FacebookModelsTest(unittest.TestCase):
             model = post_dict['model']
             for fixture_name, fixture_obj in post_fixtures.FIXTURES[model].items():
                 if hasattr(fixture_obj, 'id'):
-                    ok_(self._test_single_endpoint(model=model, id=fixture_obj.id, http_method='DELETE', return_json=False)[0])
+                    # set params as class attrs in order to place nice with caliendo
+                    self.MODEL = model
+                    self.HTTP_METHOD = 'DELETE'
+                    self.ID = fixture_obj.id
+                    self.CONNECTION = None
+                    self.RETURN_JSON = False
+                    self.KWARGS = {}
+                    ok_(self._test_single_endpoint()[0])
