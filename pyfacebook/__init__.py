@@ -22,13 +22,15 @@ class PyFacebook(object):
     """
 
     def __init__(self, app_id=None, app_secret=None, token_text=None,
-                 use_long_lived_tokens=True, facebook_graph_url='https://graph.facebook.com'):
+                 use_long_lived_tokens=True, call_token_debug=True,
+                 facebook_graph_url='https://graph.facebook.com'):
         """
         Initializes an object of the Facebook class. Sets local vars and establishes a connection.
 
         :param str app_id: Facebook app_id
         :param str app_secret: Facebook app_secret
         :param str token_text: Facebook access_token
+        :param bool call_token_debug: wether to validate or not the token_text.
 
         """
         self.__use_long_lived_tokens = use_long_lived_tokens
@@ -36,7 +38,9 @@ class PyFacebook(object):
 
         self.app_id = app_id
         self.app_secret = app_secret
-        self.access_token = self.validate_access_token(token_text=token_text)
+        self.call_token_debug = call_token_debug
+        if self.call_token_debug:
+            self.access_token = self.validate_access_token(token_text=token_text)
 
     def __call_token_debug(self, token_text, input_token_text):
         """
@@ -173,7 +177,10 @@ class PyFacebook(object):
         }
         resp = self.call_graph_api('oauth/access_token', expect_json=False, params=auth_exchange_params)
         new_token_text = parse_qs(resp)['access_token'][0]
-        return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
+        if self.call_token_debug:
+            return self.__call_token_debug(token_text=new_token_text, input_token_text=new_token_text)
+        else:
+            return new_token_text
 
     def call_graph_api(self, endpoint, http_method='GET', expect_json=True, params={}):
         """

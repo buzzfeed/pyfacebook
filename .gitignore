@@ -11,3 +11,5 @@ nosetests.xml
 .env
 .DS_Store
 caliendo/used
+*.sublime-project
+*.sublime-workspace
