@@ -41,6 +41,8 @@ class PyFacebook(object):
         self.call_token_debug = call_token_debug
         if self.call_token_debug:
             self.access_token = self.validate_access_token(token_text=token_text)
+        else:
+            self.access_token = models.Token(text=token_text)
 
     def __call_token_debug(self, token_text, input_token_text):
         """
