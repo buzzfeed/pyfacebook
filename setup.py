@@ -9,7 +9,7 @@ except ImportError:
 
 setup(
     name='pyfacebook',
-    version='1.1.2',
+    version='1.1.3',
     author='Jeff Revesz and Andrew Kelleher',
     author_email='jeff.revesz@buzzfeed.com',
     packages=find_packages(),
@@ -23,7 +23,8 @@ setup(
         'tinymodel==0.0.19',
         'requests==1.2.3',
         'inflection==0.2.0',
-        'caliendo==v2.0.5'
+        'caliendo==v2.0.5',
+        'simplejson'
     ],
     dependency_links=[
         'https://github.com/buzzfeed/tinymodel/tarball/0.0.19#egg=tinymodel-0.0.19',

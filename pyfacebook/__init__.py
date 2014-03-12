@@ -7,6 +7,8 @@ import inflection
 
 from urlparse import parse_qs
 from pyfacebook import models
+from simplejson.decoder import JSONDecodeError
+from pprint import pprint
 
 from pyfacebook.utils import(
     FacebookException,
@@ -114,7 +116,7 @@ class PyFacebook(object):
                           "Please send UTC datetimes in the future.")
             this_datetime = this_datetime.astimezone(pytz.utc)
 
-        return this_datetime.replace(tzinfo=pytz.utc, minute=0, second=0, microsecond=0).isoformat()
+        return this_datetime.replace(tzinfo=None, minute=0, second=0, microsecond=0).isoformat()
 
     def __delete_everything(self, account_id):
         """
@@ -236,9 +238,12 @@ class PyFacebook(object):
             elif not json_response.get('data'):
                 json_response = {'data': [json_response]}
             return json_response
-        except ValueError:
+        except ValueError, JSONDecodeError:
             if expect_json:
-                raise
+                print "ERROR CALLING FB URL: %s" % (url + '/' + endpoint)
+                print "WITH PARAMS:"
+                pprint(params)
+                raise Exception('Expected Valid JSON response, got this instead: %s' % response.text)
             return response.text
 
     def get(self, model, id, connection=None, return_json=False, **kwargs):
