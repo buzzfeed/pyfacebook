@@ -402,6 +402,7 @@ class CustomAudience(FacebookModel):
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='name', allowed_types=[unicode]),
+        FieldDef(title='approximate_count', allowed_types=[int]),
     ]
 
 
