@@ -238,7 +238,7 @@ class Targeting(SupportModel):
         FieldDef(title='page_types', allowed_types=[[unicode]], choices=[['desktop'], ['feed'], ['desktopfeed'], ['mobile'], ['rightcolumn'], ['home']]),
         FieldDef(title='relationship_statuses', allowed_types=[[int]]),
         FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2]]),
-        FieldDef(title='locales', allowed_types=[{unicode: unicode, unicode:unicode}, [unicode]]),
+        FieldDef(title='locales', allowed_types=[{unicode: unicode, unicode: unicode}, [unicode]]),
     ]
 
 
@@ -437,6 +437,7 @@ class AdAccount(FacebookModel):
 
     CONNECTIONS = ['users', 'adcampaigns', 'adimages', 'adcreatives',
                    'adgroups', 'stats', 'adgroupstats', 'adpreviewscss', 'customaudiences']
+
 
 class Post(FacebookModel):
     FIELD_DEFS = [
