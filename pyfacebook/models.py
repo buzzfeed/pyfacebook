@@ -393,6 +393,18 @@ class AdCampaign(FacebookModel):
     CONNECTIONS = ['adcreatives', 'adgroups', 'stats']
 
 
+class CustomAudience(FacebookModel):
+
+    """
+    Represents the customaudience object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/custom-audience-targeting
+    """
+    FIELD_DEFS = [
+        FieldDef(title='id', allowed_types=[long]),
+        FieldDef(title='name', allowed_types=[unicode]),
+    ]
+
+
 class AdAccount(FacebookModel):
 
     """
@@ -419,12 +431,12 @@ class AdAccount(FacebookModel):
         FieldDef(title='adgroups', allowed_types=[[AdGroup]]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
         FieldDef(title='adgroupstats', allowed_types=[[AdStatistic]]),
+        FieldDef(title='customaudiences', allowed_types=[[CustomAudience]]),
         FieldDef(title='adpreviewscss', allowed_types=[[AdPreviewCss]]),
     ]
 
     CONNECTIONS = ['users', 'adcampaigns', 'adimages', 'adcreatives',
-                   'adgroups', 'stats', 'adgroupstats', 'adpreviewscss']
-
+                   'adgroups', 'stats', 'adgroupstats', 'adpreviewscss', 'customaudiences']
 
 class Post(FacebookModel):
     FIELD_DEFS = [
