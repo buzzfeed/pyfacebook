@@ -205,6 +205,19 @@ class UserConnection(SupportModel):
     ]
 
 
+class CustomAudience(FacebookModel):
+
+    """
+    Represents the customaudience object in the Facebook Ads API:
+    https://developers.facebook.com/docs/reference/ads-api/custom-audience-targeting
+    """
+    FIELD_DEFS = [
+        FieldDef(title='id', allowed_types=[long]),
+        FieldDef(title='name', allowed_types=[unicode]),
+        FieldDef(title='approximate_count', allowed_types=[int]),
+    ]
+
+
 class Targeting(SupportModel):
 
     """
@@ -233,6 +246,7 @@ class Targeting(SupportModel):
         FieldDef(title='friends_of_connections', allowed_types=[[UserConnection]]),
         FieldDef(title='college_networks', allowed_types=[[CollegeNetwork]]),
         FieldDef(title='work_networks', allowed_types=[[WorkNetwork]]),
+        FieldDef(title='custom_audiences', allowed_types=[[CustomAudience]]),
         FieldDef(title='education_statuses', allowed_types=[[int]], choices=[[1], [2], [3]]),
         FieldDef(title='college_majors', allowed_types=[[unicode]]),
         FieldDef(title='page_types', allowed_types=[[unicode]], choices=[['desktop'], ['feed'], ['desktopfeed'], ['mobile'], ['rightcolumn'], ['home']]),
@@ -391,19 +405,6 @@ class AdCampaign(FacebookModel):
     ]
 
     CONNECTIONS = ['adcreatives', 'adgroups', 'stats']
-
-
-class CustomAudience(FacebookModel):
-
-    """
-    Represents the customaudience object in the Facebook Ads API:
-    https://developers.facebook.com/docs/reference/ads-api/custom-audience-targeting
-    """
-    FIELD_DEFS = [
-        FieldDef(title='id', allowed_types=[long]),
-        FieldDef(title='name', allowed_types=[unicode]),
-        FieldDef(title='approximate_count', allowed_types=[int]),
-    ]
 
 
 class AdAccount(FacebookModel):
