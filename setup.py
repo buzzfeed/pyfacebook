@@ -15,7 +15,7 @@ setup(
     packages=find_packages(),
     test_suite='test',
     install_requires=[
-        'nose==1.3.0',
+        'nose>=1.3.0',
         'BeautifulSoup==3.2.1',
         'Fabric==1.5.1',
         'pytz==2013b',
