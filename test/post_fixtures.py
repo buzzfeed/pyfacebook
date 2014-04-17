@@ -32,7 +32,7 @@ test_targeting = m.Targeting(**{
     'conjunctive_user_adclusters': [m.BroadTargetingCategory(**{'id': 6002714886772, 'name': 'Food & Dining'}),
                                     m.BroadTargetingCategory(**{'id': 6002714885172, 'name': 'Cooking'})],
     'excluded_user_adclusters': [m.BroadTargetingCategory(**{'id': 6002714898572, 'name': 'Small Business Owners'})],
-    'keywords': ['movies', '#Red Bull'],
+    'interests': ['movies', '#Red Bull'],
     'connections': [m.UserConnection(**{'id': '481523265256333', 'name': 'Discotech'})],
     'excluded_connections': [m.UserConnection(**{'id': '481523265256333', 'name': 'Discotech'})],
     'friends_of_connections': [m.UserConnection(**{'id': '481523265256333', 'name': 'Discotech'})],

@@ -236,7 +236,7 @@ class Targeting(SupportModel):
         FieldDef(title='radius', allowed_types=[int]),
         FieldDef(title='conjunctive_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='excluded_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
-        FieldDef(title='keywords', allowed_types=[[unicode]]),
+        FieldDef(title='interests', allowed_types=[[unicode]]),
         FieldDef(title='user_os', allowed_types=[[unicode]]),
         FieldDef(title='user_device', allowed_types=[[unicode]], choices=['iPhone', 'iPod', 'android_tablet', 'android_smartphone']),
         FieldDef(title='wireless_carrier', allowed_types=[[unicode]], choices=['WiFi']),
