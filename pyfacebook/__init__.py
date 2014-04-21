@@ -78,7 +78,7 @@ class PyFacebook(object):
         :param bool return_json: If True, the call returns a dict instead of TinyModel objects
 
         """
-        endpoint = str(id or model.__name__.lower())
+        endpoint = str(id or model.endpoint or model.__name__.lower())
 
         if connection:
             endpoint += ('/' + connection)
@@ -134,7 +134,7 @@ class PyFacebook(object):
             self.delete(id=adcreative.id)
         print "DELETED", len(adcreatives), "ADCREATIVES"
 
-        adcampaigns = self.get(model=models.AdCampaign, id=account_id, connection='adcampaigns')['data']
+        adcampaigns = self.get(model=models.AdSet, id=account_id, connection='adcampaigns')['data']
         for adcampaign in adcampaigns:
             self.delete(id=adcampaign.id)
         print "DELETED", len(adcampaigns), "ADCAMPAIGNS"

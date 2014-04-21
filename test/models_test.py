@@ -27,8 +27,8 @@ class FacebookModelsTest(unittest.TestCase):
     limit_live_results = settings.__dict__.get('LIVE_TEST_RESULTSET_LIMIT')
     __DEFAULT_FACEBOOK_TEST_ACCOUNT_ID = 'act_106929496119713'
 
-    app_id = settings.__dict__.get('FACEBOOK_TEST_APP_ID')
-    app_secret = settings.__dict__.get('FACEBOOK_TEST_APP_SECRET')
+    app_id = settings.__dict__.get('FACEBOOK_APP_ID')
+    app_secret = settings.__dict__.get('FACEBOOK_APP_SECRET')
     test_token_text = settings.__dict__.get('FACEBOOK_TEST_ACCESS_TOKEN')
     account_id = settings.__dict__.get('FACEBOOK_TEST_ACCOUNT_ID', __DEFAULT_FACEBOOK_TEST_ACCOUNT_ID)
     if account_id:
@@ -66,7 +66,7 @@ class FacebookModelsTest(unittest.TestCase):
             if isinstance(dependent_model, dict):
                 for key, val in dependent_model.items():
                     dependent_obj = list(post_fixtures.FIXTURES[val].values())[0]
-                    dependent_value = getattr(dependent_obj, 'id', None) or getattr(dependent_obj, 'hash')
+                    dependent_value = getattr(dependent_obj, 'id', None) or getattr(dependent_obj, 'hash', None)
                     setattr(fixture_obj, field_name, {key: dependent_value})
             else:
                 dependent_obj = list(post_fixtures.FIXTURES[dependent_model].values())[0]
@@ -87,7 +87,7 @@ class FacebookModelsTest(unittest.TestCase):
         test_method = getattr(pyfb, self.HTTP_METHOD.lower())
         results = test_method(model=self.MODEL, id=self.ID, connection=self.CONNECTION, return_json=self.RETURN_JSON, **self.KWARGS)
 
-        if self.RETURN_JSON:
+        if self.RETURN_JSON and not isinstance(results['data'][0], dict):
             results['data'] = json_to_objects(results['data'], self.MODEL)
             first_obj = first_item(results['data'])
             if first_obj and hasattr(first_obj, 'id'):
@@ -131,7 +131,7 @@ class FacebookModelsTest(unittest.TestCase):
 
                 post_params.pop('id', None)
                 post_params.pop('hash', None)
-                connection = inflection.pluralize(model.__name__.lower())
+                connection = model.endpoint or inflection.pluralize(model.__name__.lower())
                 # set params as class attrs in order to place nice with caliendo
                 self.MODEL = model
                 self.HTTP_METHOD = 'POST'
@@ -140,6 +140,7 @@ class FacebookModelsTest(unittest.TestCase):
                 self.RETURN_JSON = True
                 self.KWARGS = post_params
                 return_obj, (model_name, model_ids) = self._test_single_endpoint()
+
                 if model_name and model_ids:
                     self.get_model_ids[getattr(models, model_name)] = model_ids
                 if 'id' in return_obj:
