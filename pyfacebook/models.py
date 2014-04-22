@@ -21,7 +21,7 @@ class FacebookModel(TinyModel):
     with the notable exception of "connections" which we defined as model fields but Facebook does not.
 
     """
-    pass
+    endpoint = None
 
 
 class SupportModel(TinyModel):
@@ -230,13 +230,11 @@ class Targeting(SupportModel):
         FieldDef(title='age_min', allowed_types=[int]),
         FieldDef(title='age_max', allowed_types=[int]),
         FieldDef(title='broad_age', allowed_types=[int], choices=[0, 1]),
-        FieldDef(title='countries', allowed_types=[[unicode]]),
-        FieldDef(title='cities', allowed_types=[[City]]),
-        FieldDef(title='regions', allowed_types=[[Region]]),
-        FieldDef(title='radius', allowed_types=[int]),
-        FieldDef(title='conjunctive_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
+        FieldDef(title='geo_locations', allowed_types=[{str: [City]}, {str: [Region]}]),
+        FieldDef(title='user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='excluded_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
-        FieldDef(title='interests', allowed_types=[[unicode]]),
+        FieldDef(title='keywords', allowed_types=[[unicode]]),
+        FieldDef(title='interests', allowed_types=[[dict]]),
         FieldDef(title='user_os', allowed_types=[[unicode]]),
         FieldDef(title='user_device', allowed_types=[[unicode]], choices=['iPhone', 'iPod', 'android_tablet', 'android_smartphone']),
         FieldDef(title='wireless_carrier', allowed_types=[[unicode]], choices=['WiFi']),
@@ -328,6 +326,8 @@ class AdCreative(FacebookModel):
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='type', allowed_types=[int], choices=[1, 2, 3, 4, 12, 25, 27]),
         FieldDef(title='object_id', allowed_types=[long]),
+        FieldDef(title='object_story_id', allowed_types=[unicode]),
+        FieldDef(title='object_url', allowed_types=[unicode]),
         FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='title', allowed_types=[unicode]),
         FieldDef(title='body', allowed_types=[unicode]),
@@ -359,16 +359,16 @@ class AdGroup(FacebookModel):
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='account_id', allowed_types=[int]),
-        FieldDef(title='campaign_id', allowed_types=[long]),
+        FieldDef(title='campaign_id', allowed_types=[long, int]),
         FieldDef(title='adgroup_status', allowed_types=[unicode], choices=['ACTIVE', 'DELETED', 'PENDING_REVIEW', 'DISAPPROVED', 'PENDING_BILLING_INFO', 'CAMPAIGN_PAUSED', 'ADGROUP_PAUSED']),
-        FieldDef(title='disapprove_reason_descriptions', allowed_types=[unicode]),
+        FieldDef(title='adgroup_review_feedback', allowed_types=[unicode]),
         FieldDef(title='bid_type', allowed_types=[unicode], choices=['CPC', 'CPM', 'MULTI_PREMIUM', 'RELATIVE_OCPM', 'ABSOLUTE_OCPM', 'CPA']),
         FieldDef(title='bid_info', allowed_types=[{unicode: int}, type(None)]),
         FieldDef(title='creative_ids', allowed_types=[[long]]),
         FieldDef(title='creative', allowed_types=[{unicode: long}]),
         FieldDef(title='targeting', allowed_types=[Targeting, type(None)]),
         FieldDef(title='tracking_specs', allowed_types=[[TrackingSpec]]),
-        FieldDef(title='last_updated_by_app_id', allowed_types=[long]),
+        FieldDef(title='last_updated_by_app_id', allowed_types=[long, int]),
         FieldDef(title='created_time', allowed_types=[datetime.datetime]),
         FieldDef(title='updated_time', allowed_types=[datetime.datetime]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
@@ -380,17 +380,29 @@ class AdGroup(FacebookModel):
     CONNECTIONS = ['stats', 'adcreatives', 'previews']
 
 
-class AdCampaign(FacebookModel):
+class AdCampaignGroup(FacebookModel):
+    endpoint = 'adcampaign_groups'
+    FIELD_DEFS = [
+        FieldDef(title='id', allowed_types=[long]),
+        FieldDef(title='name', allowed_types=[unicode]),
+        FieldDef(title='objective', allowed_types=[unicode]),
+        FieldDef(title='campaign_group_status', allowed_types=[unicode]),
+        FieldDef(title='buying_type', allowed_types=[unicode]),
+    ]
 
+
+class AdSet(FacebookModel):
     """
     Represents the aduser object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adcampaign/
 
     """
+    endpoint = 'adcampaigns'
     FIELD_DEFS = [
         FieldDef(title='id', allowed_types=[long]),
         FieldDef(title='name', allowed_types=[unicode]),
         FieldDef(title='account_id', allowed_types=[long]),
+        FieldDef(title='campaign_group_id', allowed_types=[long]),
         FieldDef(title='start_time', allowed_types=[datetime.datetime]),
         FieldDef(title='end_time', allowed_types=[datetime.datetime]),
         FieldDef(title='created_time', allowed_types=[datetime.datetime]),
@@ -398,7 +410,7 @@ class AdCampaign(FacebookModel):
         FieldDef(title='daily_budget', allowed_types=[int]),
         FieldDef(title='lifetime_budget', allowed_types=[int]),
         FieldDef(title='budget_remaining', allowed_types=[int]),
-        FieldDef(title='campaign_status', allowed_types=[int], choices=[1, 2, 3]),
+        FieldDef(title='campaign_status', allowed_types=[unicode], choices=['ACTIVE', 'PAUSED']),
         FieldDef(title='adcreatives', allowed_types=[[AdCreative]]),
         FieldDef(title='adgroups', allowed_types=[[AdGroup]]),
         FieldDef(title='stats', allowed_types=[[AdStatistic]]),
@@ -427,7 +439,7 @@ class AdAccount(FacebookModel):
         FieldDef(title='daily_spend_limit', allowed_types=[int]),
         FieldDef(title='amount_spent', allowed_types=[int]),
         FieldDef(title='users', allowed_types=[[AdUser]]),
-        FieldDef(title='adcampaigns', allowed_types=[[AdCampaign]]),
+        FieldDef(title='adcampaigns', allowed_types=[[AdSet]]),
         FieldDef(title='adimages', allowed_types=[[AdImage]]),
         FieldDef(title='adcreatives', allowed_types=[[AdCreative]]),
         FieldDef(title='adgroups', allowed_types=[[AdGroup]]),
