@@ -230,7 +230,12 @@ class Targeting(SupportModel):
         FieldDef(title='age_min', allowed_types=[int]),
         FieldDef(title='age_max', allowed_types=[int]),
         FieldDef(title='broad_age', allowed_types=[int], choices=[0, 1]),
-        FieldDef(title='geo_locations', allowed_types=[{str: [City]}, {str: [Region]}]),
+        FieldDef(title='geo_locations', allowed_types=[
+            {str: [City]},  # cities
+            {str: str},  # zipcodes
+            {str: [Region]},  # regions
+            [str]  # countries
+        ]),
         FieldDef(title='user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='excluded_user_adclusters', allowed_types=[[BroadTargetingCategory]]),
         FieldDef(title='keywords', allowed_types=[[unicode]]),
