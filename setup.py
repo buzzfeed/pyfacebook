@@ -24,8 +24,5 @@ setup(
         'requests==1.2.3',
         'inflection==0.2.0',
         'simplejson'
-    ],
-    dependency_links=[
-        'https://github.com/buzzfeed/tinymodel/tarball/0.1.6#egg=tinymodel-0.1.6'
     ]
 )
