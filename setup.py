@@ -20,12 +20,14 @@ setup(
         'Fabric==1.5.1',
         'pytz==2013b',
         'python-dateutil==2.1',
-        'tinymodel==0.1.6',
         'requests==1.2.3',
         'inflection==0.2.0',
         'simplejson'
     ],
     dependency_links=[
         'https://github.com/buzzfeed/tinymodel/tarball/0.1.6#egg=tinymodel-0.1.6'
+    ],
+    tests_require=[
+        'tinymodel==0.1.6'
     ]
 )
