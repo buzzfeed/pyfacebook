@@ -397,6 +397,7 @@ class AdCampaignGroup(FacebookModel):
 
 
 class AdSet(FacebookModel):
+
     """
     Represents the aduser object in the Facebook Ads API:
     https://developers.facebook.com/docs/reference/ads-api/adcampaign/

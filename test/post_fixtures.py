@@ -11,7 +11,7 @@ POST_MODELS = [
     {'model': m.AdCampaignGroup},
     {'model': m.AdSet,
      'dependent_fields': {'campaign_group_id': m.AdCampaignGroup}
-    },
+     },
     {'model': m.AdImage},
     {'model': m.AdGroup,
      'dependent_fields': {'creative': {'creative_id': m.AdCreative}, 'campaign_id': m.AdSet}
@@ -31,7 +31,7 @@ test_targeting = m.Targeting(**{
                     m.Region(**{'id': '2', 'name': 'Alaska'})],
     },
     'user_adclusters': [m.BroadTargetingCategory(**{'id': 6002714886772, 'name': 'Food & Dining'}),
-                                    m.BroadTargetingCategory(**{'id': 6002714885172, 'name': 'Cooking'})],
+                        m.BroadTargetingCategory(**{'id': 6002714885172, 'name': 'Cooking'})],
     'excluded_user_adclusters': [m.BroadTargetingCategory(**{'id': 6002714898572, 'name': 'Small Business Owners'})],
     'interests': ['movies', '#Red Bull'],
     'connections': [m.UserConnection(**{'id': '481523265256333', 'name': 'Discotech'})],
@@ -65,12 +65,12 @@ FIXTURES[m.AdCampaignGroup] = {
 FIXTURES[m.AdSet] = {
     'test_campaign':
     m.AdSet(**{
-                 'name': 'test_campaign',
-                 'campaign_status': 'ACTIVE',
-                 'lifetime_budget': 100,
-                 'start_time': datetime.datetime(2014, 10, 1).replace(tzinfo=pytz.utc),
-                 'end_time': datetime.datetime(2014, 10, 2).replace(tzinfo=pytz.utc),
-                 }),
+        'name': 'test_campaign',
+        'campaign_status': 'ACTIVE',
+        'lifetime_budget': 100,
+        'start_time': datetime.datetime(2014, 10, 1).replace(tzinfo=pytz.utc),
+        'end_time': datetime.datetime(2014, 10, 2).replace(tzinfo=pytz.utc),
+    }),
 }
 
 FIXTURES[m.AdImage] = {
