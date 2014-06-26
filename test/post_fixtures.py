@@ -43,7 +43,7 @@ test_targeting = m.Targeting(**{
                       m.WorkNetwork(**{'id': '50446992', 'name': 'MindShare'})],
     'education_statuses': [3],
     'college_majors': ['Mathematics', 'English'],
-    'page_types': ['desktop'],
+    'ad_format': ['DESKTOP_FEED_STANDARD'],
     'relationship_statuses': [1, 2, 3],
     'interested_in': [1],
     'locales': [6, 24, 51],
