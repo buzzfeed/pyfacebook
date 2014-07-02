@@ -252,7 +252,7 @@ class Targeting(SupportModel):
         FieldDef(title='custom_audiences', allowed_types=[[CustomAudience]]),
         FieldDef(title='education_statuses', allowed_types=[[int]], choices=[[1], [2], [3]]),
         FieldDef(title='college_majors', allowed_types=[[unicode]]),
-        FieldDef(title='ad_format', allowed_types=[[unicode]], choices=[['RIGHT_COLUMN_STANDARD'], ['DESKTOP_FEED_STANDARD'], ['MOBILE_FEED_STANDARD']]),
+        FieldDef(title='page_types', allowed_types=[[unicode]], choices=[['desktop'], ['feed'], ['desktopfeed'], ['mobile'], ['rightcolumn'], ['home'], ['mobile-and-external']]),
         FieldDef(title='relationship_statuses', allowed_types=[[int]]),
         FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2]]),
         FieldDef(title='locales', allowed_types=[{unicode: unicode, unicode: unicode}, [unicode]]),
