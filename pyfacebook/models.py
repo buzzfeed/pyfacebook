@@ -256,6 +256,7 @@ class Targeting(SupportModel):
         FieldDef(title='relationship_statuses', allowed_types=[[int]]),
         FieldDef(title='interested_in', allowed_types=[[int]], choices=[[1], [2]]),
         FieldDef(title='locales', allowed_types=[{unicode: unicode, unicode: unicode}, [unicode]]),
+        FieldDef(title='ethnic_affinity', allowed_types=[{unicode: unicode, unicode: unicode}]),
     ]
 
 
