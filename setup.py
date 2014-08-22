@@ -1,5 +1,4 @@
 # coding=utf-8
-import sys
 try:
     from setuptools import setup, find_packages
 except ImportError:
@@ -9,7 +8,7 @@ except ImportError:
 
 setup(
     name='pyfacebook',
-    version='1.1.10',
+    version='1.1.11',
     author='Jeff Revesz and Andrew Kelleher',
     author_email='jeff.revesz@buzzfeed.com',
     packages=find_packages(),
