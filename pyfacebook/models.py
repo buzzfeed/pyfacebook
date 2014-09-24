@@ -442,7 +442,6 @@ class AdAccount(FacebookModel):
         FieldDef(title='timezone_id', allowed_types=[int]),
         FieldDef(title='timezone_name', allowed_types=[unicode]),
         FieldDef(title='timezone_offset_hours_utc', allowed_types=[int]),
-        FieldDef(title='vat_status', allowed_types=[int]),
         FieldDef(title='daily_spend_limit', allowed_types=[int]),
         FieldDef(title='amount_spent', allowed_types=[int]),
         FieldDef(title='users', allowed_types=[[AdUser]]),
