@@ -1,3 +1,5 @@
+*This project is no longer maintained and is now **ARCHIVED**.*
+
 # pyfacebook
 
 An implementation of the Facebook graph API targeting ads.
